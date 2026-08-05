@@ -16,8 +16,8 @@ export default function ComingSoon() {
       <Heart size={22} color="#FE9EED" className="absolute bottom-16 right-[4%] opacity-35" />
 
       <div className="max-w-xl w-full mx-auto text-center relative z-10">
-        {/* Script top */}
-        <p className="script text-[#FE9EED] text-3xl mb-3">Welcome to</p>
+        {/* Top label */}
+        <p className="text-[#FE9EED] text-lg tracking-widest uppercase mb-3">Welcome to</p>
 
         {/* Brand name */}
         <h1 className="rye text-5xl md:text-7xl text-[#6B4841] leading-tight tracking-wide uppercase mb-1">
@@ -49,7 +49,7 @@ export default function ComingSoon() {
             <div className="h-px w-10 bg-[#F2B8CE]" />
           </div>
 
-          <p className="script text-[#FE9EED] text-xl mb-3">In the meantime, reach us at</p>
+          <p className="text-[#FE9EED] text-sm tracking-widest uppercase mb-3">In the meantime, reach us at</p>
           <a
             href="tel:2506501391"
             className="rye text-2xl md:text-3xl text-[#6B4841] hover:text-[#FE9EED] transition-colors tracking-wide"
@@ -58,7 +58,7 @@ export default function ComingSoon() {
           </a>
         </div>
 
-        <p className="script text-[#D49C84] text-xl mt-10">
+        <p className="text-[#D49C84] text-base italic mt-10">
           It&apos;s more than a dance, it&apos;s a good time.
         </p>
       </div>
