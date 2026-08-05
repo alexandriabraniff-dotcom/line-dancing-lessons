@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Rye, Dancing_Script, Lato } from "next/font/google";
 import "./globals.css";
-import Nav from "@/components/Nav";
-import Footer from "@/components/Footer";
 
 const rye = Rye({
   weight: "400",
@@ -25,8 +23,8 @@ const lato = Lato({
 });
 
 export const metadata: Metadata = {
-  title: "Line Dancing Lessons",
-  description: "It's more than a dance, it's a good time. Weddings, birthdays, social events and private groups.",
+  title: "Wildflower Line Dancing",
+  description: "Wildflower Line Dancing — coming soon. Get in touch at 250-650-1391.",
 };
 
 export default function RootLayout({
@@ -39,11 +37,7 @@ export default function RootLayout({
       lang="en"
       className={`${rye.variable} ${dancingScript.variable} ${lato.variable} h-full`}
     >
-      <body className="min-h-full flex flex-col">
-        <Nav />
-        <main className="flex-1">{children}</main>
-        <Footer />
-      </body>
+      <body className="min-h-full">{children}</body>
     </html>
   );
 }
