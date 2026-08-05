@@ -45,18 +45,11 @@ export default function Home() {
         <SmallStar size={14} color="#D49C84" className="absolute bottom-32 right-[22%] opacity-60" />
 
         <div className="max-w-3xl mx-auto relative z-10">
-          <p className="script text-[#FE9EED] text-2xl mb-2">Welcome to</p>
+          <p className="script text-[#FE9EED] text-2xl mb-2">Country</p>
 
-          <h1 className="rye text-6xl md:text-8xl text-[#6B4841] leading-none tracking-wide mb-2 uppercase">
-            Line
+          <h1 className="rye text-6xl md:text-8xl text-[#6B4841] leading-none tracking-wide mb-8 uppercase">
+            Line Dancing
           </h1>
-          <h1 className="rye text-6xl md:text-8xl text-[#6B4841] leading-none tracking-wide mb-6 uppercase">
-            Dancing
-          </h1>
-
-          <p className="script text-4xl md:text-5xl text-[#FE9EED] mb-8">
-            Lessons
-          </p>
 
           <p className="text-[#6B4841] text-lg md:text-xl mb-10 max-w-lg mx-auto leading-relaxed">
             It&apos;s more than a dance, it&apos;s a good time.
