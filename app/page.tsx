@@ -47,10 +47,10 @@ export default function Home() {
         <div className="max-w-3xl mx-auto relative z-10">
           <p className="script text-[#FE9EED] text-2xl mb-2">Welcome to</p>
 
-          <h1 className="rye text-6xl md:text-8xl text-[#6B4841] leading-none tracking-wide mb-2">
+          <h1 className="rye text-6xl md:text-8xl text-[#6B4841] leading-none tracking-wide mb-2 uppercase">
             Line
           </h1>
-          <h1 className="rye text-6xl md:text-8xl text-[#6B4841] leading-none tracking-wide mb-6">
+          <h1 className="rye text-6xl md:text-8xl text-[#6B4841] leading-none tracking-wide mb-6 uppercase">
             Dancing
           </h1>
 
