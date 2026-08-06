@@ -1,8 +1,8 @@
-import { Sparkle, Heart, CowboyBoot, SmallStar } from "@/components/Decorations";
 import Link from "next/link";
+import { CowboyBoot } from "@/components/Decorations";
 
 export const metadata = {
-  title: "About | Line Dancing Lessons",
+  title: "About | Wildflower Line Dancing",
   description: "Learn about our line dancing instructors and what makes us different.",
 };
 
@@ -10,19 +10,14 @@ export default function AboutPage() {
   return (
     <>
       {/* Page header */}
-      <section className="relative px-6 pt-14 pb-12 text-center overflow-hidden">
-        <Sparkle size={24} color="#FE9EED" className="absolute top-6 left-[12%] opacity-60" />
-        <SmallStar size={16} color="#D49C84" className="absolute top-10 right-[18%] opacity-50" />
-        <Heart size={20} color="#F2B8CE" className="absolute bottom-6 right-[8%] opacity-50" />
-
-        <p className="script text-[#FE9EED] text-2xl mb-1">Get to know us</p>
+      <section className="px-6 pt-14 pb-12 text-center">
         <h1 className="rye text-5xl md:text-6xl text-[#6B4841]">About Us</h1>
       </section>
 
       {/* Story */}
       <section className="px-6 pb-16">
         <div className="max-w-4xl mx-auto">
-          <div className="bg-[#FEEFB8]/50 border border-[#F2B8CE] rounded-3xl p-8 md:p-12 mb-10">
+          <div className="bg-white/40 border border-[#D49C84]/40 rounded-3xl p-8 md:p-12 mb-10">
             <div className="flex items-center gap-3 mb-6">
               <CowboyBoot size={40} />
               <h2 className="rye text-3xl text-[#6B4841]">Our Story</h2>
@@ -66,9 +61,9 @@ export default function AboutPage() {
             ].map(({ icon, title, desc }) => (
               <div
                 key={title}
-                className="bg-[#FEEFB8]/60 border border-[#F2B8CE] rounded-2xl p-6 text-center"
+                className="bg-white/40 border border-[#D49C84]/40 rounded-2xl p-6 text-center"
               >
-                <p className="text-3xl text-[#FE9EED] mb-3">{icon}</p>
+                <p className="text-3xl text-[#C483C8] mb-3">{icon}</p>
                 <h3 className="rye text-lg text-[#6B4841] mb-2">{title}</h3>
                 <p className="text-[#6B4841] text-sm leading-relaxed">{desc}</p>
               </div>
@@ -77,12 +72,11 @@ export default function AboutPage() {
 
           {/* CTA */}
           <div className="text-center">
-            <p className="script text-[#FE9EED] text-2xl mb-4">Ready to hit the floor?</p>
             <Link
               href="/contact"
-              className="rye text-sm bg-[#6B4841] text-[#FEEFB8] px-8 py-3 rounded-full tracking-widest hover:bg-[#FE9EED] hover:text-[#6B4841] transition-all"
+              className="rye text-sm bg-[#6B4841] text-[#F7EAD8] px-8 py-3 rounded-full tracking-widest hover:bg-[#C483C8] transition-all"
             >
-              Book Your Lesson Today
+              Book Now
             </Link>
           </div>
         </div>

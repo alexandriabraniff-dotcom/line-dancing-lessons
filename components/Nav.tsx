@@ -16,10 +16,11 @@ export default function Nav() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-[#FEEFB8]/90 backdrop-blur-sm border-b border-[#F2B8CE]">
+    <header className="sticky top-0 z-50 bg-[#F7EAD8]/95 backdrop-blur-sm border-b border-[#D49C84]/40">
       <nav className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        <Link href="/" className="rye text-xl text-[#6B4841] tracking-wide leading-none">
-          Line Dancing
+        <Link href="/" className="flex flex-col leading-none">
+          <span className="rye text-xl text-[#6B4841] tracking-wide">Wildflower</span>
+          <span className="brygada font-bold italic text-sm text-[#C483C8] tracking-wide">Line Dancing</span>
         </Link>
 
         {/* Desktop links */}
@@ -30,8 +31,8 @@ export default function Nav() {
                 href={l.href}
                 className={`rye text-sm tracking-widest transition-colors ${
                   pathname === l.href
-                    ? "text-[#FE9EED]"
-                    : "text-[#6B4841] hover:text-[#FE9EED]"
+                    ? "text-[#C483C8]"
+                    : "text-[#6B4841] hover:text-[#C483C8]"
                 }`}
               >
                 {l.label}
@@ -42,7 +43,7 @@ export default function Nav() {
 
         <Link
           href="/contact"
-          className="hidden md:inline-block rye text-xs bg-[#6B4841] text-[#FEEFB8] px-5 py-2 rounded-full tracking-widest hover:bg-[#FE9EED] hover:text-[#6B4841] transition-colors"
+          className="hidden md:inline-block rye text-xs bg-[#6B4841] text-[#F7EAD8] px-5 py-2 rounded-full tracking-widest hover:bg-[#C483C8] transition-colors"
         >
           Book Now
         </Link>
@@ -67,14 +68,14 @@ export default function Nav() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden bg-[#FEEFB8] border-t border-[#F2B8CE] px-6 py-4 flex flex-col gap-4">
+        <div className="md:hidden bg-[#F7EAD8] border-t border-[#D49C84]/40 px-6 py-4 flex flex-col gap-4">
           {links.map((l) => (
             <Link
               key={l.href}
               href={l.href}
               onClick={() => setOpen(false)}
               className={`rye text-sm tracking-widest ${
-                pathname === l.href ? "text-[#FE9EED]" : "text-[#6B4841]"
+                pathname === l.href ? "text-[#C483C8]" : "text-[#6B4841]"
               }`}
             >
               {l.label}
@@ -83,7 +84,7 @@ export default function Nav() {
           <Link
             href="/contact"
             onClick={() => setOpen(false)}
-            className="rye text-xs bg-[#6B4841] text-[#FEEFB8] px-5 py-2 rounded-full tracking-widest text-center w-fit"
+            className="rye text-xs bg-[#6B4841] text-[#F7EAD8] px-5 py-2 rounded-full tracking-widest text-center w-fit"
           >
             Book Now
           </Link>

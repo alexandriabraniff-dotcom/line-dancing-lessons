@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Rye, Dancing_Script, Lato } from "next/font/google";
+import { Rye, Brygada_1918, Lato } from "next/font/google";
 import "./globals.css";
 
 const rye = Rye({
@@ -9,9 +9,11 @@ const rye = Rye({
   display: "swap",
 });
 
-const dancingScript = Dancing_Script({
+const brygada = Brygada_1918({
+  weight: ["400", "700"],
+  style: ["normal", "italic"],
   subsets: ["latin"],
-  variable: "--font-script",
+  variable: "--font-brygada",
   display: "swap",
 });
 
@@ -24,7 +26,7 @@ const lato = Lato({
 
 export const metadata: Metadata = {
   title: "Wildflower Line Dancing",
-  description: "Wildflower Line Dancing — coming soon. Get in touch at 250-650-1391.",
+  description: "It's more than a dance, it's a good time. Weddings, birthdays, social events and private groups.",
 };
 
 export default function RootLayout({
@@ -35,7 +37,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${rye.variable} ${dancingScript.variable} ${lato.variable} h-full`}
+      className={`${rye.variable} ${brygada.variable} ${lato.variable} h-full`}
     >
       <body className="min-h-full">{children}</body>
     </html>

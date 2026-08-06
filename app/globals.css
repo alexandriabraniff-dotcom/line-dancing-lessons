@@ -1,15 +1,12 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-cream: #FEEFB8;
-  --color-blush: #FFE3E2;
+  --color-cream: #F7EAD8;
   --color-brown: #6B4841;
-  --color-pink: #FE9EED;
+  --color-purple: #C483C8;
   --color-tan: #D49C84;
-  --color-peach: #FEE2BC;
-  --color-rose: #F2B8CE;
   --font-rye: var(--font-rye);
-  --font-script: var(--font-script);
+  --font-brygada: var(--font-brygada);
   --font-body: var(--font-body);
 }
 
@@ -22,16 +19,16 @@ html {
 }
 
 body {
-  background: linear-gradient(160deg, #FEEFB8 0%, #FFE3E2 100%);
+  background: #F7EAD8;
   min-height: 100vh;
   color: #6B4841;
-  font-family: var(--font-body), 'Georgia', serif;
+  font-family: var(--font-body), sans-serif;
 }
 
 .rye {
   font-family: var(--font-rye), serif;
 }
 
-.script {
-  font-family: var(--font-script), cursive;
+.brygada {
+  font-family: var(--font-brygada), serif;
 }
