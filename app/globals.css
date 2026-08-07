@@ -2,9 +2,11 @@
 
 @theme inline {
   --color-cream: #F7EAD8;
+  --color-surface: #EDE0CC;
   --color-brown: #6B4841;
   --color-purple: #C483C8;
   --color-tan: #D49C84;
+  --color-night: #1E0F0B;
   --font-rye: var(--font-rye);
   --font-brygada: var(--font-brygada);
   --font-body: var(--font-body);
@@ -23,6 +25,8 @@ body {
   min-height: 100vh;
   color: #6B4841;
   font-family: var(--font-body), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .rye {
@@ -31,4 +35,12 @@ body {
 
 .brygada {
   font-family: var(--font-brygada), serif;
+}
+
+.section-label {
+  font-family: var(--font-rye), serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #D49C84;
 }

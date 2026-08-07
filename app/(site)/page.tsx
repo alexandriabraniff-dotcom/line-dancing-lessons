@@ -1,31 +1,21 @@
 import Link from "next/link";
-import {
-  WeddingRings,
-  BirthdayCake,
-  DiscoBall,
-  CowboyBoot,
-} from "@/components/Decorations";
 
 const services = [
   {
-    Icon: WeddingRings,
     title: "Weddings",
-    desc: "Custom choreography for couples and wedding parties. Make your first dance unforgettable.",
+    desc: "Custom choreography for couples and bridal parties. Make your first dance one the whole room remembers.",
   },
   {
-    Icon: BirthdayCake,
     title: "Birthdays",
-    desc: "Celebrate in style with a line dancing lesson your guests will be talking about for years.",
+    desc: "We bring the energy, the music, and the moves. Your guests leave with tired feet and huge smiles.",
   },
   {
-    Icon: DiscoBall,
     title: "Social Events",
-    desc: "Corporate parties, hens nights, fundraisers — we bring the energy and the two-step.",
+    desc: "Corporate nights, hens parties, fundraisers. Line dancing is the activity that actually gets everyone up.",
   },
   {
-    Icon: CowboyBoot,
     title: "Private Groups",
-    desc: "Book a private session for your group, at your pace, anywhere in the area.",
+    desc: "Your crew, your pace, your location. One-off sessions or recurring lessons — tailored to your group.",
   },
 ];
 
@@ -33,74 +23,95 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="px-6 pt-20 pb-20 text-center">
-        <div className="max-w-3xl mx-auto">
-          <h1 className="rye text-6xl md:text-8xl text-[#6B4841] leading-none tracking-wide uppercase mb-2">
+      <section className="px-6 md:px-12 lg:px-16 pt-16 pb-20">
+        <div className="max-w-7xl mx-auto">
+          <h1
+            className="rye text-[#6B4841] leading-none tracking-wide uppercase"
+            style={{ fontSize: "clamp(3.2rem, 13vw, 11.5rem)" }}
+          >
             Wildflower
           </h1>
-          <p className="brygada font-bold italic text-3xl md:text-5xl text-[#C483C8] mb-8">
-            Line Dancing
-          </p>
 
-          <p className="text-[#6B4841] text-lg md:text-xl mb-10 max-w-lg mx-auto leading-relaxed">
-            It&apos;s more than a dance, it&apos;s a good time.
-            Weddings, birthdays, social events and private groups.
-          </p>
-
-          <Link
-            href="/contact"
-            className="rye text-sm bg-[#6B4841] text-[#F7EAD8] px-10 py-4 rounded-full tracking-widest hover:bg-[#C483C8] transition-all"
-          >
-            Book Now
-          </Link>
-        </div>
-      </section>
-
-      {/* Services grid */}
-      <section className="py-16 px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="rye text-4xl text-[#6B4841]">What We Offer</h2>
+          <div className="border-t border-[#6B4841]/20 mt-4 pt-4 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
+            <p
+              className="brygada font-bold italic text-[#C483C8] leading-none"
+              style={{ fontSize: "clamp(1.6rem, 5.2vw, 4.8rem)" }}
+            >
+              Line Dancing
+            </p>
+            <p className="section-label pb-1">
+              Weddings&nbsp;&nbsp;·&nbsp;&nbsp;Birthdays&nbsp;&nbsp;·&nbsp;&nbsp;Events&nbsp;&nbsp;·&nbsp;&nbsp;Private Groups
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {services.map(({ Icon, title, desc }) => (
-              <div
-                key={title}
-                className="bg-white/40 border border-[#D49C84]/40 rounded-2xl p-6 text-center hover:shadow-md transition-shadow"
-              >
-                <div className="flex justify-center mb-4">
-                  <Icon size={52} />
-                </div>
-                <h3 className="rye text-xl text-[#6B4841] mb-2">{title}</h3>
-                <p className="text-[#6B4841] text-sm leading-relaxed">{desc}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="text-center mt-10">
+          <div className="mt-12 flex flex-wrap gap-4 items-center">
+            <Link
+              href="/contact"
+              className="rye text-sm bg-[#6B4841] text-[#F7EAD8] px-9 py-3.5 rounded-full tracking-widest hover:bg-[#C483C8] transition-colors"
+            >
+              Book Now
+            </Link>
             <Link
               href="/services"
-              className="rye text-sm border-2 border-[#6B4841] text-[#6B4841] px-8 py-3 rounded-full tracking-widest hover:bg-[#6B4841] hover:text-[#F7EAD8] transition-all"
+              className="rye text-sm text-[#6B4841] tracking-widest hover:text-[#C483C8] transition-colors flex items-center gap-2"
             >
-              See All Services
+              See Services <span className="text-base">→</span>
             </Link>
           </div>
         </div>
       </section>
 
-      {/* CTA banner */}
-      <section className="py-16 px-6 text-center">
-        <div className="max-w-3xl mx-auto bg-[#6B4841] rounded-3xl px-10 py-12">
-          <h2 className="rye text-3xl md:text-4xl text-[#F7EAD8] mb-4">
-            Ready to Hit the Floor?
-          </h2>
-          <p className="brygada italic text-[#C483C8] text-xl mb-8">
-            It&apos;s more than a dance, it&apos;s a good time.
-          </p>
+      {/* Services list */}
+      <section className="px-6 md:px-12 lg:px-16 py-16 border-t border-[#6B4841]/15">
+        <div className="max-w-7xl mx-auto">
+          <p className="section-label mb-10">What We Offer</p>
+
+          <div>
+            {services.map(({ title, desc }) => (
+              <Link
+                key={title}
+                href="/services"
+                className="group block border-t border-[#6B4841]/15 py-7 hover:bg-[#EDE0CC] transition-colors px-4 -mx-4 last:border-b last:border-b-[#6B4841]/15"
+              >
+                <div className="flex items-start justify-between gap-6">
+                  <div className="flex-1">
+                    <h3 className="rye text-2xl md:text-3xl text-[#6B4841] mb-1.5">
+                      {title}
+                    </h3>
+                    <p className="text-[#6B4841]/65 text-sm leading-relaxed max-w-xl">
+                      {desc}
+                    </p>
+                  </div>
+                  <span className="rye text-[#C483C8] text-2xl mt-1 opacity-0 group-hover:opacity-100 transition-opacity shrink-0">
+                    →
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Dark CTA strip */}
+      <section className="bg-[#1E0F0B] py-24 px-6 md:px-12 lg:px-16">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-end md:justify-between gap-8">
+          <div>
+            <p
+              className="brygada italic text-[#C483C8] leading-tight"
+              style={{ fontSize: "clamp(1.8rem, 4.5vw, 3.8rem)" }}
+            >
+              It&apos;s more than a dance,
+            </p>
+            <p
+              className="brygada italic text-[#F7EAD8] leading-tight"
+              style={{ fontSize: "clamp(1.8rem, 4.5vw, 3.8rem)" }}
+            >
+              it&apos;s a good time.
+            </p>
+          </div>
           <Link
             href="/contact"
-            className="rye text-sm bg-[#F7EAD8] text-[#6B4841] px-10 py-4 rounded-full tracking-widest hover:bg-[#C483C8] hover:text-[#F7EAD8] transition-all"
+            className="rye text-sm border border-[#F7EAD8]/40 text-[#F7EAD8] px-9 py-3.5 rounded-full tracking-widest hover:bg-[#F7EAD8] hover:text-[#1E0F0B] transition-all self-start md:self-end shrink-0"
           >
             Book Now
           </Link>
