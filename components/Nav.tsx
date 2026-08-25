@@ -39,23 +39,10 @@ export default function Nav() {
 
   return (
     <>
-      {/* DESIGNER CREDIT BANNER - remove only after client payment */}
-      <div className="fixed top-0 left-0 right-0 z-[60] bg-[#1E0F0B] text-[#F7EAD8]/60 text-center py-1.5" style={{ fontSize: "0.6rem", letterSpacing: "0.15em" }}>
-        Website designed by{" "}
-        <a href="https://alexandriabraniff.com" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#C483C8] transition-colors">
-          Alexandria Braniff
-        </a>
-        {" "}&mdash;{" "}
-        <a href="mailto:hello@alexandriabraniff.com" className="underline hover:text-[#C483C8] transition-colors">
-          hello@alexandriabraniff.com
-        </a>
-      </div>
-      {/* END DESIGNER CREDIT BANNER */}
-
       <header
         className={`fixed left-0 right-0 z-50 bg-[#F7EAD8] border-b border-[#6B4841]/10 transition-all duration-500 ease-out ${
           visible
-            ? "translate-y-[22px] opacity-100"
+            ? "translate-y-0 opacity-100"
             : "-translate-y-full opacity-0 pointer-events-none"
         }`}
         style={{ top: 0 }}

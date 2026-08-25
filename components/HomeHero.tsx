@@ -23,7 +23,7 @@ export default function HomeHero() {
       <div className="absolute inset-0 bg-[#1E0F0B]/50" />
 
       {/* ── Inline Nav ── */}
-      <nav className="relative z-10 w-full px-6 md:px-12 lg:px-16 pt-6 pb-4">
+      <nav className="relative z-10 w-full px-6 md:px-12 lg:px-16 pt-16 pb-4">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           {/* Left links */}
           <ul className="hidden md:flex gap-8 items-center">
