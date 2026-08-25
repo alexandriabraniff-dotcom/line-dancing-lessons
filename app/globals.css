@@ -7,6 +7,8 @@
   --color-purple: #C483C8;
   --color-tan: #D49C84;
   --color-night: #1E0F0B;
+  --color-blush: #F2B8CE;
+  --color-peach: #FEE2BC;
   --font-rye: var(--font-rye);
   --font-brygada: var(--font-brygada);
   --font-body: var(--font-body);
@@ -43,4 +45,97 @@ body {
   letter-spacing: 0.3em;
   text-transform: uppercase;
   color: #D49C84;
+}
+
+/* Image placeholder boxes */
+.image-placeholder {
+  border: 1.5px dashed #D49C84;
+  background: #EDE0CC;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.image-placeholder::before {
+  content: '';
+  position: absolute;
+  inset: 6px;
+  border: 1px dashed #D49C84;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.image-placeholder span {
+  font-family: var(--font-rye), serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #D49C84;
+  opacity: 0.6;
+}
+
+/* Decorative line */
+.deco-line {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #D49C84 20%, #C483C8 50%, #D49C84 80%, transparent);
+  opacity: 0.4;
+}
+
+/* Subtle grain texture overlay */
+.grain::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+/* Fade-in animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  animation: fadeUp 0.6s ease-out both;
+}
+
+/* Botanical star decorations */
+.deco-star {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  opacity: 0.25;
+}
+
+.deco-star::before,
+.deco-star::after {
+  content: '';
+  position: absolute;
+  background: #C483C8;
+}
+
+.deco-star::before {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 100%;
+}
+
+.deco-star::after {
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100%;
+  height: 2px;
 }

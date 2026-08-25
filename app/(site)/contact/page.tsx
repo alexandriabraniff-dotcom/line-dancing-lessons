@@ -6,120 +6,168 @@ export const metadata = {
 export default function ContactPage() {
   return (
     <>
-      {/* Header */}
-      <section className="px-6 md:px-12 lg:px-16 pt-14 pb-12 border-b border-[#6B4841]/15">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-end md:justify-between gap-4">
-          <h1 className="rye text-5xl md:text-7xl text-[#6B4841] leading-none">Get in Touch</h1>
-          <p className="section-label pb-1">We respond within 24 hours</p>
+      {/* ── Header ── */}
+      <section className="px-6 md:px-12 lg:px-16 pt-12 md:pt-20 pb-6">
+        <div className="max-w-7xl mx-auto">
+          <p className="section-label mb-6">We Respond Within 24 Hours</p>
+          <h1
+            className="rye text-[#6B4841] leading-[0.9] tracking-wide"
+            style={{ fontSize: "clamp(3rem, 10vw, 8rem)" }}
+          >
+            Contact
+          </h1>
         </div>
       </section>
 
-      {/* Content */}
-      <section className="px-6 md:px-12 lg:px-16 py-16">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-[1fr_360px] gap-12 lg:gap-20">
+      {/* ── Hero Image ── */}
+      <section className="px-6 md:px-12 lg:px-16 pb-20 md:pb-28">
+        <div className="max-w-7xl mx-auto">
+          <div className="image-placeholder w-full aspect-[3/1] rounded-2xl">
+            <span>Contact hero / Fun, inviting shot</span>
+          </div>
+        </div>
+      </section>
 
-          {/* Form */}
-          <div>
-            <p className="section-label mb-8">Book Your Lesson</p>
+      {/* ── Form + Info ── */}
+      <section className="px-6 md:px-12 lg:px-16 pb-24 md:pb-32">
+        <div className="max-w-7xl mx-auto">
+          <div className="deco-line mb-16" />
 
-            <form className="space-y-6">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-16 lg:gap-24">
+            {/* Form */}
+            <div>
+              <p className="section-label mb-8">Book Your Lesson</p>
+
+              <form className="space-y-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                  <div>
+                    <label className="block section-label mb-3">Your Name</label>
+                    <input
+                      type="text"
+                      name="name"
+                      placeholder="Jane Smith"
+                      className="w-full bg-transparent border-b border-[#6B4841]/25 py-3 text-[#6B4841] placeholder:text-[#6B4841]/25 focus:outline-none focus:border-[#C483C8] transition-colors text-sm"
+                    />
+                  </div>
+                  <div>
+                    <label className="block section-label mb-3">Email Address</label>
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="jane@example.com"
+                      className="w-full bg-transparent border-b border-[#6B4841]/25 py-3 text-[#6B4841] placeholder:text-[#6B4841]/25 focus:outline-none focus:border-[#C483C8] transition-colors text-sm"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                  <div>
+                    <label className="block section-label mb-3">Phone Number</label>
+                    <input
+                      type="tel"
+                      name="phone"
+                      placeholder="0400 000 000"
+                      className="w-full bg-transparent border-b border-[#6B4841]/25 py-3 text-[#6B4841] placeholder:text-[#6B4841]/25 focus:outline-none focus:border-[#C483C8] transition-colors text-sm"
+                    />
+                  </div>
+                  <div>
+                    <label className="block section-label mb-3">Type of Event</label>
+                    <select
+                      name="event"
+                      className="w-full bg-transparent border-b border-[#6B4841]/25 py-3 text-[#6B4841] focus:outline-none focus:border-[#C483C8] transition-colors text-sm appearance-none"
+                      defaultValue=""
+                    >
+                      <option value="" disabled>Select an option</option>
+                      <option value="wedding">Wedding</option>
+                      <option value="birthday">Birthday</option>
+                      <option value="social">Social Event</option>
+                      <option value="private">Private Group</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
+                </div>
+
                 <div>
-                  <label className="block section-label mb-2">Your Name</label>
-                  <input
-                    type="text"
-                    name="name"
-                    placeholder="Jane Smith"
-                    className="w-full bg-transparent border-b border-[#6B4841]/30 py-2.5 text-[#6B4841] placeholder:text-[#6B4841]/30 focus:outline-none focus:border-[#C483C8] transition-colors text-sm"
+                  <label className="block section-label mb-3">Tell Us More</label>
+                  <textarea
+                    name="message"
+                    rows={5}
+                    placeholder="Date, location, group size, any special requests..."
+                    className="w-full bg-transparent border-b border-[#6B4841]/25 py-3 text-[#6B4841] placeholder:text-[#6B4841]/25 focus:outline-none focus:border-[#C483C8] transition-colors resize-none text-sm leading-relaxed"
                   />
                 </div>
-                <div>
-                  <label className="block section-label mb-2">Email Address</label>
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="jane@example.com"
-                    className="w-full bg-transparent border-b border-[#6B4841]/30 py-2.5 text-[#6B4841] placeholder:text-[#6B4841]/30 focus:outline-none focus:border-[#C483C8] transition-colors text-sm"
-                  />
-                </div>
+
+                <button
+                  type="submit"
+                  className="rye text-sm bg-[#6B4841] text-[#F7EAD8] px-10 py-4 rounded-full tracking-widest hover:bg-[#C483C8] transition-colors"
+                >
+                  Send Enquiry
+                </button>
+              </form>
+            </div>
+
+            {/* Right column */}
+            <div className="lg:pt-14">
+              {/* Image placeholder */}
+              <div className="image-placeholder aspect-[4/3] rounded-xl mb-10">
+                <span>Contact visual / Friendly, approachable</span>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div>
-                  <label className="block section-label mb-2">Phone Number</label>
-                  <input
-                    type="tel"
-                    name="phone"
-                    placeholder="250-000-0000"
-                    className="w-full bg-transparent border-b border-[#6B4841]/30 py-2.5 text-[#6B4841] placeholder:text-[#6B4841]/30 focus:outline-none focus:border-[#C483C8] transition-colors text-sm"
-                  />
-                </div>
-                <div>
-                  <label className="block section-label mb-2">Type of Event</label>
-                  <select
-                    name="event"
-                    className="w-full bg-transparent border-b border-[#6B4841]/30 py-2.5 text-[#6B4841] focus:outline-none focus:border-[#C483C8] transition-colors text-sm"
-                  >
-                    <option value="">Select an option</option>
-                    <option value="wedding">Wedding</option>
-                    <option value="birthday">Birthday</option>
-                    <option value="social">Social Event</option>
-                    <option value="private">Private Group</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
+              {/* What to expect */}
+              <div className="mb-10">
+                <p className="section-label mb-6">What to Expect</p>
+                <ul className="space-y-4">
+                  {[
+                    "We respond to all enquiries within 24 hours",
+                    "Sessions can be held at your venue or a location of your choice",
+                    "No dance experience required",
+                    "All group sizes catered for",
+                    "Custom playlists and routines available",
+                    "Packages tailored to your budget",
+                  ].map((item) => (
+                    <li key={item} className="flex gap-3 text-sm text-[#6B4841]/65 leading-relaxed">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="#C483C8" className="shrink-0 mt-1 opacity-50"><path d="M12 2 L13.2 9.8 L21 11 L13.2 12.2 L12 20 L10.8 12.2 L3 11 L10.8 9.8 Z" /></svg>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
 
+              <div className="deco-line mb-10" />
+
+              {/* Reassurance */}
               <div>
-                <label className="block section-label mb-2">Tell Us More</label>
-                <textarea
-                  name="message"
-                  rows={4}
-                  placeholder="Date, location, group size, any special requests..."
-                  className="w-full bg-transparent border-b border-[#6B4841]/30 py-2.5 text-[#6B4841] placeholder:text-[#6B4841]/30 focus:outline-none focus:border-[#C483C8] transition-colors resize-none text-sm"
-                />
+                <p className="rye text-lg text-[#6B4841] mb-3">Not sure yet?</p>
+                <p className="text-[#6B4841]/55 text-sm leading-relaxed mb-5">
+                  Send us a message anyway. We love chatting about all things dance and will help you
+                  figure out exactly what you need.
+                </p>
+                <p className="brygada italic text-[#C483C8] text-base">
+                  It&apos;s more than a dance, it&apos;s a good time.
+                </p>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-              <button
-                type="submit"
-                className="rye text-sm bg-[#6B4841] text-[#F7EAD8] px-9 py-3.5 rounded-full tracking-widest hover:bg-[#C483C8] transition-colors"
-              >
-                Send Enquiry
-              </button>
-            </form>
+      {/* ── Dark CTA ── */}
+      <section className="bg-[#1E0F0B] py-20 md:py-24 px-6 md:px-12 lg:px-16">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+          <div>
+            <p className="rye text-[0.6rem] tracking-[0.3em] uppercase text-[#D49C84] mb-4">Based in Adelaide</p>
+            <p
+              className="brygada italic text-[#F7EAD8] leading-snug"
+              style={{ fontSize: "clamp(1.4rem, 3vw, 2.4rem)" }}
+            >
+              Available for events across
+              <br />
+              <span className="text-[#C483C8]">South Australia</span>
+            </p>
           </div>
 
-          {/* Info panel */}
-          <div className="flex flex-col gap-8">
-            <div>
-              <p className="section-label mb-6">What to Expect</p>
-              <ul className="space-y-4">
-                {[
-                  "We respond to all enquiries within 24 hours",
-                  "Sessions can be held at your venue or a location of your choice",
-                  "No dance experience required",
-                  "All group sizes catered for",
-                  "Custom playlists and routines available",
-                  "Packages tailored to your budget",
-                ].map((item) => (
-                  <li key={item} className="flex gap-3 text-sm text-[#6B4841]/70 leading-relaxed">
-                    <span className="text-[#C483C8] shrink-0 mt-0.5 text-xs">✦</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="border-t border-[#6B4841]/15 pt-8">
-              <p className="rye text-lg text-[#6B4841] mb-2">Not sure yet?</p>
-              <p className="text-[#6B4841]/60 text-sm leading-relaxed mb-4">
-                Send us a message anyway. We love chatting about all things dance and will help you
-                figure out exactly what you need.
-              </p>
-              <p className="brygada italic text-[#C483C8] text-base">
-                It&apos;s more than a dance, it&apos;s a good time.
-              </p>
-            </div>
+          <div className="image-placeholder aspect-[16/9] rounded-xl !border-[#F7EAD8]/15 !bg-[#F7EAD8]/[0.04]">
+            <span className="!text-[#F7EAD8]/20">Adelaide / Location shot</span>
           </div>
         </div>
       </section>
