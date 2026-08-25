@@ -1,4 +1,5 @@
 import Link from "next/link";
+import HomeHero from "@/components/HomeHero";
 
 const services = [
   {
@@ -26,62 +27,11 @@ const services = [
 export default function Home() {
   return (
     <>
-      {/* ── Hero ── */}
-      <section className="relative px-6 md:px-12 lg:px-16 pt-12 md:pt-20 pb-0 overflow-hidden">
-        <div className="max-w-7xl mx-auto">
-          {/* Label */}
-          <p className="section-label mb-6">Line Dancing Lessons &amp; Events</p>
-
-          {/* Title */}
-          <h1
-            className="rye text-[#6B4841] leading-[0.9] tracking-wide uppercase"
-            style={{ fontSize: "clamp(3.5rem, 14vw, 12rem)" }}
-          >
-            Wild
-            <br />
-            flower
-          </h1>
-
-          {/* Subtitle row */}
-          <div className="mt-6 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
-            <p
-              className="brygada font-bold italic text-[#C483C8] leading-none"
-              style={{ fontSize: "clamp(1.4rem, 4vw, 3.6rem)" }}
-            >
-              It&apos;s more than a dance,
-              <br />
-              it&apos;s a good time.
-            </p>
-
-            <div className="flex flex-wrap gap-4 items-center pb-2">
-              <Link
-                href="/contact"
-                className="rye text-sm bg-[#6B4841] text-[#F7EAD8] px-9 py-3.5 rounded-full tracking-widest hover:bg-[#C483C8] transition-colors"
-              >
-                Book Now
-              </Link>
-              <Link
-                href="/services"
-                className="rye text-sm text-[#6B4841] tracking-widest hover:text-[#C483C8] transition-colors flex items-center gap-2"
-              >
-                See Services <span className="text-base">&#8594;</span>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Hero Image Placeholder ── */}
-      <section className="px-6 md:px-12 lg:px-16 pt-12 pb-0">
-        <div className="max-w-7xl mx-auto">
-          <div className="image-placeholder w-full aspect-[2.4/1] rounded-2xl">
-            <span>Hero image / Group dancing shot</span>
-          </div>
-        </div>
-      </section>
+      {/* ── Hero (full-screen, dark, with inline nav) ── */}
+      <HomeHero />
 
       {/* ── Intro Statement ── */}
-      <section className="px-6 md:px-12 lg:px-16 py-24 md:py-32">
+      <section className="px-6 md:px-12 lg:px-16 pt-36 md:pt-44 pb-24 md:pb-32">
         <div className="max-w-7xl mx-auto">
           <div className="deco-line mb-12" />
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-12 lg:gap-24 items-start">

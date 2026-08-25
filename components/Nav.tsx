@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const links = [
   { href: "/", label: "Home" },
@@ -13,12 +13,35 @@ const links = [
 
 export default function Nav() {
   const pathname = usePathname();
+  const isHome = pathname === "/";
   const [open, setOpen] = useState(false);
+  const [visible, setVisible] = useState(!isHome);
+
+  useEffect(() => {
+    if (!isHome) {
+      setVisible(true);
+      return;
+    }
+
+    setVisible(false);
+
+    const handleScroll = () => {
+      const hero = document.getElementById("home-hero");
+      if (!hero) return;
+      const heroBottom = hero.offsetTop + hero.offsetHeight;
+      const threshold = hero.offsetTop + hero.offsetHeight * 0.75;
+      setVisible(window.scrollY >= threshold);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [isHome]);
 
   return (
     <>
       {/* DESIGNER CREDIT BANNER - remove only after client payment */}
-      <div className="bg-[#1E0F0B] text-[#F7EAD8]/60 text-center py-1.5" style={{ fontSize: "0.6rem", letterSpacing: "0.15em" }}>
+      <div className="fixed top-0 left-0 right-0 z-[60] bg-[#1E0F0B] text-[#F7EAD8]/60 text-center py-1.5" style={{ fontSize: "0.6rem", letterSpacing: "0.15em" }}>
         Website designed by{" "}
         <a href="https://alexandriabraniff.com" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#C483C8] transition-colors">
           Alexandria Braniff
@@ -30,8 +53,15 @@ export default function Nav() {
       </div>
       {/* END DESIGNER CREDIT BANNER */}
 
-      <header className="sticky top-0 z-50 bg-[#F7EAD8]/95 backdrop-blur-sm">
-        <nav className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 py-5 flex items-center justify-between">
+      <header
+        className={`fixed left-0 right-0 z-50 bg-[#F7EAD8]/95 backdrop-blur-sm transition-all duration-500 ease-out ${
+          visible
+            ? "translate-y-[22px] opacity-100"
+            : "-translate-y-full opacity-0 pointer-events-none"
+        }`}
+        style={{ top: 0 }}
+      >
+        <nav className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 py-4 flex items-center justify-between">
           <Link href="/" className="flex flex-col leading-none gap-0.5">
             <span className="rye text-lg text-[#6B4841] tracking-wide leading-none">Wildflower</span>
             <span className="brygada font-bold italic text-xs text-[#C483C8] tracking-wide">Line Dancing</span>
@@ -82,7 +112,7 @@ export default function Nav() {
 
         {/* Mobile menu */}
         {open && (
-          <div className="md:hidden bg-[#F7EAD8] border-t border-[#6B4841]/12 px-6 md:px-12 py-6 flex flex-col gap-5">
+          <div className="md:hidden bg-[#F7EAD8] border-t border-[#6B4841]/12 px-6 py-6 flex flex-col gap-5">
             {links.map((l) => (
               <Link
                 key={l.href}
