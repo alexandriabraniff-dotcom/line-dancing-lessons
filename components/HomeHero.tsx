@@ -15,12 +15,12 @@ export default function HomeHero() {
 
   return (
     <section id="home-hero" className="relative min-h-screen flex flex-col">
-      {/* Background image placeholder */}
-      <div className="absolute inset-0 image-placeholder !rounded-none !border-0">
-        <span className="!text-[#F7EAD8]/20 text-center">Hero background / Full-bleed dancing photo</span>
+      {/* Background image */}
+      <div className="absolute inset-0">
+        <img src="/hero-bg.png" alt="" className="w-full h-full object-cover" />
       </div>
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-[#1E0F0B]/60" />
+      <div className="absolute inset-0 bg-[#1E0F0B]/50" />
 
       {/* ── Inline Nav ── */}
       <nav className="relative z-10 w-full px-6 md:px-12 lg:px-16 pt-6 pb-4">
