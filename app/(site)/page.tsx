@@ -40,8 +40,7 @@ export default function Home() {
                   <span>{placeholder}</span>
                 </div>
                 <p className="rye text-[0.65rem] tracking-[0.25em] uppercase text-[#6B4841]/70 group-hover:text-[#C483C8] transition-colors">
-                  {title} &#8594;
-                </p>
+                  {title}                </p>
               </Link>
             ))}
           </div>
@@ -105,8 +104,7 @@ export default function Home() {
                 href="/about"
                 className="rye text-xs border border-[#C483C8]/40 text-[#C483C8] px-7 py-3 tracking-[0.25em] uppercase hover:bg-[#C483C8] hover:text-[#F7EAD8] transition-all inline-block"
               >
-                Read More About Us &#8594;
-              </Link>
+                Read More About Us              </Link>
             </div>
           </div>
         </div>
@@ -132,8 +130,7 @@ export default function Home() {
                   <span>{placeholder}</span>
                 </div>
                 <p className="rye text-[0.6rem] tracking-[0.2em] uppercase text-[#6B4841]/70 group-hover:text-[#C483C8] transition-colors">
-                  {title} &#8594;
-                </p>
+                  {title}                </p>
               </Link>
             ))}
           </div>
@@ -143,8 +140,7 @@ export default function Home() {
               href="/services"
               className="rye text-xs border border-[#C483C8]/40 text-[#C483C8] px-7 py-3 tracking-[0.25em] uppercase hover:bg-[#C483C8] hover:text-[#F7EAD8] transition-all inline-block"
             >
-              Browse All &#8594;
-            </Link>
+              Browse All            </Link>
           </div>
         </div>
       </section>
@@ -170,14 +166,12 @@ export default function Home() {
                   href="/contact"
                   className="rye text-xs border border-[#C483C8]/50 text-[#C483C8] px-7 py-3 tracking-[0.25em] uppercase hover:bg-[#C483C8] hover:text-[#1E0F0B] transition-all inline-block"
                 >
-                  Get in Touch &#8594;
-                </Link>
+                  Get in Touch                </Link>
                 <Link
                   href="/services"
                   className="rye text-xs border border-[#F7EAD8]/30 text-[#F7EAD8]/60 px-7 py-3 tracking-[0.25em] uppercase hover:text-[#F7EAD8] hover:border-[#F7EAD8]/60 transition-all inline-block"
                 >
-                  See Services &#8594;
-                </Link>
+                  See Services                </Link>
               </div>
             </div>
           </div>

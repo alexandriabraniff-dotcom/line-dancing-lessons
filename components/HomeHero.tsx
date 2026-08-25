@@ -100,14 +100,12 @@ export default function HomeHero() {
             href="/contact"
             className="rye text-xs border border-[#C483C8]/50 text-[#C483C8] px-8 py-3.5 tracking-[0.25em] uppercase hover:bg-[#C483C8] hover:text-[#1E0F0B] transition-all inline-block"
           >
-            Book Event &#8594;
-          </Link>
+            Book Event          </Link>
           <Link
             href="/services"
             className="rye text-xs border border-[#F7EAD8]/30 text-[#F7EAD8]/70 px-8 py-3.5 tracking-[0.25em] uppercase hover:border-[#F7EAD8]/60 hover:text-[#F7EAD8] transition-all inline-block"
           >
-            View Services &#8594;
-          </Link>
+            View Services          </Link>
         </div>
       </div>
     </section>

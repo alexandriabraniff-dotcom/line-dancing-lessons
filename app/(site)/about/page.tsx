@@ -159,8 +159,7 @@ export default function AboutPage() {
                 href="/contact"
                 className="rye text-xs border border-[#C483C8]/40 text-[#C483C8] px-7 py-3 tracking-[0.25em] uppercase hover:bg-[#C483C8] hover:text-[#F7EAD8] transition-all inline-block"
               >
-                Book a Session &#8594;
-              </Link>
+                Book a Session              </Link>
             </div>
           </div>
         </div>
@@ -184,8 +183,7 @@ export default function AboutPage() {
                 href="/contact"
                 className="rye text-xs border border-[#C483C8]/50 text-[#C483C8] px-7 py-3 tracking-[0.25em] uppercase hover:bg-[#C483C8] hover:text-[#1E0F0B] transition-all inline-block self-start md:self-center"
               >
-                Book Now &#8594;
-              </Link>
+                Book Now              </Link>
             </div>
           </div>
         </div>

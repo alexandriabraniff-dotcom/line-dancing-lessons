@@ -135,8 +135,7 @@ export default function ContactPage() {
                 type="submit"
                 className="rye text-xs border border-[#C483C8]/40 text-[#C483C8] px-7 py-3 tracking-[0.25em] uppercase hover:bg-[#C483C8] hover:text-[#F7EAD8] transition-all"
               >
-                Send Enquiry &#8594;
-              </button>
+                Send Enquiry              </button>
             </form>
           </div>
         </div>
@@ -161,8 +160,7 @@ export default function ContactPage() {
                 href="/services"
                 className="rye text-xs border border-[#C483C8]/50 text-[#C483C8] px-7 py-3 tracking-[0.25em] uppercase hover:bg-[#C483C8] hover:text-[#1E0F0B] transition-all inline-block self-start md:self-center"
               >
-                See Services &#8594;
-              </Link>
+                See Services              </Link>
             </div>
           </div>
         </div>
