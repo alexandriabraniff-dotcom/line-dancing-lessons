@@ -114,7 +114,7 @@ export default function HomeHero() {
           </Link>
           <Link
             href="/services"
-            className="brygada font-bold text-xs bg-[#F7EAD8] text-[#6B4841] border-2 border-[#6B4841] px-8 py-3.5 tracking-[0.25em] uppercase hover:bg-[#6B4841] hover:text-[#F7EAD8] transition-all duration-300 inline-block shadow-lg"
+            className="brygada font-bold text-xs bg-transparent text-[#F7EAD8] border-2 border-[#F7EAD8] px-8 py-3.5 tracking-[0.25em] uppercase hover:bg-[#F7EAD8] hover:text-[#6B4841] transition-all duration-300 inline-block shadow-lg"
           >
             View Services
           </Link>
