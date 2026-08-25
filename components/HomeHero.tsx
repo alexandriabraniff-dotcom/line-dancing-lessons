@@ -46,17 +46,12 @@ export default function HomeHero() {
           </ul>
 
           {/* Center logo */}
-          <Link href="/" className="flex flex-col items-center leading-none gap-0.5">
-            <span
-              className="rye text-4xl text-[#6B4841] tracking-widest leading-none uppercase"
-              style={{ textShadow: "0 0 20px rgba(247,234,216,0.8), 0 0 40px rgba(247,234,216,0.4)" }}
-            >
+          <Link href="/" className="flex flex-col items-center leading-none gap-0.5 relative">
+            <span className="absolute inset-0 -inset-x-6 -inset-y-3 bg-[#F7EAD8]/80 rounded-full blur-[2px]" />
+            <span className="relative rye text-4xl text-[#6B4841] tracking-widest leading-none uppercase">
               Wildflower
             </span>
-            <span
-              className="brygada font-bold text-xl text-[#C483C8] tracking-wide"
-              style={{ textShadow: "0 0 15px rgba(196,131,200,0.5)" }}
-            >
+            <span className="relative brygada font-bold text-xl text-[#C483C8] tracking-wide">
               Line Dancing
             </span>
           </Link>
@@ -103,7 +98,7 @@ export default function HomeHero() {
 
         {/* Subheading */}
         <p
-          className="brygada font-bold tracking-[0.3em] uppercase text-[#F7EAD8] mt-6 drop-shadow-md"
+          className="brygada font-bold tracking-[0.3em] uppercase text-[#D49C84] mt-6 drop-shadow-md"
           style={{ fontSize: "clamp(0.9rem, 2vw, 1.4rem)" }}
         >
           Lessons &amp; Events for Every Occasion
