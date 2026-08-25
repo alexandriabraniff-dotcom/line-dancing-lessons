@@ -7,13 +7,6 @@ const occasions = [
   { title: "Events", placeholder: "Social event photo" },
 ];
 
-const services = [
-  { title: "Weddings", placeholder: "Bridal party lesson" },
-  { title: "Private Groups", placeholder: "Small group session" },
-  { title: "Social Events", placeholder: "Corporate event" },
-  { title: "Birthday Parties", placeholder: "Birthday celebration" },
-];
-
 export default function Home() {
   return (
     <>
@@ -106,41 +99,6 @@ export default function Home() {
               >
                 Read More About Us              </Link>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Our Services ── */}
-      <section className="px-6 md:px-12 lg:px-16 py-20 md:py-28 border-t border-[#6B4841]/10">
-        <div className="max-w-6xl mx-auto text-center">
-          <p className="brygada font-bold text-[0.6rem] tracking-[0.35em] uppercase text-[#D49C84] mb-3">
-            What We Offer
-          </p>
-          <h2
-            className="rye text-[#6B4841] uppercase tracking-wide"
-            style={{ fontSize: "clamp(1.6rem, 4vw, 2.8rem)" }}
-          >
-            Our Services
-          </h2>
-
-          <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-5">
-            {services.map(({ title, placeholder }) => (
-              <Link key={title} href="/services" className="group">
-                <div className="image-placeholder aspect-[3/4] mb-4">
-                  <span>{placeholder}</span>
-                </div>
-                <p className="brygada font-bold text-[0.6rem] tracking-[0.2em] uppercase text-[#6B4841]/70 group-hover:text-[#C483C8] transition-colors">
-                  {title}                </p>
-              </Link>
-            ))}
-          </div>
-
-          <div className="mt-12">
-            <Link
-              href="/services"
-              className="brygada font-bold text-xs border border-[#C483C8]/40 text-[#C483C8] px-7 py-3 tracking-[0.25em] uppercase hover:bg-[#C483C8] hover:text-[#F7EAD8] transition-all inline-block"
-            >
-              Browse All            </Link>
           </div>
         </div>
       </section>
