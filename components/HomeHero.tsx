@@ -149,7 +149,7 @@ export default function HomeHero() {
           className="rye text-[#F7EAD8] leading-[0.95] tracking-wide uppercase drop-shadow-lg"
           style={{ fontSize: "clamp(2.8rem, 8vw, 6rem)" }}
         >
-          Line Dancing Lessons
+          Lessons
           <br />
           for
           <br />
