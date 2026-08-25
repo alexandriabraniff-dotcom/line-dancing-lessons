@@ -159,7 +159,7 @@ export default function HomeHero() {
         {/* Subheading */}
         <p
           className="brygada font-bold tracking-[0.3em] uppercase text-[#D49C84] mt-6"
-          style={{ fontSize: "clamp(1rem, 2.2vw, 1.5rem)", textShadow: "0 1px 6px rgba(0,0,0,0.7), 0 0 20px rgba(0,0,0,0.4)" }}
+          style={{ fontSize: "clamp(0.7rem, 2.2vw, 1.5rem)", textShadow: "0 1px 6px rgba(0,0,0,0.7), 0 0 20px rgba(0,0,0,0.4)" }}
         >
           Line Dancing for Beginners &amp; Intermediate
         </p>
