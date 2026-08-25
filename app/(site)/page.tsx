@@ -23,11 +23,11 @@ export default function Home() {
       {/* ── Book by Occasion ── */}
       <section className="px-6 md:px-12 lg:px-16 py-20 md:py-28">
         <div className="max-w-6xl mx-auto text-center">
-          <p className="rye text-[0.6rem] tracking-[0.35em] uppercase text-[#D49C84] mb-3">
+          <p className="brygada font-bold text-[0.6rem] tracking-[0.35em] uppercase text-[#D49C84] mb-3">
             Whatever the occasion, we&apos;ve got you covered
           </p>
           <h2
-            className="rye text-[#6B4841] uppercase tracking-wide"
+            className="brygada font-bold text-[#6B4841] uppercase tracking-wide"
             style={{ fontSize: "clamp(1.6rem, 4vw, 2.8rem)" }}
           >
             Book by Occasion
@@ -39,7 +39,7 @@ export default function Home() {
                 <div className="image-placeholder aspect-[3/4] mb-4">
                   <span>{placeholder}</span>
                 </div>
-                <p className="rye text-[0.65rem] tracking-[0.25em] uppercase text-[#6B4841]/70 group-hover:text-[#C483C8] transition-colors">
+                <p className="brygada font-bold text-[0.65rem] tracking-[0.25em] uppercase text-[#6B4841]/70 group-hover:text-[#C483C8] transition-colors">
                   {title}                </p>
               </Link>
             ))}
@@ -55,11 +55,11 @@ export default function Home() {
         <div className="absolute inset-0 bg-[#1E0F0B]/50 flex items-center">
           <div className="w-full px-6 md:px-12 lg:px-16">
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-end md:justify-between gap-4">
-              <h2 className="rye text-[#F7EAD8] uppercase tracking-wide leading-tight" style={{ fontSize: "clamp(1.4rem, 3.5vw, 2.6rem)" }}>
+              <h2 className="brygada font-bold text-[#F7EAD8] uppercase tracking-wide leading-tight" style={{ fontSize: "clamp(1.4rem, 3.5vw, 2.6rem)" }}>
                 Bringing People
                 <br />Together Since Day One
               </h2>
-              <p className="rye text-[0.6rem] tracking-[0.3em] uppercase text-[#D49C84] pb-1">
+              <p className="brygada font-bold text-[0.6rem] tracking-[0.3em] uppercase text-[#D49C84] pb-1">
                 Lessons &amp; Events
                 <br />
                 Built to Remember
@@ -77,11 +77,11 @@ export default function Home() {
           </div>
 
           <div>
-            <p className="rye text-[0.6rem] tracking-[0.35em] uppercase text-[#D49C84] mb-3">
+            <p className="brygada font-bold text-[0.6rem] tracking-[0.35em] uppercase text-[#D49C84] mb-3">
               Get to Know Us
             </p>
             <h2
-              className="rye text-[#6B4841] uppercase tracking-wide mb-6"
+              className="brygada font-bold text-[#6B4841] uppercase tracking-wide mb-6"
               style={{ fontSize: "clamp(1.6rem, 3.5vw, 2.4rem)" }}
             >
               Our Story
@@ -102,7 +102,7 @@ export default function Home() {
             <div className="mt-8">
               <Link
                 href="/about"
-                className="rye text-xs border border-[#C483C8]/40 text-[#C483C8] px-7 py-3 tracking-[0.25em] uppercase hover:bg-[#C483C8] hover:text-[#F7EAD8] transition-all inline-block"
+                className="brygada font-bold text-xs border border-[#C483C8]/40 text-[#C483C8] px-7 py-3 tracking-[0.25em] uppercase hover:bg-[#C483C8] hover:text-[#F7EAD8] transition-all inline-block"
               >
                 Read More About Us              </Link>
             </div>
@@ -113,11 +113,11 @@ export default function Home() {
       {/* ── Our Services ── */}
       <section className="px-6 md:px-12 lg:px-16 py-20 md:py-28 border-t border-[#6B4841]/10">
         <div className="max-w-6xl mx-auto text-center">
-          <p className="rye text-[0.6rem] tracking-[0.35em] uppercase text-[#D49C84] mb-3">
+          <p className="brygada font-bold text-[0.6rem] tracking-[0.35em] uppercase text-[#D49C84] mb-3">
             What We Offer
           </p>
           <h2
-            className="rye text-[#6B4841] uppercase tracking-wide"
+            className="brygada font-bold text-[#6B4841] uppercase tracking-wide"
             style={{ fontSize: "clamp(1.6rem, 4vw, 2.8rem)" }}
           >
             Our Services
@@ -129,7 +129,7 @@ export default function Home() {
                 <div className="image-placeholder aspect-[3/4] mb-4">
                   <span>{placeholder}</span>
                 </div>
-                <p className="rye text-[0.6rem] tracking-[0.2em] uppercase text-[#6B4841]/70 group-hover:text-[#C483C8] transition-colors">
+                <p className="brygada font-bold text-[0.6rem] tracking-[0.2em] uppercase text-[#6B4841]/70 group-hover:text-[#C483C8] transition-colors">
                   {title}                </p>
               </Link>
             ))}
@@ -138,7 +138,7 @@ export default function Home() {
           <div className="mt-12">
             <Link
               href="/services"
-              className="rye text-xs border border-[#C483C8]/40 text-[#C483C8] px-7 py-3 tracking-[0.25em] uppercase hover:bg-[#C483C8] hover:text-[#F7EAD8] transition-all inline-block"
+              className="brygada font-bold text-xs border border-[#C483C8]/40 text-[#C483C8] px-7 py-3 tracking-[0.25em] uppercase hover:bg-[#C483C8] hover:text-[#F7EAD8] transition-all inline-block"
             >
               Browse All            </Link>
           </div>
@@ -154,22 +154,22 @@ export default function Home() {
           <div className="w-full px-6 md:px-12 lg:px-16">
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-8">
               <div>
-                <p className="rye text-[0.6rem] tracking-[0.35em] uppercase text-[#D49C84] mb-3">
+                <p className="brygada font-bold text-[0.6rem] tracking-[0.35em] uppercase text-[#D49C84] mb-3">
                   Be Part of the Fun
                 </p>
-                <h2 className="rye text-[#F7EAD8] uppercase tracking-wide" style={{ fontSize: "clamp(1.6rem, 4vw, 2.8rem)" }}>
+                <h2 className="brygada font-bold text-[#F7EAD8] uppercase tracking-wide" style={{ fontSize: "clamp(1.6rem, 4vw, 2.8rem)" }}>
                   Book Your Session
                 </h2>
               </div>
               <div className="flex flex-wrap gap-4">
                 <Link
                   href="/contact"
-                  className="rye text-xs border border-[#C483C8]/50 text-[#C483C8] px-7 py-3 tracking-[0.25em] uppercase hover:bg-[#C483C8] hover:text-[#1E0F0B] transition-all inline-block"
+                  className="brygada font-bold text-xs border border-[#C483C8]/50 text-[#C483C8] px-7 py-3 tracking-[0.25em] uppercase hover:bg-[#C483C8] hover:text-[#1E0F0B] transition-all inline-block"
                 >
                   Get in Touch                </Link>
                 <Link
                   href="/services"
-                  className="rye text-xs border border-[#F7EAD8]/30 text-[#F7EAD8]/60 px-7 py-3 tracking-[0.25em] uppercase hover:text-[#F7EAD8] hover:border-[#F7EAD8]/60 transition-all inline-block"
+                  className="brygada font-bold text-xs border border-[#F7EAD8]/30 text-[#F7EAD8]/60 px-7 py-3 tracking-[0.25em] uppercase hover:text-[#F7EAD8] hover:border-[#F7EAD8]/60 transition-all inline-block"
                 >
                   See Services                </Link>
               </div>

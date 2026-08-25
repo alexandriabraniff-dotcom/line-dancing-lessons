@@ -40,7 +40,8 @@ body {
 }
 
 .section-label {
-  font-family: var(--font-rye), serif;
+  font-family: var(--font-brygada), serif;
+  font-weight: bold;
   font-size: 0.65rem;
   letter-spacing: 0.3em;
   text-transform: uppercase;

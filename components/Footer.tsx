@@ -9,7 +9,7 @@ export default function Footer() {
           {/* Left links */}
           <div className="flex flex-col sm:flex-row gap-8">
             <nav className="flex flex-col gap-2.5">
-              <p className="rye text-[0.55rem] tracking-[0.3em] uppercase text-[#D49C84] mb-1">Navigate</p>
+              <p className="brygada font-bold text-[0.55rem] tracking-[0.3em] uppercase text-[#D49C84] mb-1">Navigate</p>
               {[
                 { href: "/", label: "Home" },
                 { href: "/about", label: "About Us" },
@@ -27,7 +27,7 @@ export default function Footer() {
             </nav>
 
             <nav className="flex flex-col gap-2.5">
-              <p className="rye text-[0.55rem] tracking-[0.3em] uppercase text-[#D49C84] mb-1">Services</p>
+              <p className="brygada font-bold text-[0.55rem] tracking-[0.3em] uppercase text-[#D49C84] mb-1">Services</p>
               {["Weddings", "Birthdays", "Social Events", "Private Groups"].map((s) => (
                 <Link
                   key={s}
@@ -52,7 +52,7 @@ export default function Footer() {
 
           {/* Right */}
           <div className="flex flex-col gap-2.5 md:items-end md:text-right">
-            <p className="rye text-[0.55rem] tracking-[0.3em] uppercase text-[#D49C84] mb-1">Get in Touch</p>
+            <p className="brygada font-bold text-[0.55rem] tracking-[0.3em] uppercase text-[#D49C84] mb-1">Get in Touch</p>
             <Link
               href="/contact"
               className="text-xs text-[#F7EAD8]/40 hover:text-[#F7EAD8] transition-colors uppercase tracking-wider"

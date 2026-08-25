@@ -54,7 +54,7 @@ export default function Nav() {
               <li key={l.href}>
                 <Link
                   href={l.href}
-                  className={`rye text-[0.6rem] tracking-[0.3em] uppercase transition-colors ${
+                  className={`brygada font-bold text-[0.6rem] tracking-[0.3em] uppercase transition-colors ${
                     pathname === l.href
                       ? "text-[#C483C8]"
                       : "text-[#6B4841]/60 hover:text-[#6B4841]"
@@ -78,7 +78,7 @@ export default function Nav() {
               <li key={l.href}>
                 <Link
                   href={l.href}
-                  className={`rye text-[0.6rem] tracking-[0.3em] uppercase transition-colors ${
+                  className={`brygada font-bold text-[0.6rem] tracking-[0.3em] uppercase transition-colors ${
                     pathname === l.href
                       ? "text-[#C483C8]"
                       : "text-[#6B4841]/60 hover:text-[#6B4841]"
@@ -116,7 +116,7 @@ export default function Nav() {
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className={`rye text-[0.6rem] tracking-[0.3em] uppercase ${
+                className={`brygada font-bold text-[0.6rem] tracking-[0.3em] uppercase ${
                   pathname === l.href ? "text-[#C483C8]" : "text-[#6B4841]/60"
                 }`}
               >
@@ -126,7 +126,7 @@ export default function Nav() {
             <Link
               href="/contact"
               onClick={() => setOpen(false)}
-              className="rye text-xs border border-[#C483C8]/40 text-[#C483C8] px-5 py-2.5 tracking-widest text-center w-fit mt-1"
+              className="brygada font-bold text-xs border border-[#C483C8]/40 text-[#C483C8] px-5 py-2.5 tracking-widest text-center w-fit mt-1"
             >
               Book Now
             </Link>

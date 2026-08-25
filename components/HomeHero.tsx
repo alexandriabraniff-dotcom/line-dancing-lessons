@@ -31,7 +31,7 @@ export default function HomeHero() {
               <li key={l.href}>
                 <Link
                   href={l.href}
-                  className={`rye text-[0.9rem] tracking-[0.3em] uppercase transition-colors ${
+                  className={`brygada font-bold text-[0.9rem] tracking-[0.3em] uppercase transition-colors ${
                     pathname === l.href
                       ? "text-[#C483C8]"
                       : "text-[#F7EAD8]/70 hover:text-[#F7EAD8]"
@@ -55,7 +55,7 @@ export default function HomeHero() {
               <li key={l.href}>
                 <Link
                   href={l.href}
-                  className={`rye text-[0.9rem] tracking-[0.3em] uppercase transition-colors ${
+                  className={`brygada font-bold text-[0.9rem] tracking-[0.3em] uppercase transition-colors ${
                     pathname === l.href
                       ? "text-[#C483C8]"
                       : "text-[#F7EAD8]/70 hover:text-[#F7EAD8]"
@@ -70,7 +70,7 @@ export default function HomeHero() {
           {/* Mobile */}
           <Link
             href="/contact"
-            className="md:hidden rye text-[0.9rem] border border-[#C483C8]/40 text-[#C483C8] px-5 py-2.5 rounded-full tracking-widest"
+            className="md:hidden brygada font-bold text-[0.9rem] border border-[#C483C8]/40 text-[#C483C8] px-5 py-2.5 rounded-full tracking-widest"
           >
             Book Now
           </Link>
@@ -80,7 +80,7 @@ export default function HomeHero() {
       {/* ── Hero Content ── */}
       <div className="relative z-10 flex-1 flex flex-col justify-center items-center px-6 md:px-12 lg:px-16 text-center">
         {/* Small label */}
-        <p className="rye text-[0.6rem] tracking-[0.35em] uppercase text-[#D49C84] mb-4">
+        <p className="brygada font-bold text-[0.6rem] tracking-[0.35em] uppercase text-[#D49C84] mb-4">
           Lessons &amp; Events for Every Occasion
         </p>
 
@@ -98,12 +98,12 @@ export default function HomeHero() {
         <div className="mt-10 flex flex-wrap justify-center gap-5">
           <Link
             href="/contact"
-            className="rye text-xs border border-[#C483C8]/50 text-[#C483C8] px-8 py-3.5 tracking-[0.25em] uppercase hover:bg-[#C483C8] hover:text-[#1E0F0B] transition-all inline-block"
+            className="brygada font-bold text-xs border border-[#C483C8]/50 text-[#C483C8] px-8 py-3.5 tracking-[0.25em] uppercase hover:bg-[#C483C8] hover:text-[#1E0F0B] transition-all inline-block"
           >
             Book Event          </Link>
           <Link
             href="/services"
-            className="rye text-xs border border-[#F7EAD8]/30 text-[#F7EAD8]/70 px-8 py-3.5 tracking-[0.25em] uppercase hover:border-[#F7EAD8]/60 hover:text-[#F7EAD8] transition-all inline-block"
+            className="brygada font-bold text-xs border border-[#F7EAD8]/30 text-[#F7EAD8]/70 px-8 py-3.5 tracking-[0.25em] uppercase hover:border-[#F7EAD8]/60 hover:text-[#F7EAD8] transition-all inline-block"
           >
             View Services          </Link>
         </div>
