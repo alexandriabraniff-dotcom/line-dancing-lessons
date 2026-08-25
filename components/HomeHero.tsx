@@ -23,15 +23,15 @@ export default function HomeHero() {
       <div className="absolute inset-0 bg-[#1E0F0B]/50" />
 
       {/* ── Inline Nav ── */}
-      <nav className="relative z-10 w-full px-6 md:px-12 lg:px-16 pt-16 pb-4">
+      <nav className="relative z-10 w-full px-6 md:px-12 lg:px-16 pt-[80px] pb-4">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           {/* Left links */}
-          <ul className="hidden md:flex gap-8 items-center">
+          <ul className="hidden md:flex gap-10 items-center">
             {links.slice(0, 2).map((l) => (
               <li key={l.href}>
                 <Link
                   href={l.href}
-                  className={`rye text-[0.6rem] tracking-[0.3em] uppercase transition-colors ${
+                  className={`rye text-[0.9rem] tracking-[0.3em] uppercase transition-colors ${
                     pathname === l.href
                       ? "text-[#C483C8]"
                       : "text-[#F7EAD8]/70 hover:text-[#F7EAD8]"
@@ -45,17 +45,17 @@ export default function HomeHero() {
 
           {/* Center logo */}
           <Link href="/" className="flex flex-col items-center leading-none gap-0.5">
-            <span className="rye text-2xl text-[#6B4841] tracking-widest leading-none uppercase">Wildflower</span>
-            <span className="brygada font-bold text-sm text-[#C483C8] tracking-wide">Line Dancing</span>
+            <span className="rye text-4xl text-[#6B4841] tracking-widest leading-none uppercase">Wildflower</span>
+            <span className="brygada font-bold text-xl text-[#C483C8] tracking-wide">Line Dancing</span>
           </Link>
 
           {/* Right links */}
-          <ul className="hidden md:flex gap-8 items-center">
+          <ul className="hidden md:flex gap-10 items-center">
             {links.slice(2).map((l) => (
               <li key={l.href}>
                 <Link
                   href={l.href}
-                  className={`rye text-[0.6rem] tracking-[0.3em] uppercase transition-colors ${
+                  className={`rye text-[0.9rem] tracking-[0.3em] uppercase transition-colors ${
                     pathname === l.href
                       ? "text-[#C483C8]"
                       : "text-[#F7EAD8]/70 hover:text-[#F7EAD8]"
@@ -70,7 +70,7 @@ export default function HomeHero() {
           {/* Mobile */}
           <Link
             href="/contact"
-            className="md:hidden rye text-[0.6rem] border border-[#C483C8]/40 text-[#C483C8] px-4 py-2 rounded-full tracking-widest"
+            className="md:hidden rye text-[0.9rem] border border-[#C483C8]/40 text-[#C483C8] px-5 py-2.5 rounded-full tracking-widest"
           >
             Book Now
           </Link>
