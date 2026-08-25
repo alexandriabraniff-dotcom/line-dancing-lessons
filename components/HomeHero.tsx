@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
 
 const links = [
   { href: "/", label: "Home" },
@@ -12,6 +13,7 @@ const links = [
 
 export default function HomeHero() {
   const pathname = usePathname();
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <section id="home-hero" className="relative min-h-screen flex flex-col">
@@ -24,10 +26,74 @@ export default function HomeHero() {
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-[#1E0F0B]/35" />
 
+      {/* ── Mobile fullscreen menu ── */}
+      {menuOpen && (
+        <div className="fixed inset-0 z-50 bg-[#1E0F0B] flex flex-col md:hidden">
+          {/* Close header */}
+          <div className="flex items-center justify-between px-6 pt-8 pb-4">
+            <Link href="/" onClick={() => setMenuOpen(false)} className="flex flex-col leading-none gap-0.5">
+              <span className="rye text-2xl text-[#6B4841] tracking-widest leading-none uppercase">Wildflower</span>
+              <span className="brygada font-bold text-sm text-[#C483C8] tracking-wide">Line Dancing</span>
+            </Link>
+            <button
+              onClick={() => setMenuOpen(false)}
+              className="text-[#F7EAD8] p-2"
+              aria-label="Close menu"
+            >
+              <svg width="28" height="28" fill="none" stroke="currentColor" strokeWidth={1.5}>
+                <path d="M6 22L22 6M6 6l16 16" />
+              </svg>
+            </button>
+          </div>
+
+          {/* Links */}
+          <div className="flex-1 flex flex-col items-center justify-center gap-8">
+            {links.map((l) => (
+              <Link
+                key={l.href}
+                href={l.href}
+                onClick={() => setMenuOpen(false)}
+                className={`rye text-3xl tracking-widest uppercase ${
+                  pathname === l.href ? "text-[#C483C8]" : "text-[#F7EAD8]"
+                }`}
+              >
+                {l.label}
+              </Link>
+            ))}
+          </div>
+
+          {/* Bottom CTA */}
+          <div className="px-6 pb-10">
+            <Link
+              href="/contact"
+              onClick={() => setMenuOpen(false)}
+              className="brygada font-bold text-xs bg-[#F7EAD8] text-[#6B4841] border-2 border-[#6B4841] w-full h-[45px] flex items-center justify-center tracking-[0.25em] uppercase"
+            >
+              Book Event
+            </Link>
+          </div>
+        </div>
+      )}
+
       {/* ── Inline Nav ── */}
-      <nav className="relative z-10 w-full px-6 md:px-12 lg:px-16 pt-[80px] pb-4">
+      <nav className="relative z-10 w-full px-6 md:px-12 lg:px-16 pt-8 md:pt-[80px] pb-4">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
-          {/* Left links */}
+          {/* Mobile: logo left + hamburger right */}
+          <Link href="/" className="flex flex-col leading-none gap-0.5 md:hidden">
+            <span className="rye text-2xl text-[#6B4841] tracking-widest leading-none uppercase" style={{ textShadow: "0 0 15px rgba(247,234,216,0.8)" }}>Wildflower</span>
+            <span className="brygada font-bold text-sm text-[#C483C8] tracking-wide" style={{ textShadow: "0 0 10px rgba(196,131,200,0.5)" }}>Line Dancing</span>
+          </Link>
+          <button
+            onClick={() => setMenuOpen(true)}
+            className="md:hidden text-[#F7EAD8] p-2 drop-shadow-lg"
+            aria-label="Open menu"
+          >
+            <svg width="28" height="28" fill="none" stroke="currentColor" strokeWidth={1.5}>
+              <path d="M4 7h20M4 14h20M4 21h20" />
+            </svg>
+          </button>
+
+          {/* Desktop: left links */}
           <ul className="hidden md:flex gap-10 items-center">
             {links.slice(0, 2).map((l) => (
               <li key={l.href}>
@@ -45,8 +111,8 @@ export default function HomeHero() {
             ))}
           </ul>
 
-          {/* Center logo */}
-          <Link href="/" className="flex flex-col items-center leading-none gap-0.5 relative">
+          {/* Desktop: center logo */}
+          <Link href="/" className="hidden md:flex flex-col items-center leading-none gap-0.5 relative">
             <span className="absolute inset-0 -inset-x-6 -inset-y-3 bg-[#F7EAD8]/80 rounded-full blur-[2px]" />
             <span className="relative rye text-4xl text-[#6B4841] tracking-widest leading-none uppercase">
               Wildflower
@@ -56,7 +122,7 @@ export default function HomeHero() {
             </span>
           </Link>
 
-          {/* Right links */}
+          {/* Desktop: right links */}
           <ul className="hidden md:flex gap-10 items-center">
             {links.slice(2).map((l) => (
               <li key={l.href}>
@@ -73,14 +139,6 @@ export default function HomeHero() {
               </li>
             ))}
           </ul>
-
-          {/* Mobile */}
-          <Link
-            href="/contact"
-            className="md:hidden brygada font-bold text-[0.9rem] bg-[#F7EAD8] text-[#6B4841] border-2 border-[#6B4841] px-5 py-2.5 rounded-full tracking-widest"
-          >
-            Book Now
-          </Link>
         </div>
       </nav>
 
