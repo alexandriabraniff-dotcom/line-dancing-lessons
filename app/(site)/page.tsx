@@ -27,7 +27,7 @@ export default function Home() {
             Whatever the occasion, we&apos;ve got you covered
           </p>
           <h2
-            className="brygada font-bold text-[#6B4841] uppercase tracking-wide"
+            className="rye text-[#6B4841] uppercase tracking-wide"
             style={{ fontSize: "clamp(1.6rem, 4vw, 2.8rem)" }}
           >
             Book by Occasion
@@ -55,7 +55,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-[#1E0F0B]/50 flex items-center">
           <div className="w-full px-6 md:px-12 lg:px-16">
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-end md:justify-between gap-4">
-              <h2 className="brygada font-bold text-[#F7EAD8] uppercase tracking-wide leading-tight" style={{ fontSize: "clamp(1.4rem, 3.5vw, 2.6rem)" }}>
+              <h2 className="rye text-[#F7EAD8] uppercase tracking-wide leading-tight" style={{ fontSize: "clamp(1.4rem, 3.5vw, 2.6rem)" }}>
                 Bringing People
                 <br />Together Since Day One
               </h2>
@@ -81,7 +81,7 @@ export default function Home() {
               Get to Know Us
             </p>
             <h2
-              className="brygada font-bold text-[#6B4841] uppercase tracking-wide mb-6"
+              className="rye text-[#6B4841] uppercase tracking-wide mb-6"
               style={{ fontSize: "clamp(1.6rem, 3.5vw, 2.4rem)" }}
             >
               Our Story
@@ -117,7 +117,7 @@ export default function Home() {
             What We Offer
           </p>
           <h2
-            className="brygada font-bold text-[#6B4841] uppercase tracking-wide"
+            className="rye text-[#6B4841] uppercase tracking-wide"
             style={{ fontSize: "clamp(1.6rem, 4vw, 2.8rem)" }}
           >
             Our Services
@@ -157,7 +157,7 @@ export default function Home() {
                 <p className="brygada font-bold text-[0.6rem] tracking-[0.35em] uppercase text-[#D49C84] mb-3">
                   Be Part of the Fun
                 </p>
-                <h2 className="brygada font-bold text-[#F7EAD8] uppercase tracking-wide" style={{ fontSize: "clamp(1.6rem, 4vw, 2.8rem)" }}>
+                <h2 className="rye text-[#F7EAD8] uppercase tracking-wide" style={{ fontSize: "clamp(1.6rem, 4vw, 2.8rem)" }}>
                   Book Your Session
                 </h2>
               </div>

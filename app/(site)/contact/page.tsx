@@ -59,7 +59,7 @@ export default function ContactPage() {
             </ul>
 
             <div className="border-t border-[#6B4841]/10 pt-8">
-              <p className="brygada font-bold text-base tracking-[0.15em] uppercase text-[#6B4841] mb-2">Not Sure Yet?</p>
+              <p className="rye text-base tracking-[0.15em] uppercase text-[#6B4841] mb-2">Not Sure Yet?</p>
               <p className="text-[#6B4841]/55 text-sm leading-relaxed mb-4">
                 Send us a message anyway. We love chatting about all things dance and will help you
                 figure out exactly what you need.
@@ -151,7 +151,7 @@ export default function ContactPage() {
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-8">
               <div>
                 <p className="brygada font-bold text-[0.6rem] tracking-[0.35em] uppercase text-[#D49C84] mb-3">Based in Adelaide</p>
-                <h2 className="brygada font-bold text-[#F7EAD8] uppercase tracking-wide" style={{ fontSize: "clamp(1.6rem, 4vw, 2.8rem)" }}>
+                <h2 className="rye text-[#F7EAD8] uppercase tracking-wide" style={{ fontSize: "clamp(1.6rem, 4vw, 2.8rem)" }}>
                   Available Across
                   <br />South Australia
                 </h2>

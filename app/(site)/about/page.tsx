@@ -47,7 +47,7 @@ export default function AboutPage() {
           <div>
             <p className="brygada font-bold text-[0.6rem] tracking-[0.35em] uppercase text-[#D49C84] mb-3">Our Story</p>
             <h2
-              className="brygada font-bold text-[#6B4841] uppercase tracking-wide mb-6"
+              className="rye text-[#6B4841] uppercase tracking-wide mb-6"
               style={{ fontSize: "clamp(1.6rem, 3.5vw, 2.4rem)" }}
             >
               Dancing Should Be
@@ -85,7 +85,7 @@ export default function AboutPage() {
         <div className="absolute inset-0 bg-[#1E0F0B]/50 flex items-center">
           <div className="w-full px-6 md:px-12 lg:px-16">
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-end md:justify-between gap-4">
-              <h2 className="brygada font-bold text-[#F7EAD8] uppercase tracking-wide leading-tight" style={{ fontSize: "clamp(1.4rem, 3.5vw, 2.6rem)" }}>
+              <h2 className="rye text-[#F7EAD8] uppercase tracking-wide leading-tight" style={{ fontSize: "clamp(1.4rem, 3.5vw, 2.6rem)" }}>
                 It&apos;s More Than
                 <br />a Dance
               </h2>
@@ -105,7 +105,7 @@ export default function AboutPage() {
             What drives everything we do
           </p>
           <h2
-            className="brygada font-bold text-[#6B4841] uppercase tracking-wide mb-12"
+            className="rye text-[#6B4841] uppercase tracking-wide mb-12"
             style={{ fontSize: "clamp(1.6rem, 4vw, 2.8rem)" }}
           >
             What We Stand For
@@ -117,7 +117,7 @@ export default function AboutPage() {
                 <div className="image-placeholder aspect-[3/4] mb-5">
                   <span>{title} visual</span>
                 </div>
-                <h3 className="brygada font-bold text-base tracking-[0.2em] uppercase text-[#6B4841] mb-2">{title}</h3>
+                <h3 className="rye text-base tracking-[0.2em] uppercase text-[#6B4841] mb-2">{title}</h3>
                 <p className="text-[#6B4841]/60 text-sm leading-relaxed">{desc}</p>
               </div>
             ))}
@@ -136,7 +136,7 @@ export default function AboutPage() {
           <div className="md:order-1">
             <p className="brygada font-bold text-[0.6rem] tracking-[0.35em] uppercase text-[#D49C84] mb-3">The Wildflower Way</p>
             <h2
-              className="brygada font-bold text-[#6B4841] uppercase tracking-wide mb-6"
+              className="rye text-[#6B4841] uppercase tracking-wide mb-6"
               style={{ fontSize: "clamp(1.6rem, 3.5vw, 2.4rem)" }}
             >
               More Than
@@ -175,7 +175,7 @@ export default function AboutPage() {
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-8">
               <div>
                 <p className="brygada font-bold text-[0.6rem] tracking-[0.35em] uppercase text-[#D49C84] mb-3">Ready to Hit the Floor?</p>
-                <h2 className="brygada font-bold text-[#F7EAD8] uppercase tracking-wide" style={{ fontSize: "clamp(1.6rem, 4vw, 2.8rem)" }}>
+                <h2 className="rye text-[#F7EAD8] uppercase tracking-wide" style={{ fontSize: "clamp(1.6rem, 4vw, 2.8rem)" }}>
                   Let&apos;s Dance
                 </h2>
               </div>

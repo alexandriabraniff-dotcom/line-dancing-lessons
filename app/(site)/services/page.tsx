@@ -110,7 +110,7 @@ export default function ServicesPage() {
               <div className={i % 2 === 1 ? "md:order-1" : ""}>
                 <p className="brygada font-bold text-[0.6rem] tracking-[0.35em] uppercase text-[#D49C84] mb-3">{num}</p>
                 <h2
-                  className="brygada font-bold text-[#6B4841] uppercase tracking-wide mb-5"
+                  className="rye text-[#6B4841] uppercase tracking-wide mb-5"
                   style={{ fontSize: "clamp(1.6rem, 3.5vw, 2.4rem)" }}
                 >
                   {title}
@@ -145,7 +145,7 @@ export default function ServicesPage() {
         <div className="absolute inset-0 bg-[#1E0F0B]/50 flex items-center">
           <div className="w-full px-6 md:px-12 lg:px-16">
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-end md:justify-between gap-4">
-              <h2 className="brygada font-bold text-[#F7EAD8] uppercase tracking-wide leading-tight" style={{ fontSize: "clamp(1.4rem, 3.5vw, 2.6rem)" }}>
+              <h2 className="rye text-[#F7EAD8] uppercase tracking-wide leading-tight" style={{ fontSize: "clamp(1.4rem, 3.5vw, 2.6rem)" }}>
                 No Experience
                 <br />Needed
               </h2>
@@ -163,7 +163,7 @@ export default function ServicesPage() {
         <div className="max-w-6xl mx-auto text-center">
           <p className="brygada font-bold text-[0.6rem] tracking-[0.35em] uppercase text-[#D49C84] mb-3">Simple As</p>
           <h2
-            className="brygada font-bold text-[#6B4841] uppercase tracking-wide mb-14"
+            className="rye text-[#6B4841] uppercase tracking-wide mb-14"
             style={{ fontSize: "clamp(1.6rem, 4vw, 2.8rem)" }}
           >
             How It Works
@@ -175,8 +175,8 @@ export default function ServicesPage() {
                 key={step}
                 className="border-b md:border-b-0 md:border-r last:border-r-0 border-[#6B4841]/10 py-10 md:px-10"
               >
-                <p className="brygada font-bold text-[2.5rem] text-[#D49C84]/25 mb-3">{step}</p>
-                <h3 className="brygada font-bold text-base tracking-[0.2em] uppercase text-[#6B4841] mb-3">{title}</h3>
+                <p className="rye text-[2.5rem] text-[#D49C84]/25 mb-3">{step}</p>
+                <h3 className="rye text-base tracking-[0.2em] uppercase text-[#6B4841] mb-3">{title}</h3>
                 <p className="text-[#6B4841]/60 text-sm leading-relaxed">{desc}</p>
               </div>
             ))}
@@ -202,7 +202,7 @@ export default function ServicesPage() {
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-8">
               <div>
                 <p className="brygada font-bold text-[0.6rem] tracking-[0.35em] uppercase text-[#D49C84] mb-3">Sound Like Your Kind of Fun?</p>
-                <h2 className="brygada font-bold text-[#F7EAD8] uppercase tracking-wide" style={{ fontSize: "clamp(1.6rem, 4vw, 2.8rem)" }}>
+                <h2 className="rye text-[#F7EAD8] uppercase tracking-wide" style={{ fontSize: "clamp(1.6rem, 4vw, 2.8rem)" }}>
                   Book Your Session
                 </h2>
               </div>
