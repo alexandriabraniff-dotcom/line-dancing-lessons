@@ -28,7 +28,6 @@ export default function Nav() {
     const handleScroll = () => {
       const hero = document.getElementById("home-hero");
       if (!hero) return;
-      const heroBottom = hero.offsetTop + hero.offsetHeight;
       const threshold = hero.offsetTop + hero.offsetHeight * 0.75;
       setVisible(window.scrollY >= threshold);
     };
@@ -54,7 +53,7 @@ export default function Nav() {
       {/* END DESIGNER CREDIT BANNER */}
 
       <header
-        className={`fixed left-0 right-0 z-50 bg-[#F7EAD8]/95 backdrop-blur-sm transition-all duration-500 ease-out ${
+        className={`fixed left-0 right-0 z-50 bg-[#F7EAD8] border-b border-[#6B4841]/10 transition-all duration-500 ease-out ${
           visible
             ? "translate-y-[22px] opacity-100"
             : "-translate-y-full opacity-0 pointer-events-none"
@@ -62,21 +61,16 @@ export default function Nav() {
         style={{ top: 0 }}
       >
         <nav className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 py-4 flex items-center justify-between">
-          <Link href="/" className="flex flex-col leading-none gap-0.5">
-            <span className="rye text-lg text-[#6B4841] tracking-wide leading-none">Wildflower</span>
-            <span className="brygada font-bold italic text-xs text-[#C483C8] tracking-wide">Line Dancing</span>
-          </Link>
-
-          {/* Desktop links */}
+          {/* Left links */}
           <ul className="hidden md:flex gap-8 items-center">
-            {links.map((l) => (
+            {links.slice(0, 2).map((l) => (
               <li key={l.href}>
                 <Link
                   href={l.href}
-                  className={`section-label transition-colors ${
+                  className={`rye text-[0.6rem] tracking-[0.3em] uppercase transition-colors ${
                     pathname === l.href
                       ? "text-[#C483C8]"
-                      : "hover:text-[#6B4841]"
+                      : "text-[#6B4841]/60 hover:text-[#6B4841]"
                   }`}
                 >
                   {l.label}
@@ -85,12 +79,29 @@ export default function Nav() {
             ))}
           </ul>
 
-          <Link
-            href="/contact"
-            className="hidden md:inline-block rye text-xs bg-[#6B4841] text-[#F7EAD8] px-5 py-2.5 rounded-full tracking-widest hover:bg-[#C483C8] transition-colors"
-          >
-            Book Now
+          {/* Center logo */}
+          <Link href="/" className="flex flex-col items-center leading-none gap-0.5">
+            <span className="rye text-xl text-[#6B4841] tracking-widest leading-none uppercase">Wildflower</span>
+            <span className="brygada font-bold italic text-xs text-[#C483C8] tracking-wide">Line Dancing</span>
           </Link>
+
+          {/* Right links */}
+          <ul className="hidden md:flex gap-8 items-center">
+            {links.slice(2).map((l) => (
+              <li key={l.href}>
+                <Link
+                  href={l.href}
+                  className={`rye text-[0.6rem] tracking-[0.3em] uppercase transition-colors ${
+                    pathname === l.href
+                      ? "text-[#C483C8]"
+                      : "text-[#6B4841]/60 hover:text-[#6B4841]"
+                  }`}
+                >
+                  {l.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
 
           {/* Mobile toggle */}
           <button
@@ -112,14 +123,14 @@ export default function Nav() {
 
         {/* Mobile menu */}
         {open && (
-          <div className="md:hidden bg-[#F7EAD8] border-t border-[#6B4841]/12 px-6 py-6 flex flex-col gap-5">
+          <div className="md:hidden bg-[#F7EAD8] border-t border-[#6B4841]/10 px-6 py-6 flex flex-col gap-5">
             {links.map((l) => (
               <Link
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className={`section-label ${
-                  pathname === l.href ? "text-[#C483C8]" : ""
+                className={`rye text-[0.6rem] tracking-[0.3em] uppercase ${
+                  pathname === l.href ? "text-[#C483C8]" : "text-[#6B4841]/60"
                 }`}
               >
                 {l.label}
@@ -128,7 +139,7 @@ export default function Nav() {
             <Link
               href="/contact"
               onClick={() => setOpen(false)}
-              className="rye text-xs bg-[#6B4841] text-[#F7EAD8] px-5 py-2.5 rounded-full tracking-widest text-center w-fit mt-1"
+              className="rye text-xs border border-[#6B4841]/30 text-[#6B4841] px-5 py-2.5 tracking-widest text-center w-fit mt-1"
             >
               Book Now
             </Link>

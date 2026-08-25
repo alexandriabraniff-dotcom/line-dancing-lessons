@@ -2,69 +2,84 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#1E0F0B] text-[#F7EAD8] relative">
-      {/* Decorative top line */}
-      <div className="h-px bg-gradient-to-r from-transparent via-[#C483C8]/40 to-transparent" />
-
+    <footer className="bg-[#1E0F0B] text-[#F7EAD8]">
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 pt-16 pb-10">
-        {/* Top section */}
-        <div className="grid grid-cols-1 md:grid-cols-[1.2fr_1fr_1fr] gap-12 md:gap-16 mb-16">
-          {/* Brand */}
-          <div>
-            <p className="rye text-2xl text-[#F7EAD8] leading-none tracking-wide">Wildflower</p>
-            <p className="brygada font-bold italic text-[#C483C8] text-lg mt-1">Line Dancing</p>
-            <p className="text-[#F7EAD8]/40 text-sm mt-5 leading-relaxed max-w-xs">
-              It&apos;s more than a dance, it&apos;s a good time. Weddings, birthdays, social events, and private groups across Adelaide.
+        {/* Top: 3-column grid with center logo like reference */}
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-10 md:gap-16 items-start mb-14">
+          {/* Left links */}
+          <div className="flex flex-col sm:flex-row gap-8">
+            <nav className="flex flex-col gap-2.5">
+              <p className="rye text-[0.55rem] tracking-[0.3em] uppercase text-[#D49C84] mb-1">Navigate</p>
+              {[
+                { href: "/", label: "Home" },
+                { href: "/about", label: "About Us" },
+                { href: "/services", label: "Services" },
+                { href: "/contact", label: "Contact" },
+              ].map(({ href, label }) => (
+                <Link
+                  key={href}
+                  href={href}
+                  className="text-xs text-[#F7EAD8]/40 hover:text-[#F7EAD8] transition-colors uppercase tracking-wider"
+                >
+                  {label}
+                </Link>
+              ))}
+            </nav>
+
+            <nav className="flex flex-col gap-2.5">
+              <p className="rye text-[0.55rem] tracking-[0.3em] uppercase text-[#D49C84] mb-1">Services</p>
+              {["Weddings", "Birthdays", "Social Events", "Private Groups"].map((s) => (
+                <Link
+                  key={s}
+                  href="/services"
+                  className="text-xs text-[#F7EAD8]/40 hover:text-[#F7EAD8] transition-colors uppercase tracking-wider"
+                >
+                  {s}
+                </Link>
+              ))}
+            </nav>
+          </div>
+
+          {/* Center logo */}
+          <div className="flex flex-col items-center text-center">
+            <p className="rye text-2xl text-[#F7EAD8] tracking-widest leading-none uppercase">Wildflower</p>
+            <p className="brygada font-bold italic text-[#C483C8] text-base mt-1">Line Dancing</p>
+            <p className="text-[#F7EAD8]/25 text-xs mt-4 leading-relaxed">
+              It&apos;s more than a dance,
+              <br />it&apos;s a good time.
             </p>
           </div>
 
-          {/* Navigation */}
-          <nav className="flex flex-col gap-3">
-            <p className="rye text-[0.6rem] tracking-[0.3em] uppercase text-[#D49C84] mb-2">Navigation</p>
-            {[
-              { href: "/", label: "Home" },
-              { href: "/about", label: "About" },
-              { href: "/services", label: "Services" },
-              { href: "/contact", label: "Contact" },
-            ].map(({ href, label }) => (
-              <Link
-                key={href}
-                href={href}
-                className="text-sm text-[#F7EAD8]/50 hover:text-[#F7EAD8] transition-colors w-fit"
-              >
-                {label}
-              </Link>
-            ))}
-          </nav>
-
-          {/* CTA */}
-          <div className="flex flex-col items-start md:items-end gap-6">
+          {/* Right */}
+          <div className="flex flex-col gap-2.5 md:items-end md:text-right">
+            <p className="rye text-[0.55rem] tracking-[0.3em] uppercase text-[#D49C84] mb-1">Get in Touch</p>
             <Link
               href="/contact"
-              className="rye text-xs border border-[#F7EAD8]/25 text-[#F7EAD8] px-7 py-3 rounded-full tracking-widest hover:bg-[#F7EAD8] hover:text-[#1E0F0B] transition-all"
+              className="text-xs text-[#F7EAD8]/40 hover:text-[#F7EAD8] transition-colors uppercase tracking-wider"
             >
-              Book Now
+              Book a Session
             </Link>
-            <p className="brygada italic text-[#C483C8]/60 text-sm md:text-right">
-              No experience required.
-              <br />
-              Just good vibes.
-            </p>
+            <Link
+              href="/contact"
+              className="text-xs text-[#F7EAD8]/40 hover:text-[#F7EAD8] transition-colors uppercase tracking-wider"
+            >
+              Reach Out
+            </Link>
           </div>
         </div>
 
         {/* Bottom bar */}
         <div className="border-t border-[#F7EAD8]/10 pt-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-          <p className="text-[0.65rem] text-[#F7EAD8]/30 tracking-wide">
+          <p className="text-[0.6rem] text-[#F7EAD8]/25 tracking-wider uppercase">
             &copy; {new Date().getFullYear()} Wildflower Line Dancing. All rights reserved.
           </p>
-          <p className="text-[0.65rem] text-[#F7EAD8]/30 tracking-wide">
+          <p className="text-[0.6rem] text-[#F7EAD8]/25 tracking-wider uppercase">
             Website designed by{" "}
             <a
               href="https://alexandriabraniff.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#F7EAD8]/50 hover:text-[#C483C8] transition-colors"
+              className="text-[#F7EAD8]/40 hover:text-[#C483C8] transition-colors"
             >
               Alexandria Braniff
             </a>

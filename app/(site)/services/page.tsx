@@ -62,7 +62,7 @@ const services = [
 
 const process = [
   { step: "01", title: "Reach Out", desc: "Tell us about your event, your group, and what you're after." },
-  { step: "02", title: "We Plan", desc: "We'll put together a session tailored to your vibe, skill level, and venue." },
+  { step: "02", title: "We Plan", desc: "We put together a session tailored to your vibe, skill level, and venue." },
   { step: "03", title: "We Dance", desc: "Show up, have fun, and let us handle the rest. No experience needed." },
 ];
 
@@ -71,141 +71,152 @@ export default function ServicesPage() {
     <>
       {/* ── Header ── */}
       <section className="px-6 md:px-12 lg:px-16 pt-24 md:pt-28 pb-6">
-        <div className="max-w-7xl mx-auto">
-          <p className="section-label mb-6">For Every Occasion</p>
+        <div className="max-w-6xl mx-auto text-center">
+          <p className="rye text-[0.6rem] tracking-[0.35em] uppercase text-[#D49C84] mb-3">
+            For Every Occasion
+          </p>
           <h1
-            className="rye text-[#6B4841] leading-[0.9] tracking-wide"
-            style={{ fontSize: "clamp(3rem, 10vw, 8rem)" }}
+            className="rye text-[#6B4841] uppercase tracking-wide"
+            style={{ fontSize: "clamp(2.4rem, 7vw, 5rem)" }}
           >
-            Services
+            Our Services
           </h1>
         </div>
       </section>
 
       {/* ── Hero Image ── */}
       <section className="px-6 md:px-12 lg:px-16 pb-20 md:pb-28">
-        <div className="max-w-7xl mx-auto">
-          <div className="image-placeholder w-full aspect-[2.8/1] rounded-2xl">
+        <div className="max-w-6xl mx-auto">
+          <div className="image-placeholder w-full aspect-[2.8/1]">
             <span>Services hero / Dancing in action</span>
           </div>
         </div>
       </section>
 
-      {/* ── Service Cards ── */}
+      {/* ── Service Blocks (alternating image + text like reference) ── */}
       <section className="px-6 md:px-12 lg:px-16 pb-8">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           {services.map(({ num, title, desc, details, placeholder }, i) => (
-            <div key={title}>
-              <div className="deco-line" />
-              <div className={`py-16 md:py-20 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 ${i % 2 === 1 ? "lg:direction-rtl" : ""}`}>
-                {/* Image */}
-                <div className={`${i % 2 === 1 ? "lg:order-2" : ""}`}>
-                  <div className="image-placeholder aspect-[4/3] rounded-xl">
-                    <span>{placeholder}</span>
-                  </div>
+            <div
+              key={title}
+              className="border-t border-[#6B4841]/10 py-16 md:py-20 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center"
+            >
+              {/* Image */}
+              <div className={i % 2 === 1 ? "md:order-2" : ""}>
+                <div className="image-placeholder aspect-[4/5]">
+                  <span>{placeholder}</span>
                 </div>
+              </div>
 
-                {/* Content */}
-                <div className={`flex flex-col justify-center ${i % 2 === 1 ? "lg:order-1" : ""}`}>
-                  <p className="section-label mb-4">{num}</p>
-                  <h2
-                    className="rye text-[#6B4841] mb-5"
-                    style={{ fontSize: "clamp(2rem, 4vw, 3.2rem)" }}
-                  >
-                    {title}
-                  </h2>
-                  <p className="text-[#6B4841]/70 leading-relaxed mb-8">{desc}</p>
+              {/* Content */}
+              <div className={i % 2 === 1 ? "md:order-1" : ""}>
+                <p className="rye text-[0.6rem] tracking-[0.35em] uppercase text-[#D49C84] mb-3">{num}</p>
+                <h2
+                  className="rye text-[#6B4841] uppercase tracking-wide mb-5"
+                  style={{ fontSize: "clamp(1.6rem, 3.5vw, 2.4rem)" }}
+                >
+                  {title}
+                </h2>
+                <p className="text-[#6B4841]/70 text-sm leading-relaxed mb-8">{desc}</p>
 
-                  <ul className="space-y-3">
-                    {details.map((item) => (
-                      <li key={item} className="flex gap-3 text-sm text-[#6B4841]/60">
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="#C483C8" className="shrink-0 mt-1 opacity-50"><path d="M12 2 L13.2 9.8 L21 11 L13.2 12.2 L12 20 L10.8 12.2 L3 11 L10.8 9.8 Z" /></svg>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                <ul className="space-y-3 mb-8">
+                  {details.map((item) => (
+                    <li key={item} className="flex gap-3 text-sm text-[#6B4841]/60">
+                      <span className="text-[#C483C8] text-xs mt-0.5">&#10022;</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+
+                <Link
+                  href="/contact"
+                  className="rye text-xs border border-[#6B4841]/30 text-[#6B4841] px-7 py-3 tracking-[0.25em] uppercase hover:bg-[#6B4841] hover:text-[#F7EAD8] transition-all inline-block"
+                >
+                  Book {title} &#8594;
+                </Link>
               </div>
             </div>
           ))}
         </div>
       </section>
 
+      {/* ── Full-Width Image Banner ── */}
+      <section className="relative">
+        <div className="image-placeholder w-full aspect-[2.8/1] !rounded-none !border-x-0">
+          <span>Wide shot / Event atmosphere</span>
+        </div>
+        <div className="absolute inset-0 bg-[#1E0F0B]/50 flex items-center">
+          <div className="w-full px-6 md:px-12 lg:px-16">
+            <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+              <h2 className="rye text-[#F7EAD8] uppercase tracking-wide leading-tight" style={{ fontSize: "clamp(1.4rem, 3.5vw, 2.6rem)" }}>
+                No Experience
+                <br />Needed
+              </h2>
+              <p className="rye text-[0.6rem] tracking-[0.3em] uppercase text-[#D49C84] pb-1">
+                Just Good Vibes
+                <br />&amp; Good Times
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── How It Works ── */}
-      <section className="bg-[#1E0F0B] py-24 md:py-32 px-6 md:px-12 lg:px-16">
-        <div className="max-w-7xl mx-auto">
-          <p className="rye text-[0.6rem] tracking-[0.3em] uppercase text-[#D49C84] mb-4">Simple as</p>
+      <section className="px-6 md:px-12 lg:px-16 py-20 md:py-28">
+        <div className="max-w-6xl mx-auto text-center">
+          <p className="rye text-[0.6rem] tracking-[0.35em] uppercase text-[#D49C84] mb-3">Simple As</p>
           <h2
-            className="rye text-[#F7EAD8] leading-none mb-16"
-            style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)" }}
+            className="rye text-[#6B4841] uppercase tracking-wide mb-14"
+            style={{ fontSize: "clamp(1.6rem, 4vw, 2.8rem)" }}
           >
             How It Works
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border-t border-[#F7EAD8]/10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border-t border-b border-[#6B4841]/10">
             {process.map(({ step, title, desc }) => (
               <div
                 key={step}
-                className="border-b md:border-b-0 md:border-r last:border-r-0 border-[#F7EAD8]/10 p-8 md:p-10"
+                className="border-b md:border-b-0 md:border-r last:border-r-0 border-[#6B4841]/10 py-10 md:px-10"
               >
-                <p className="rye text-[2.5rem] text-[#C483C8]/20 mb-4">{step}</p>
-                <h3 className="rye text-xl text-[#F7EAD8] mb-3">{title}</h3>
-                <p className="text-[#F7EAD8]/45 text-sm leading-relaxed">{desc}</p>
+                <p className="rye text-[2.5rem] text-[#C483C8]/20 mb-3">{step}</p>
+                <h3 className="rye text-base tracking-[0.2em] uppercase text-[#6B4841] mb-3">{title}</h3>
+                <p className="text-[#6B4841]/60 text-sm leading-relaxed">{desc}</p>
               </div>
             ))}
           </div>
 
-          <div className="mt-16 text-center">
+          <div className="mt-12">
             <Link
               href="/contact"
-              className="rye text-sm border border-[#F7EAD8]/25 text-[#F7EAD8] px-10 py-4 rounded-full tracking-widest hover:bg-[#F7EAD8] hover:text-[#1E0F0B] transition-all"
+              className="rye text-xs border border-[#6B4841]/30 text-[#6B4841] px-7 py-3 tracking-[0.25em] uppercase hover:bg-[#6B4841] hover:text-[#F7EAD8] transition-all inline-block"
             >
-              Get Started
+              Get Started &#8594;
             </Link>
           </div>
         </div>
       </section>
 
-      {/* ── Gallery Strip ── */}
-      <section className="px-6 md:px-12 lg:px-16 py-24 md:py-32">
-        <div className="max-w-7xl mx-auto">
-          <p className="section-label mb-10 text-center">Moments from the Floor</p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {["Moment 1", "Moment 2", "Moment 3", "Moment 4"].map((label, i) => (
-              <div
-                key={label}
-                className={`image-placeholder rounded-lg ${i % 2 === 0 ? "aspect-[3/4]" : "aspect-square"}`}
-              >
-                <span>{label}</span>
-              </div>
-            ))}
-          </div>
+      {/* ── CTA Banner ── */}
+      <section className="relative">
+        <div className="image-placeholder w-full aspect-[3/1] md:aspect-[4/1] !rounded-none !border-x-0">
+          <span>CTA background / Fun group shot</span>
         </div>
-      </section>
-
-      {/* ── CTA ── */}
-      <section className="relative py-24 md:py-28 px-6 md:px-12 lg:px-16 border-t border-[#6B4841]/10">
-        <div className="max-w-7xl mx-auto text-center">
-          <div className="flex justify-center gap-3 mb-8">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="#C483C8" opacity="0.3"><path d="M12 2 L13.2 9.8 L21 11 L13.2 12.2 L12 20 L10.8 12.2 L3 11 L10.8 9.8 Z" /></svg>
-            <svg width="10" height="10" viewBox="0 0 24 24" fill="#D49C84" opacity="0.4"><path d="M12 2 L13.2 9.8 L21 11 L13.2 12.2 L12 20 L10.8 12.2 L3 11 L10.8 9.8 Z" /></svg>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="#C483C8" opacity="0.3"><path d="M12 2 L13.2 9.8 L21 11 L13.2 12.2 L12 20 L10.8 12.2 L3 11 L10.8 9.8 Z" /></svg>
-          </div>
-
-          <p
-            className="brygada italic text-[#6B4841] leading-snug mx-auto"
-            style={{ fontSize: "clamp(1.8rem, 4vw, 3.2rem)", maxWidth: "44rem" }}
-          >
-            Sound like your kind of fun?
-          </p>
-
-          <div className="mt-10">
-            <Link
-              href="/contact"
-              className="rye text-sm bg-[#6B4841] text-[#F7EAD8] px-10 py-4 rounded-full tracking-widest hover:bg-[#C483C8] transition-colors"
-            >
-              Book Your Session
-            </Link>
+        <div className="absolute inset-0 bg-[#1E0F0B]/65 flex items-center">
+          <div className="w-full px-6 md:px-12 lg:px-16">
+            <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+              <div>
+                <p className="rye text-[0.6rem] tracking-[0.35em] uppercase text-[#D49C84] mb-3">Sound Like Your Kind of Fun?</p>
+                <h2 className="rye text-[#F7EAD8] uppercase tracking-wide" style={{ fontSize: "clamp(1.6rem, 4vw, 2.8rem)" }}>
+                  Book Your Session
+                </h2>
+              </div>
+              <Link
+                href="/contact"
+                className="rye text-xs border border-[#F7EAD8]/40 text-[#F7EAD8] px-7 py-3 tracking-[0.25em] uppercase hover:bg-[#F7EAD8] hover:text-[#1E0F0B] transition-all inline-block self-start md:self-center"
+              >
+                Get in Touch &#8594;
+              </Link>
+            </div>
           </div>
         </div>
       </section>
