@@ -19,8 +19,10 @@ export default function HomeHero() {
       <div className="absolute inset-0">
         <img src="/hero-bg.png" alt="" className="w-full h-full object-cover" />
       </div>
+      {/* Light haze overlay */}
+      <div className="absolute inset-0 bg-[#F7EAD8]/25" />
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-[#1E0F0B]/50" />
+      <div className="absolute inset-0 bg-[#1E0F0B]/40" />
 
       {/* ── Inline Nav ── */}
       <nav className="relative z-10 w-full px-6 md:px-12 lg:px-16 pt-[80px] pb-4">
