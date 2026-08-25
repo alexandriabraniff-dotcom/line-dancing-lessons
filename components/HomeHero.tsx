@@ -147,7 +147,7 @@ export default function HomeHero() {
         {/* Big heading */}
         <h1
           className="rye text-[#F7EAD8] leading-[0.95] tracking-wide uppercase drop-shadow-lg"
-          style={{ fontSize: "clamp(2.8rem, 8vw, 6rem)" }}
+          style={{ fontSize: "clamp(1.8rem, 8vw, 6rem)" }}
         >
           Lessons
           <br />
