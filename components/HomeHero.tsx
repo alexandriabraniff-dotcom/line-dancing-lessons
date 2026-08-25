@@ -89,9 +89,9 @@ export default function HomeHero() {
           className="rye text-[#F7EAD8] leading-[0.95] tracking-wide uppercase"
           style={{ fontSize: "clamp(2.8rem, 8vw, 6rem)" }}
         >
-          For the Countryside
+          Dance on the
           <br />
-          in You
+          Countryside
         </h1>
 
         {/* CTAs */}
