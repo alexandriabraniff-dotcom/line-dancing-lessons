@@ -41,24 +41,37 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Full-Width Image Banner ── */}
-      <section className="relative">
-        <div className="image-placeholder w-full aspect-[2.8/1] !rounded-none !border-x-0">
-          <span>Wide landscape / Dancers in a venue</span>
-        </div>
-        <div className="absolute inset-0 bg-[#1E0F0B]/50 flex items-center">
-          <div className="w-full px-6 md:px-12 lg:px-16">
-            <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-end md:justify-between gap-4">
-              <h2 className="rye text-[#F7EAD8] uppercase tracking-wide leading-tight" style={{ fontSize: "clamp(1.4rem, 3.5vw, 2.6rem)" }}>
-                Bringing People
-                <br />Together Since Day One
-              </h2>
-              <p className="brygada font-bold text-[0.6rem] tracking-[0.3em] uppercase text-[#D49C84] pb-1">
-                Lessons &amp; Events
-                <br />
-                Built to Remember
-              </p>
-            </div>
+      {/* ── Gallery ── */}
+      <section className="bg-[#1E0F0B] px-6 md:px-12 lg:px-16 py-20 md:py-28">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-14">
+            <p className="brygada font-bold text-[0.6rem] tracking-[0.35em] uppercase text-[#D49C84] mb-3">
+              See Us in Action
+            </p>
+            <h2
+              className="rye text-[#F7EAD8] uppercase tracking-wide"
+              style={{ fontSize: "clamp(1.6rem, 4vw, 2.8rem)" }}
+            >
+              Photos &amp; Events
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+            {[
+              { label: "Wedding reception", span: "md:col-span-2 md:row-span-2" },
+              { label: "Birthday party", span: "" },
+              { label: "Corporate team night", span: "" },
+              { label: "Private lesson", span: "" },
+              { label: "Hen's night", span: "" },
+              { label: "Community event", span: "md:col-span-2" },
+            ].map(({ label, span }) => (
+              <div
+                key={label}
+                className={`image-placeholder aspect-square !border-[#F7EAD8]/15 !bg-[#F7EAD8]/[0.04] group cursor-pointer overflow-hidden ${span}`}
+              >
+                <span className="!text-[#F7EAD8]/20 text-xs text-center group-hover:!text-[#F7EAD8]/40 transition-colors">{label}</span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
