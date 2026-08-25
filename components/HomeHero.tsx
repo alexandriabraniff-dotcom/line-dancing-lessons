@@ -149,9 +149,9 @@ export default function HomeHero() {
           className="rye text-[#F7EAD8] leading-[0.95] tracking-wide uppercase drop-shadow-lg"
           style={{ fontSize: "clamp(2.8rem, 8vw, 6rem)" }}
         >
-          Vancouver
+          Line Dancing Lessons
           <br />
-          Line Dancing
+          for Every Occasion
         </h1>
 
         {/* Subheading */}
@@ -159,7 +159,7 @@ export default function HomeHero() {
           className="brygada font-bold tracking-[0.3em] uppercase text-[#D49C84] mt-6 drop-shadow-md"
           style={{ fontSize: "clamp(0.9rem, 2vw, 1.4rem)" }}
         >
-          Lessons &amp; Events for Every Occasion
+          Events for Beginners &amp; Intermediate
         </p>
 
         {/* CTAs */}
