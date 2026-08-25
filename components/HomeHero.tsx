@@ -20,9 +20,9 @@ export default function HomeHero() {
         <img src="/hero-bg.png" alt="" className="w-full h-full object-cover" />
       </div>
       {/* Light haze overlay */}
-      <div className="absolute inset-0 bg-[#F7EAD8]/25" />
+      <div className="absolute inset-0 bg-[#F7EAD8]/30" />
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-[#1E0F0B]/40" />
+      <div className="absolute inset-0 bg-[#1E0F0B]/35" />
 
       {/* ── Inline Nav ── */}
       <nav className="relative z-10 w-full px-6 md:px-12 lg:px-16 pt-[80px] pb-4">
@@ -33,10 +33,10 @@ export default function HomeHero() {
               <li key={l.href}>
                 <Link
                   href={l.href}
-                  className={`brygada font-bold text-[0.9rem] tracking-[0.3em] uppercase transition-colors ${
+                  className={`brygada font-bold text-[0.9rem] tracking-[0.3em] uppercase transition-colors drop-shadow-md ${
                     pathname === l.href
                       ? "text-[#C483C8]"
-                      : "text-[#F7EAD8]/70 hover:text-[#F7EAD8]"
+                      : "text-[#F7EAD8] hover:text-[#C483C8]"
                   }`}
                 >
                   {l.label}
@@ -47,8 +47,18 @@ export default function HomeHero() {
 
           {/* Center logo */}
           <Link href="/" className="flex flex-col items-center leading-none gap-0.5">
-            <span className="rye text-4xl text-[#6B4841] tracking-widest leading-none uppercase">Wildflower</span>
-            <span className="brygada font-bold text-xl text-[#C483C8] tracking-wide">Line Dancing</span>
+            <span
+              className="rye text-4xl text-[#6B4841] tracking-widest leading-none uppercase"
+              style={{ textShadow: "0 0 20px rgba(247,234,216,0.8), 0 0 40px rgba(247,234,216,0.4)" }}
+            >
+              Wildflower
+            </span>
+            <span
+              className="brygada font-bold text-xl text-[#C483C8] tracking-wide"
+              style={{ textShadow: "0 0 15px rgba(196,131,200,0.5)" }}
+            >
+              Line Dancing
+            </span>
           </Link>
 
           {/* Right links */}
@@ -57,10 +67,10 @@ export default function HomeHero() {
               <li key={l.href}>
                 <Link
                   href={l.href}
-                  className={`brygada font-bold text-[0.9rem] tracking-[0.3em] uppercase transition-colors ${
+                  className={`brygada font-bold text-[0.9rem] tracking-[0.3em] uppercase transition-colors drop-shadow-md ${
                     pathname === l.href
                       ? "text-[#C483C8]"
-                      : "text-[#F7EAD8]/70 hover:text-[#F7EAD8]"
+                      : "text-[#F7EAD8] hover:text-[#C483C8]"
                   }`}
                 >
                   {l.label}
@@ -72,7 +82,7 @@ export default function HomeHero() {
           {/* Mobile */}
           <Link
             href="/contact"
-            className="md:hidden brygada font-bold text-[0.9rem] border border-[#C483C8]/40 text-[#C483C8] px-5 py-2.5 rounded-full tracking-widest"
+            className="md:hidden brygada font-bold text-[0.9rem] bg-[#F7EAD8] text-[#6B4841] border-2 border-[#6B4841] px-5 py-2.5 rounded-full tracking-widest"
           >
             Book Now
           </Link>
@@ -83,7 +93,7 @@ export default function HomeHero() {
       <div className="relative z-10 flex-1 flex flex-col justify-center items-center px-6 md:px-12 lg:px-16 text-center">
         {/* Big heading */}
         <h1
-          className="rye text-[#F7EAD8] leading-[0.95] tracking-wide uppercase"
+          className="rye text-[#F7EAD8] leading-[0.95] tracking-wide uppercase drop-shadow-lg"
           style={{ fontSize: "clamp(2.8rem, 8vw, 6rem)" }}
         >
           Vancouver
@@ -93,7 +103,7 @@ export default function HomeHero() {
 
         {/* Subheading */}
         <p
-          className="brygada font-bold tracking-[0.3em] uppercase text-[#D49C84] mt-6"
+          className="brygada font-bold tracking-[0.3em] uppercase text-[#F7EAD8] mt-6 drop-shadow-md"
           style={{ fontSize: "clamp(0.9rem, 2vw, 1.4rem)" }}
         >
           Lessons &amp; Events for Every Occasion
@@ -103,13 +113,13 @@ export default function HomeHero() {
         <div className="mt-10 flex flex-wrap justify-center gap-5">
           <Link
             href="/contact"
-            className="brygada font-bold text-xs bg-[#F7EAD8] text-[#6B4841] border-2 border-[#6B4841] px-8 py-3.5 tracking-[0.25em] uppercase hover:bg-[#6B4841] hover:text-[#F7EAD8] transition-all duration-300 inline-block"
+            className="brygada font-bold text-xs bg-[#F7EAD8] text-[#6B4841] border-2 border-[#6B4841] px-8 py-3.5 tracking-[0.25em] uppercase hover:bg-[#6B4841] hover:text-[#F7EAD8] transition-all duration-300 inline-block shadow-lg"
           >
             Book Event
           </Link>
           <Link
             href="/services"
-            className="brygada font-bold text-xs bg-[#F7EAD8] text-[#6B4841] border-2 border-[#6B4841] px-8 py-3.5 tracking-[0.25em] uppercase hover:bg-[#6B4841] hover:text-[#F7EAD8] transition-all duration-300 inline-block"
+            className="brygada font-bold text-xs bg-[#F7EAD8] text-[#6B4841] border-2 border-[#6B4841] px-8 py-3.5 tracking-[0.25em] uppercase hover:bg-[#6B4841] hover:text-[#F7EAD8] transition-all duration-300 inline-block shadow-lg"
           >
             View Services
           </Link>
