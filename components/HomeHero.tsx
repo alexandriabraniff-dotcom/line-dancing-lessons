@@ -151,7 +151,9 @@ export default function HomeHero() {
         >
           Line Dancing Lessons
           <br />
-          for Every Occasion
+          for
+          <br />
+          Every Occasion
         </h1>
 
         {/* Subheading */}
