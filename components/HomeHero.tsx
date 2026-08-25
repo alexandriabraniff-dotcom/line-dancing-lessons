@@ -79,33 +79,38 @@ export default function HomeHero() {
 
       {/* ── Hero Content ── */}
       <div className="relative z-10 flex-1 flex flex-col justify-center items-center px-6 md:px-12 lg:px-16 text-center">
-        {/* Small label */}
-        <p className="brygada font-bold text-[0.6rem] tracking-[0.35em] uppercase text-[#D49C84] mb-4">
-          Lessons &amp; Events for Every Occasion
-        </p>
-
         {/* Big heading */}
         <h1
           className="rye text-[#F7EAD8] leading-[0.95] tracking-wide uppercase"
           style={{ fontSize: "clamp(2.8rem, 8vw, 6rem)" }}
         >
-          Dance on the
+          Vancouver
           <br />
-          Countryside
+          Line Dancing
         </h1>
+
+        {/* Subheading */}
+        <p
+          className="brygada font-bold tracking-[0.3em] uppercase text-[#D49C84] mt-6"
+          style={{ fontSize: "clamp(0.9rem, 2vw, 1.4rem)" }}
+        >
+          Lessons &amp; Events for Every Occasion
+        </p>
 
         {/* CTAs */}
         <div className="mt-10 flex flex-wrap justify-center gap-5">
           <Link
             href="/contact"
-            className="brygada font-bold text-xs border border-[#C483C8]/50 text-[#C483C8] px-8 py-3.5 tracking-[0.25em] uppercase hover:bg-[#C483C8] hover:text-[#1E0F0B] transition-all inline-block"
+            className="brygada font-bold text-xs bg-[#F7EAD8] text-[#6B4841] border border-[#6B4841]/30 px-8 py-3.5 tracking-[0.25em] uppercase hover:bg-[#EDE0CC] transition-all inline-block"
           >
-            Book Event          </Link>
+            Book Event
+          </Link>
           <Link
             href="/services"
-            className="brygada font-bold text-xs border border-[#F7EAD8]/30 text-[#F7EAD8]/70 px-8 py-3.5 tracking-[0.25em] uppercase hover:border-[#F7EAD8]/60 hover:text-[#F7EAD8] transition-all inline-block"
+            className="brygada font-bold text-xs bg-[#F7EAD8] text-[#6B4841] border border-[#6B4841]/30 px-8 py-3.5 tracking-[0.25em] uppercase hover:bg-[#EDE0CC] transition-all inline-block"
           >
-            View Services          </Link>
+            View Services
+          </Link>
         </div>
       </div>
     </section>
