@@ -101,13 +101,13 @@ export default function HomeHero() {
         <div className="mt-10 flex flex-wrap justify-center gap-5">
           <Link
             href="/contact"
-            className="brygada font-bold text-xs bg-[#F7EAD8] text-[#6B4841] border border-[#6B4841]/30 px-8 py-3.5 tracking-[0.25em] uppercase hover:bg-[#EDE0CC] transition-all inline-block"
+            className="brygada font-bold text-xs bg-[#F7EAD8] text-[#6B4841] border-2 border-[#6B4841] px-8 py-3.5 tracking-[0.25em] uppercase hover:bg-[#6B4841] hover:text-[#F7EAD8] transition-all duration-300 inline-block"
           >
             Book Event
           </Link>
           <Link
             href="/services"
-            className="brygada font-bold text-xs bg-[#F7EAD8] text-[#6B4841] border border-[#6B4841]/30 px-8 py-3.5 tracking-[0.25em] uppercase hover:bg-[#EDE0CC] transition-all inline-block"
+            className="brygada font-bold text-xs bg-[#F7EAD8] text-[#6B4841] border-2 border-[#6B4841] px-8 py-3.5 tracking-[0.25em] uppercase hover:bg-[#6B4841] hover:text-[#F7EAD8] transition-all duration-300 inline-block"
           >
             View Services
           </Link>
