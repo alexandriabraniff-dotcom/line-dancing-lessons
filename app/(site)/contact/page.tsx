@@ -32,7 +32,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* ── Form + Info (image left, form right like reference "Our Story" layout) ── */}
+      {/* ── Form + Info ── */}
       <section className="px-6 md:px-12 lg:px-16 pb-20 md:pb-28">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
           {/* Left: Image + Info */}
@@ -52,7 +52,7 @@ export default function ContactPage() {
                 "Packages tailored to your budget",
               ].map((item) => (
                 <li key={item} className="flex gap-3 text-sm text-[#6B4841]/65 leading-relaxed">
-                  <span className="text-[#C483C8] text-xs mt-0.5">&#10022;</span>
+                  <span className="text-[#D49C84] text-xs mt-0.5">&#10022;</span>
                   {item}
                 </li>
               ))}
@@ -64,7 +64,7 @@ export default function ContactPage() {
                 Send us a message anyway. We love chatting about all things dance and will help you
                 figure out exactly what you need.
               </p>
-              <p className="brygada italic text-[#C483C8] text-base">
+              <p className="brygada font-bold text-[#6B4841]/70 text-base">
                 It&apos;s more than a dance, it&apos;s a good time.
               </p>
             </div>
@@ -133,7 +133,7 @@ export default function ContactPage() {
 
               <button
                 type="submit"
-                className="rye text-xs border border-[#6B4841]/30 text-[#6B4841] px-7 py-3 tracking-[0.25em] uppercase hover:bg-[#6B4841] hover:text-[#F7EAD8] transition-all"
+                className="rye text-xs border border-[#C483C8]/40 text-[#C483C8] px-7 py-3 tracking-[0.25em] uppercase hover:bg-[#C483C8] hover:text-[#F7EAD8] transition-all"
               >
                 Send Enquiry &#8594;
               </button>
@@ -159,7 +159,7 @@ export default function ContactPage() {
               </div>
               <Link
                 href="/services"
-                className="rye text-xs border border-[#F7EAD8]/40 text-[#F7EAD8] px-7 py-3 tracking-[0.25em] uppercase hover:bg-[#F7EAD8] hover:text-[#1E0F0B] transition-all inline-block self-start md:self-center"
+                className="rye text-xs border border-[#C483C8]/50 text-[#C483C8] px-7 py-3 tracking-[0.25em] uppercase hover:bg-[#C483C8] hover:text-[#1E0F0B] transition-all inline-block self-start md:self-center"
               >
                 See Services &#8594;
               </Link>

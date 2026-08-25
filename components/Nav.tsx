@@ -82,7 +82,7 @@ export default function Nav() {
           {/* Center logo */}
           <Link href="/" className="flex flex-col items-center leading-none gap-0.5">
             <span className="rye text-xl text-[#6B4841] tracking-widest leading-none uppercase">Wildflower</span>
-            <span className="brygada font-bold italic text-xs text-[#C483C8] tracking-wide">Line Dancing</span>
+            <span className="brygada font-bold text-xs text-[#C483C8] tracking-wide">Line Dancing</span>
           </Link>
 
           {/* Right links */}
@@ -139,7 +139,7 @@ export default function Nav() {
             <Link
               href="/contact"
               onClick={() => setOpen(false)}
-              className="rye text-xs border border-[#6B4841]/30 text-[#6B4841] px-5 py-2.5 tracking-widest text-center w-fit mt-1"
+              className="rye text-xs border border-[#C483C8]/40 text-[#C483C8] px-5 py-2.5 tracking-widest text-center w-fit mt-1"
             >
               Book Now
             </Link>

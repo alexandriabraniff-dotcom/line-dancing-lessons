@@ -93,7 +93,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* ── Service Blocks (alternating image + text like reference) ── */}
+      {/* ── Service Blocks ── */}
       <section className="px-6 md:px-12 lg:px-16 pb-8">
         <div className="max-w-6xl mx-auto">
           {services.map(({ num, title, desc, details, placeholder }, i) => (
@@ -101,14 +101,12 @@ export default function ServicesPage() {
               key={title}
               className="border-t border-[#6B4841]/10 py-16 md:py-20 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center"
             >
-              {/* Image */}
               <div className={i % 2 === 1 ? "md:order-2" : ""}>
                 <div className="image-placeholder aspect-[4/5]">
                   <span>{placeholder}</span>
                 </div>
               </div>
 
-              {/* Content */}
               <div className={i % 2 === 1 ? "md:order-1" : ""}>
                 <p className="rye text-[0.6rem] tracking-[0.35em] uppercase text-[#D49C84] mb-3">{num}</p>
                 <h2
@@ -122,7 +120,7 @@ export default function ServicesPage() {
                 <ul className="space-y-3 mb-8">
                   {details.map((item) => (
                     <li key={item} className="flex gap-3 text-sm text-[#6B4841]/60">
-                      <span className="text-[#C483C8] text-xs mt-0.5">&#10022;</span>
+                      <span className="text-[#D49C84] text-xs mt-0.5">&#10022;</span>
                       {item}
                     </li>
                   ))}
@@ -130,7 +128,7 @@ export default function ServicesPage() {
 
                 <Link
                   href="/contact"
-                  className="rye text-xs border border-[#6B4841]/30 text-[#6B4841] px-7 py-3 tracking-[0.25em] uppercase hover:bg-[#6B4841] hover:text-[#F7EAD8] transition-all inline-block"
+                  className="rye text-xs border border-[#C483C8]/40 text-[#C483C8] px-7 py-3 tracking-[0.25em] uppercase hover:bg-[#C483C8] hover:text-[#F7EAD8] transition-all inline-block"
                 >
                   Book {title} &#8594;
                 </Link>
@@ -178,7 +176,7 @@ export default function ServicesPage() {
                 key={step}
                 className="border-b md:border-b-0 md:border-r last:border-r-0 border-[#6B4841]/10 py-10 md:px-10"
               >
-                <p className="rye text-[2.5rem] text-[#C483C8]/20 mb-3">{step}</p>
+                <p className="rye text-[2.5rem] text-[#D49C84]/25 mb-3">{step}</p>
                 <h3 className="rye text-base tracking-[0.2em] uppercase text-[#6B4841] mb-3">{title}</h3>
                 <p className="text-[#6B4841]/60 text-sm leading-relaxed">{desc}</p>
               </div>
@@ -188,7 +186,7 @@ export default function ServicesPage() {
           <div className="mt-12">
             <Link
               href="/contact"
-              className="rye text-xs border border-[#6B4841]/30 text-[#6B4841] px-7 py-3 tracking-[0.25em] uppercase hover:bg-[#6B4841] hover:text-[#F7EAD8] transition-all inline-block"
+              className="rye text-xs border border-[#C483C8]/40 text-[#C483C8] px-7 py-3 tracking-[0.25em] uppercase hover:bg-[#C483C8] hover:text-[#F7EAD8] transition-all inline-block"
             >
               Get Started &#8594;
             </Link>
@@ -212,7 +210,7 @@ export default function ServicesPage() {
               </div>
               <Link
                 href="/contact"
-                className="rye text-xs border border-[#F7EAD8]/40 text-[#F7EAD8] px-7 py-3 tracking-[0.25em] uppercase hover:bg-[#F7EAD8] hover:text-[#1E0F0B] transition-all inline-block self-start md:self-center"
+                className="rye text-xs border border-[#C483C8]/50 text-[#C483C8] px-7 py-3 tracking-[0.25em] uppercase hover:bg-[#C483C8] hover:text-[#1E0F0B] transition-all inline-block self-start md:self-center"
               >
                 Get in Touch &#8594;
               </Link>

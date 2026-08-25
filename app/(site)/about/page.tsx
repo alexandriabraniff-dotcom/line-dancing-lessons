@@ -38,7 +38,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── Story (image left, text right like reference "Our Story") ── */}
+      {/* ── Story ── */}
       <section className="px-6 md:px-12 lg:px-16 pb-20 md:pb-28">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
           <div className="image-placeholder aspect-[4/5]">
@@ -98,7 +98,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── Values (3-across grid with images like reference) ── */}
+      {/* ── Values ── */}
       <section className="px-6 md:px-12 lg:px-16 py-20 md:py-28">
         <div className="max-w-6xl mx-auto text-center">
           <p className="rye text-[0.6rem] tracking-[0.35em] uppercase text-[#D49C84] mb-3">
@@ -125,7 +125,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── Second Story Section (text left, image right) ── */}
+      {/* ── Second Story Section ── */}
       <section className="px-6 md:px-12 lg:px-16 pb-20 md:pb-28 border-t border-[#6B4841]/10 pt-20 md:pt-28">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
           <div className="md:order-2">
@@ -157,7 +157,7 @@ export default function AboutPage() {
             <div className="mt-8">
               <Link
                 href="/contact"
-                className="rye text-xs border border-[#6B4841]/30 text-[#6B4841] px-7 py-3 tracking-[0.25em] uppercase hover:bg-[#6B4841] hover:text-[#F7EAD8] transition-all inline-block"
+                className="rye text-xs border border-[#C483C8]/40 text-[#C483C8] px-7 py-3 tracking-[0.25em] uppercase hover:bg-[#C483C8] hover:text-[#F7EAD8] transition-all inline-block"
               >
                 Book a Session &#8594;
               </Link>
@@ -182,7 +182,7 @@ export default function AboutPage() {
               </div>
               <Link
                 href="/contact"
-                className="rye text-xs border border-[#F7EAD8]/40 text-[#F7EAD8] px-7 py-3 tracking-[0.25em] uppercase hover:bg-[#F7EAD8] hover:text-[#1E0F0B] transition-all inline-block self-start md:self-center"
+                className="rye text-xs border border-[#C483C8]/50 text-[#C483C8] px-7 py-3 tracking-[0.25em] uppercase hover:bg-[#C483C8] hover:text-[#1E0F0B] transition-all inline-block self-start md:self-center"
               >
                 Book Now &#8594;
               </Link>

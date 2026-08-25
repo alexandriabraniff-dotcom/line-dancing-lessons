@@ -20,7 +20,7 @@ export default function Home() {
       {/* ── Hero ── */}
       <HomeHero />
 
-      {/* ── Book by Occasion (like "Shop by Occasion") ── */}
+      {/* ── Book by Occasion ── */}
       <section className="px-6 md:px-12 lg:px-16 py-20 md:py-28">
         <div className="max-w-6xl mx-auto text-center">
           <p className="rye text-[0.6rem] tracking-[0.35em] uppercase text-[#D49C84] mb-3">
@@ -48,12 +48,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Full-Width Image Banner with Overlaid Text ── */}
+      {/* ── Full-Width Image Banner ── */}
       <section className="relative">
         <div className="image-placeholder w-full aspect-[2.8/1] !rounded-none !border-x-0">
           <span>Wide landscape / Dancers in a venue</span>
         </div>
-        {/* Overlay */}
         <div className="absolute inset-0 bg-[#1E0F0B]/50 flex items-center">
           <div className="w-full px-6 md:px-12 lg:px-16">
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-end md:justify-between gap-4">
@@ -71,15 +70,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Our Story (image left, text right) ── */}
+      {/* ── Our Story ── */}
       <section className="px-6 md:px-12 lg:px-16 py-20 md:py-28">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
-          {/* Image */}
           <div className="image-placeholder aspect-[4/5]">
             <span>Instructor portrait / Teaching moment</span>
           </div>
 
-          {/* Text */}
           <div>
             <p className="rye text-[0.6rem] tracking-[0.35em] uppercase text-[#D49C84] mb-3">
               Get to Know Us
@@ -106,7 +103,7 @@ export default function Home() {
             <div className="mt-8">
               <Link
                 href="/about"
-                className="rye text-xs border border-[#6B4841]/30 text-[#6B4841] px-7 py-3 tracking-[0.25em] uppercase hover:bg-[#6B4841] hover:text-[#F7EAD8] transition-all inline-block"
+                className="rye text-xs border border-[#C483C8]/40 text-[#C483C8] px-7 py-3 tracking-[0.25em] uppercase hover:bg-[#C483C8] hover:text-[#F7EAD8] transition-all inline-block"
               >
                 Read More About Us &#8594;
               </Link>
@@ -115,7 +112,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Our Services (4-across grid like "Shop New Arrivals") ── */}
+      {/* ── Our Services ── */}
       <section className="px-6 md:px-12 lg:px-16 py-20 md:py-28 border-t border-[#6B4841]/10">
         <div className="max-w-6xl mx-auto text-center">
           <p className="rye text-[0.6rem] tracking-[0.35em] uppercase text-[#D49C84] mb-3">
@@ -144,7 +141,7 @@ export default function Home() {
           <div className="mt-12">
             <Link
               href="/services"
-              className="rye text-xs border border-[#6B4841]/30 text-[#6B4841] px-7 py-3 tracking-[0.25em] uppercase hover:bg-[#6B4841] hover:text-[#F7EAD8] transition-all inline-block"
+              className="rye text-xs border border-[#C483C8]/40 text-[#C483C8] px-7 py-3 tracking-[0.25em] uppercase hover:bg-[#C483C8] hover:text-[#F7EAD8] transition-all inline-block"
             >
               Browse All &#8594;
             </Link>
@@ -152,7 +149,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Join the Fun CTA (full-width dark image bg like "Join the Family") ── */}
+      {/* ── CTA Banner ── */}
       <section className="relative">
         <div className="image-placeholder w-full aspect-[3/1] md:aspect-[4/1] !rounded-none !border-x-0">
           <span>CTA background / Group photo or venue</span>
@@ -171,13 +168,13 @@ export default function Home() {
               <div className="flex flex-wrap gap-4">
                 <Link
                   href="/contact"
-                  className="rye text-xs border border-[#F7EAD8]/40 text-[#F7EAD8] px-7 py-3 tracking-[0.25em] uppercase hover:bg-[#F7EAD8] hover:text-[#1E0F0B] transition-all inline-block"
+                  className="rye text-xs border border-[#C483C8]/50 text-[#C483C8] px-7 py-3 tracking-[0.25em] uppercase hover:bg-[#C483C8] hover:text-[#1E0F0B] transition-all inline-block"
                 >
                   Get in Touch &#8594;
                 </Link>
                 <Link
                   href="/services"
-                  className="rye text-xs border border-[#F7EAD8]/40 text-[#F7EAD8] px-7 py-3 tracking-[0.25em] uppercase hover:bg-[#F7EAD8] hover:text-[#1E0F0B] transition-all inline-block"
+                  className="rye text-xs border border-[#F7EAD8]/30 text-[#F7EAD8]/60 px-7 py-3 tracking-[0.25em] uppercase hover:text-[#F7EAD8] hover:border-[#F7EAD8]/60 transition-all inline-block"
                 >
                   See Services &#8594;
                 </Link>

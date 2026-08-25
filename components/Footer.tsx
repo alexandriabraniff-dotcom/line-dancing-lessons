@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#1E0F0B] text-[#F7EAD8]">
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 pt-16 pb-10">
-        {/* Top: 3-column grid with center logo like reference */}
+        {/* Top: 3-column grid with center logo */}
         <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-10 md:gap-16 items-start mb-14">
           {/* Left links */}
           <div className="flex flex-col sm:flex-row gap-8">
@@ -43,7 +43,7 @@ export default function Footer() {
           {/* Center logo */}
           <div className="flex flex-col items-center text-center">
             <p className="rye text-2xl text-[#F7EAD8] tracking-widest leading-none uppercase">Wildflower</p>
-            <p className="brygada font-bold italic text-[#C483C8] text-base mt-1">Line Dancing</p>
+            <p className="brygada font-bold text-[#C483C8] text-base mt-1">Line Dancing</p>
             <p className="text-[#F7EAD8]/25 text-xs mt-4 leading-relaxed">
               It&apos;s more than a dance,
               <br />it&apos;s a good time.

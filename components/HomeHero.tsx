@@ -46,7 +46,7 @@ export default function HomeHero() {
           {/* Center logo */}
           <Link href="/" className="flex flex-col items-center leading-none gap-0.5">
             <span className="rye text-2xl text-[#F7EAD8] tracking-widest leading-none uppercase">Wildflower</span>
-            <span className="brygada font-bold italic text-sm text-[#C483C8] tracking-wide">Line Dancing</span>
+            <span className="brygada font-bold text-sm text-[#C483C8] tracking-wide">Line Dancing</span>
           </Link>
 
           {/* Right links */}
@@ -70,7 +70,7 @@ export default function HomeHero() {
           {/* Mobile */}
           <Link
             href="/contact"
-            className="md:hidden rye text-[0.6rem] border border-[#F7EAD8]/30 text-[#F7EAD8] px-4 py-2 rounded-full tracking-widest"
+            className="md:hidden rye text-[0.6rem] border border-[#C483C8]/40 text-[#C483C8] px-4 py-2 rounded-full tracking-widest"
           >
             Book Now
           </Link>
@@ -92,7 +92,7 @@ export default function HomeHero() {
           >
             Line Dancing
             <br />
-            <span className="text-[#C483C8]">That Brings</span>
+            That Brings
             <br />
             People Together
           </h1>
@@ -101,7 +101,7 @@ export default function HomeHero() {
           <div className="mt-8">
             <Link
               href="/contact"
-              className="rye text-xs border border-[#F7EAD8]/40 text-[#F7EAD8] px-8 py-3.5 tracking-[0.25em] uppercase hover:bg-[#F7EAD8] hover:text-[#1E0F0B] transition-all inline-block"
+              className="rye text-xs border border-[#C483C8]/50 text-[#C483C8] px-8 py-3.5 tracking-[0.25em] uppercase hover:bg-[#C483C8] hover:text-[#1E0F0B] transition-all inline-block"
             >
               Book Your Session &#8594;
             </Link>
