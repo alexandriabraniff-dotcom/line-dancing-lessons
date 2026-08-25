@@ -27,14 +27,15 @@ export default function Home() {
             Our Services
           </h2>
 
-          <div className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-6">
+          <div className="mt-12 flex gap-5 overflow-x-auto pb-4 snap-x snap-mandatory sm:grid sm:grid-cols-4 sm:overflow-visible sm:pb-0">
             {occasions.map(({ title, placeholder }) => (
-              <Link key={title} href="/services" className="group">
+              <Link key={title} href="/services" className="group shrink-0 w-[65vw] sm:w-auto snap-start">
                 <div className="image-placeholder aspect-[3/4] mb-4">
                   <span>{placeholder}</span>
                 </div>
                 <p className="brygada font-bold text-[0.65rem] tracking-[0.25em] uppercase text-[#6B4841]/70 group-hover:text-[#C483C8] transition-colors">
-                  {title}                </p>
+                  {title}
+                </p>
               </Link>
             ))}
           </div>
@@ -56,7 +57,7 @@ export default function Home() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+          <div className="flex gap-3 overflow-x-auto pb-4 snap-x snap-mandatory md:grid md:grid-cols-4 md:overflow-visible md:pb-0 md:gap-4">
             {[
               { label: "Wedding reception", span: "md:col-span-2 md:row-span-2" },
               { label: "Birthday party", span: "" },
@@ -68,7 +69,7 @@ export default function Home() {
             ].map(({ label, span }) => (
               <div
                 key={label}
-                className={`image-placeholder aspect-square !border-[#F7EAD8]/15 !bg-[#F7EAD8]/[0.04] group cursor-pointer overflow-hidden ${span}`}
+                className={`image-placeholder aspect-square !border-[#F7EAD8]/15 !bg-[#F7EAD8]/[0.04] group cursor-pointer overflow-hidden shrink-0 w-[55vw] snap-start md:w-auto md:shrink ${span}`}
               >
                 <span className="!text-[#F7EAD8]/20 text-xs text-center group-hover:!text-[#F7EAD8]/40 transition-colors">{label}</span>
               </div>

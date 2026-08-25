@@ -105,16 +105,16 @@ export default function HomeHero() {
         </p>
 
         {/* CTAs */}
-        <div className="mt-10 flex flex-wrap justify-center gap-5">
+        <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4 sm:gap-5 w-full sm:w-auto px-6 sm:px-0">
           <Link
             href="/contact"
-            className="brygada font-bold text-xs bg-[#F7EAD8] text-[#6B4841] border-2 border-[#6B4841] px-8 py-3.5 tracking-[0.25em] uppercase hover:bg-[#6B4841] hover:text-[#F7EAD8] transition-all duration-300 inline-block shadow-lg"
+            className="brygada font-bold text-xs bg-[#F7EAD8] text-[#6B4841] border-2 border-[#6B4841] w-full sm:w-auto px-8 h-[45px] flex items-center justify-center tracking-[0.25em] uppercase hover:bg-[#6B4841] hover:text-[#F7EAD8] transition-all duration-300 shadow-lg"
           >
             Book Event
           </Link>
           <Link
             href="/services"
-            className="brygada font-bold text-xs bg-transparent text-[#F7EAD8] border-2 border-[#F7EAD8] px-8 py-3.5 tracking-[0.25em] uppercase hover:bg-[#F7EAD8] hover:text-[#6B4841] transition-all duration-300 inline-block shadow-lg"
+            className="brygada font-bold text-xs bg-transparent text-[#F7EAD8] border-2 border-[#F7EAD8] w-full sm:w-auto px-8 h-[45px] flex items-center justify-center tracking-[0.25em] uppercase hover:bg-[#F7EAD8] hover:text-[#6B4841] transition-all duration-300 shadow-lg"
           >
             View Services
           </Link>
