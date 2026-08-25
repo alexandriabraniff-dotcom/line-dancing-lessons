@@ -57,23 +57,48 @@ export default function Home() {
             </h2>
           </div>
 
-          <div className="flex gap-3 overflow-x-auto pb-4 snap-x snap-mandatory md:grid md:grid-cols-4 md:overflow-visible md:pb-0 md:gap-4">
-            {[
-              { label: "Wedding reception", span: "md:col-span-2 md:row-span-2" },
-              { label: "Birthday party", span: "" },
-              { label: "Corporate team night", span: "" },
-              { label: "Private lesson", span: "" },
-              { label: "Hen's night", span: "" },
-              { label: "Country bar night", span: "" },
-              { label: "Fundraiser gala", span: "" },
-            ].map(({ label, span }) => (
+          {/* Mobile: horizontal scroll */}
+          <div className="flex gap-3 overflow-x-auto pb-4 snap-x snap-mandatory md:hidden">
+            {["Wedding reception", "Birthday party", "Corporate team night", "Private lesson", "Hen's night", "Country bar night", "Community event", "Fundraiser gala", "Bucks night"].map((label) => (
               <div
                 key={label}
-                className={`image-placeholder aspect-square !border-[#F7EAD8]/15 !bg-[#F7EAD8]/[0.04] group cursor-pointer overflow-hidden shrink-0 w-[55vw] snap-start md:w-auto md:shrink ${span}`}
+                className="image-placeholder aspect-square !border-[#F7EAD8]/15 !bg-[#F7EAD8]/[0.04] group cursor-pointer overflow-hidden shrink-0 w-[55vw] snap-start"
               >
                 <span className="!text-[#F7EAD8]/20 text-xs text-center group-hover:!text-[#F7EAD8]/40 transition-colors">{label}</span>
               </div>
             ))}
+          </div>
+
+          {/* Desktop: 4 small left | 1 big center | 4 small right */}
+          <div className="hidden md:grid md:grid-cols-[1fr_2fr_1fr] gap-4">
+            {/* Left 4 */}
+            <div className="grid grid-cols-2 gap-4">
+              {["Wedding reception", "Birthday party", "Corporate night", "Private lesson"].map((label) => (
+                <div
+                  key={label}
+                  className="image-placeholder aspect-square !border-[#F7EAD8]/15 !bg-[#F7EAD8]/[0.04] group cursor-pointer overflow-hidden"
+                >
+                  <span className="!text-[#F7EAD8]/20 text-[0.55rem] text-center group-hover:!text-[#F7EAD8]/40 transition-colors">{label}</span>
+                </div>
+              ))}
+            </div>
+
+            {/* Center big */}
+            <div className="image-placeholder aspect-auto !border-[#F7EAD8]/15 !bg-[#F7EAD8]/[0.04] group cursor-pointer overflow-hidden min-h-full">
+              <span className="!text-[#F7EAD8]/20 text-xs text-center group-hover:!text-[#F7EAD8]/40 transition-colors">Featured event photo</span>
+            </div>
+
+            {/* Right 4 */}
+            <div className="grid grid-cols-2 gap-4">
+              {["Hen's night", "Country bar night", "Community event", "Fundraiser gala"].map((label) => (
+                <div
+                  key={label}
+                  className="image-placeholder aspect-square !border-[#F7EAD8]/15 !bg-[#F7EAD8]/[0.04] group cursor-pointer overflow-hidden"
+                >
+                  <span className="!text-[#F7EAD8]/20 text-[0.55rem] text-center group-hover:!text-[#F7EAD8]/40 transition-colors">{label}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
