@@ -63,7 +63,8 @@ export default function Home() {
               { label: "Corporate team night", span: "" },
               { label: "Private lesson", span: "" },
               { label: "Hen's night", span: "" },
-              { label: "Community event", span: "md:col-span-2" },
+              { label: "Country bar night", span: "" },
+              { label: "Fundraiser gala", span: "" },
             ].map(({ label, span }) => (
               <div
                 key={label}
