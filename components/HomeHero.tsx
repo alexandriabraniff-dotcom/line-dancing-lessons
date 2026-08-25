@@ -161,7 +161,7 @@ export default function HomeHero() {
           className="brygada font-bold tracking-[0.3em] uppercase text-[#D49C84] mt-6 drop-shadow-md"
           style={{ fontSize: "clamp(0.9rem, 2vw, 1.4rem)" }}
         >
-          Events for Beginners &amp; Intermediate
+          Line Dancing for Beginners &amp; Intermediate
         </p>
 
         {/* CTAs */}
