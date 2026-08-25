@@ -4,7 +4,8 @@ import HomeHero from "@/components/HomeHero";
 const occasions = [
   { title: "Weddings", placeholder: "Wedding dancing photo" },
   { title: "Birthdays", placeholder: "Birthday party photo" },
-  { title: "Events", placeholder: "Social event photo" },
+  { title: "Special Events", placeholder: "Social event photo" },
+  { title: "Private Lessons", placeholder: "Private lesson photo" },
 ];
 
 export default function Home() {
@@ -23,10 +24,10 @@ export default function Home() {
             className="rye text-[#6B4841] uppercase tracking-wide"
             style={{ fontSize: "clamp(1.6rem, 4vw, 2.8rem)" }}
           >
-            Book by Occasion
+            Our Services
           </h2>
 
-          <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <div className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-6">
             {occasions.map(({ title, placeholder }) => (
               <Link key={title} href="/services" className="group">
                 <div className="image-placeholder aspect-[3/4] mb-4">
