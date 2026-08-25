@@ -45,7 +45,7 @@ export default function HomeHero() {
 
           {/* Center logo */}
           <Link href="/" className="flex flex-col items-center leading-none gap-0.5">
-            <span className="rye text-2xl text-[#F7EAD8] tracking-widest leading-none uppercase">Wildflower</span>
+            <span className="rye text-2xl text-[#6B4841] tracking-widest leading-none uppercase">Wildflower</span>
             <span className="brygada font-bold text-sm text-[#C483C8] tracking-wide">Line Dancing</span>
           </Link>
 

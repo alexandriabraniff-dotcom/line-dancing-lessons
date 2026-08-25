@@ -42,7 +42,7 @@ export default function Footer() {
 
           {/* Center logo */}
           <div className="flex flex-col items-center text-center">
-            <p className="rye text-2xl text-[#F7EAD8] tracking-widest leading-none uppercase">Wildflower</p>
+            <p className="rye text-2xl text-[#6B4841] tracking-widest leading-none uppercase">Wildflower</p>
             <p className="brygada font-bold text-[#C483C8] text-base mt-1">Line Dancing</p>
             <p className="text-[#F7EAD8]/25 text-xs mt-4 leading-relaxed">
               It&apos;s more than a dance,
