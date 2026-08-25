@@ -78,34 +78,36 @@ export default function HomeHero() {
       </nav>
 
       {/* ── Hero Content ── */}
-      <div className="relative z-10 flex-1 flex flex-col justify-end px-6 md:px-12 lg:px-16 pb-16 md:pb-20">
-        <div className="max-w-7xl mx-auto w-full">
-          {/* Small label */}
-          <p className="rye text-[0.6rem] tracking-[0.35em] uppercase text-[#D49C84] mb-4">
-            Lessons &amp; Events for Every Occasion
-          </p>
+      <div className="relative z-10 flex-1 flex flex-col justify-center items-center px-6 md:px-12 lg:px-16 text-center">
+        {/* Small label */}
+        <p className="rye text-[0.6rem] tracking-[0.35em] uppercase text-[#D49C84] mb-4">
+          Lessons &amp; Events for Every Occasion
+        </p>
 
-          {/* Big heading */}
-          <h1
-            className="rye text-[#F7EAD8] leading-[0.95] tracking-wide uppercase max-w-4xl"
-            style={{ fontSize: "clamp(2.8rem, 8vw, 6rem)" }}
+        {/* Big heading */}
+        <h1
+          className="rye text-[#F7EAD8] leading-[0.95] tracking-wide uppercase"
+          style={{ fontSize: "clamp(2.8rem, 8vw, 6rem)" }}
+        >
+          For the Countryside
+          <br />
+          in You
+        </h1>
+
+        {/* CTAs */}
+        <div className="mt-10 flex flex-wrap justify-center gap-5">
+          <Link
+            href="/contact"
+            className="rye text-xs border border-[#C483C8]/50 text-[#C483C8] px-8 py-3.5 tracking-[0.25em] uppercase hover:bg-[#C483C8] hover:text-[#1E0F0B] transition-all inline-block"
           >
-            Line Dancing
-            <br />
-            That Brings
-            <br />
-            People Together
-          </h1>
-
-          {/* CTA */}
-          <div className="mt-8">
-            <Link
-              href="/contact"
-              className="rye text-xs border border-[#C483C8]/50 text-[#C483C8] px-8 py-3.5 tracking-[0.25em] uppercase hover:bg-[#C483C8] hover:text-[#1E0F0B] transition-all inline-block"
-            >
-              Book Your Session &#8594;
-            </Link>
-          </div>
+            Book Event &#8594;
+          </Link>
+          <Link
+            href="/services"
+            className="rye text-xs border border-[#F7EAD8]/30 text-[#F7EAD8]/70 px-8 py-3.5 tracking-[0.25em] uppercase hover:border-[#F7EAD8]/60 hover:text-[#F7EAD8] transition-all inline-block"
+          >
+            View Services &#8594;
+          </Link>
         </div>
       </div>
     </section>
