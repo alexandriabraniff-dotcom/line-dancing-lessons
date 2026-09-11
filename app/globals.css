@@ -27,17 +27,11 @@
   --section-sm: clamp(2rem, 3.6vw, 4.5rem);
   --section-top: clamp(5rem, 6vw, 8rem);
 
-  /* Hero top / bottom edge inset: 15px on a 1080-tall screen,
-     scaling with viewport height so it reads the same everywhere */
-  --hero-edge: clamp(0.75rem, 1.39vh, 1.5rem);
+  /* Hero offsets: exact pixel values, identical on every device */
+  --nav-top: 80px;
+  --hero-drop: 40px;
 
-  /* Downward offset of the whole hero copy group from centre:
-     40px on a 1080-tall screen, scaling with viewport height */
-  --hero-drop: clamp(1.5rem, 3.7vh, 3rem);
-
-  /* Gap between the hero copy and the CTA buttons: 40px on a
-     1080-tall screen, scaling with viewport height */
-  --cta-gap: clamp(1.5rem, 3.7vh, 3rem);
+  --cta-gap: 40px;
 
   /* Grid / column gaps */
   --gap: clamp(1.75rem, 3.2vw, 4rem);

@@ -76,7 +76,7 @@ export default function HomeHero() {
       )}
 
       {/* ── Inline Nav ── */}
-      <nav className="absolute top-[var(--hero-edge)] left-0 right-0 z-20 w-full px-[var(--gutter)]">
+      <nav className="relative z-20 w-full px-[var(--gutter)] pt-[var(--nav-top)] pb-4">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           {/* Mobile: logo left + hamburger right */}
           <Link href="/" className="flex flex-col leading-none gap-0.5 md:hidden">
@@ -143,7 +143,7 @@ export default function HomeHero() {
       </nav>
 
       {/* ── Hero Content ── */}
-      <div className="relative z-10 flex-1 flex flex-col justify-center items-center px-[var(--gutter)] text-center py-[clamp(5rem,13vh,8.5rem)] translate-y-[var(--hero-drop)]">
+      <div className="relative z-10 flex-1 flex flex-col justify-center items-center px-[var(--gutter)] text-center py-[clamp(1.5rem,4vh,2.5rem)] translate-y-[var(--hero-drop)]">
         {/* Big heading */}
         <h1
           className="rye text-[#F7EAD8] leading-[0.95] tracking-wide uppercase drop-shadow-lg"
