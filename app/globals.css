@@ -77,13 +77,15 @@ html {
   display: none;
 }
 
-body {
-  background: #F7EAD8;
-  min-height: 100vh;
-  color: #6B4841;
+@layer base {
+  body {
+    background: #F7EAD8;
+    min-height: 100vh;
+    color: #6B4841;
   font-family: var(--font-body), sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 }
 
 .rye {
