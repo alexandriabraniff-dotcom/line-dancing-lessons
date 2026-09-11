@@ -143,7 +143,7 @@ export default function HomeHero() {
       </nav>
 
       {/* ── Hero Content ── */}
-      <div className="relative z-10 flex-1 flex flex-col justify-center items-center px-[var(--gutter)] text-center pt-[clamp(5rem,13vh,8.5rem)] pb-[clamp(8rem,20vh,9.5rem)] sm:pb-[clamp(5.5rem,13vh,8.5rem)]">
+      <div className="relative z-10 flex-1 flex flex-col justify-center items-center px-[var(--gutter)] text-center py-[clamp(5rem,13vh,8.5rem)]">
         {/* Big heading */}
         <h1
           className="rye text-[#F7EAD8] leading-[0.95] tracking-wide uppercase drop-shadow-lg"
@@ -163,22 +163,22 @@ export default function HomeHero() {
         >
           Line Dancing for Beginners &amp; Intermediate
         </p>
-      </div>
 
-      {/* ── CTAs, pinned to the bottom edge ── */}
-      <div className="absolute bottom-[var(--hero-edge)] left-0 right-0 z-20 px-6 sm:px-[var(--gutter)] flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-5">
-        <Link
-          href="/contact"
-          className="brygada font-bold text-xs bg-[#F7EAD8] text-[#6B4841] border-2 border-[#6B4841] w-full sm:w-auto px-8 h-[45px] flex items-center justify-center tracking-[0.25em] uppercase hover:bg-[#6B4841] hover:text-[#F7EAD8] transition-all duration-300 shadow-lg"
+        {/* ── CTAs, 40px below the writing ── */}
+        <div className="mt-[var(--cta-gap)] w-full sm:w-auto px-6 sm:px-0 flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-5">
+          <Link
+            href="/contact"
+            className="brygada font-bold text-xs bg-[#F7EAD8] text-[#6B4841] border-2 border-[#6B4841] w-full sm:w-auto px-8 h-[45px] flex items-center justify-center tracking-[0.25em] uppercase hover:bg-[#6B4841] hover:text-[#F7EAD8] transition-all duration-300 shadow-lg"
           >
-          Book Event
-        </Link>
-        <Link
-          href="/services"
-          className="brygada font-bold text-xs bg-transparent text-[#F7EAD8] border-2 border-[#F7EAD8] w-full sm:w-auto px-8 h-[45px] flex items-center justify-center tracking-[0.25em] uppercase hover:bg-[#F7EAD8] hover:text-[#6B4841] transition-all duration-300 shadow-lg"
+            Book Event
+          </Link>
+          <Link
+            href="/services"
+            className="brygada font-bold text-xs bg-transparent text-[#F7EAD8] border-2 border-[#F7EAD8] w-full sm:w-auto px-8 h-[45px] flex items-center justify-center tracking-[0.25em] uppercase hover:bg-[#F7EAD8] hover:text-[#6B4841] transition-all duration-300 shadow-lg"
           >
-          View Services
-        </Link>
+            View Services
+          </Link>
+        </div>
       </div>
     </section>
   );
