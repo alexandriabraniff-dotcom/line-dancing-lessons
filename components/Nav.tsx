@@ -40,7 +40,7 @@ export default function Nav() {
   return (
     <>
       <header
-        className={`fixed left-0 right-0 z-50 bg-[#F7EAD8] border-b border-[#6B4841]/10 transition-all duration-500 ease-out ${
+        className={`fixed left-0 right-0 z-50 bg-[#1E0F0B] border-b border-[#F7EAD8]/10 transition-all duration-500 ease-out ${
           visible
             ? "translate-y-0 opacity-100"
             : "-translate-y-full opacity-0 pointer-events-none"
@@ -57,7 +57,7 @@ export default function Nav() {
                   className={`brygada font-bold text-[var(--nav-link-sm)] tracking-[0.3em] uppercase transition-colors ${
                     pathname === l.href
                       ? "text-[#C483C8]"
-                      : "text-[#6B4841]/60 hover:text-[#6B4841]"
+                      : "text-white hover:text-[#C483C8]"
                   }`}
                 >
                   {l.label}
@@ -68,7 +68,7 @@ export default function Nav() {
 
           {/* Center logo */}
           <Link href="/" className="flex flex-col items-center leading-none gap-0.5">
-            <span className="rye text-[var(--nav-logo-sm)] text-[#6B4841] tracking-widest leading-none uppercase">Wildflower</span>
+            <span className="rye text-[var(--nav-logo-sm)] text-[#F7EAD8] tracking-widest leading-none uppercase">Wildflower</span>
             <span className="brygada font-bold text-[var(--nav-sub-sm)] text-[#C483C8] tracking-wide">Line Dancing</span>
           </Link>
 
@@ -81,7 +81,7 @@ export default function Nav() {
                   className={`brygada font-bold text-[var(--nav-link-sm)] tracking-[0.3em] uppercase transition-colors ${
                     pathname === l.href
                       ? "text-[#C483C8]"
-                      : "text-[#6B4841]/60 hover:text-[#6B4841]"
+                      : "text-white hover:text-[#C483C8]"
                   }`}
                 >
                   {l.label}
@@ -93,7 +93,7 @@ export default function Nav() {
           {/* Mobile toggle */}
           <button
             onClick={() => setOpen(!open)}
-            className="md:hidden text-[#6B4841] p-2"
+            className="md:hidden text-[#F7EAD8] p-2"
             aria-label="Toggle menu"
           >
             {open ? (
@@ -110,14 +110,14 @@ export default function Nav() {
 
         {/* Mobile menu */}
         {open && (
-          <div className="md:hidden bg-[#F7EAD8] border-t border-[#6B4841]/10 px-6 py-6 flex flex-col gap-5">
+          <div className="md:hidden bg-[#1E0F0B] border-t border-[#F7EAD8]/10 px-6 py-6 flex flex-col gap-5">
             {links.map((l) => (
               <Link
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
                 className={`brygada font-bold text-[var(--nav-link-sm)] tracking-[0.3em] uppercase ${
-                  pathname === l.href ? "text-[#C483C8]" : "text-[#6B4841]/60"
+                  pathname === l.href ? "text-[#C483C8]" : "text-white hover:text-[#C483C8]"
                 }`}
               >
                 {l.label}
