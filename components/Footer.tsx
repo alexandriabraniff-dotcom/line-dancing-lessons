@@ -1,6 +1,11 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Footer() {
+  const pathname = usePathname();
+
   return (
     <footer className="bg-[#1E0F0B] text-[#F7EAD8]">
       <div className="max-w-7xl mx-auto px-[var(--gutter)] pt-[var(--section-sm)] pb-[clamp(1.5rem,2.5vw,2.5rem)]">
@@ -19,7 +24,9 @@ export default function Footer() {
                 <Link
                   key={href}
                   href={href}
-                  className="text-xs text-[#F7EAD8]/40 hover:text-[#F7EAD8] transition-colors uppercase tracking-wider"
+                  className={`text-xs hover:text-[#C483C8] transition-colors uppercase tracking-wider ${
+                    pathname === href ? "text-[#C483C8]" : "text-white"
+                  }`}
                 >
                   {label}
                 </Link>
@@ -32,7 +39,7 @@ export default function Footer() {
                 <Link
                   key={s}
                   href="/services"
-                  className="text-xs text-[#F7EAD8]/40 hover:text-[#F7EAD8] transition-colors uppercase tracking-wider"
+                  className="text-xs text-white hover:text-[#C483C8] transition-colors uppercase tracking-wider"
                 >
                   {s}
                 </Link>
