@@ -11,7 +11,7 @@ export default function ContactPage() {
       {/* ── Header ── */}
       <section className="px-[var(--gutter)] pt-[var(--section-top)] pb-6">
         <div className="max-w-6xl mx-auto text-center">
-          <p className="brygada font-bold text-[var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-3">
+          <p className="brygada font-bold text-[length:var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-3">
             We Respond Within 24 Hours
           </p>
           <h1
@@ -41,7 +41,7 @@ export default function ContactPage() {
               <span>Contact visual / Friendly, approachable</span>
             </div>
 
-            <p className="brygada font-bold text-[var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-4">What to Expect</p>
+            <p className="brygada font-bold text-[length:var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-4">What to Expect</p>
             <ul className="space-y-3 mb-10">
               {[
                 "We respond to all enquiries within 24 hours",
@@ -51,7 +51,7 @@ export default function ContactPage() {
                 "Custom playlists and routines available",
                 "Packages tailored to your budget",
               ].map((item) => (
-                <li key={item} className="flex gap-3 text-[var(--text-body)] text-[#6B4841]/65 leading-relaxed">
+                <li key={item} className="flex gap-3 text-[length:var(--text-body)] text-[#6B4841]/65 leading-relaxed">
                   <span className="text-[#D49C84] text-xs mt-0.5">&#10022;</span>
                   {item}
                 </li>
@@ -59,8 +59,8 @@ export default function ContactPage() {
             </ul>
 
             <div className="border-t border-[#6B4841]/10 pt-8">
-              <p className="rye text-[var(--text-h3)] tracking-[0.15em] uppercase text-[#6B4841] mb-2">Not Sure Yet?</p>
-              <p className="text-[#6B4841]/55 text-[var(--text-body)] leading-relaxed mb-4">
+              <p className="rye text-[length:var(--text-h3)] tracking-[0.15em] uppercase text-[#6B4841] mb-2">Not Sure Yet?</p>
+              <p className="text-[#6B4841]/55 text-[length:var(--text-body)] leading-relaxed mb-4">
                 Send us a message anyway. We love chatting about all things dance and will help you
                 figure out exactly what you need.
               </p>
@@ -72,44 +72,44 @@ export default function ContactPage() {
 
           {/* Right: Form */}
           <div>
-            <p className="brygada font-bold text-[var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-8">Book Your Lesson</p>
+            <p className="brygada font-bold text-[length:var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-8">Book Your Lesson</p>
 
             <form className="space-y-7">
               <div>
-                <label className="block brygada font-bold text-[var(--text-eyebrow)] tracking-[0.3em] uppercase text-[#6B4841]/50 mb-2">Your Name</label>
+                <label className="block brygada font-bold text-[length:var(--text-eyebrow)] tracking-[0.3em] uppercase text-[#6B4841]/50 mb-2">Your Name</label>
                 <input
                   type="text"
                   name="name"
                   placeholder="Jane Smith"
-                  className="w-full bg-transparent border-b border-[#6B4841]/20 py-3 text-[#6B4841] placeholder:text-[#6B4841]/25 focus:outline-none focus:border-[#C483C8] transition-colors text-[var(--text-body)]"
+                  className="w-full bg-transparent border-b border-[#6B4841]/20 py-3 text-[#6B4841] placeholder:text-[#6B4841]/25 focus:outline-none focus:border-[#C483C8] transition-colors text-[length:var(--text-body)]"
                 />
               </div>
 
               <div>
-                <label className="block brygada font-bold text-[var(--text-eyebrow)] tracking-[0.3em] uppercase text-[#6B4841]/50 mb-2">Email Address</label>
+                <label className="block brygada font-bold text-[length:var(--text-eyebrow)] tracking-[0.3em] uppercase text-[#6B4841]/50 mb-2">Email Address</label>
                 <input
                   type="email"
                   name="email"
                   placeholder="jane@example.com"
-                  className="w-full bg-transparent border-b border-[#6B4841]/20 py-3 text-[#6B4841] placeholder:text-[#6B4841]/25 focus:outline-none focus:border-[#C483C8] transition-colors text-[var(--text-body)]"
+                  className="w-full bg-transparent border-b border-[#6B4841]/20 py-3 text-[#6B4841] placeholder:text-[#6B4841]/25 focus:outline-none focus:border-[#C483C8] transition-colors text-[length:var(--text-body)]"
                 />
               </div>
 
               <div>
-                <label className="block brygada font-bold text-[var(--text-eyebrow)] tracking-[0.3em] uppercase text-[#6B4841]/50 mb-2">Phone Number</label>
+                <label className="block brygada font-bold text-[length:var(--text-eyebrow)] tracking-[0.3em] uppercase text-[#6B4841]/50 mb-2">Phone Number</label>
                 <input
                   type="tel"
                   name="phone"
                   placeholder="0400 000 000"
-                  className="w-full bg-transparent border-b border-[#6B4841]/20 py-3 text-[#6B4841] placeholder:text-[#6B4841]/25 focus:outline-none focus:border-[#C483C8] transition-colors text-[var(--text-body)]"
+                  className="w-full bg-transparent border-b border-[#6B4841]/20 py-3 text-[#6B4841] placeholder:text-[#6B4841]/25 focus:outline-none focus:border-[#C483C8] transition-colors text-[length:var(--text-body)]"
                 />
               </div>
 
               <div>
-                <label className="block brygada font-bold text-[var(--text-eyebrow)] tracking-[0.3em] uppercase text-[#6B4841]/50 mb-2">Type of Event</label>
+                <label className="block brygada font-bold text-[length:var(--text-eyebrow)] tracking-[0.3em] uppercase text-[#6B4841]/50 mb-2">Type of Event</label>
                 <select
                   name="event"
-                  className="w-full bg-transparent border-b border-[#6B4841]/20 py-3 text-[#6B4841] focus:outline-none focus:border-[#C483C8] transition-colors text-[var(--text-body)] appearance-none"
+                  className="w-full bg-transparent border-b border-[#6B4841]/20 py-3 text-[#6B4841] focus:outline-none focus:border-[#C483C8] transition-colors text-[length:var(--text-body)] appearance-none"
                   defaultValue=""
                 >
                   <option value="" disabled>Select an option</option>
@@ -122,12 +122,12 @@ export default function ContactPage() {
               </div>
 
               <div>
-                <label className="block brygada font-bold text-[var(--text-eyebrow)] tracking-[0.3em] uppercase text-[#6B4841]/50 mb-2">Tell Us More</label>
+                <label className="block brygada font-bold text-[length:var(--text-eyebrow)] tracking-[0.3em] uppercase text-[#6B4841]/50 mb-2">Tell Us More</label>
                 <textarea
                   name="message"
                   rows={5}
                   placeholder="Date, location, group size, any special requests..."
-                  className="w-full bg-transparent border-b border-[#6B4841]/20 py-3 text-[#6B4841] placeholder:text-[#6B4841]/25 focus:outline-none focus:border-[#C483C8] transition-colors resize-none text-[var(--text-body)] leading-relaxed"
+                  className="w-full bg-transparent border-b border-[#6B4841]/20 py-3 text-[#6B4841] placeholder:text-[#6B4841]/25 focus:outline-none focus:border-[#C483C8] transition-colors resize-none text-[length:var(--text-body)] leading-relaxed"
                 />
               </div>
 
@@ -150,7 +150,7 @@ export default function ContactPage() {
           <div className="w-full px-[var(--gutter)]">
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-8">
               <div>
-                <p className="brygada font-bold text-[var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-3">Based in Adelaide</p>
+                <p className="brygada font-bold text-[length:var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-3">Based in Adelaide</p>
                 <h2 className="rye text-[#F7EAD8] uppercase tracking-wide" style={{ fontSize: "var(--text-h2)" }}>
                   Available Across
                   <br />South Australia

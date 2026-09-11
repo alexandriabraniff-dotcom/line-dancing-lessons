@@ -72,7 +72,7 @@ export default function ServicesPage() {
       {/* ── Header ── */}
       <section className="px-[var(--gutter)] pt-[var(--section-top)] pb-6">
         <div className="max-w-6xl mx-auto text-center">
-          <p className="brygada font-bold text-[var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-3">
+          <p className="brygada font-bold text-[length:var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-3">
             For Every Occasion
           </p>
           <h1
@@ -108,18 +108,18 @@ export default function ServicesPage() {
               </div>
 
               <div className={i % 2 === 1 ? "md:order-1" : ""}>
-                <p className="brygada font-bold text-[var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-3">{num}</p>
+                <p className="brygada font-bold text-[length:var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-3">{num}</p>
                 <h2
                   className="rye text-[#6B4841] uppercase tracking-wide mb-5"
                   style={{ fontSize: "var(--text-h3)" }}
                 >
                   {title}
                 </h2>
-                <p className="text-[#6B4841]/70 text-[var(--text-body)] leading-relaxed mb-8">{desc}</p>
+                <p className="text-[#6B4841]/70 text-[length:var(--text-body)] leading-relaxed mb-8">{desc}</p>
 
                 <ul className="space-y-3 mb-8">
                   {details.map((item) => (
-                    <li key={item} className="flex gap-3 text-[var(--text-body)] text-[#6B4841]/60">
+                    <li key={item} className="flex gap-3 text-[length:var(--text-body)] text-[#6B4841]/60">
                       <span className="text-[#D49C84] text-xs mt-0.5">&#10022;</span>
                       {item}
                     </li>
@@ -149,7 +149,7 @@ export default function ServicesPage() {
                 No Experience
                 <br />Needed
               </h2>
-              <p className="brygada font-bold text-[var(--text-eyebrow)] tracking-[0.3em] uppercase text-[#D49C84] pb-1">
+              <p className="brygada font-bold text-[length:var(--text-eyebrow)] tracking-[0.3em] uppercase text-[#D49C84] pb-1">
                 Just Good Vibes
                 <br />&amp; Good Times
               </p>
@@ -161,7 +161,7 @@ export default function ServicesPage() {
       {/* ── How It Works ── */}
       <section className="px-[var(--gutter)] py-[var(--section)]">
         <div className="max-w-6xl mx-auto text-center">
-          <p className="brygada font-bold text-[var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-3">Simple As</p>
+          <p className="brygada font-bold text-[length:var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-3">Simple As</p>
           <h2
             className="rye text-[#6B4841] uppercase tracking-wide mb-14"
             style={{ fontSize: "var(--text-h2)" }}
@@ -176,8 +176,8 @@ export default function ServicesPage() {
                 className="border-b md:border-b-0 md:border-r last:border-r-0 border-[#6B4841]/10 py-10 md:px-10"
               >
                 <p className="rye text-[2.5rem] text-[#D49C84]/25 mb-3">{step}</p>
-                <h3 className="rye text-[var(--text-h3)] tracking-[0.2em] uppercase text-[#6B4841] mb-3">{title}</h3>
-                <p className="text-[#6B4841]/60 text-[var(--text-body)] leading-relaxed">{desc}</p>
+                <h3 className="rye text-[length:var(--text-h3)] tracking-[0.2em] uppercase text-[#6B4841] mb-3">{title}</h3>
+                <p className="text-[#6B4841]/60 text-[length:var(--text-body)] leading-relaxed">{desc}</p>
               </div>
             ))}
           </div>
@@ -201,7 +201,7 @@ export default function ServicesPage() {
           <div className="w-full px-[var(--gutter)]">
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-8">
               <div>
-                <p className="brygada font-bold text-[var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-3">Sound Like Your Kind of Fun?</p>
+                <p className="brygada font-bold text-[length:var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-3">Sound Like Your Kind of Fun?</p>
                 <h2 className="rye text-[#F7EAD8] uppercase tracking-wide" style={{ fontSize: "var(--text-h2)" }}>
                   Book Your Session
                 </h2>

@@ -17,7 +17,7 @@ export default function AboutPage() {
       {/* ── Header ── */}
       <section className="px-[var(--gutter)] pt-[var(--section-top)] pb-6">
         <div className="max-w-6xl mx-auto text-center">
-          <p className="brygada font-bold text-[var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-3">
+          <p className="brygada font-bold text-[length:var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-3">
             Get to Know Us
           </p>
           <h1
@@ -45,7 +45,7 @@ export default function AboutPage() {
             <span>Instructor portrait</span>
           </div>
           <div>
-            <p className="brygada font-bold text-[var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-3">Our Story</p>
+            <p className="brygada font-bold text-[length:var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-3">Our Story</p>
             <h2
               className="rye text-[#6B4841] uppercase tracking-wide mb-6"
               style={{ fontSize: "var(--text-h3)" }}
@@ -53,7 +53,7 @@ export default function AboutPage() {
               Dancing Should Be
               <br />For Everyone
             </h2>
-            <div className="space-y-4 text-[#6B4841]/70 text-[var(--text-body)] leading-relaxed">
+            <div className="space-y-4 text-[#6B4841]/70 text-[length:var(--text-body)] leading-relaxed">
               <p>
                 No experience needed, no two left feet too clumsy, no event too big or too small.
                 Just boots, beats, and a whole lot of good times.
@@ -89,7 +89,7 @@ export default function AboutPage() {
                 It&apos;s More Than
                 <br />a Dance
               </h2>
-              <p className="brygada font-bold text-[var(--text-eyebrow)] tracking-[0.3em] uppercase text-[#D49C84] pb-1">
+              <p className="brygada font-bold text-[length:var(--text-eyebrow)] tracking-[0.3em] uppercase text-[#D49C84] pb-1">
                 It&apos;s a
                 <br />Good Time
               </p>
@@ -101,7 +101,7 @@ export default function AboutPage() {
       {/* ── Values ── */}
       <section className="px-[var(--gutter)] py-[var(--section)]">
         <div className="max-w-6xl mx-auto text-center">
-          <p className="brygada font-bold text-[var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-3">
+          <p className="brygada font-bold text-[length:var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-3">
             What drives everything we do
           </p>
           <h2
@@ -117,8 +117,8 @@ export default function AboutPage() {
                 <div className="image-placeholder aspect-[3/4] mb-5">
                   <span>{title} visual</span>
                 </div>
-                <h3 className="rye text-[var(--text-h3)] tracking-[0.2em] uppercase text-[#6B4841] mb-2">{title}</h3>
-                <p className="text-[#6B4841]/60 text-[var(--text-body)] leading-relaxed">{desc}</p>
+                <h3 className="rye text-[length:var(--text-h3)] tracking-[0.2em] uppercase text-[#6B4841] mb-2">{title}</h3>
+                <p className="text-[#6B4841]/60 text-[length:var(--text-body)] leading-relaxed">{desc}</p>
               </div>
             ))}
           </div>
@@ -134,7 +134,7 @@ export default function AboutPage() {
             </div>
           </div>
           <div className="md:order-1">
-            <p className="brygada font-bold text-[var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-3">The Wildflower Way</p>
+            <p className="brygada font-bold text-[length:var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-3">The Wildflower Way</p>
             <h2
               className="rye text-[#6B4841] uppercase tracking-wide mb-6"
               style={{ fontSize: "var(--text-h3)" }}
@@ -142,7 +142,7 @@ export default function AboutPage() {
               More Than
               <br />Just Steps
             </h2>
-            <div className="space-y-4 text-[#6B4841]/70 text-[var(--text-body)] leading-relaxed">
+            <div className="space-y-4 text-[#6B4841]/70 text-[length:var(--text-body)] leading-relaxed">
               <p>
                 We believe the best dance classes are the ones where you forget you&apos;re
                 learning. Where the music takes over, the group finds its groove, and
@@ -174,7 +174,7 @@ export default function AboutPage() {
           <div className="w-full px-[var(--gutter)]">
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-8">
               <div>
-                <p className="brygada font-bold text-[var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-3">Ready to Hit the Floor?</p>
+                <p className="brygada font-bold text-[length:var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-3">Ready to Hit the Floor?</p>
                 <h2 className="rye text-[#F7EAD8] uppercase tracking-wide" style={{ fontSize: "var(--text-h2)" }}>
                   Let&apos;s Dance
                 </h2>

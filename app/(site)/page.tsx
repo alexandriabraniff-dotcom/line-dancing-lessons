@@ -17,7 +17,7 @@ export default function Home() {
       {/* ── Book by Occasion ── */}
       <section className="px-[var(--gutter)] py-[var(--section)]">
         <div className="max-w-6xl mx-auto text-center">
-          <p className="brygada font-bold text-[var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-3">
+          <p className="brygada font-bold text-[length:var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-3">
             Whatever the occasion, we&apos;ve got you covered
           </p>
           <h2
@@ -33,7 +33,7 @@ export default function Home() {
                 <div className="image-placeholder aspect-[3/4] mb-4">
                   <span>{placeholder}</span>
                 </div>
-                <p className="brygada font-bold text-[var(--text-eyebrow)] tracking-[0.25em] uppercase text-[#6B4841]/70 group-hover:text-[#C483C8] transition-colors">
+                <p className="brygada font-bold text-[length:var(--text-eyebrow)] tracking-[0.25em] uppercase text-[#6B4841]/70 group-hover:text-[#C483C8] transition-colors">
                   {title}
                 </p>
               </Link>
@@ -46,7 +46,7 @@ export default function Home() {
       <section className="bg-[#1E0F0B] px-[var(--gutter)] py-[var(--section)]">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14">
-            <p className="brygada font-bold text-[var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-3">
+            <p className="brygada font-bold text-[length:var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-3">
               See Us in Action
             </p>
             <h2
@@ -111,7 +111,7 @@ export default function Home() {
           </div>
 
           <div>
-            <p className="brygada font-bold text-[var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-3">
+            <p className="brygada font-bold text-[length:var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-3">
               Get to Know Us
             </p>
             <h2
@@ -120,7 +120,7 @@ export default function Home() {
             >
               Our Story
             </h2>
-            <div className="space-y-4 text-[#6B4841]/70 text-[var(--text-body)] leading-relaxed">
+            <div className="space-y-4 text-[#6B4841]/70 text-[length:var(--text-body)] leading-relaxed">
               <p>
                 Line dancing has a way of bringing people together like nothing else.
                 Whether it&apos;s a bride and her bridesmaids learning a surprise routine,
@@ -153,7 +153,7 @@ export default function Home() {
           <div className="w-full px-[var(--gutter)]">
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-8">
               <div>
-                <p className="brygada font-bold text-[var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-3">
+                <p className="brygada font-bold text-[length:var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-3">
                   Be Part of the Fun
                 </p>
                 <h2 className="rye text-[#F7EAD8] uppercase tracking-wide" style={{ fontSize: "var(--text-h2)" }}>
