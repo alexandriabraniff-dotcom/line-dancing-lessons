@@ -54,7 +54,7 @@ export default function HomeHero() {
                 href={l.href}
                 onClick={() => setMenuOpen(false)}
                 className={`rye text-3xl tracking-widest uppercase ${
-                  pathname === l.href ? "text-[#C483C8]" : "text-[#F7EAD8]"
+                  pathname === l.href ? "text-[#C483C8]" : "text-white"
                 }`}
               >
                 {l.label}
@@ -102,7 +102,7 @@ export default function HomeHero() {
                   className={`brygada font-bold text-[var(--nav-link)] tracking-[0.3em] uppercase transition-colors drop-shadow-md ${
                     pathname === l.href
                       ? "text-[#C483C8]"
-                      : "text-[#F7EAD8] hover:text-[#C483C8]"
+                      : "text-white hover:text-[#C483C8]"
                   }`}
                 >
                   {l.label}
@@ -131,7 +131,7 @@ export default function HomeHero() {
                   className={`brygada font-bold text-[var(--nav-link)] tracking-[0.3em] uppercase transition-colors drop-shadow-md ${
                     pathname === l.href
                       ? "text-[#C483C8]"
-                      : "text-[#F7EAD8] hover:text-[#C483C8]"
+                      : "text-white hover:text-[#C483C8]"
                   }`}
                 >
                   {l.label}
