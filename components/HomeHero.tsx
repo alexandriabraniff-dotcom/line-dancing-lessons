@@ -16,7 +16,7 @@ export default function HomeHero() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <section id="home-hero" className="relative min-h-screen flex flex-col">
+    <section id="home-hero" className="relative min-h-[100svh] flex flex-col">
       {/* Background image */}
       <div className="absolute inset-0">
         <img src="/hero-bg.png" alt="" className="w-full h-full object-cover" />
@@ -67,7 +67,7 @@ export default function HomeHero() {
             <Link
               href="/contact"
               onClick={() => setMenuOpen(false)}
-              className="brygada font-bold text-xs bg-[#F7EAD8] text-[#6B4841] border-2 border-[#6B4841] w-full h-[45px] flex items-center justify-center tracking-[0.25em] uppercase"
+              className="brygada font-bold text-[var(--text-btn)] bg-[#F7EAD8] text-[#6B4841] border-2 border-[#6B4841] w-full h-[clamp(2.5rem,4.5vh,3.125rem)] flex items-center justify-center tracking-[0.25em] uppercase"
             >
               Book Event
             </Link>
@@ -76,7 +76,7 @@ export default function HomeHero() {
       )}
 
       {/* ── Inline Nav ── */}
-      <nav className="relative z-10 w-full px-6 md:px-12 lg:px-16 pt-8 md:pt-[80px] pb-4">
+      <nav className="relative z-10 w-full px-[var(--gutter)] pt-[clamp(1.25rem,4vh,4rem)] pb-[clamp(0.5rem,1.5vh,1.5rem)]">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           {/* Mobile: logo left + hamburger right */}
           <Link href="/" className="flex flex-col leading-none gap-0.5 md:hidden">
@@ -94,12 +94,12 @@ export default function HomeHero() {
           </button>
 
           {/* Desktop: left links */}
-          <ul className="hidden md:flex gap-10 items-center">
+          <ul className="hidden md:flex gap-[clamp(1.25rem,2.6vw,2.5rem)] items-center">
             {links.slice(0, 2).map((l) => (
               <li key={l.href}>
                 <Link
                   href={l.href}
-                  className={`brygada font-bold text-[0.9rem] tracking-[0.3em] uppercase transition-colors drop-shadow-md ${
+                  className={`brygada font-bold text-[clamp(0.65rem,0.8vw,0.9rem)] tracking-[0.3em] uppercase transition-colors drop-shadow-md ${
                     pathname === l.href
                       ? "text-[#C483C8]"
                       : "text-[#F7EAD8] hover:text-[#C483C8]"
@@ -114,21 +114,21 @@ export default function HomeHero() {
           {/* Desktop: center logo */}
           <Link href="/" className="hidden md:flex flex-col items-center leading-none gap-0.5 relative">
             <span className="absolute inset-0 -inset-x-6 -inset-y-3 bg-[#F7EAD8]/80 rounded-full blur-[2px]" />
-            <span className="relative rye text-4xl text-[#6B4841] tracking-widest leading-none uppercase">
+            <span className="relative rye text-[clamp(1.5rem,2.6vw,2.5rem)] text-[#6B4841] tracking-widest leading-none uppercase">
               Wildflower
             </span>
-            <span className="relative brygada font-bold text-xl text-[#C483C8] tracking-wide">
+            <span className="relative brygada font-bold text-[clamp(0.8rem,1.25vw,1.25rem)] text-[#C483C8] tracking-wide">
               Line Dancing
             </span>
           </Link>
 
           {/* Desktop: right links */}
-          <ul className="hidden md:flex gap-10 items-center">
+          <ul className="hidden md:flex gap-[clamp(1.25rem,2.6vw,2.5rem)] items-center">
             {links.slice(2).map((l) => (
               <li key={l.href}>
                 <Link
                   href={l.href}
-                  className={`brygada font-bold text-[0.9rem] tracking-[0.3em] uppercase transition-colors drop-shadow-md ${
+                  className={`brygada font-bold text-[clamp(0.65rem,0.8vw,0.9rem)] tracking-[0.3em] uppercase transition-colors drop-shadow-md ${
                     pathname === l.href
                       ? "text-[#C483C8]"
                       : "text-[#F7EAD8] hover:text-[#C483C8]"
@@ -143,11 +143,11 @@ export default function HomeHero() {
       </nav>
 
       {/* ── Hero Content ── */}
-      <div className="relative z-10 flex-1 flex flex-col justify-center items-center px-6 md:px-12 lg:px-16 text-center">
+      <div className="relative z-10 flex-1 flex flex-col justify-center items-center px-[var(--gutter)] text-center">
         {/* Big heading */}
         <h1
           className="rye text-[#F7EAD8] leading-[0.95] tracking-wide uppercase drop-shadow-lg"
-          style={{ fontSize: "clamp(1.8rem, 8vw, 6rem)" }}
+          style={{ fontSize: "var(--text-hero)" }}
         >
           Lessons
           <br />
@@ -158,23 +158,23 @@ export default function HomeHero() {
 
         {/* Subheading */}
         <p
-          className="brygada font-bold tracking-[0.3em] uppercase text-[#D49C84] mt-6"
-          style={{ fontSize: "clamp(0.7rem, 2.2vw, 1.5rem)", textShadow: "0 1px 6px rgba(0,0,0,0.7), 0 0 20px rgba(0,0,0,0.4)" }}
+          className="brygada font-bold tracking-[0.3em] uppercase text-[#D49C84] mt-[clamp(0.75rem,2.2vh,1.75rem)]"
+          style={{ fontSize: "var(--text-hero-sub)", textShadow: "0 1px 6px rgba(0,0,0,0.7), 0 0 20px rgba(0,0,0,0.4)" }}
         >
           Line Dancing for Beginners &amp; Intermediate
         </p>
 
         {/* CTAs */}
-        <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4 sm:gap-5 w-full sm:w-auto px-6 sm:px-0">
+        <div className="mt-[clamp(1.5rem,4vh,2.75rem)] flex flex-col sm:flex-row justify-center gap-4 sm:gap-5 w-full sm:w-auto px-6 sm:px-0">
           <Link
             href="/contact"
-            className="brygada font-bold text-xs bg-[#F7EAD8] text-[#6B4841] border-2 border-[#6B4841] w-full sm:w-auto px-8 h-[45px] flex items-center justify-center tracking-[0.25em] uppercase hover:bg-[#6B4841] hover:text-[#F7EAD8] transition-all duration-300 shadow-lg"
+            className="brygada font-bold text-[var(--text-btn)] bg-[#F7EAD8] text-[#6B4841] border-2 border-[#6B4841] w-full sm:w-auto px-8 h-[clamp(2.5rem,4.5vh,3.125rem)] flex items-center justify-center tracking-[0.25em] uppercase hover:bg-[#6B4841] hover:text-[#F7EAD8] transition-all duration-300 shadow-lg"
           >
             Book Event
           </Link>
           <Link
             href="/services"
-            className="brygada font-bold text-xs bg-transparent text-[#F7EAD8] border-2 border-[#F7EAD8] w-full sm:w-auto px-8 h-[45px] flex items-center justify-center tracking-[0.25em] uppercase hover:bg-[#F7EAD8] hover:text-[#6B4841] transition-all duration-300 shadow-lg"
+            className="brygada font-bold text-[var(--text-btn)] bg-transparent text-[#F7EAD8] border-2 border-[#F7EAD8] w-full sm:w-auto px-8 h-[clamp(2.5rem,4.5vh,3.125rem)] flex items-center justify-center tracking-[0.25em] uppercase hover:bg-[#F7EAD8] hover:text-[#6B4841] transition-all duration-300 shadow-lg"
           >
             View Services
           </Link>

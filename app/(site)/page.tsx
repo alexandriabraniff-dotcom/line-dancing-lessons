@@ -15,14 +15,14 @@ export default function Home() {
       <HomeHero />
 
       {/* ── Book by Occasion ── */}
-      <section className="px-6 md:px-12 lg:px-16 py-20 md:py-28">
+      <section className="px-[var(--gutter)] py-[var(--section)]">
         <div className="max-w-6xl mx-auto text-center">
-          <p className="brygada font-bold text-[0.6rem] tracking-[0.35em] uppercase text-[#D49C84] mb-3">
+          <p className="brygada font-bold text-[var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-3">
             Whatever the occasion, we&apos;ve got you covered
           </p>
           <h2
             className="rye text-[#6B4841] uppercase tracking-wide"
-            style={{ fontSize: "clamp(1.6rem, 4vw, 2.8rem)" }}
+            style={{ fontSize: "var(--text-h2)" }}
           >
             Our Services
           </h2>
@@ -33,7 +33,7 @@ export default function Home() {
                 <div className="image-placeholder aspect-[3/4] mb-4">
                   <span>{placeholder}</span>
                 </div>
-                <p className="brygada font-bold text-[0.65rem] tracking-[0.25em] uppercase text-[#6B4841]/70 group-hover:text-[#C483C8] transition-colors">
+                <p className="brygada font-bold text-[var(--text-eyebrow)] tracking-[0.25em] uppercase text-[#6B4841]/70 group-hover:text-[#C483C8] transition-colors">
                   {title}
                 </p>
               </Link>
@@ -43,15 +43,15 @@ export default function Home() {
       </section>
 
       {/* ── Gallery ── */}
-      <section className="bg-[#1E0F0B] px-6 md:px-12 lg:px-16 py-20 md:py-28">
+      <section className="bg-[#1E0F0B] px-[var(--gutter)] py-[var(--section)]">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14">
-            <p className="brygada font-bold text-[0.6rem] tracking-[0.35em] uppercase text-[#D49C84] mb-3">
+            <p className="brygada font-bold text-[var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-3">
               See Us in Action
             </p>
             <h2
               className="rye text-[#F7EAD8] uppercase tracking-wide"
-              style={{ fontSize: "clamp(1.6rem, 4vw, 2.8rem)" }}
+              style={{ fontSize: "var(--text-h2)" }}
             >
               Photos &amp; Events
             </h2>
@@ -104,23 +104,23 @@ export default function Home() {
       </section>
 
       {/* ── Our Story ── */}
-      <section className="px-6 md:px-12 lg:px-16 py-20 md:py-28">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
+      <section className="px-[var(--gutter)] py-[var(--section)]">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-[var(--gap)] items-center">
           <div className="image-placeholder aspect-[4/5]">
             <span>Instructor portrait / Teaching moment</span>
           </div>
 
           <div>
-            <p className="brygada font-bold text-[0.6rem] tracking-[0.35em] uppercase text-[#D49C84] mb-3">
+            <p className="brygada font-bold text-[var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-3">
               Get to Know Us
             </p>
             <h2
               className="rye text-[#6B4841] uppercase tracking-wide mb-6"
-              style={{ fontSize: "clamp(1.6rem, 3.5vw, 2.4rem)" }}
+              style={{ fontSize: "var(--text-h3)" }}
             >
               Our Story
             </h2>
-            <div className="space-y-4 text-[#6B4841]/70 text-sm leading-relaxed">
+            <div className="space-y-4 text-[#6B4841]/70 text-[var(--text-body)] leading-relaxed">
               <p>
                 Line dancing has a way of bringing people together like nothing else.
                 Whether it&apos;s a bride and her bridesmaids learning a surprise routine,
@@ -136,7 +136,7 @@ export default function Home() {
             <div className="mt-8">
               <Link
                 href="/about"
-                className="brygada font-bold text-xs border border-[#C483C8]/40 text-[#C483C8] px-7 py-3 tracking-[0.25em] uppercase hover:bg-[#C483C8] hover:text-[#F7EAD8] transition-all inline-block"
+                className="brygada font-bold text-[var(--text-btn)] border border-[#C483C8]/40 text-[#C483C8] px-7 py-3 tracking-[0.25em] uppercase hover:bg-[#C483C8] hover:text-[#F7EAD8] transition-all inline-block"
               >
                 Read More About Us              </Link>
             </div>
@@ -150,25 +150,25 @@ export default function Home() {
           <span>CTA background / Group photo or venue</span>
         </div>
         <div className="absolute inset-0 bg-[#1E0F0B]/65 flex items-center">
-          <div className="w-full px-6 md:px-12 lg:px-16">
+          <div className="w-full px-[var(--gutter)]">
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-8">
               <div>
-                <p className="brygada font-bold text-[0.6rem] tracking-[0.35em] uppercase text-[#D49C84] mb-3">
+                <p className="brygada font-bold text-[var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-3">
                   Be Part of the Fun
                 </p>
-                <h2 className="rye text-[#F7EAD8] uppercase tracking-wide" style={{ fontSize: "clamp(1.6rem, 4vw, 2.8rem)" }}>
+                <h2 className="rye text-[#F7EAD8] uppercase tracking-wide" style={{ fontSize: "var(--text-h2)" }}>
                   Book Your Session
                 </h2>
               </div>
               <div className="flex flex-wrap gap-4">
                 <Link
                   href="/contact"
-                  className="brygada font-bold text-xs border border-[#C483C8]/50 text-[#C483C8] px-7 py-3 tracking-[0.25em] uppercase hover:bg-[#C483C8] hover:text-[#1E0F0B] transition-all inline-block"
+                  className="brygada font-bold text-[var(--text-btn)] border border-[#C483C8]/50 text-[#C483C8] px-7 py-3 tracking-[0.25em] uppercase hover:bg-[#C483C8] hover:text-[#1E0F0B] transition-all inline-block"
                 >
                   Get in Touch                </Link>
                 <Link
                   href="/services"
-                  className="brygada font-bold text-xs border border-[#F7EAD8]/30 text-[#F7EAD8]/60 px-7 py-3 tracking-[0.25em] uppercase hover:text-[#F7EAD8] hover:border-[#F7EAD8]/60 transition-all inline-block"
+                  className="brygada font-bold text-[var(--text-btn)] border border-[#F7EAD8]/30 text-[#F7EAD8]/60 px-7 py-3 tracking-[0.25em] uppercase hover:text-[#F7EAD8] hover:border-[#F7EAD8]/60 transition-all inline-block"
                 >
                   See Services                </Link>
               </div>

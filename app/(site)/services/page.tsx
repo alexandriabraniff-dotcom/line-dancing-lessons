@@ -70,14 +70,14 @@ export default function ServicesPage() {
   return (
     <>
       {/* ── Header ── */}
-      <section className="px-6 md:px-12 lg:px-16 pt-24 md:pt-28 pb-6">
+      <section className="px-[var(--gutter)] pt-[var(--section-top)] pb-6">
         <div className="max-w-6xl mx-auto text-center">
-          <p className="brygada font-bold text-[0.6rem] tracking-[0.35em] uppercase text-[#D49C84] mb-3">
+          <p className="brygada font-bold text-[var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-3">
             For Every Occasion
           </p>
           <h1
             className="rye text-[#6B4841] uppercase tracking-wide"
-            style={{ fontSize: "clamp(2.4rem, 7vw, 5rem)" }}
+            style={{ fontSize: "var(--text-h1)" }}
           >
             Our Services
           </h1>
@@ -85,7 +85,7 @@ export default function ServicesPage() {
       </section>
 
       {/* ── Hero Image ── */}
-      <section className="px-6 md:px-12 lg:px-16 pb-20 md:pb-28">
+      <section className="px-[var(--gutter)] pb-[var(--section)]">
         <div className="max-w-6xl mx-auto">
           <div className="image-placeholder w-full aspect-[2.8/1]">
             <span>Services hero / Dancing in action</span>
@@ -94,12 +94,12 @@ export default function ServicesPage() {
       </section>
 
       {/* ── Service Blocks ── */}
-      <section className="px-6 md:px-12 lg:px-16 pb-8">
+      <section className="px-[var(--gutter)] pb-8">
         <div className="max-w-6xl mx-auto">
           {services.map(({ num, title, desc, details, placeholder }, i) => (
             <div
               key={title}
-              className="border-t border-[#6B4841]/10 py-16 md:py-20 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center"
+              className="border-t border-[#6B4841]/10 py-[var(--section-sm)] grid grid-cols-1 md:grid-cols-2 gap-[var(--gap)] items-center"
             >
               <div className={i % 2 === 1 ? "md:order-2" : ""}>
                 <div className="image-placeholder aspect-[4/5]">
@@ -108,18 +108,18 @@ export default function ServicesPage() {
               </div>
 
               <div className={i % 2 === 1 ? "md:order-1" : ""}>
-                <p className="brygada font-bold text-[0.6rem] tracking-[0.35em] uppercase text-[#D49C84] mb-3">{num}</p>
+                <p className="brygada font-bold text-[var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-3">{num}</p>
                 <h2
                   className="rye text-[#6B4841] uppercase tracking-wide mb-5"
-                  style={{ fontSize: "clamp(1.6rem, 3.5vw, 2.4rem)" }}
+                  style={{ fontSize: "var(--text-h3)" }}
                 >
                   {title}
                 </h2>
-                <p className="text-[#6B4841]/70 text-sm leading-relaxed mb-8">{desc}</p>
+                <p className="text-[#6B4841]/70 text-[var(--text-body)] leading-relaxed mb-8">{desc}</p>
 
                 <ul className="space-y-3 mb-8">
                   {details.map((item) => (
-                    <li key={item} className="flex gap-3 text-sm text-[#6B4841]/60">
+                    <li key={item} className="flex gap-3 text-[var(--text-body)] text-[#6B4841]/60">
                       <span className="text-[#D49C84] text-xs mt-0.5">&#10022;</span>
                       {item}
                     </li>
@@ -128,7 +128,7 @@ export default function ServicesPage() {
 
                 <Link
                   href="/contact"
-                  className="brygada font-bold text-xs border border-[#C483C8]/40 text-[#C483C8] px-7 py-3 tracking-[0.25em] uppercase hover:bg-[#C483C8] hover:text-[#F7EAD8] transition-all inline-block"
+                  className="brygada font-bold text-[var(--text-btn)] border border-[#C483C8]/40 text-[#C483C8] px-7 py-3 tracking-[0.25em] uppercase hover:bg-[#C483C8] hover:text-[#F7EAD8] transition-all inline-block"
                 >
                   Book {title}                </Link>
               </div>
@@ -143,13 +143,13 @@ export default function ServicesPage() {
           <span>Wide shot / Event atmosphere</span>
         </div>
         <div className="absolute inset-0 bg-[#1E0F0B]/50 flex items-center">
-          <div className="w-full px-6 md:px-12 lg:px-16">
+          <div className="w-full px-[var(--gutter)]">
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-end md:justify-between gap-4">
-              <h2 className="rye text-[#F7EAD8] uppercase tracking-wide leading-tight" style={{ fontSize: "clamp(1.4rem, 3.5vw, 2.6rem)" }}>
+              <h2 className="rye text-[#F7EAD8] uppercase tracking-wide leading-tight" style={{ fontSize: "var(--text-h3)" }}>
                 No Experience
                 <br />Needed
               </h2>
-              <p className="brygada font-bold text-[0.6rem] tracking-[0.3em] uppercase text-[#D49C84] pb-1">
+              <p className="brygada font-bold text-[var(--text-eyebrow)] tracking-[0.3em] uppercase text-[#D49C84] pb-1">
                 Just Good Vibes
                 <br />&amp; Good Times
               </p>
@@ -159,12 +159,12 @@ export default function ServicesPage() {
       </section>
 
       {/* ── How It Works ── */}
-      <section className="px-6 md:px-12 lg:px-16 py-20 md:py-28">
+      <section className="px-[var(--gutter)] py-[var(--section)]">
         <div className="max-w-6xl mx-auto text-center">
-          <p className="brygada font-bold text-[0.6rem] tracking-[0.35em] uppercase text-[#D49C84] mb-3">Simple As</p>
+          <p className="brygada font-bold text-[var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-3">Simple As</p>
           <h2
             className="rye text-[#6B4841] uppercase tracking-wide mb-14"
-            style={{ fontSize: "clamp(1.6rem, 4vw, 2.8rem)" }}
+            style={{ fontSize: "var(--text-h2)" }}
           >
             How It Works
           </h2>
@@ -176,8 +176,8 @@ export default function ServicesPage() {
                 className="border-b md:border-b-0 md:border-r last:border-r-0 border-[#6B4841]/10 py-10 md:px-10"
               >
                 <p className="rye text-[2.5rem] text-[#D49C84]/25 mb-3">{step}</p>
-                <h3 className="rye text-base tracking-[0.2em] uppercase text-[#6B4841] mb-3">{title}</h3>
-                <p className="text-[#6B4841]/60 text-sm leading-relaxed">{desc}</p>
+                <h3 className="rye text-[var(--text-h3)] tracking-[0.2em] uppercase text-[#6B4841] mb-3">{title}</h3>
+                <p className="text-[#6B4841]/60 text-[var(--text-body)] leading-relaxed">{desc}</p>
               </div>
             ))}
           </div>
@@ -185,7 +185,7 @@ export default function ServicesPage() {
           <div className="mt-12">
             <Link
               href="/contact"
-              className="brygada font-bold text-xs border border-[#C483C8]/40 text-[#C483C8] px-7 py-3 tracking-[0.25em] uppercase hover:bg-[#C483C8] hover:text-[#F7EAD8] transition-all inline-block"
+              className="brygada font-bold text-[var(--text-btn)] border border-[#C483C8]/40 text-[#C483C8] px-7 py-3 tracking-[0.25em] uppercase hover:bg-[#C483C8] hover:text-[#F7EAD8] transition-all inline-block"
             >
               Get Started            </Link>
           </div>
@@ -198,17 +198,17 @@ export default function ServicesPage() {
           <span>CTA background / Fun group shot</span>
         </div>
         <div className="absolute inset-0 bg-[#1E0F0B]/65 flex items-center">
-          <div className="w-full px-6 md:px-12 lg:px-16">
+          <div className="w-full px-[var(--gutter)]">
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-8">
               <div>
-                <p className="brygada font-bold text-[0.6rem] tracking-[0.35em] uppercase text-[#D49C84] mb-3">Sound Like Your Kind of Fun?</p>
-                <h2 className="rye text-[#F7EAD8] uppercase tracking-wide" style={{ fontSize: "clamp(1.6rem, 4vw, 2.8rem)" }}>
+                <p className="brygada font-bold text-[var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-3">Sound Like Your Kind of Fun?</p>
+                <h2 className="rye text-[#F7EAD8] uppercase tracking-wide" style={{ fontSize: "var(--text-h2)" }}>
                   Book Your Session
                 </h2>
               </div>
               <Link
                 href="/contact"
-                className="brygada font-bold text-xs border border-[#C483C8]/50 text-[#C483C8] px-7 py-3 tracking-[0.25em] uppercase hover:bg-[#C483C8] hover:text-[#1E0F0B] transition-all inline-block self-start md:self-center"
+                className="brygada font-bold text-[var(--text-btn)] border border-[#C483C8]/50 text-[#C483C8] px-7 py-3 tracking-[0.25em] uppercase hover:bg-[#C483C8] hover:text-[#1E0F0B] transition-all inline-block self-start md:self-center"
               >
                 Get in Touch              </Link>
             </div>

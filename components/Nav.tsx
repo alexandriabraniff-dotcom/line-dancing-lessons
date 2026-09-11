@@ -47,14 +47,14 @@ export default function Nav() {
         }`}
         style={{ top: 0 }}
       >
-        <nav className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 py-4 flex items-center justify-between">
+        <nav className="max-w-7xl mx-auto px-[var(--gutter)] py-[clamp(0.6rem,1.2vw,1rem)] flex items-center justify-between">
           {/* Left links */}
-          <ul className="hidden md:flex gap-8 items-center">
+          <ul className="hidden md:flex gap-[clamp(1rem,2.2vw,2rem)] items-center">
             {links.slice(0, 2).map((l) => (
               <li key={l.href}>
                 <Link
                   href={l.href}
-                  className={`brygada font-bold text-[0.6rem] tracking-[0.3em] uppercase transition-colors ${
+                  className={`brygada font-bold text-[var(--text-eyebrow)] tracking-[0.3em] uppercase transition-colors ${
                     pathname === l.href
                       ? "text-[#C483C8]"
                       : "text-[#6B4841]/60 hover:text-[#6B4841]"
@@ -68,17 +68,17 @@ export default function Nav() {
 
           {/* Center logo */}
           <Link href="/" className="flex flex-col items-center leading-none gap-0.5">
-            <span className="rye text-xl text-[#6B4841] tracking-widest leading-none uppercase">Wildflower</span>
-            <span className="brygada font-bold text-xs text-[#C483C8] tracking-wide">Line Dancing</span>
+            <span className="rye text-[clamp(1rem,1.4vw,1.35rem)] text-[#6B4841] tracking-widest leading-none uppercase">Wildflower</span>
+            <span className="brygada font-bold text-[var(--text-btn)] text-[#C483C8] tracking-wide">Line Dancing</span>
           </Link>
 
           {/* Right links */}
-          <ul className="hidden md:flex gap-8 items-center">
+          <ul className="hidden md:flex gap-[clamp(1rem,2.2vw,2rem)] items-center">
             {links.slice(2).map((l) => (
               <li key={l.href}>
                 <Link
                   href={l.href}
-                  className={`brygada font-bold text-[0.6rem] tracking-[0.3em] uppercase transition-colors ${
+                  className={`brygada font-bold text-[var(--text-eyebrow)] tracking-[0.3em] uppercase transition-colors ${
                     pathname === l.href
                       ? "text-[#C483C8]"
                       : "text-[#6B4841]/60 hover:text-[#6B4841]"
@@ -116,7 +116,7 @@ export default function Nav() {
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className={`brygada font-bold text-[0.6rem] tracking-[0.3em] uppercase ${
+                className={`brygada font-bold text-[var(--text-eyebrow)] tracking-[0.3em] uppercase ${
                   pathname === l.href ? "text-[#C483C8]" : "text-[#6B4841]/60"
                 }`}
               >
@@ -126,7 +126,7 @@ export default function Nav() {
             <Link
               href="/contact"
               onClick={() => setOpen(false)}
-              className="brygada font-bold text-xs border border-[#C483C8]/40 text-[#C483C8] px-5 py-2.5 tracking-widest text-center w-fit mt-1"
+              className="brygada font-bold text-[var(--text-btn)] border border-[#C483C8]/40 text-[#C483C8] px-5 py-2.5 tracking-widest text-center w-fit mt-1"
             >
               Book Now
             </Link>

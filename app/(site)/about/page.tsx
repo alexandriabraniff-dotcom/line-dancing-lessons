@@ -15,14 +15,14 @@ export default function AboutPage() {
   return (
     <>
       {/* ── Header ── */}
-      <section className="px-6 md:px-12 lg:px-16 pt-24 md:pt-28 pb-6">
+      <section className="px-[var(--gutter)] pt-[var(--section-top)] pb-6">
         <div className="max-w-6xl mx-auto text-center">
-          <p className="brygada font-bold text-[0.6rem] tracking-[0.35em] uppercase text-[#D49C84] mb-3">
+          <p className="brygada font-bold text-[var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-3">
             Get to Know Us
           </p>
           <h1
             className="rye text-[#6B4841] uppercase tracking-wide"
-            style={{ fontSize: "clamp(2.4rem, 7vw, 5rem)" }}
+            style={{ fontSize: "var(--text-h1)" }}
           >
             About Wildflower
           </h1>
@@ -30,7 +30,7 @@ export default function AboutPage() {
       </section>
 
       {/* ── Hero Image ── */}
-      <section className="px-6 md:px-12 lg:px-16 pb-20 md:pb-28">
+      <section className="px-[var(--gutter)] pb-[var(--section)]">
         <div className="max-w-6xl mx-auto">
           <div className="image-placeholder w-full aspect-[2.8/1]">
             <span>About hero / Team or teaching moment</span>
@@ -39,21 +39,21 @@ export default function AboutPage() {
       </section>
 
       {/* ── Story ── */}
-      <section className="px-6 md:px-12 lg:px-16 pb-20 md:pb-28">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
+      <section className="px-[var(--gutter)] pb-[var(--section)]">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-[var(--gap)] items-center">
           <div className="image-placeholder aspect-[4/5]">
             <span>Instructor portrait</span>
           </div>
           <div>
-            <p className="brygada font-bold text-[0.6rem] tracking-[0.35em] uppercase text-[#D49C84] mb-3">Our Story</p>
+            <p className="brygada font-bold text-[var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-3">Our Story</p>
             <h2
               className="rye text-[#6B4841] uppercase tracking-wide mb-6"
-              style={{ fontSize: "clamp(1.6rem, 3.5vw, 2.4rem)" }}
+              style={{ fontSize: "var(--text-h3)" }}
             >
               Dancing Should Be
               <br />For Everyone
             </h2>
-            <div className="space-y-4 text-[#6B4841]/70 text-sm leading-relaxed">
+            <div className="space-y-4 text-[#6B4841]/70 text-[var(--text-body)] leading-relaxed">
               <p>
                 No experience needed, no two left feet too clumsy, no event too big or too small.
                 Just boots, beats, and a whole lot of good times.
@@ -83,13 +83,13 @@ export default function AboutPage() {
           <span>Wide shot / Group dancing at an event</span>
         </div>
         <div className="absolute inset-0 bg-[#1E0F0B]/50 flex items-center">
-          <div className="w-full px-6 md:px-12 lg:px-16">
+          <div className="w-full px-[var(--gutter)]">
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-end md:justify-between gap-4">
-              <h2 className="rye text-[#F7EAD8] uppercase tracking-wide leading-tight" style={{ fontSize: "clamp(1.4rem, 3.5vw, 2.6rem)" }}>
+              <h2 className="rye text-[#F7EAD8] uppercase tracking-wide leading-tight" style={{ fontSize: "var(--text-h3)" }}>
                 It&apos;s More Than
                 <br />a Dance
               </h2>
-              <p className="brygada font-bold text-[0.6rem] tracking-[0.3em] uppercase text-[#D49C84] pb-1">
+              <p className="brygada font-bold text-[var(--text-eyebrow)] tracking-[0.3em] uppercase text-[#D49C84] pb-1">
                 It&apos;s a
                 <br />Good Time
               </p>
@@ -99,14 +99,14 @@ export default function AboutPage() {
       </section>
 
       {/* ── Values ── */}
-      <section className="px-6 md:px-12 lg:px-16 py-20 md:py-28">
+      <section className="px-[var(--gutter)] py-[var(--section)]">
         <div className="max-w-6xl mx-auto text-center">
-          <p className="brygada font-bold text-[0.6rem] tracking-[0.35em] uppercase text-[#D49C84] mb-3">
+          <p className="brygada font-bold text-[var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-3">
             What drives everything we do
           </p>
           <h2
             className="rye text-[#6B4841] uppercase tracking-wide mb-12"
-            style={{ fontSize: "clamp(1.6rem, 4vw, 2.8rem)" }}
+            style={{ fontSize: "var(--text-h2)" }}
           >
             What We Stand For
           </h2>
@@ -117,8 +117,8 @@ export default function AboutPage() {
                 <div className="image-placeholder aspect-[3/4] mb-5">
                   <span>{title} visual</span>
                 </div>
-                <h3 className="rye text-base tracking-[0.2em] uppercase text-[#6B4841] mb-2">{title}</h3>
-                <p className="text-[#6B4841]/60 text-sm leading-relaxed">{desc}</p>
+                <h3 className="rye text-[var(--text-h3)] tracking-[0.2em] uppercase text-[#6B4841] mb-2">{title}</h3>
+                <p className="text-[#6B4841]/60 text-[var(--text-body)] leading-relaxed">{desc}</p>
               </div>
             ))}
           </div>
@@ -126,23 +126,23 @@ export default function AboutPage() {
       </section>
 
       {/* ── Second Story Section ── */}
-      <section className="px-6 md:px-12 lg:px-16 pb-20 md:pb-28 border-t border-[#6B4841]/10 pt-20 md:pt-28">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
+      <section className="px-[var(--gutter)] pb-[var(--section)] border-t border-[#6B4841]/10 pt-[var(--section)]">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-[var(--gap)] items-center">
           <div className="md:order-2">
             <div className="image-placeholder aspect-[4/5]">
               <span>Candid teaching moment</span>
             </div>
           </div>
           <div className="md:order-1">
-            <p className="brygada font-bold text-[0.6rem] tracking-[0.35em] uppercase text-[#D49C84] mb-3">The Wildflower Way</p>
+            <p className="brygada font-bold text-[var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-3">The Wildflower Way</p>
             <h2
               className="rye text-[#6B4841] uppercase tracking-wide mb-6"
-              style={{ fontSize: "clamp(1.6rem, 3.5vw, 2.4rem)" }}
+              style={{ fontSize: "var(--text-h3)" }}
             >
               More Than
               <br />Just Steps
             </h2>
-            <div className="space-y-4 text-[#6B4841]/70 text-sm leading-relaxed">
+            <div className="space-y-4 text-[#6B4841]/70 text-[var(--text-body)] leading-relaxed">
               <p>
                 We believe the best dance classes are the ones where you forget you&apos;re
                 learning. Where the music takes over, the group finds its groove, and
@@ -157,7 +157,7 @@ export default function AboutPage() {
             <div className="mt-8">
               <Link
                 href="/contact"
-                className="brygada font-bold text-xs border border-[#C483C8]/40 text-[#C483C8] px-7 py-3 tracking-[0.25em] uppercase hover:bg-[#C483C8] hover:text-[#F7EAD8] transition-all inline-block"
+                className="brygada font-bold text-[var(--text-btn)] border border-[#C483C8]/40 text-[#C483C8] px-7 py-3 tracking-[0.25em] uppercase hover:bg-[#C483C8] hover:text-[#F7EAD8] transition-all inline-block"
               >
                 Book a Session              </Link>
             </div>
@@ -171,17 +171,17 @@ export default function AboutPage() {
           <span>CTA background / Dancers or venue</span>
         </div>
         <div className="absolute inset-0 bg-[#1E0F0B]/65 flex items-center">
-          <div className="w-full px-6 md:px-12 lg:px-16">
+          <div className="w-full px-[var(--gutter)]">
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-8">
               <div>
-                <p className="brygada font-bold text-[0.6rem] tracking-[0.35em] uppercase text-[#D49C84] mb-3">Ready to Hit the Floor?</p>
-                <h2 className="rye text-[#F7EAD8] uppercase tracking-wide" style={{ fontSize: "clamp(1.6rem, 4vw, 2.8rem)" }}>
+                <p className="brygada font-bold text-[var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-3">Ready to Hit the Floor?</p>
+                <h2 className="rye text-[#F7EAD8] uppercase tracking-wide" style={{ fontSize: "var(--text-h2)" }}>
                   Let&apos;s Dance
                 </h2>
               </div>
               <Link
                 href="/contact"
-                className="brygada font-bold text-xs border border-[#C483C8]/50 text-[#C483C8] px-7 py-3 tracking-[0.25em] uppercase hover:bg-[#C483C8] hover:text-[#1E0F0B] transition-all inline-block self-start md:self-center"
+                className="brygada font-bold text-[var(--text-btn)] border border-[#C483C8]/50 text-[#C483C8] px-7 py-3 tracking-[0.25em] uppercase hover:bg-[#C483C8] hover:text-[#1E0F0B] transition-all inline-block self-start md:self-center"
               >
                 Book Now              </Link>
             </div>

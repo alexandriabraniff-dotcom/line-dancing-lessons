@@ -14,6 +14,34 @@
   --font-body: var(--font-body);
 }
 
+/* ── Fluid responsive scale ────────────────────────────────
+   Every size below grows and shrinks with the viewport, so the
+   layout keeps the same proportions on a phone, a laptop and a
+   large desktop monitor. Tuned between 360px and 1920px wide. */
+:root {
+  /* Horizontal page gutter */
+  --gutter: clamp(1.25rem, 3.2vw, 4rem);
+
+  /* Vertical section rhythm */
+  --section: clamp(3rem, 5.4vw, 7rem);
+  --section-sm: clamp(2rem, 3.6vw, 4.5rem);
+  --section-top: clamp(5rem, 6vw, 8rem);
+
+  /* Grid / column gaps */
+  --gap: clamp(1.75rem, 3.2vw, 4rem);
+  --gap-sm: clamp(0.75rem, 1.2vw, 1.25rem);
+
+  /* Type scale */
+  --text-hero: min(clamp(2rem, 5.4vw, 4.6rem), 13vh);
+  --text-hero-sub: clamp(0.65rem, 1.15vw, 1.05rem);
+  --text-h1: clamp(2.1rem, 4.8vw, 4.4rem);
+  --text-h2: clamp(1.5rem, 2.6vw, 2.6rem);
+  --text-h3: clamp(1.3rem, 2.05vw, 2.15rem);
+  --text-eyebrow: clamp(0.55rem, 0.42vw + 0.42rem, 0.7rem);
+  --text-body: clamp(0.85rem, 0.45vw + 0.72rem, 1rem);
+  --text-btn: clamp(0.6rem, 0.3vw + 0.52rem, 0.78rem);
+}
+
 * {
   box-sizing: border-box;
 }
@@ -149,4 +177,35 @@ body {
   transform: translateY(-50%);
   width: 100%;
   height: 2px;
+}
+
+/* Fluid helpers */
+.eyebrow {
+  font-size: var(--text-eyebrow);
+}
+
+.body-copy {
+  font-size: var(--text-body);
+}
+
+.btn-label {
+  font-size: var(--text-btn);
+}
+
+/* Never allow a stray wide element to scroll the page sideways.
+   clip is used instead of hidden so fixed and sticky positioning
+   and smooth scrolling keep working. */
+html {
+  overflow-x: clip;
+}
+
+body {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+img,
+svg,
+video {
+  max-width: 100%;
 }
