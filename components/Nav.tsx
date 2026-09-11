@@ -54,7 +54,7 @@ export default function Nav() {
               <li key={l.href}>
                 <Link
                   href={l.href}
-                  className={`brygada font-bold text-[var(--nav-link)] tracking-[0.3em] uppercase transition-colors ${
+                  className={`brygada font-bold text-[var(--nav-link-sm)] tracking-[0.3em] uppercase transition-colors ${
                     pathname === l.href
                       ? "text-[#C483C8]"
                       : "text-[#6B4841]/60 hover:text-[#6B4841]"
@@ -78,7 +78,7 @@ export default function Nav() {
               <li key={l.href}>
                 <Link
                   href={l.href}
-                  className={`brygada font-bold text-[var(--nav-link)] tracking-[0.3em] uppercase transition-colors ${
+                  className={`brygada font-bold text-[var(--nav-link-sm)] tracking-[0.3em] uppercase transition-colors ${
                     pathname === l.href
                       ? "text-[#C483C8]"
                       : "text-[#6B4841]/60 hover:text-[#6B4841]"
@@ -116,7 +116,7 @@ export default function Nav() {
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className={`brygada font-bold text-[var(--nav-link)] tracking-[0.3em] uppercase ${
+                className={`brygada font-bold text-[var(--nav-link-sm)] tracking-[0.3em] uppercase ${
                   pathname === l.href ? "text-[#C483C8]" : "text-[#6B4841]/60"
                 }`}
               >

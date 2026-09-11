@@ -41,7 +41,8 @@
   --nav-logo-sm: clamp(1.33rem, 2.1vw, 2.1rem);
   --nav-sub: clamp(0.72rem, 1.05vw, 1.05rem);
   --nav-sub-sm: clamp(0.68rem, 1vw, 1rem);
-  --nav-link: clamp(0.7rem, 0.85vw, 0.95rem);
+  --nav-link: clamp(0.78rem, 1.1vw, 0.95rem);
+  --nav-link-sm: clamp(0.74rem, 1.05vw, 0.9rem);
   --nav-gap: clamp(1.25rem, 2.5vw, 2.4rem);
 
   /* Grid / column gaps */
