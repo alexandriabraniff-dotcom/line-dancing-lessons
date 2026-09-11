@@ -94,12 +94,12 @@ export default function HomeHero() {
           </button>
 
           {/* Desktop: left links */}
-          <ul className="hidden md:flex gap-[clamp(1.25rem,2.6vw,2.5rem)] items-center">
+          <ul className="hidden md:flex gap-[var(--nav-gap)] items-center">
             {links.slice(0, 2).map((l) => (
               <li key={l.href}>
                 <Link
                   href={l.href}
-                  className={`brygada font-bold text-[clamp(0.65rem,0.8vw,0.9rem)] tracking-[0.3em] uppercase transition-colors drop-shadow-md ${
+                  className={`brygada font-bold text-[var(--nav-link)] tracking-[0.3em] uppercase transition-colors drop-shadow-md ${
                     pathname === l.href
                       ? "text-[#C483C8]"
                       : "text-[#F7EAD8] hover:text-[#C483C8]"
@@ -114,21 +114,21 @@ export default function HomeHero() {
           {/* Desktop: center logo */}
           <Link href="/" className="hidden md:flex flex-col items-center leading-none gap-0.5 relative">
             <span className="absolute inset-0 -inset-x-6 -inset-y-3 bg-[#F7EAD8]/80 rounded-full blur-[2px]" />
-            <span className="relative rye text-[clamp(1.5rem,2.6vw,2.5rem)] text-[#6B4841] tracking-widest leading-none uppercase">
+            <span className="relative rye text-[var(--nav-logo)] text-[#6B4841] tracking-widest leading-none uppercase">
               Wildflower
             </span>
-            <span className="relative brygada font-bold text-[clamp(0.8rem,1.25vw,1.25rem)] text-[#C483C8] tracking-wide">
+            <span className="relative brygada font-bold text-[var(--nav-sub)] text-[#C483C8] tracking-wide">
               Line Dancing
             </span>
           </Link>
 
           {/* Desktop: right links */}
-          <ul className="hidden md:flex gap-[clamp(1.25rem,2.6vw,2.5rem)] items-center">
+          <ul className="hidden md:flex gap-[var(--nav-gap)] items-center">
             {links.slice(2).map((l) => (
               <li key={l.href}>
                 <Link
                   href={l.href}
-                  className={`brygada font-bold text-[clamp(0.65rem,0.8vw,0.9rem)] tracking-[0.3em] uppercase transition-colors drop-shadow-md ${
+                  className={`brygada font-bold text-[var(--nav-link)] tracking-[0.3em] uppercase transition-colors drop-shadow-md ${
                     pathname === l.href
                       ? "text-[#C483C8]"
                       : "text-[#F7EAD8] hover:text-[#C483C8]"

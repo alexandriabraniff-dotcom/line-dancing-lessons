@@ -49,12 +49,12 @@ export default function Nav() {
       >
         <nav className="max-w-7xl mx-auto px-[var(--gutter)] py-[clamp(0.6rem,1.2vw,1rem)] flex items-center justify-between">
           {/* Left links */}
-          <ul className="hidden md:flex gap-[clamp(1rem,2.2vw,2rem)] items-center">
+          <ul className="hidden md:flex gap-[var(--nav-gap)] items-center">
             {links.slice(0, 2).map((l) => (
               <li key={l.href}>
                 <Link
                   href={l.href}
-                  className={`brygada font-bold text-[var(--text-eyebrow)] tracking-[0.3em] uppercase transition-colors ${
+                  className={`brygada font-bold text-[var(--nav-link)] tracking-[0.3em] uppercase transition-colors ${
                     pathname === l.href
                       ? "text-[#C483C8]"
                       : "text-[#6B4841]/60 hover:text-[#6B4841]"
@@ -68,17 +68,17 @@ export default function Nav() {
 
           {/* Center logo */}
           <Link href="/" className="flex flex-col items-center leading-none gap-0.5">
-            <span className="rye text-[clamp(1rem,1.4vw,1.35rem)] text-[#6B4841] tracking-widest leading-none uppercase">Wildflower</span>
-            <span className="brygada font-bold text-xs text-[#C483C8] tracking-wide">Line Dancing</span>
+            <span className="rye text-[var(--nav-logo-sm)] text-[#6B4841] tracking-widest leading-none uppercase">Wildflower</span>
+            <span className="brygada font-bold text-[var(--nav-sub-sm)] text-[#C483C8] tracking-wide">Line Dancing</span>
           </Link>
 
           {/* Right links */}
-          <ul className="hidden md:flex gap-[clamp(1rem,2.2vw,2rem)] items-center">
+          <ul className="hidden md:flex gap-[var(--nav-gap)] items-center">
             {links.slice(2).map((l) => (
               <li key={l.href}>
                 <Link
                   href={l.href}
-                  className={`brygada font-bold text-[var(--text-eyebrow)] tracking-[0.3em] uppercase transition-colors ${
+                  className={`brygada font-bold text-[var(--nav-link)] tracking-[0.3em] uppercase transition-colors ${
                     pathname === l.href
                       ? "text-[#C483C8]"
                       : "text-[#6B4841]/60 hover:text-[#6B4841]"
@@ -116,7 +116,7 @@ export default function Nav() {
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className={`brygada font-bold text-[var(--text-eyebrow)] tracking-[0.3em] uppercase ${
+                className={`brygada font-bold text-[var(--nav-link)] tracking-[0.3em] uppercase ${
                   pathname === l.href ? "text-[#C483C8]" : "text-[#6B4841]/60"
                 }`}
               >

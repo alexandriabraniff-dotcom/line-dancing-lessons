@@ -33,6 +33,16 @@
 
   --cta-gap: 40px;
 
+  /* Nav sizing, shared by the hero nav and the sticky header so the
+     two read as the same bar at two sizes rather than two designs.
+     The sticky version is a gentle step down, not a halving. */
+  --nav-logo: clamp(1.4rem, 2.2vw, 2.2rem);
+  --nav-logo-sm: clamp(1.2rem, 1.85vw, 1.85rem);
+  --nav-sub: clamp(0.72rem, 1.05vw, 1.05rem);
+  --nav-sub-sm: clamp(0.64rem, 0.9vw, 0.9rem);
+  --nav-link: clamp(0.65rem, 0.78vw, 0.88rem);
+  --nav-gap: clamp(1.25rem, 2.5vw, 2.4rem);
+
   /* Grid / column gaps */
   --gap: clamp(1.75rem, 3.2vw, 4rem);
   --gap-sm: clamp(0.75rem, 1.2vw, 1.25rem);
