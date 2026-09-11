@@ -67,7 +67,7 @@ export default function HomeHero() {
             <Link
               href="/contact"
               onClick={() => setMenuOpen(false)}
-              className="brygada font-bold text-[var(--text-btn)] bg-[#F7EAD8] text-[#6B4841] border-2 border-[#6B4841] w-full h-[clamp(2.5rem,4.5vh,3.125rem)] flex items-center justify-center tracking-[0.25em] uppercase"
+              className="brygada font-bold text-xs bg-[#F7EAD8] text-[#6B4841] border-2 border-[#6B4841] w-full h-[45px] flex items-center justify-center tracking-[0.25em] uppercase"
             >
               Book Event
             </Link>
@@ -158,23 +158,23 @@ export default function HomeHero() {
 
         {/* Subheading */}
         <p
-          className="brygada font-bold tracking-[0.3em] uppercase text-[#D49C84] mt-[clamp(0.75rem,2.2vh,1.75rem)]"
+          className="brygada font-bold tracking-[0.3em] uppercase text-[#D49C84] mt-[min(1.5rem,3vh)]"
           style={{ fontSize: "var(--text-hero-sub)", textShadow: "0 1px 6px rgba(0,0,0,0.7), 0 0 20px rgba(0,0,0,0.4)" }}
         >
           Line Dancing for Beginners &amp; Intermediate
         </p>
 
         {/* CTAs */}
-        <div className="mt-[clamp(1.5rem,4vh,2.75rem)] flex flex-col sm:flex-row justify-center gap-4 sm:gap-5 w-full sm:w-auto px-6 sm:px-0">
+        <div className="mt-[min(2.5rem,5vh)] flex flex-col sm:flex-row justify-center gap-4 sm:gap-5 w-full sm:w-auto px-6 sm:px-0">
           <Link
             href="/contact"
-            className="brygada font-bold text-[var(--text-btn)] bg-[#F7EAD8] text-[#6B4841] border-2 border-[#6B4841] w-full sm:w-auto px-8 h-[clamp(2.5rem,4.5vh,3.125rem)] flex items-center justify-center tracking-[0.25em] uppercase hover:bg-[#6B4841] hover:text-[#F7EAD8] transition-all duration-300 shadow-lg"
+            className="brygada font-bold text-xs bg-[#F7EAD8] text-[#6B4841] border-2 border-[#6B4841] w-full sm:w-auto px-8 h-[45px] flex items-center justify-center tracking-[0.25em] uppercase hover:bg-[#6B4841] hover:text-[#F7EAD8] transition-all duration-300 shadow-lg"
           >
             Book Event
           </Link>
           <Link
             href="/services"
-            className="brygada font-bold text-[var(--text-btn)] bg-transparent text-[#F7EAD8] border-2 border-[#F7EAD8] w-full sm:w-auto px-8 h-[clamp(2.5rem,4.5vh,3.125rem)] flex items-center justify-center tracking-[0.25em] uppercase hover:bg-[#F7EAD8] hover:text-[#6B4841] transition-all duration-300 shadow-lg"
+            className="brygada font-bold text-xs bg-transparent text-[#F7EAD8] border-2 border-[#F7EAD8] w-full sm:w-auto px-8 h-[45px] flex items-center justify-center tracking-[0.25em] uppercase hover:bg-[#F7EAD8] hover:text-[#6B4841] transition-all duration-300 shadow-lg"
           >
             View Services
           </Link>

@@ -19,7 +19,7 @@ export default function Footer() {
                 <Link
                   key={href}
                   href={href}
-                  className="text-[var(--text-btn)] text-[#F7EAD8]/40 hover:text-[#F7EAD8] transition-colors uppercase tracking-wider"
+                  className="text-xs text-[#F7EAD8]/40 hover:text-[#F7EAD8] transition-colors uppercase tracking-wider"
                 >
                   {label}
                 </Link>
@@ -32,7 +32,7 @@ export default function Footer() {
                 <Link
                   key={s}
                   href="/services"
-                  className="text-[var(--text-btn)] text-[#F7EAD8]/40 hover:text-[#F7EAD8] transition-colors uppercase tracking-wider"
+                  className="text-xs text-[#F7EAD8]/40 hover:text-[#F7EAD8] transition-colors uppercase tracking-wider"
                 >
                   {s}
                 </Link>
@@ -44,7 +44,7 @@ export default function Footer() {
           <div className="flex flex-col items-center text-center">
             <p className="rye text-[clamp(1.25rem,1.8vw,1.6rem)] text-[#6B4841] tracking-widest leading-none uppercase">Wildflower</p>
             <p className="brygada font-bold text-[#C483C8] text-[var(--text-body)] mt-1">Line Dancing</p>
-            <p className="text-[#F7EAD8]/25 text-[var(--text-btn)] mt-4 leading-relaxed">
+            <p className="text-[#F7EAD8]/25 text-xs mt-4 leading-relaxed">
               It&apos;s more than a dance,
               <br />it&apos;s a good time.
             </p>
@@ -55,13 +55,13 @@ export default function Footer() {
             <p className="brygada font-bold text-[var(--text-eyebrow)] tracking-[0.3em] uppercase text-[#D49C84] mb-1">Get in Touch</p>
             <Link
               href="/contact"
-              className="text-[var(--text-btn)] text-[#F7EAD8]/40 hover:text-[#F7EAD8] transition-colors uppercase tracking-wider"
+              className="text-xs text-[#F7EAD8]/40 hover:text-[#F7EAD8] transition-colors uppercase tracking-wider"
             >
               Book a Session
             </Link>
             <Link
               href="/contact"
-              className="text-[var(--text-btn)] text-[#F7EAD8]/40 hover:text-[#F7EAD8] transition-colors uppercase tracking-wider"
+              className="text-xs text-[#F7EAD8]/40 hover:text-[#F7EAD8] transition-colors uppercase tracking-wider"
             >
               Reach Out
             </Link>
