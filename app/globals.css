@@ -35,12 +35,13 @@
 
   /* Nav sizing, shared by the hero nav and the sticky header so the
      two read as the same bar at two sizes rather than two designs.
-     The sticky version is a gentle step down, not a halving. */
+     The sticky version is only a hair smaller (95%), so scrolling
+     past the hero reads as one bar settling rather than swapping. */
   --nav-logo: clamp(1.4rem, 2.2vw, 2.2rem);
-  --nav-logo-sm: clamp(1.2rem, 1.85vw, 1.85rem);
+  --nav-logo-sm: clamp(1.33rem, 2.1vw, 2.1rem);
   --nav-sub: clamp(0.72rem, 1.05vw, 1.05rem);
-  --nav-sub-sm: clamp(0.64rem, 0.9vw, 0.9rem);
-  --nav-link: clamp(0.65rem, 0.78vw, 0.88rem);
+  --nav-sub-sm: clamp(0.68rem, 1vw, 1rem);
+  --nav-link: clamp(0.7rem, 0.85vw, 0.95rem);
   --nav-gap: clamp(1.25rem, 2.5vw, 2.4rem);
 
   /* Grid / column gaps */
