@@ -143,7 +143,7 @@ export default function HomeHero() {
       </nav>
 
       {/* ── Hero Content ── */}
-      <div className="relative z-10 flex-1 flex flex-col justify-center items-center px-[var(--gutter)] text-center py-[clamp(5rem,13vh,8.5rem)]">
+      <div className="relative z-10 flex-1 flex flex-col justify-center items-center px-[var(--gutter)] text-center py-[clamp(5rem,13vh,8.5rem)] translate-y-[var(--hero-drop)]">
         {/* Big heading */}
         <h1
           className="rye text-[#F7EAD8] leading-[0.95] tracking-wide uppercase drop-shadow-lg"

@@ -31,6 +31,10 @@
      scaling with viewport height so it reads the same everywhere */
   --hero-edge: clamp(0.75rem, 1.39vh, 1.5rem);
 
+  /* Downward offset of the whole hero copy group from centre:
+     40px on a 1080-tall screen, scaling with viewport height */
+  --hero-drop: clamp(1.5rem, 3.7vh, 3rem);
+
   /* Gap between the hero copy and the CTA buttons: 40px on a
      1080-tall screen, scaling with viewport height */
   --cta-gap: clamp(1.5rem, 3.7vh, 3rem);
