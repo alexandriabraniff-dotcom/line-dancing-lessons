@@ -8,7 +8,6 @@ export const metadata = {
 
 const services = [
   {
-    num: "01",
     title: "Weddings",
     desc: "Your wedding day deserves something unforgettable. We work with brides, grooms, and bridal parties to create a first dance or group routine that will have the whole venue on its feet.",
     details: [
@@ -21,7 +20,6 @@ const services = [
     image: "/services/weddings.png",
   },
   {
-    num: "02",
     title: "Birthdays",
     desc: "Turn your birthday into the event of the year. We come to your venue, bring the energy, and make sure every guest leaves with tired feet and a huge smile.",
     details: [
@@ -34,7 +32,6 @@ const services = [
     image: "/services/birthdays.png",
   },
   {
-    num: "03",
     title: "Social Events",
     desc: "Looking for an activity that actually gets people engaged? Line dancing breaks the ice, gets everyone moving, and creates a shared experience your group won't forget.",
     details: [
@@ -47,7 +44,6 @@ const services = [
     image: "/services/special-events.png",
   },
   {
-    num: "04",
     title: "Private Groups",
     desc: "Book us for your crew on your terms. Whether it's a one-off session or a regular weekly lesson, we tailor everything to suit your group's vibe and skill level.",
     details: [
@@ -62,10 +58,19 @@ const services = [
 ];
 
 const process = [
-  { step: "01", title: "Reach Out", desc: "Tell us about your event, your group, and what you're after." },
-  { step: "02", title: "We Plan", desc: "We put together a session tailored to your vibe, skill level, and venue." },
-  { step: "03", title: "We Dance", desc: "Show up, have fun, and let us handle the rest. No experience needed." },
+  { title: "Reach Out", desc: "Tell us about your event, your group, and what you're after." },
+  { title: "We Plan", desc: "We put together a session tailored to your vibe, skill level, and venue." },
+  { title: "We Dance", desc: "Show up, have fun, and let us handle the rest. No experience needed." },
 ];
+
+const focusRing =
+  "focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#C483C8]";
+
+/* Solid, high-contrast buttons (brown on cream, cream on dark banners) */
+const buttonBase =
+  "brygada inline-flex h-11 items-center justify-center px-6 text-[0.85rem] font-bold uppercase tracking-[0.18em] transition-colors duration-300";
+const buttonOnLight = `${buttonBase} bg-[#6B4841] text-[#F7EAD8] hover:bg-[#1E0F0B] ${focusRing}`;
+const buttonOnDark = `${buttonBase} bg-[#F7EAD8] text-[#6B4841] hover:bg-[#C483C8] hover:text-[#1E0F0B] ${focusRing}`;
 
 export default function ServicesPage() {
   return (
@@ -88,47 +93,53 @@ export default function ServicesPage() {
       {/* ── Service Blocks ── */}
       <section className="px-[var(--gutter)] pb-8">
         <div className="max-w-6xl mx-auto">
-          {services.map(({ num, title, desc, details, image }, i) => (
+          {services.map(({ title, desc, details, image }, i) => (
             <div
               key={title}
-              className="border-t border-[#6B4841]/10 py-[var(--section-sm)] grid grid-cols-1 md:grid-cols-2 gap-[var(--gap)] items-center"
+              id={title.toLowerCase().replace(/\s+/g, "-")}
+              className={`scroll-mt-[calc(var(--header-logo)+var(--header-pad-y)*2)] border-t border-[#6B4841]/10 py-[max(1.25rem,3vh)] grid grid-cols-1 gap-x-[var(--gap)] gap-y-6 items-center ${
+                i % 2 === 1 ? "md:grid-cols-[minmax(0,1fr)_auto]" : "md:grid-cols-[auto_minmax(0,1fr)]"
+              }`}
             >
+              {/* Image width follows screen height so two sections fit on screen at once */}
               <div className={i % 2 === 1 ? "md:order-2" : ""}>
-                <div className="relative aspect-[3/4] overflow-hidden shadow-[0_10px_30px_-18px_rgba(30,15,11,0.35)]">
+                <div className="relative mx-auto aspect-[3/4] w-[min(60%,16rem)] overflow-hidden shadow-[0_10px_30px_-18px_rgba(30,15,11,0.35)] md:mx-0 md:w-[max(9rem,24vh)]">
                   <Image
                     src={image}
                     alt={title}
                     fill
-                    sizes="(min-width: 768px) 50vw, 100vw"
+                    sizes="(min-width: 768px) 30vh, 60vw"
                     className="object-cover"
                   />
                 </div>
               </div>
 
               <div className={i % 2 === 1 ? "md:order-1" : ""}>
-                <p className="brygada font-bold text-[length:var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-3">{num}</p>
                 <h2
-                  className="rye text-[#6B4841] uppercase tracking-wide mb-5"
-                  style={{ fontSize: "var(--text-h3)" }}
+                  className="rye text-[#6B4841] uppercase tracking-wide leading-tight mb-2"
+                  style={{ fontSize: "var(--text-h2)" }}
                 >
                   {title}
                 </h2>
-                <p className="text-[#6B4841]/70 text-[length:var(--text-body)] leading-relaxed mb-8">{desc}</p>
+                <p className="text-[#6B4841]/80 text-[length:clamp(1rem,0.4vw+0.85rem,1.2rem)] leading-relaxed mb-3">
+                  {desc}
+                </p>
 
-                <ul className="space-y-3 mb-8">
+                <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-1.5 mb-5">
                   {details.map((item) => (
-                    <li key={item} className="flex gap-3 text-[length:var(--text-body)] text-[#6B4841]/60">
-                      <span className="text-[#D49C84] text-xs mt-0.5">&#10022;</span>
+                    <li
+                      key={item}
+                      className="flex gap-2.5 text-[length:clamp(0.95rem,0.3vw+0.85rem,1.1rem)] text-[#6B4841]/75"
+                    >
+                      <span className="text-[#D49C84] text-xs mt-1">&#10022;</span>
                       {item}
                     </li>
                   ))}
                 </ul>
 
-                <Link
-                  href="/contact"
-                  className="brygada font-bold text-xs border border-[#C483C8]/40 text-[#C483C8] px-7 py-3 tracking-[0.25em] uppercase hover:bg-[#C483C8] hover:text-[#F7EAD8] transition-all inline-block"
-                >
-                  Book {title}                </Link>
+                <Link href="/contact" className={buttonOnLight}>
+                  Book {title}
+                </Link>
               </div>
             </div>
           ))}
@@ -167,12 +178,11 @@ export default function ServicesPage() {
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border-t border-b border-[#6B4841]/10">
-            {process.map(({ step, title, desc }) => (
+            {process.map(({ title, desc }) => (
               <div
-                key={step}
+                key={title}
                 className="border-b md:border-b-0 md:border-r last:border-r-0 border-[#6B4841]/10 py-10 md:px-10"
               >
-                <p className="rye text-[2.5rem] text-[#D49C84]/25 mb-3">{step}</p>
                 <h3 className="rye text-[length:var(--text-h3)] tracking-[0.2em] uppercase text-[#6B4841] mb-3">{title}</h3>
                 <p className="text-[#6B4841]/60 text-[length:var(--text-body)] leading-relaxed">{desc}</p>
               </div>
@@ -180,11 +190,9 @@ export default function ServicesPage() {
           </div>
 
           <div className="mt-12">
-            <Link
-              href="/contact"
-              className="brygada font-bold text-xs border border-[#C483C8]/40 text-[#C483C8] px-7 py-3 tracking-[0.25em] uppercase hover:bg-[#C483C8] hover:text-[#F7EAD8] transition-all inline-block"
-            >
-              Get Started            </Link>
+            <Link href="/contact" className={buttonOnLight}>
+              Get Started
+            </Link>
           </div>
         </div>
       </section>
@@ -203,11 +211,9 @@ export default function ServicesPage() {
                 Book Your Session
               </h2>
             </div>
-            <Link
-              href="/contact"
-              className="brygada font-bold text-xs border border-[#C483C8]/50 text-[#C483C8] px-7 py-3 tracking-[0.25em] uppercase hover:bg-[#C483C8] hover:text-[#1E0F0B] transition-all inline-block self-start md:self-center"
-            >
-              Get in Touch              </Link>
+            <Link href="/contact" className={`${buttonOnDark} self-start md:self-center`}>
+              Get in Touch
+            </Link>
           </div>
         </div>
       </section>
