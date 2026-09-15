@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -49,8 +50,16 @@ export default function Footer() {
 
           {/* Center logo */}
           <div className="flex flex-col items-center text-center">
-            <p className="rye text-[clamp(1.25rem,1.8vw,1.6rem)] text-[#6B4841] tracking-widest leading-none uppercase">Wildflower</p>
-            <p className="brygada font-bold text-[#C483C8] text-[length:var(--text-body)] mt-1">Line Dancing</p>
+            <Link href="/" aria-label="Wildflower Line Dancing, home">
+              <Image
+                src="/logo.png"
+                alt="Wildflower Line Dancing"
+                width={584}
+                height={584}
+                sizes="140px"
+                className="h-auto w-[clamp(96px,10vw,132px)]"
+              />
+            </Link>
             <p className="text-[#F7EAD8]/25 text-xs mt-4 leading-relaxed">
               It&apos;s more than a dance,
               <br />it&apos;s a good time.
