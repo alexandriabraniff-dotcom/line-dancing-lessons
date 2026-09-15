@@ -10,6 +10,60 @@ const occasions = [
   { title: "Private Lessons", image: "/services/private-lessons.png" },
 ];
 
+/* ── Gallery ──────────────────────────────────────────────
+   Add new photos to public/gallery and drop them into an empty (null)
+   slot below. Empty slots show a subtle placeholder until filled. */
+type Photo = { src: string; alt: string } | null;
+
+const photos = {
+  group: {
+    src: "/gallery/group-photo.png",
+    alt: "Group of dancers in cowboy hats smiling under string lights at an outdoor event",
+  },
+  danceFloor: {
+    src: "/gallery/dance-floor.jpeg",
+    alt: "A packed dance floor line dancing together at a country bar",
+  },
+  street: {
+    src: "/gallery/street-event.jpeg",
+    alt: "Three dancers smiling arm in arm at a street festival",
+  },
+  boots: {
+    src: "/gallery/boots-on-the-floor.jpeg",
+    alt: "Dancers in cowboy boots mid-step on a wooden dance floor",
+  },
+};
+
+const gallery: { featured: Photo; left: Photo[]; right: Photo[]; mobile: Photo[] } = {
+  featured: photos.group,
+  left: [photos.danceFloor, photos.street, null, null],
+  right: [photos.boots, null, null, null],
+  mobile: [photos.group, photos.danceFloor, photos.street, photos.boots, null, null, null, null, null],
+};
+
+function GallerySlot({ photo, sizes, className }: { photo: Photo; sizes: string; className: string }) {
+  if (!photo) {
+    return (
+      <div
+        aria-hidden
+        className={`image-placeholder !border-[#F7EAD8]/15 !bg-[#F7EAD8]/[0.04] ${className}`}
+      />
+    );
+  }
+
+  return (
+    <div className={`group relative overflow-hidden bg-[#F7EAD8]/[0.04] ${className}`}>
+      <Image
+        src={photo.src}
+        alt={photo.alt}
+        fill
+        sizes={sizes}
+        className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+      />
+    </div>
+  );
+}
+
 export default function Home() {
   return (
     <>
@@ -52,7 +106,7 @@ export default function Home() {
       </section>
 
       {/* ── Gallery ── */}
-      <section className="bg-[#1E0F0B] px-[var(--gutter)] py-[var(--section)]">
+      <section id="gallery" className="bg-[#1E0F0B] px-[var(--gutter)] py-[var(--section)]">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14">
             <p className="brygada font-bold text-[length:var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-3">
@@ -62,50 +116,45 @@ export default function Home() {
               className="rye text-[#F7EAD8] uppercase tracking-wide"
               style={{ fontSize: "var(--text-h2)" }}
             >
-              Photos &amp; Events
+              Gallery
             </h2>
           </div>
 
           {/* Mobile: horizontal scroll */}
           <div className="flex gap-3 overflow-x-auto pb-4 snap-x snap-mandatory md:hidden">
-            {["Wedding reception", "Birthday party", "Corporate team night", "Private lesson", "Hen's night", "Country bar night", "Community event", "Fundraiser gala", "Bucks night"].map((label) => (
-              <div
-                key={label}
-                className="image-placeholder aspect-square !border-[#F7EAD8]/15 !bg-[#F7EAD8]/[0.04] group cursor-pointer overflow-hidden shrink-0 w-[55vw] snap-start"
-              >
-                <span className="!text-[#F7EAD8]/20 text-xs text-center group-hover:!text-[#F7EAD8]/40 transition-colors">{label}</span>
-              </div>
+            {gallery.mobile.map((photo, i) => (
+              <GallerySlot
+                key={photo?.src ?? `empty-${i}`}
+                photo={photo}
+                sizes="55vw"
+                className="aspect-square shrink-0 w-[55vw] snap-start"
+              />
             ))}
           </div>
 
           {/* Desktop: 4 small left | 1 big center | 4 small right */}
           <div className="hidden md:grid md:grid-cols-[1fr_2fr_1fr] gap-4">
-            {/* Left 4 */}
             <div className="grid grid-cols-2 gap-4">
-              {["Wedding reception", "Birthday party", "Corporate night", "Private lesson"].map((label) => (
-                <div
-                  key={label}
-                  className="image-placeholder aspect-square !border-[#F7EAD8]/15 !bg-[#F7EAD8]/[0.04] group cursor-pointer overflow-hidden"
-                >
-                  <span className="!text-[#F7EAD8]/20 text-[0.55rem] text-center group-hover:!text-[#F7EAD8]/40 transition-colors">{label}</span>
-                </div>
+              {gallery.left.map((photo, i) => (
+                <GallerySlot
+                  key={photo?.src ?? `left-${i}`}
+                  photo={photo}
+                  sizes="13vw"
+                  className="aspect-square"
+                />
               ))}
             </div>
 
-            {/* Center big */}
-            <div className="image-placeholder aspect-auto !border-[#F7EAD8]/15 !bg-[#F7EAD8]/[0.04] group cursor-pointer overflow-hidden min-h-full">
-              <span className="!text-[#F7EAD8]/20 text-xs text-center group-hover:!text-[#F7EAD8]/40 transition-colors">Featured event photo</span>
-            </div>
+            <GallerySlot photo={gallery.featured} sizes="40vw" className="min-h-full" />
 
-            {/* Right 4 */}
             <div className="grid grid-cols-2 gap-4">
-              {["Hen's night", "Country bar night", "Community event", "Fundraiser gala"].map((label) => (
-                <div
-                  key={label}
-                  className="image-placeholder aspect-square !border-[#F7EAD8]/15 !bg-[#F7EAD8]/[0.04] group cursor-pointer overflow-hidden"
-                >
-                  <span className="!text-[#F7EAD8]/20 text-[0.55rem] text-center group-hover:!text-[#F7EAD8]/40 transition-colors">{label}</span>
-                </div>
+              {gallery.right.map((photo, i) => (
+                <GallerySlot
+                  key={photo?.src ?? `right-${i}`}
+                  photo={photo}
+                  sizes="13vw"
+                  className="aspect-square"
+                />
               ))}
             </div>
           </div>
