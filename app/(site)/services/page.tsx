@@ -72,6 +72,8 @@ const buttonBase =
 const buttonOnLight = `${buttonBase} bg-[#6B4841] text-[#F7EAD8] hover:bg-[#1E0F0B] ${focusRing}`;
 const buttonOnDark = `${buttonBase} bg-[#F7EAD8] text-[#6B4841] hover:bg-[#C483C8] hover:text-[#1E0F0B] ${focusRing}`;
 
+const slug = (title: string) => title.toLowerCase().replace(/\s+/g, "-");
+
 export default function ServicesPage() {
   return (
     <>
@@ -87,113 +89,121 @@ export default function ServicesPage() {
           >
             Our Services
           </h1>
+          <p className="mx-auto mt-4 max-w-[38rem] text-[length:var(--text-body)] leading-relaxed text-[#6B4841]/75">
+            Every session is tailored to your group, your venue and your vibe. Pick your occasion
+            below and we&apos;ll take care of the steps.
+          </p>
+
+          {/* Jump links to each service */}
+          <nav aria-label="Services" className="mt-8 flex flex-wrap justify-center gap-3">
+            {services.map(({ title }) => (
+              <a
+                key={title}
+                href={`#${slug(title)}`}
+                className={`brygada inline-flex h-10 items-center border border-[#6B4841]/25 px-5 text-[0.8rem] font-bold uppercase tracking-[0.18em] text-[#6B4841] transition-colors duration-300 hover:border-[#6B4841] hover:bg-[#6B4841] hover:text-[#F7EAD8] ${focusRing}`}
+              >
+                {title}
+              </a>
+            ))}
+          </nav>
         </div>
       </section>
 
-      {/* ── Service Blocks ── */}
-      <section className="px-[var(--gutter)] pb-8">
-        <div className="max-w-6xl mx-auto">
-          {services.map(({ title, desc, details, image }, i) => (
-            <div
+      {/* ── Service Cards ── */}
+      <section className="px-[var(--gutter)] pb-[var(--section)]">
+        <div className="max-w-6xl mx-auto flex flex-col gap-[max(1rem,1.5vw)]">
+          {services.map(({ title, desc, details, image }) => (
+            <article
               key={title}
-              id={title.toLowerCase().replace(/\s+/g, "-")}
-              className="scroll-mt-[calc(var(--header-logo)+var(--header-pad-y)*2)] border-t border-[#6B4841]/10 py-[max(1rem,2.5vh)] grid grid-cols-1 md:grid-cols-2 gap-x-[var(--gap)] gap-y-5 items-center"
+              id={slug(title)}
+              className="scroll-mt-[calc(var(--header-logo)+var(--header-pad-y)*2+1rem)] grid grid-cols-1 items-center gap-[max(1.25rem,2.2vw)] border border-[#6B4841]/10 bg-[#EDE0CC]/45 p-[max(1rem,1.6vw)] md:grid-cols-[auto_minmax(0,1fr)]"
             >
-              {/* Image half: left on even sections, right on odd. Image width follows
-                  screen height so each section stays compact. */}
-              <div className={`flex justify-center ${i % 2 === 1 ? "md:order-2" : ""}`}>
-                <div className="relative aspect-[3/4] w-[min(60%,16rem)] overflow-hidden shadow-[0_10px_30px_-18px_rgba(30,15,11,0.35)] md:w-[max(9rem,26vh)]">
-                  <Image
-                    src={image}
-                    alt={title}
-                    fill
-                    sizes="(min-width: 768px) 30vh, 60vw"
-                    className="object-cover"
-                  />
+              {/* Artwork: width follows screen height so two cards fit on screen at once */}
+              <div className="relative mx-auto aspect-[3/4] w-[min(55%,14rem)] overflow-hidden shadow-[0_10px_30px_-18px_rgba(30,15,11,0.35)] md:mx-0 md:w-[max(9rem,min(22vw,26vh))]">
+                <Image
+                  src={image}
+                  alt={title}
+                  fill
+                  sizes="(min-width: 768px) 26vh, 55vw"
+                  className="object-cover"
+                />
+              </div>
+
+              {/* Content: description + button on the left, what's included on the right */}
+              <div className="grid grid-cols-1 gap-x-[max(1.25rem,2.2vw)] gap-y-5 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] lg:grid-rows-[auto_1fr]">
+                <div className="lg:col-start-1 lg:row-start-1">
+                  <h2
+                    className="rye text-[#6B4841] uppercase tracking-wide leading-tight"
+                    style={{ fontSize: "var(--text-h3)" }}
+                  >
+                    {title}
+                  </h2>
+                  <p className="mt-3 text-[length:var(--text-body)] leading-relaxed text-[#6B4841]/80">
+                    {desc}
+                  </p>
+                </div>
+
+                <div className="lg:col-start-2 lg:row-start-1 lg:row-span-2 lg:border-l lg:border-[#6B4841]/15 lg:pl-[max(1.25rem,2.2vw)]">
+                  <p className="brygada text-[0.75rem] font-bold uppercase tracking-[0.25em] text-[#6B4841]/60">
+                    What&apos;s Included
+                  </p>
+                  <ul className="mt-3 space-y-1.5">
+                    {details.map((item) => (
+                      <li
+                        key={item}
+                        className="flex items-start gap-3 text-[length:var(--text-body)] leading-snug text-[#6B4841]/80"
+                      >
+                        <span aria-hidden className="mt-[0.5em] h-1.5 w-1.5 shrink-0 rounded-full bg-[#D49C84]" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="lg:col-start-1 lg:row-start-2 lg:self-start">
+                  <Link href="/contact" className={buttonOnLight}>
+                    Book {title}
+                  </Link>
                 </div>
               </div>
-
-              {/* Text half */}
-              <div className={i % 2 === 1 ? "md:order-1" : ""}>
-                <h2
-                  className="rye text-[#6B4841] uppercase tracking-wide leading-tight mb-2"
-                  style={{ fontSize: "var(--text-h3)" }}
-                >
-                  {title}
-                </h2>
-                <p className="text-[#6B4841]/80 text-[length:var(--text-body)] leading-relaxed mb-3">
-                  {desc}
-                </p>
-
-                <ul className="space-y-1 mb-4">
-                  {details.map((item) => (
-                    <li
-                      key={item}
-                      className="flex gap-2.5 text-[length:var(--text-body)] leading-snug text-[#6B4841]/75"
-                    >
-                      <span className="text-[#D49C84] text-[0.65rem] mt-1">&#10022;</span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-
-                <Link href="/contact" className={buttonOnLight}>
-                  Book {title}
-                </Link>
-              </div>
-            </div>
+            </article>
           ))}
         </div>
       </section>
 
-      {/* ── Full-Width Image Banner ── */}
-      <section className="relative flex min-h-[35.72vw] items-center">
-        <div className="image-placeholder !absolute inset-0 !border-x-0">
-          <span>Wide shot / Event atmosphere</span>
-        </div>
-        <div className="absolute inset-0 bg-[#1E0F0B]/50" />
-        <div className="relative w-full px-[var(--gutter)] py-[var(--section-sm)]">
-          <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-end md:justify-between gap-4">
-            <h2 className="rye text-[#F7EAD8] uppercase tracking-wide leading-tight" style={{ fontSize: "var(--text-h3)" }}>
-              No Experience
-              <br />Needed
-            </h2>
-            <p className="brygada font-bold text-[length:var(--text-eyebrow)] tracking-[0.3em] uppercase text-[#D49C84] pb-1">
-              Just Good Vibes
-              <br />&amp; Good Times
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* ── How It Works ── */}
-      <section className="px-[var(--gutter)] py-[var(--section)]">
+      <section className="border-t border-[#6B4841]/10 px-[var(--gutter)] py-[var(--section)]">
         <div className="max-w-6xl mx-auto text-center">
-          <p className="brygada font-bold text-[length:var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-3">Simple As</p>
+          <p className="brygada font-bold text-[length:var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-3">
+            Simple As
+          </p>
           <h2
-            className="rye text-[#6B4841] uppercase tracking-wide mb-14"
+            className="rye text-[#6B4841] uppercase tracking-wide mb-[max(2rem,3vw)]"
             style={{ fontSize: "var(--text-h2)" }}
           >
             How It Works
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border-t border-b border-[#6B4841]/10">
+          <ol className="grid grid-cols-1 border-y border-[#6B4841]/10 md:grid-cols-3">
             {process.map(({ title, desc }) => (
-              <div
+              <li
                 key={title}
-                className="border-b md:border-b-0 md:border-r last:border-r-0 border-[#6B4841]/10 py-10 md:px-10"
+                className="border-b border-[#6B4841]/10 px-[max(1rem,2vw)] py-[max(1.75rem,2.6vw)] last:border-b-0 md:border-b-0 md:border-r md:last:border-r-0"
               >
-                <h3 className="rye text-[length:var(--text-h3)] tracking-[0.2em] uppercase text-[#6B4841] mb-3">{title}</h3>
-                <p className="text-[#6B4841]/60 text-[length:var(--text-body)] leading-relaxed">{desc}</p>
-              </div>
+                <h3 className="rye text-[length:var(--text-h3)] tracking-[0.12em] uppercase text-[#6B4841] mb-3">
+                  {title}
+                </h3>
+                <p className="text-[#6B4841]/70 text-[length:var(--text-body)] leading-relaxed">{desc}</p>
+              </li>
             ))}
-          </div>
+          </ol>
 
-          <div className="mt-12">
-            <Link href="/contact" className={buttonOnLight}>
-              Get Started
-            </Link>
-          </div>
+          <p className="brygada mt-[max(2rem,3vw)] text-[length:clamp(1.05rem,1.4vw,1.5rem)] italic text-[#6B4841]/80">
+            No experience needed. Just good vibes and good times.
+          </p>
+          <Link href="/contact" className={`${buttonOnLight} mt-6`}>
+            Get Started
+          </Link>
         </div>
       </section>
 
@@ -206,7 +216,9 @@ export default function ServicesPage() {
         <div className="relative w-full px-[var(--gutter)] py-[var(--section-sm)]">
           <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-8">
             <div>
-              <p className="brygada font-bold text-[length:var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-3">Sound Like Your Kind of Fun?</p>
+              <p className="brygada font-bold text-[length:var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-3">
+                Sound Like Your Kind of Fun?
+              </p>
               <h2 className="rye text-[#F7EAD8] uppercase tracking-wide" style={{ fontSize: "var(--text-h2)" }}>
                 Book Your Session
               </h2>
