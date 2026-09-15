@@ -71,7 +71,7 @@ export default function ServicesPage() {
   return (
     <>
       {/* ── Header ── */}
-      <section className="px-[var(--gutter)] pt-[var(--section-top)] pb-6">
+      <section className="px-[var(--gutter)] pt-[var(--section-top)] pb-[var(--section-sm)]">
         <div className="max-w-6xl mx-auto text-center">
           <p className="brygada font-bold text-[length:var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-3">
             For Every Occasion
@@ -82,15 +82,6 @@ export default function ServicesPage() {
           >
             Our Services
           </h1>
-        </div>
-      </section>
-
-      {/* ── Hero Image ── */}
-      <section className="px-[var(--gutter)] pb-[var(--section)]">
-        <div className="max-w-6xl mx-auto">
-          <div className="image-placeholder w-full aspect-[2.8/1]">
-            <span>Services hero / Dancing in action</span>
-          </div>
         </div>
       </section>
 
