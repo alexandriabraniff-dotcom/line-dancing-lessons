@@ -1,11 +1,13 @@
+import Image from "next/image";
 import Link from "next/link";
 import HomeHero from "@/components/HomeHero";
 
+/* Card artwork is 3:4 portrait with the title designed into the image */
 const occasions = [
-  { title: "Weddings", placeholder: "Wedding dancing photo" },
-  { title: "Birthdays", placeholder: "Birthday party photo" },
-  { title: "Special Events", placeholder: "Social event photo" },
-  { title: "Private Lessons", placeholder: "Private lesson photo" },
+  { title: "Weddings", image: "/services/weddings.png" },
+  { title: "Birthdays", image: "/services/birthdays.png" },
+  { title: "Special Events", image: "/services/special-events.png" },
+  { title: "Private Lessons", image: "/services/private-lessons.png" },
 ];
 
 export default function Home() {
@@ -15,7 +17,7 @@ export default function Home() {
       <HomeHero />
 
       {/* ── Book by Occasion ── */}
-      <section className="px-[var(--gutter)] py-[var(--section)]">
+      <section id="our-services" className="px-[var(--gutter)] py-[var(--section)]">
         <div className="max-w-6xl mx-auto text-center">
           <p className="brygada font-bold text-[length:var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-3">
             Whatever the occasion, we&apos;ve got you covered
@@ -28,14 +30,21 @@ export default function Home() {
           </h2>
 
           <div className="mt-12 flex gap-5 overflow-x-auto pb-4 snap-x snap-mandatory sm:grid sm:grid-cols-4 sm:overflow-visible sm:pb-0">
-            {occasions.map(({ title, placeholder }) => (
-              <Link key={title} href="/services" className="group shrink-0 w-[65vw] sm:w-auto snap-start">
-                <div className="image-placeholder aspect-[3/4] mb-4">
-                  <span>{placeholder}</span>
+            {occasions.map(({ title, image }) => (
+              <Link
+                key={title}
+                href="/services"
+                className="group shrink-0 w-[65vw] sm:w-auto snap-start focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#C483C8]"
+              >
+                <div className="relative aspect-[3/4] overflow-hidden shadow-[0_10px_30px_-18px_rgba(30,15,11,0.35)] transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-[0_18px_40px_-18px_rgba(30,15,11,0.45)]">
+                  <Image
+                    src={image}
+                    alt={title}
+                    fill
+                    sizes="(min-width: 640px) 25vw, 65vw"
+                    className="object-cover"
+                  />
                 </div>
-                <p className="brygada font-bold text-[length:var(--text-eyebrow)] tracking-[0.25em] uppercase text-[#6B4841]/70 group-hover:text-[#C483C8] transition-colors">
-                  {title}
-                </p>
               </Link>
             ))}
           </div>
