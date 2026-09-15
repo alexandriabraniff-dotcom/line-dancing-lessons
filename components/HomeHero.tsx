@@ -67,18 +67,11 @@ export default function HomeHero() {
         </h1>
 
         <p
-          className="fade-up brygada mt-[clamp(0.75rem,2.4vh,1.5rem)] text-[length:clamp(1rem,min(1.8vw,2.6vh),1.5rem)] italic text-[#F2B8CE]"
+          className="fade-up mt-[clamp(1rem,3vh,1.75rem)] max-w-[36rem] text-[length:clamp(0.95rem,min(1.3vw,2.2vh),1.2rem)] leading-relaxed text-[#F7EAD8]/85"
           style={delay(160)}
         >
-          It&apos;s more than a dance, it&apos;s a good time.
-        </p>
-
-        <p
-          className="fade-up mt-[clamp(0.5rem,1.4vh,1rem)] max-w-[36rem] text-[length:clamp(0.9rem,min(1.2vw,2vh),1.125rem)] leading-relaxed text-[#F7EAD8]/80 [@media(max-height:640px)]:hidden"
-          style={delay(240)}
-        >
           Beginner and intermediate line dancing for weddings, birthdays, social
-          events and private groups. We bring the steps, you bring the good time.
+          events and private groups.
         </p>
 
         <div
