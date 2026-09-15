@@ -142,26 +142,25 @@ export default function ContactPage() {
       </section>
 
       {/* ── CTA Banner ── */}
-      <section className="relative">
-        <div className="image-placeholder w-full aspect-[3/1] md:aspect-[4/1] !rounded-none !border-x-0">
+      <section className="relative flex min-h-[33.34vw] md:min-h-[25vw] items-center">
+        <div className="image-placeholder !absolute inset-0 !border-x-0">
           <span>CTA background / Adelaide or venue shot</span>
         </div>
-        <div className="absolute inset-0 bg-[#1E0F0B]/65 flex items-center">
-          <div className="w-full px-[var(--gutter)]">
-            <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-8">
-              <div>
-                <p className="brygada font-bold text-[length:var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-3">Based in Adelaide</p>
-                <h2 className="rye text-[#F7EAD8] uppercase tracking-wide" style={{ fontSize: "var(--text-h2)" }}>
-                  Available Across
-                  <br />South Australia
-                </h2>
-              </div>
-              <Link
-                href="/services"
-                className="brygada font-bold text-xs border border-[#C483C8]/50 text-[#C483C8] px-7 py-3 tracking-[0.25em] uppercase hover:bg-[#C483C8] hover:text-[#1E0F0B] transition-all inline-block self-start md:self-center"
-              >
-                See Services              </Link>
+        <div className="absolute inset-0 bg-[#1E0F0B]/65" />
+        <div className="relative w-full px-[var(--gutter)] py-[var(--section-sm)]">
+          <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+            <div>
+              <p className="brygada font-bold text-[length:var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-3">Based in Adelaide</p>
+              <h2 className="rye text-[#F7EAD8] uppercase tracking-wide" style={{ fontSize: "var(--text-h2)" }}>
+                Available Across
+                <br />South Australia
+              </h2>
             </div>
+            <Link
+              href="/services"
+              className="brygada font-bold text-xs border border-[#C483C8]/50 text-[#C483C8] px-7 py-3 tracking-[0.25em] uppercase hover:bg-[#C483C8] hover:text-[#1E0F0B] transition-all inline-block self-start md:self-center"
+            >
+              See Services              </Link>
           </div>
         </div>
       </section>

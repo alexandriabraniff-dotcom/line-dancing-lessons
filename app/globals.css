@@ -76,8 +76,19 @@
   box-sizing: border-box;
 }
 
+/* ── Site-wide scale ──────────────────────────────────────
+   Every Tailwind size (text, spacing, max widths) and every clamp()
+   cap above is in rem, so scaling the root font-size scales the whole
+   site with the screen:
+   - never below 15px, so text stays readable on phones and tablets
+   - grows gently across laptops (about 15px at 1366, 16px at 1920)
+   - fully proportional above 1920px (0.8333vw = 16px at 1920,
+     about 21px at 2560, 32px at 3840)
+   rem units inside max() refer to the browser default, so user font
+   size preferences are still respected. */
 html {
   scroll-behavior: smooth;
+  font-size: max(0.9375rem, calc(0.78rem + 0.18vw), 0.8333vw);
 }
 
 /* Hide horizontal scrollbars on swipe sections */

@@ -57,7 +57,7 @@ export default function Footer() {
                 width={584}
                 height={584}
                 sizes="140px"
-                className="h-auto w-[clamp(96px,10vw,132px)]"
+                className="h-auto w-[clamp(6rem,10vw,8.25rem)]"
               />
             </Link>
             <p className="text-[#F7EAD8]/25 text-xs mt-4 leading-relaxed">
