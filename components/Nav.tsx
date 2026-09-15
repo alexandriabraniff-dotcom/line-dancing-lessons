@@ -195,7 +195,7 @@ function NavBar({ hero }: { hero: boolean }) {
             className={
               hero
                 ? "w-[clamp(64px,min(22vw,13vh),132px)] drop-shadow-[0_8px_24px_rgba(30,15,11,0.45)]"
-                : "w-[clamp(52px,6vw,64px)]"
+                : "w-[clamp(48px,4.5vw,58px)]"
             }
           />
         </Link>

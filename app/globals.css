@@ -25,7 +25,8 @@
   /* Vertical section rhythm */
   --section: clamp(3rem, 5.4vw, 7rem);
   --section-sm: clamp(2rem, 3.6vw, 4.5rem);
-  --section-top: clamp(5rem, 6vw, 8rem);
+  /* Inner page top padding: clears the fixed header plus breathing room */
+  --section-top: clamp(6.5rem, 8vw, 10rem);
 
   /* Fixed header heights (compact bar, and the taller bar over the hero) */
   --header-h: 72px;
