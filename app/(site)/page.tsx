@@ -35,10 +35,10 @@ const photos = {
 };
 
 const gallery: { featured: Photo; left: Photo[]; right: Photo[]; mobile: Photo[] } = {
-  featured: photos.group,
-  left: [photos.danceFloor, photos.street, null, null],
+  featured: photos.street,
+  left: [photos.danceFloor, photos.group, null, null],
   right: [photos.boots, null, null, null],
-  mobile: [photos.group, photos.danceFloor, photos.street, photos.boots, null, null, null, null, null],
+  mobile: [photos.street, photos.group, photos.danceFloor, photos.boots, null, null, null, null, null],
 };
 
 function GallerySlot({ photo, sizes, className }: { photo: Photo; sizes: string; className: string }) {
