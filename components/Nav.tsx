@@ -24,7 +24,7 @@ function Logo({ className, preload = false }: { className: string; preload?: boo
       width={584}
       height={584}
       preload={preload}
-      sizes="180px"
+      sizes="(min-width: 2000px) 300px, 180px"
       className={`h-auto ${className}`}
     />
   );
@@ -71,9 +71,9 @@ function MobileMenu({
       aria-label="Menu"
       className="menu-drop grain fixed inset-0 z-[70] flex flex-col overflow-y-auto bg-[#1E0F0B] lg:hidden"
     >
-      <div className="relative z-10 flex items-center justify-between px-[var(--gutter)] pt-[clamp(0.75rem,2.5vh,2rem)]">
+      <div className="relative z-10 flex items-center justify-between px-[var(--hero-gutter)] pt-[var(--hero-pad-top)]">
         <Link href="/" onClick={onNavigate} className={focusRing}>
-          <Logo className="w-[clamp(80px,min(26vw,17vh),112px)]" />
+          <Logo className="w-[var(--hero-logo)]" />
         </Link>
         <button
           type="button"
@@ -86,7 +86,7 @@ function MobileMenu({
         </button>
       </div>
 
-      <div className="relative z-10 flex flex-1 flex-col justify-between px-[var(--gutter)] pb-10 pt-10">
+      <div className="relative z-10 flex flex-1 flex-col justify-between px-[var(--hero-gutter)] pb-10 pt-10">
         <ul className="flex flex-col items-center gap-1 text-center">
           {links.map((l, i) => {
             const active = pathname === l.href;
@@ -97,7 +97,7 @@ function MobileMenu({
                   href={l.href}
                   onClick={onNavigate}
                   aria-current={active ? "page" : undefined}
-                  className={`rye block py-3 text-[clamp(1.9rem,9vw,2.5rem)] uppercase leading-none tracking-wide ${focusRing} ${
+                  className={`rye block py-3 text-[clamp(1.9rem,9vw,3.5rem)] uppercase leading-none tracking-wide ${focusRing} ${
                     active ? "text-[#C483C8]" : "text-[#F7EAD8] active:text-[#C483C8]"
                   }`}
                 >
@@ -128,7 +128,8 @@ function MobileMenu({
   );
 }
 
-/* ── Shared bar: `hero` sits over the photo, otherwise the solid cream header ── */
+/* ── Shared bar: `hero` sits over the photo, otherwise the solid cream header.
+   Sizes come from the --nav-* / --header-* / --hero-* variables in globals.css. ── */
 function NavBar({ hero }: { hero: boolean }) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
@@ -151,8 +152,8 @@ function NavBar({ hero }: { hero: boolean }) {
     <>
       <nav
         aria-label={hero ? "Main" : "Site"}
-        className={`mx-auto flex max-w-7xl items-center justify-between gap-6 px-[var(--gutter)] ${
-          hero ? "pt-[clamp(0.75rem,2.5vh,2rem)]" : "py-2"
+        className={`flex w-full items-center justify-between gap-6 px-[var(--hero-gutter)] ${
+          hero ? "pt-[var(--hero-pad-top)]" : "py-[var(--header-pad-y)]"
         }`}
       >
         {/* Logo, top left */}
@@ -161,15 +162,15 @@ function NavBar({ hero }: { hero: boolean }) {
             preload={hero}
             className={
               hero
-                ? "w-[clamp(80px,min(26vw,17vh),170px)] drop-shadow-[0_8px_24px_rgba(30,15,11,0.45)]"
-                : "w-[clamp(56px,5vw,68px)]"
+                ? "w-[var(--hero-logo)] drop-shadow-[0_8px_24px_rgba(30,15,11,0.45)]"
+                : "w-[var(--header-logo)]"
             }
           />
         </Link>
 
         {/* Links, CTA and menu toggle, right */}
-        <div className="flex items-center gap-[clamp(1.25rem,2.6vw,2.75rem)]">
-          <ul className="hidden items-center gap-[clamp(1.25rem,2.6vw,2.5rem)] lg:flex">
+        <div className="flex items-center gap-[var(--nav-gap)]">
+          <ul className="hidden items-center gap-[var(--nav-gap)] lg:flex">
             {links.map((l) => {
               const active = pathname === l.href;
               return (
@@ -177,7 +178,7 @@ function NavBar({ hero }: { hero: boolean }) {
                   <Link
                     href={l.href}
                     aria-current={active ? "page" : undefined}
-                    className={`nav-link brygada block py-2 text-[0.8rem] font-bold uppercase tracking-[0.25em] transition-colors duration-300 xl:text-[0.85rem] ${focusRing} ${
+                    className={`nav-link brygada block py-2 text-[length:var(--nav-link)] font-bold uppercase tracking-[0.25em] transition-colors duration-300 ${focusRing} ${
                       hero
                         ? active
                           ? "text-[#C483C8]"
@@ -196,7 +197,7 @@ function NavBar({ hero }: { hero: boolean }) {
 
           <Link
             href="/contact"
-            className={`brygada hidden h-11 items-center border-[1.5px] px-6 text-[0.75rem] font-bold uppercase tracking-[0.22em] transition-colors duration-300 lg:inline-flex ${focusRing} ${
+            className={`brygada hidden h-[var(--nav-btn-h)] items-center border-[1.5px] px-[var(--nav-btn-px)] text-[length:var(--nav-btn-text)] font-bold uppercase tracking-[0.22em] transition-colors duration-300 lg:inline-flex ${focusRing} ${
               hero
                 ? "border-[#F7EAD8] text-[#F7EAD8] hover:bg-[#F7EAD8] hover:text-[#6B4841]"
                 : "border-[#6B4841] bg-[#6B4841] text-[#F7EAD8] hover:border-[#1E0F0B] hover:bg-[#1E0F0B]"

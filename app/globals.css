@@ -25,12 +25,40 @@
   /* Vertical section rhythm */
   --section: clamp(3rem, 5.4vw, 7rem);
   --section-sm: clamp(2rem, 3.6vw, 4.5rem);
-  /* Inner page top padding: clears the fixed header plus breathing room */
-  --section-top: clamp(6.5rem, 8vw, 10rem);
+  /* ── Hero + header scale ──────────────────────────────────
+     One viewport unit drives every hero and header size, with no upper
+     cap, so a bigger screen shows a proportionally bigger hero. It is 1%
+     of the screen width, limited by height so short screens still fit the
+     whole hero. The max() floors only keep things readable on small phones. */
+  --vu: min(1vw, 1.8vh);
 
-  /* Fixed header heights (compact bar, and the taller bar over the hero) */
-  --header-h: 72px;
-  --header-h-lg: 88px;
+  --hero-gutter: max(1.25rem, 3.5vw);
+  --hero-pad-top: max(0.75rem, calc(var(--vu) * 1.8));
+  --hero-logo: max(min(22vw, 15vh), calc(var(--vu) * 9));
+  --hero-eyebrow: max(0.62rem, calc(var(--vu) * 0.72));
+  --hero-title: max(1.85rem, calc(var(--vu) * 4.6));
+  --hero-body: max(0.95rem, calc(var(--vu) * 1.05));
+  --hero-body-w: max(20rem, calc(var(--vu) * 48));
+  --hero-gap-sm: max(0.75rem, calc(var(--vu) * 1.6));
+  --hero-gap: max(1rem, calc(var(--vu) * 2));
+  --hero-gap-lg: max(1.25rem, calc(var(--vu) * 3));
+  --hero-btn-h: max(48px, calc(var(--vu) * 3.2));
+  --hero-btn-px: max(2rem, calc(var(--vu) * 2.6));
+  --hero-btn-text: max(0.75rem, calc(var(--vu) * 0.72));
+
+  --nav-link: max(0.8rem, calc(var(--vu) * 0.68));
+  --nav-gap: max(1.25rem, calc(var(--vu) * 2.4));
+  --nav-btn-h: max(44px, calc(var(--vu) * 2.9));
+  --nav-btn-px: max(1.5rem, calc(var(--vu) * 1.8));
+  --nav-btn-text: max(0.75rem, calc(var(--vu) * 0.66));
+  --header-logo: max(56px, calc(var(--vu) * 3.6));
+  --header-pad-y: max(0.5rem, calc(var(--vu) * 0.6));
+
+  /* Inner page top padding: always clears the fixed header plus breathing room */
+  --section-top: max(
+    clamp(6.5rem, 8vw, 10rem),
+    calc(var(--header-logo) + var(--header-pad-y) * 2 + 2.5rem)
+  );
 
   /* Grid / column gaps */
   --gap: clamp(1.75rem, 3.2vw, 4rem);

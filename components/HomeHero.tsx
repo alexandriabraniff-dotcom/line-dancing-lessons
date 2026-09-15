@@ -5,11 +5,13 @@ import { HeroNav } from "@/components/Nav";
 const focusRing =
   "focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#C483C8]";
 
+const buttonBase =
+  "brygada inline-flex h-[var(--hero-btn-h)] items-center justify-center border-[1.5px] px-[var(--hero-btn-px)] text-[length:var(--hero-btn-text)] font-bold uppercase tracking-[0.25em] transition-colors duration-300";
+
 const delay = (ms: number) => ({ animationDelay: `${ms}ms` });
 
-/* Every size in the hero scales with BOTH the screen width and height
-   (min of a vw and a vh value), so the whole hero fits inside one
-   screen on phones, laptops and large monitors. */
+/* All hero sizes come from the --hero-* variables in globals.css, which scale
+   with the screen (width, limited by height) and have no upper cap. */
 export default function HomeHero() {
   return (
     <section
@@ -48,9 +50,9 @@ export default function HomeHero() {
       </div>
 
       {/* Copy */}
-      <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-1 flex-col items-center justify-center px-[var(--gutter)] py-[clamp(1.5rem,5vh,4rem)] text-center">
+      <div className="relative z-10 flex w-full flex-1 flex-col items-center justify-center px-[var(--hero-gutter)] py-[max(1.5rem,5vh)] text-center">
         <p
-          className="fade-up brygada text-[length:clamp(0.62rem,min(0.9vw,1.6vh),0.85rem)] font-bold uppercase tracking-[0.35em] text-[#D49C84]"
+          className="fade-up brygada text-[length:var(--hero-eyebrow)] font-bold uppercase tracking-[0.35em] text-[#D49C84]"
           style={delay(0)}
         >
           Line Dancing Lessons &amp; Events
@@ -58,7 +60,7 @@ export default function HomeHero() {
 
         <h1
           id="hero-heading"
-          className="fade-up rye mt-[clamp(0.75rem,2.2vh,1.5rem)] text-[length:clamp(1.85rem,min(6.4vw,8.5vh),5.75rem)] uppercase leading-[1.08] tracking-wide text-[#F7EAD8]"
+          className="fade-up rye mt-[var(--hero-gap-sm)] text-[length:var(--hero-title)] uppercase leading-[1.08] tracking-wide text-[#F7EAD8]"
           style={delay(80)}
         >
           Lessons for
@@ -67,7 +69,7 @@ export default function HomeHero() {
         </h1>
 
         <p
-          className="fade-up mt-[clamp(1rem,3vh,1.75rem)] max-w-[36rem] text-[length:clamp(0.95rem,min(1.3vw,2.2vh),1.2rem)] leading-relaxed text-[#F7EAD8]/85"
+          className="fade-up mt-[var(--hero-gap)] max-w-[var(--hero-body-w)] text-[length:var(--hero-body)] leading-relaxed text-[#F7EAD8]/85"
           style={delay(160)}
         >
           Beginner and intermediate line dancing for weddings, birthdays, social
@@ -75,18 +77,18 @@ export default function HomeHero() {
         </p>
 
         <div
-          className="fade-up mt-[clamp(1.25rem,4vh,2.5rem)] flex w-full max-w-xs flex-col gap-3 sm:w-auto sm:max-w-none sm:flex-row sm:gap-4"
-          style={delay(320)}
+          className="fade-up mt-[var(--hero-gap-lg)] flex w-full max-w-xs flex-col gap-3 sm:w-auto sm:max-w-none sm:flex-row sm:gap-[max(1rem,calc(var(--vu)*1.2))]"
+          style={delay(240)}
         >
           <Link
             href="/contact"
-            className={`brygada inline-flex h-12 items-center justify-center border-[1.5px] border-[#F7EAD8] bg-[#F7EAD8] px-8 text-xs font-bold uppercase tracking-[0.25em] text-[#6B4841] transition-colors duration-300 hover:bg-[#6B4841] hover:text-[#F7EAD8] ${focusRing}`}
+            className={`${buttonBase} border-[#F7EAD8] bg-[#F7EAD8] text-[#6B4841] hover:bg-[#6B4841] hover:text-[#F7EAD8] ${focusRing}`}
           >
             Book Your Event
           </Link>
           <Link
             href="/services"
-            className={`brygada inline-flex h-12 items-center justify-center border-[1.5px] border-[#F7EAD8]/70 px-8 text-xs font-bold uppercase tracking-[0.25em] text-[#F7EAD8] transition-colors duration-300 hover:border-[#F7EAD8] hover:bg-[#F7EAD8]/10 ${focusRing}`}
+            className={`${buttonBase} border-[#F7EAD8]/70 text-[#F7EAD8] hover:border-[#F7EAD8] hover:bg-[#F7EAD8]/10 ${focusRing}`}
           >
             Explore Services
           </Link>
