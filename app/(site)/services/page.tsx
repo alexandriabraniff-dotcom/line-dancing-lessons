@@ -57,12 +57,6 @@ const services = [
   },
 ];
 
-const process = [
-  { title: "Reach Out", desc: "Tell us about your event, your group, and what you're after." },
-  { title: "We Plan", desc: "We put together a session tailored to your vibe, skill level, and venue." },
-  { title: "We Dance", desc: "Show up, have fun, and let us handle the rest. No experience needed." },
-];
-
 const focusRing =
   "focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#C483C8]";
 
@@ -93,19 +87,6 @@ export default function ServicesPage() {
             Every session is tailored to your group, your venue and your vibe. Pick your occasion
             below and we&apos;ll take care of the steps.
           </p>
-
-          {/* Jump links to each service */}
-          <nav aria-label="Services" className="mt-8 flex flex-wrap justify-center gap-3">
-            {services.map(({ title }) => (
-              <a
-                key={title}
-                href={`#${slug(title)}`}
-                className={`brygada inline-flex h-10 items-center border border-[#6B4841]/25 px-5 text-[0.8rem] font-bold uppercase tracking-[0.18em] text-[#6B4841] transition-colors duration-300 hover:border-[#6B4841] hover:bg-[#6B4841] hover:text-[#F7EAD8] ${focusRing}`}
-              >
-                {title}
-              </a>
-            ))}
-          </nav>
         </div>
       </section>
 
@@ -168,42 +149,6 @@ export default function ServicesPage() {
               </div>
             </article>
           ))}
-        </div>
-      </section>
-
-      {/* ── How It Works ── */}
-      <section className="border-t border-[#6B4841]/10 px-[var(--gutter)] py-[var(--section)]">
-        <div className="max-w-6xl mx-auto text-center">
-          <p className="brygada font-bold text-[length:var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-3">
-            Simple As
-          </p>
-          <h2
-            className="rye text-[#6B4841] uppercase tracking-wide mb-[max(2rem,3vw)]"
-            style={{ fontSize: "var(--text-h2)" }}
-          >
-            How It Works
-          </h2>
-
-          <ol className="grid grid-cols-1 border-y border-[#6B4841]/10 md:grid-cols-3">
-            {process.map(({ title, desc }) => (
-              <li
-                key={title}
-                className="border-b border-[#6B4841]/10 px-[max(1rem,2vw)] py-[max(1.75rem,2.6vw)] last:border-b-0 md:border-b-0 md:border-r md:last:border-r-0"
-              >
-                <h3 className="rye text-[length:var(--text-h3)] tracking-[0.12em] uppercase text-[#6B4841] mb-3">
-                  {title}
-                </h3>
-                <p className="text-[#6B4841]/70 text-[length:var(--text-body)] leading-relaxed">{desc}</p>
-              </li>
-            ))}
-          </ol>
-
-          <p className="brygada mt-[max(2rem,3vw)] text-[length:clamp(1.05rem,1.4vw,1.5rem)] italic text-[#6B4841]/80">
-            Just good vibes and good times.
-          </p>
-          <Link href="/contact" className={`${buttonOnLight} mt-6`}>
-            Get Started
-          </Link>
         </div>
       </section>
 
