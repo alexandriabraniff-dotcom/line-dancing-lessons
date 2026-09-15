@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata = {
@@ -17,7 +18,7 @@ const services = [
       "Pre-wedding hen and bucks lessons",
       "Reception floor fillers",
     ],
-    placeholder: "Wedding dancing / Bridal party",
+    image: "/services/weddings.png",
   },
   {
     num: "02",
@@ -30,7 +31,7 @@ const services = [
       "Themed playlists",
       "Party-friendly pacing",
     ],
-    placeholder: "Birthday celebration / Party vibes",
+    image: "/services/birthdays.png",
   },
   {
     num: "03",
@@ -43,7 +44,7 @@ const services = [
       "Community events",
       "Pop-up lessons",
     ],
-    placeholder: "Corporate event / Group activity",
+    image: "/services/special-events.png",
   },
   {
     num: "04",
@@ -56,7 +57,7 @@ const services = [
       "Small or large groups",
       "Recurring lessons available",
     ],
-    placeholder: "Private lesson / Small group",
+    image: "/services/private-lessons.png",
   },
 ];
 
@@ -96,14 +97,20 @@ export default function ServicesPage() {
       {/* ── Service Blocks ── */}
       <section className="px-[var(--gutter)] pb-8">
         <div className="max-w-6xl mx-auto">
-          {services.map(({ num, title, desc, details, placeholder }, i) => (
+          {services.map(({ num, title, desc, details, image }, i) => (
             <div
               key={title}
               className="border-t border-[#6B4841]/10 py-[var(--section-sm)] grid grid-cols-1 md:grid-cols-2 gap-[var(--gap)] items-center"
             >
               <div className={i % 2 === 1 ? "md:order-2" : ""}>
-                <div className="image-placeholder aspect-[4/5]">
-                  <span>{placeholder}</span>
+                <div className="relative aspect-[3/4] overflow-hidden shadow-[0_10px_30px_-18px_rgba(30,15,11,0.35)]">
+                  <Image
+                    src={image}
+                    alt={title}
+                    fill
+                    sizes="(min-width: 768px) 50vw, 100vw"
+                    className="object-cover"
+                  />
                 </div>
               </div>
 
