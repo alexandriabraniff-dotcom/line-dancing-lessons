@@ -1,184 +1,147 @@
-"use client";
-
+import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { SmallStar } from "@/components/Decorations";
 
-const links = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/services", label: "Services" },
-  { href: "/contact", label: "Contact" },
+const highlights = [
+  { title: "Weddings", caption: "First dance to last song" },
+  { title: "Birthdays", caption: "Any age, any crowd" },
+  { title: "Social Events", caption: "Work, hens and more" },
+  { title: "Private Groups", caption: "Lessons at your pace" },
 ];
 
+// Dividers: 2x2 on mobile, a single row of four from md up
+const highlightBorders = [
+  "pr-4 md:pr-6",
+  "border-l pl-4 md:px-6",
+  "border-t pr-4 md:border-t-0 md:border-l md:px-6",
+  "border-t border-l pl-4 md:border-t-0 md:pl-6",
+];
+
+const focusRing =
+  "focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#C483C8]";
+
+const delay = (ms: number) => ({ animationDelay: `${ms}ms` });
+
 export default function HomeHero() {
-  const pathname = usePathname();
-  const [menuOpen, setMenuOpen] = useState(false);
-
   return (
-    <section id="home-hero" className="relative min-h-[100svh] flex flex-col">
-      {/* Background image */}
-      <div className="absolute inset-0">
-        <img src="/hero-bg.png" alt="" className="w-full h-full object-cover" />
-      </div>
-      {/* Light haze overlay */}
-      <div className="absolute inset-0 bg-[#F7EAD8]/30" />
-      {/* Dark overlay */}
-      <div className="absolute inset-0 bg-[#1E0F0B]/35" />
+    <section
+      id="home-hero"
+      aria-labelledby="hero-heading"
+      className="grain relative isolate flex min-h-[min(100svh,1000px)] flex-col overflow-hidden bg-[#1E0F0B]"
+    >
+      {/* Background photo */}
+      <Image
+        src="/hero-bg.png"
+        alt=""
+        fill
+        preload
+        sizes="100vw"
+        className="-z-20 object-cover object-[60%_center]"
+      />
 
-      {/* ── Mobile fullscreen menu ── */}
-      {menuOpen && (
-        <div className="fixed inset-0 z-50 bg-[#1E0F0B] flex flex-col md:hidden">
-          {/* Close header */}
-          <div className="flex items-center justify-between px-6 pt-8 pb-4">
-            <Link href="/" onClick={() => setMenuOpen(false)} className="flex flex-col leading-none gap-0.5">
-              <span className="rye text-2xl text-[#6B4841] tracking-widest leading-none uppercase">Wildflower</span>
-              <span className="brygada font-bold text-sm text-[#C483C8] tracking-wide">Line Dancing</span>
-            </Link>
-            <button
-              onClick={() => setMenuOpen(false)}
-              className="text-[#F7EAD8] p-2"
-              aria-label="Close menu"
+      {/* Legibility gradients */}
+      <div
+        aria-hidden
+        className="absolute inset-0 -z-10 bg-linear-to-r from-[#1E0F0B]/90 via-[#1E0F0B]/60 to-[#1E0F0B]/15"
+      />
+      <div aria-hidden className="absolute inset-0 -z-10 bg-[#1E0F0B]/35 md:hidden" />
+      <div
+        aria-hidden
+        className="absolute inset-x-0 bottom-0 -z-10 h-1/2 bg-linear-to-t from-[#1E0F0B]/80 to-transparent"
+      />
+
+      <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-1 flex-col px-[var(--gutter)]">
+        {/* Copy */}
+        <div className="flex flex-1 flex-col justify-center pb-12 pt-32 md:pb-16 md:pt-40">
+          <div className="max-w-[40rem]">
+            <p
+              className="fade-up brygada flex items-center gap-3 text-[length:clamp(0.68rem,0.5vw+0.55rem,0.85rem)] font-bold uppercase tracking-[0.35em] text-[#D49C84]"
+              style={delay(0)}
             >
-              <svg width="28" height="28" fill="none" stroke="currentColor" strokeWidth={1.5}>
-                <path d="M6 22L22 6M6 6l16 16" />
-              </svg>
-            </button>
-          </div>
+              <SmallStar size={14} color="#C483C8" className="shrink-0" />
+              Line Dancing Lessons &amp; Events
+            </p>
 
-          {/* Links */}
-          <div className="flex-1 flex flex-col items-center justify-center gap-8">
-            {links.map((l) => (
+            <h1
+              id="hero-heading"
+              className="fade-up rye mt-6 text-[length:clamp(2.3rem,6vw,5.25rem)] uppercase leading-[1.08] tracking-wide text-[#F7EAD8]"
+              style={delay(80)}
+            >
+              Lessons for
+              <br />
+              <span className="relative inline-block">
+                Every Occasion
+                <svg
+                  aria-hidden
+                  viewBox="0 0 300 12"
+                  preserveAspectRatio="none"
+                  fill="none"
+                  className="absolute -bottom-[0.2em] left-0 h-[0.18em] w-full text-[#D49C84]"
+                >
+                  <path
+                    d="M2 8 C 50 2, 100 11, 150 6 S 250 2, 298 7"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    vectorEffect="non-scaling-stroke"
+                  />
+                </svg>
+              </span>
+            </h1>
+
+            <p
+              className="fade-up brygada mt-9 text-[length:clamp(1.1rem,1.8vw,1.5rem)] italic text-[#F2B8CE]"
+              style={delay(160)}
+            >
+              It&apos;s more than a dance, it&apos;s a good time.
+            </p>
+
+            <p
+              className="fade-up mt-4 max-w-[34rem] text-[length:clamp(0.95rem,0.4vw+0.85rem,1.125rem)] leading-relaxed text-[#F7EAD8]/80"
+              style={delay(240)}
+            >
+              Beginner and intermediate line dancing for weddings, birthdays, social
+              events and private groups. We bring the steps, you bring the good time.
+            </p>
+
+            <div className="fade-up mt-10 flex flex-col gap-4 sm:flex-row" style={delay(320)}>
               <Link
-                key={l.href}
-                href={l.href}
-                onClick={() => setMenuOpen(false)}
-                className={`rye text-3xl tracking-widest uppercase ${
-                  pathname === l.href ? "text-[#C483C8]" : "text-white"
-                }`}
+                href="/contact"
+                className={`brygada inline-flex h-12 items-center justify-center border-[1.5px] border-[#F7EAD8] bg-[#F7EAD8] px-8 text-xs font-bold uppercase tracking-[0.25em] text-[#6B4841] transition-colors duration-300 hover:border-[#F7EAD8] hover:bg-[#6B4841] hover:text-[#F7EAD8] ${focusRing}`}
               >
-                {l.label}
+                Book Your Event
               </Link>
-            ))}
-          </div>
-
-          {/* Bottom CTA */}
-          <div className="px-6 pb-10">
-            <Link
-              href="/contact"
-              onClick={() => setMenuOpen(false)}
-              className="brygada font-bold text-xs bg-[#F7EAD8] text-[#6B4841] border-2 border-[#6B4841] w-full h-[45px] flex items-center justify-center tracking-[0.25em] uppercase"
-            >
-              Book Event
-            </Link>
+              <Link
+                href="/services"
+                className={`brygada group inline-flex h-12 items-center justify-center gap-3 border-[1.5px] border-[#F7EAD8]/70 px-8 text-xs font-bold uppercase tracking-[0.25em] text-[#F7EAD8] transition-colors duration-300 hover:border-[#F7EAD8] hover:bg-[#F7EAD8]/10 ${focusRing}`}
+              >
+                Explore Services
+                <span aria-hidden className="transition-transform duration-300 group-hover:translate-x-1">
+                  →
+                </span>
+              </Link>
+            </div>
           </div>
         </div>
-      )}
 
-      {/* ── Inline Nav ── */}
-      <nav className="relative z-20 w-full px-[var(--gutter)] pt-[var(--nav-top)] pb-4">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          {/* Mobile: logo left + hamburger right */}
-          <Link href="/" className="flex flex-col leading-none gap-0.5 md:hidden">
-            <span className="rye text-2xl text-[#6B4841] tracking-widest leading-none uppercase" style={{ textShadow: "0 0 15px rgba(247,234,216,0.8)" }}>Wildflower</span>
-            <span className="brygada font-bold text-sm text-[#C483C8] tracking-wide" style={{ textShadow: "0 0 10px rgba(196,131,200,0.5)" }}>Line Dancing</span>
-          </Link>
-          <button
-            onClick={() => setMenuOpen(true)}
-            className="md:hidden text-[#F7EAD8] p-2 drop-shadow-lg"
-            aria-label="Open menu"
-          >
-            <svg width="28" height="28" fill="none" stroke="currentColor" strokeWidth={1.5}>
-              <path d="M4 7h20M4 14h20M4 21h20" />
-            </svg>
-          </button>
-
-          {/* Desktop: left links */}
-          <ul className="hidden md:flex gap-[var(--nav-gap)] items-center">
-            {links.slice(0, 2).map((l) => (
-              <li key={l.href}>
-                <Link
-                  href={l.href}
-                  className={`brygada font-bold text-[length:var(--nav-link)] tracking-[0.3em] uppercase transition-colors drop-shadow-md ${
-                    pathname === l.href
-                      ? "text-[#C483C8]"
-                      : "text-white hover:text-[#C483C8]"
-                  }`}
-                >
-                  {l.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-
-          {/* Desktop: center logo */}
-          <Link href="/" className="hidden md:flex flex-col items-center leading-none gap-0.5 relative">
-            <span className="absolute inset-0 -inset-x-6 -inset-y-3 bg-[#F7EAD8]/80 rounded-full blur-[2px]" />
-            <span className="relative rye text-[length:var(--nav-logo)] text-[#6B4841] tracking-widest leading-none uppercase">
-              Wildflower
-            </span>
-            <span className="relative brygada font-bold text-[length:var(--nav-sub)] text-[#C483C8] tracking-wide">
-              Line Dancing
-            </span>
-          </Link>
-
-          {/* Desktop: right links */}
-          <ul className="hidden md:flex gap-[var(--nav-gap)] items-center">
-            {links.slice(2).map((l) => (
-              <li key={l.href}>
-                <Link
-                  href={l.href}
-                  className={`brygada font-bold text-[length:var(--nav-link)] tracking-[0.3em] uppercase transition-colors drop-shadow-md ${
-                    pathname === l.href
-                      ? "text-[#C483C8]"
-                      : "text-white hover:text-[#C483C8]"
-                  }`}
-                >
-                  {l.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </nav>
-
-      {/* ── Hero Content ── */}
-      <div className="relative z-10 flex-1 flex flex-col justify-center items-center px-[var(--gutter)] text-center py-[clamp(1.5rem,4vh,2.5rem)] translate-y-[var(--hero-drop)]">
-        {/* Big heading */}
-        <h1
-          className="rye text-[#F7EAD8] leading-[0.95] tracking-wide uppercase drop-shadow-lg"
-          style={{ fontSize: "var(--text-hero)" }}
+        {/* Highlight strip */}
+        <ul
+          className="fade-up grid grid-cols-2 border-t border-[#F7EAD8]/15 md:grid-cols-4"
+          style={delay(420)}
         >
-          Lessons
-          <br />
-          for
-          <br />
-          Every Occasion
-        </h1>
-
-        {/* Subheading */}
-        <p
-          className="brygada font-bold tracking-[0.3em] uppercase text-[#D49C84] mt-[min(1.5rem,3vh)]"
-          style={{ fontSize: "var(--text-hero-sub)", textShadow: "0 1px 6px rgba(0,0,0,0.7), 0 0 20px rgba(0,0,0,0.4)" }}
-        >
-          Line Dancing for Beginners &amp; Intermediate
-        </p>
-
-        {/* ── CTAs, 40px below the writing ── */}
-        <div className="mt-[var(--cta-gap)] w-full sm:w-auto px-6 sm:px-0 flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-5">
-          <Link
-            href="/contact"
-            className="brygada font-bold text-xs bg-[#F7EAD8] text-[#6B4841] border-2 border-[#6B4841] w-full sm:w-auto px-8 h-[45px] flex items-center justify-center tracking-[0.25em] uppercase hover:bg-[#6B4841] hover:text-[#F7EAD8] transition-all duration-300 shadow-lg"
-          >
-            Book Event
-          </Link>
-          <Link
-            href="/services"
-            className="brygada font-bold text-xs bg-transparent text-[#F7EAD8] border-2 border-[#F7EAD8] w-full sm:w-auto px-8 h-[45px] flex items-center justify-center tracking-[0.25em] uppercase hover:bg-[#F7EAD8] hover:text-[#6B4841] transition-all duration-300 shadow-lg"
-          >
-            View Services
-          </Link>
-        </div>
+          {highlights.map((h, i) => (
+            <li key={h.title} className={`border-[#F7EAD8]/15 ${highlightBorders[i]}`}>
+              <Link href="/services" className={`group block py-5 md:py-7 ${focusRing}`}>
+                <span className="rye block text-[length:clamp(0.95rem,1.2vw,1.2rem)] uppercase tracking-wide text-[#F7EAD8] transition-colors duration-300 group-hover:text-[#C483C8]">
+                  {h.title}
+                </span>
+                <span className="brygada mt-1.5 block text-sm italic text-[#F7EAD8]/65">
+                  {h.caption}
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );

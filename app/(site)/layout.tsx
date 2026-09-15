@@ -9,7 +9,7 @@ export default function SiteLayout({
   return (
     <div className="min-h-full flex flex-col">
       <Nav />
-      <main className="flex-1">{children}</main>
+      <main id="main" className="flex-1">{children}</main>
       <Footer />
     </div>
   );
