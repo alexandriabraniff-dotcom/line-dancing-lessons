@@ -199,7 +199,7 @@ export default function ServicesPage() {
           </ol>
 
           <p className="brygada mt-[max(2rem,3vw)] text-[length:clamp(1.05rem,1.4vw,1.5rem)] italic text-[#6B4841]/80">
-            No experience needed. Just good vibes and good times.
+            Just good vibes and good times.
           </p>
           <Link href="/contact" className={`${buttonOnLight} mt-6`}>
             Get Started
