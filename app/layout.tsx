@@ -25,6 +25,7 @@ const lato = Lato({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://wildflowerlinedancing.com"),
   title: "Wildflower Line Dancing",
   description: "It's more than a dance, it's a good time. Weddings, birthdays, social events and private groups.",
 };
