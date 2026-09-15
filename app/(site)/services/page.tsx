@@ -97,13 +97,12 @@ export default function ServicesPage() {
             <div
               key={title}
               id={title.toLowerCase().replace(/\s+/g, "-")}
-              className={`scroll-mt-[calc(var(--header-logo)+var(--header-pad-y)*2)] border-t border-[#6B4841]/10 py-[max(1.25rem,3vh)] grid grid-cols-1 gap-x-[var(--gap)] gap-y-6 items-center ${
-                i % 2 === 1 ? "md:grid-cols-[minmax(0,1fr)_auto]" : "md:grid-cols-[auto_minmax(0,1fr)]"
-              }`}
+              className="scroll-mt-[calc(var(--header-logo)+var(--header-pad-y)*2)] border-t border-[#6B4841]/10 py-[max(1rem,2.5vh)] grid grid-cols-1 md:grid-cols-2 gap-x-[var(--gap)] gap-y-5 items-center"
             >
-              {/* Image width follows screen height so two sections fit on screen at once */}
-              <div className={i % 2 === 1 ? "md:order-2" : ""}>
-                <div className="relative mx-auto aspect-[3/4] w-[min(60%,16rem)] overflow-hidden shadow-[0_10px_30px_-18px_rgba(30,15,11,0.35)] md:mx-0 md:w-[max(9rem,24vh)]">
+              {/* Image half: left on even sections, right on odd. Image width follows
+                  screen height so each section stays compact. */}
+              <div className={`flex justify-center ${i % 2 === 1 ? "md:order-2" : ""}`}>
+                <div className="relative aspect-[3/4] w-[min(60%,16rem)] overflow-hidden shadow-[0_10px_30px_-18px_rgba(30,15,11,0.35)] md:w-[max(9rem,26vh)]">
                   <Image
                     src={image}
                     alt={title}
@@ -114,24 +113,25 @@ export default function ServicesPage() {
                 </div>
               </div>
 
+              {/* Text half */}
               <div className={i % 2 === 1 ? "md:order-1" : ""}>
                 <h2
                   className="rye text-[#6B4841] uppercase tracking-wide leading-tight mb-2"
-                  style={{ fontSize: "var(--text-h2)" }}
+                  style={{ fontSize: "var(--text-h3)" }}
                 >
                   {title}
                 </h2>
-                <p className="text-[#6B4841]/80 text-[length:clamp(1rem,0.4vw+0.85rem,1.2rem)] leading-relaxed mb-3">
+                <p className="text-[#6B4841]/80 text-[length:var(--text-body)] leading-relaxed mb-3">
                   {desc}
                 </p>
 
-                <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-1.5 mb-5">
+                <ul className="space-y-1 mb-4">
                   {details.map((item) => (
                     <li
                       key={item}
-                      className="flex gap-2.5 text-[length:clamp(0.95rem,0.3vw+0.85rem,1.1rem)] text-[#6B4841]/75"
+                      className="flex gap-2.5 text-[length:var(--text-body)] leading-snug text-[#6B4841]/75"
                     >
-                      <span className="text-[#D49C84] text-xs mt-1">&#10022;</span>
+                      <span className="text-[#D49C84] text-[0.65rem] mt-1">&#10022;</span>
                       {item}
                     </li>
                   ))}
