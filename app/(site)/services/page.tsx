@@ -43,9 +43,9 @@ const services = [
   },
   {
     title: "Private Groups",
-    desc: "Book us for your crew on your terms. Whether it's a one-off session or a regular weekly lesson, we tailor everything to suit your group's vibe and skill level.",
+    desc: "Gather your friends, family or coworkers and make the dance floor your own. Whether you want a one-time session or weekly lessons to keep building your skills, we come to you and shape every routine around your group's energy and experience. No experience needed, just bring your crew and we'll handle the rest.",
     details: [
-      "Custom session length",
+      "Custom sessions",
       "Your choice of location",
       "Beginner to intermediate routines",
       "Small or large groups",
