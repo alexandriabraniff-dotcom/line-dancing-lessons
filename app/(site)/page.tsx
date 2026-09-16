@@ -174,7 +174,7 @@ export default function Home() {
               alt="Two Wildflower Line Dancing instructors in cowboy hats and boots smiling in front of a brick wall"
               fill
               sizes="(min-width: 768px) 50vw, 100vw"
-              className="object-cover"
+              className="object-cover origin-[50%_52%] scale-[1.4]"
             />
           </div>
 
