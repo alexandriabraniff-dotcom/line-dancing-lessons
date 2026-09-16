@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import BookingButton from "@/components/BookingButton";
 
 export const metadata = {
   title: "Services",
@@ -16,6 +16,8 @@ const services = [
       "Bridal party choreography",
       "Couples first dance",
       "Lessons for all your guests",
+      "Pre-wedding practice sessions",
+      "Songs picked for your wedding",
     ],
     image: "/services/weddings.png",
   },
@@ -26,6 +28,8 @@ const services = [
       "Group lessons",
       "Friendly for all ages",
       "Themed playlists",
+      "We come to your venue",
+      "No experience needed",
     ],
     image: "/services/birthdays.png",
   },
@@ -139,9 +143,7 @@ export default function ServicesPage() {
                 </div>
 
                 <div className="lg:col-start-1 lg:row-start-2 lg:self-start">
-                  <Link href="/contact" className={buttonOnLight}>
-                    Book {title}
-                  </Link>
+                  <BookingButton serviceKey={slug(title)} className={buttonOnLight} />
                 </div>
               </div>
             </article>
