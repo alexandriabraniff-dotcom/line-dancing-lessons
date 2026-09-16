@@ -1,8 +1,10 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "About | Wildflower Line Dancing",
-  description: "Learn about our line dancing instructors and what makes us different.",
+  title: "About Us",
+  description:
+    "Meet Wildflower Line Dancing, Vancouver's fun, inclusive line dancing instructors. Beginner and intermediate friendly lessons that feel like a party, not a class.",
+  alternates: { canonical: "/about" },
 };
 
 const values = [

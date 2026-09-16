@@ -12,6 +12,10 @@ const redirectHosts = [
 ];
 
 const nextConfig: NextConfig = {
+  /* Browsers and crawlers that still ask for /favicon.ico get the flower icon */
+  async rewrites() {
+    return [{ source: "/favicon.ico", destination: "/icon.png" }];
+  },
   async redirects() {
     return redirectHosts.map((host) => ({
       source: "/:path*",

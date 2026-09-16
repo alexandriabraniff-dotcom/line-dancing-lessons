@@ -2,6 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import HomeHero from "@/components/HomeHero";
 
+export const metadata = {
+  alternates: { canonical: "/" },
+};
+
 /* Card artwork is 3:4 portrait with the title designed into the image */
 const occasions = [
   { title: "Weddings", image: "/services/weddings.png" },

@@ -2,8 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Services | Wildflower Line Dancing",
-  description: "Weddings, birthdays, social events, private groups and more. Line dancing lessons for every occasion.",
+  title: "Services",
+  description:
+    "Line dancing lessons in Vancouver for weddings, birthdays, bachelorette and stag parties, corporate events and private groups. Beginner and intermediate friendly.",
+  alternates: { canonical: "/services" },
 };
 
 const services = [

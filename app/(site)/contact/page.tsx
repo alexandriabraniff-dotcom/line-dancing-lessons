@@ -1,8 +1,10 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Contact | Wildflower Line Dancing",
-  description: "Book your line dancing lesson today. Weddings, birthdays, social events and private groups.",
+  title: "Contact Us",
+  description:
+    "Book a line dancing lesson in Vancouver for your wedding, birthday, bachelorette party, corporate event or private group. We reply to every enquiry within 24 hours.",
+  alternates: { canonical: "/contact" },
 };
 
 export default function ContactPage() {
