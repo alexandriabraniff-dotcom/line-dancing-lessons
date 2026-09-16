@@ -16,10 +16,12 @@ const instructors: {
   image: string | null;
   /* Horizontal focus point of the photo, keeps the person centred in the portrait crop */
   focus?: string;
+  /* Optional zoom so both portraits share the same head-to-hips framing */
+  zoom?: string;
   writeUp: string | null;
 }[] = [
   { name: "Alex", image: "/about/alex.jpg", focus: "48% center", writeUp: null },
-  { name: "Lily", image: "/about/lily.jpg", focus: "45% center", writeUp: null },
+  { name: "Lily", image: "/about/lily.jpg", focus: "45% center", zoom: "origin-[45%_0%] scale-[1.4] translate-y-[1%]", writeUp: null },
 ];
 
 const focusRing =
@@ -119,7 +121,7 @@ export default function AboutPage() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-[var(--gap)]">
-            {instructors.map(({ name, image, focus, writeUp }) => (
+            {instructors.map(({ name, image, focus, zoom, writeUp }) => (
               <article key={name} className="flex flex-col">
                 {image ? (
                   <div className="relative aspect-[4/5] overflow-hidden shadow-[0_10px_30px_-18px_rgba(30,15,11,0.35)]">
@@ -128,7 +130,7 @@ export default function AboutPage() {
                       alt={`${name} of Wildflower Line Dancing`}
                       fill
                       sizes="(min-width: 640px) 40vw, 100vw"
-                      className="object-cover"
+                      className={`object-cover ${zoom ?? ""}`}
                       style={{ objectPosition: focus ?? "center" }}
                     />
                   </div>
