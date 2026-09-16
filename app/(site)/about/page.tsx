@@ -11,9 +11,15 @@ export const metadata = {
 /* ── Instructors ──────────────────────────────────────────
    Add each photo to public/about/ and set `image`, then replace `writeUp`
    with their own words. While `image` is null a placeholder is shown. */
-const instructors: { name: string; image: string | null; writeUp: string | null }[] = [
-  { name: "Alex", image: null, writeUp: null },
-  { name: "Lily", image: null, writeUp: null },
+const instructors: {
+  name: string;
+  image: string | null;
+  /* Horizontal focus point of the photo, keeps the person centred in the portrait crop */
+  focus?: string;
+  writeUp: string | null;
+}[] = [
+  { name: "Alex", image: "/about/alex.jpg", focus: "48% center", writeUp: null },
+  { name: "Lily", image: "/about/lily.jpg", focus: "45% center", writeUp: null },
 ];
 
 const focusRing =
@@ -113,7 +119,7 @@ export default function AboutPage() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-[var(--gap)]">
-            {instructors.map(({ name, image, writeUp }) => (
+            {instructors.map(({ name, image, focus, writeUp }) => (
               <article key={name} className="flex flex-col">
                 {image ? (
                   <div className="relative aspect-[4/5] overflow-hidden shadow-[0_10px_30px_-18px_rgba(30,15,11,0.35)]">
@@ -123,6 +129,7 @@ export default function AboutPage() {
                       fill
                       sizes="(min-width: 640px) 40vw, 100vw"
                       className="object-cover"
+                      style={{ objectPosition: focus ?? "center" }}
                     />
                   </div>
                 ) : (
