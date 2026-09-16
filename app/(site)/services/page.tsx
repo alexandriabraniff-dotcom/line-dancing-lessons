@@ -15,19 +15,17 @@ const services = [
     details: [
       "Bridal party choreography",
       "Couples first dance",
-      "A line dancing lesson for all your guests",
+      "Lessons for all your guests",
     ],
     image: "/services/weddings.png",
   },
   {
     title: "Birthdays",
-    desc: "Turn your birthday into the event of the year. We come to your venue, bring the energy, and make sure every guest leaves with tired feet and a huge smile.",
+    desc: "Turn your birthday into the event of the year. We come to your venue, bring the energy, and teach your guests easy, fun routines, so everyone leaves with tired feet and a huge smile.",
     details: [
-      "Private group lessons",
-      "Any age milestone",
-      "Surprise routines for the guest of honour",
+      "Group lessons",
+      "Friendly for all ages",
       "Themed playlists",
-      "Party-friendly pacing",
     ],
     image: "/services/birthdays.png",
   },
