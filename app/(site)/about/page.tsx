@@ -79,12 +79,20 @@ export default function AboutPage() {
                 learn something new, and walk away feeling a little lighter than they came in.
               </p>
             </div>
-            <Link
-              href="/contact"
-              className={`brygada mt-8 inline-flex h-11 items-center justify-center bg-[#6B4841] px-6 text-[0.85rem] font-bold uppercase tracking-[0.18em] text-[#F7EAD8] transition-colors duration-300 hover:bg-[#1E0F0B] ${focusRing}`}
-            >
-              Book a Session
-            </Link>
+            <div className="mt-8 border-t border-[#6B4841]/15 pt-6">
+              <p className="brygada text-[length:clamp(1.05rem,1.3vw,1.35rem)] font-bold italic text-[#6B4841]">
+                Have any questions?
+              </p>
+              <p className="mt-1 text-[#6B4841]/75 text-[length:var(--text-body)] leading-relaxed">
+                We&apos;d love to hear from you. Reach out and we&apos;ll get back to you within 24 hours.
+              </p>
+              <Link
+                href="/contact"
+                className={`brygada mt-5 inline-flex h-11 items-center justify-center bg-[#6B4841] px-6 text-[0.85rem] font-bold uppercase tracking-[0.18em] text-[#F7EAD8] transition-colors duration-300 hover:bg-[#1E0F0B] ${focusRing}`}
+              >
+                Contact Us
+              </Link>
+            </div>
           </div>
         </div>
       </section>

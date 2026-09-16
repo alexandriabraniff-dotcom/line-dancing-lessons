@@ -81,16 +81,16 @@ export default function HomeHero() {
           style={delay(240)}
         >
           <Link
-            href="/contact"
+            href="/services"
             className={`${buttonBase} border-[#F7EAD8] bg-[#F7EAD8] text-[#6B4841] hover:bg-[#6B4841] hover:text-[#F7EAD8] ${focusRing}`}
           >
             Book Your Event
           </Link>
           <Link
-            href="/services"
+            href="/contact"
             className={`${buttonBase} border-[#F7EAD8]/70 text-[#F7EAD8] hover:border-[#F7EAD8] hover:bg-[#F7EAD8]/10 ${focusRing}`}
           >
-            Explore Services
+            Contact Us
           </Link>
         </div>
       </div>

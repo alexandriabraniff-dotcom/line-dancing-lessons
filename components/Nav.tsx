@@ -116,7 +116,7 @@ function MobileMenu({
             It&apos;s more than a dance, it&apos;s a good time.
           </p>
           <Link
-            href="/contact"
+            href="/services"
             onClick={onNavigate}
             className={`brygada mt-6 flex h-12 w-full items-center justify-center bg-[#F7EAD8] text-xs font-bold uppercase tracking-[0.25em] text-[#6B4841] ${focusRing}`}
           >
@@ -196,7 +196,7 @@ function NavBar({ hero }: { hero: boolean }) {
           </ul>
 
           <Link
-            href="/contact"
+            href="/services"
             className={`brygada hidden h-[var(--nav-btn-h)] items-center border-[1.5px] px-[var(--nav-btn-px)] text-[length:var(--nav-btn-text)] font-bold uppercase tracking-[0.22em] transition-colors duration-300 lg:inline-flex ${focusRing} ${
               hero
                 ? "border-[#F7EAD8] text-[#F7EAD8] hover:bg-[#F7EAD8] hover:text-[#6B4841]"
