@@ -21,7 +21,7 @@ const instructors: {
   writeUp: string | null;
 }[] = [
   { name: "Alex", image: "/about/alex.jpg", focus: "48% center", writeUp: null },
-  { name: "Lily", image: "/about/lily.jpg", focus: "55% center", zoom: "origin-[50%_0%] scale-[1.1]", writeUp: null },
+  { name: "Lily", image: "/about/lily.jpg", focus: "45% center", writeUp: null },
 ];
 
 const focusRing =
