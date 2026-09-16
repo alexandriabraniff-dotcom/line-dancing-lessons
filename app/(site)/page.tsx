@@ -182,7 +182,7 @@ export default function Home() {
               <p>
                 Line dancing has a way of bringing people together like nothing else.
                 Whether it&apos;s a bride and her bridesmaids learning a surprise routine,
-                a group of mates celebrating a birthday, or a corporate team letting
+                a group of friends celebrating a birthday, or a corporate team letting
                 loose after hours, the magic is always the same.
               </p>
               <p>

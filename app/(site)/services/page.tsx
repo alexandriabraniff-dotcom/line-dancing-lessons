@@ -14,7 +14,7 @@ const services = [
       "Bridal party choreography",
       "Couples first dance",
       "Guest participation routines",
-      "Pre-wedding hen and bucks lessons",
+      "Bachelorette and stag party lessons",
       "Reception floor fillers",
     ],
     image: "/services/weddings.png",
@@ -36,7 +36,7 @@ const services = [
     desc: "Looking for an activity that actually gets people engaged? Line dancing breaks the ice, gets everyone moving, and creates a shared experience your group won't forget.",
     details: [
       "Corporate team events",
-      "Hens and bucks nights",
+      "Bachelorette and stag parties",
       "Fundraisers and galas",
       "Community events",
       "Pop-up lessons",

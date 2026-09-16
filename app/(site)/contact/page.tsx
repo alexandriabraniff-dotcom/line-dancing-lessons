@@ -100,7 +100,7 @@ export default function ContactPage() {
                 <input
                   type="tel"
                   name="phone"
-                  placeholder="0400 000 000"
+                  placeholder="(604) 555-0123"
                   className="w-full bg-transparent border-b border-[#6B4841]/20 py-3 text-[#6B4841] placeholder:text-[#6B4841]/25 focus:outline-none focus:border-[#C483C8] transition-colors text-[length:var(--text-body)]"
                 />
               </div>
@@ -144,16 +144,16 @@ export default function ContactPage() {
       {/* ── CTA Banner ── */}
       <section className="relative flex min-h-[33.34vw] md:min-h-[25vw] items-center">
         <div className="image-placeholder !absolute inset-0 !border-x-0">
-          <span>CTA background / Adelaide or venue shot</span>
+          <span>CTA background / Vancouver or venue shot</span>
         </div>
         <div className="absolute inset-0 bg-[#1E0F0B]/65" />
         <div className="relative w-full px-[var(--gutter)] py-[var(--section-sm)]">
           <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-8">
             <div>
-              <p className="brygada font-bold text-[length:var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-3">Based in Adelaide</p>
+              <p className="brygada font-bold text-[length:var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-3">Based in Vancouver</p>
               <h2 className="rye text-[#F7EAD8] uppercase tracking-wide" style={{ fontSize: "var(--text-h2)" }}>
                 Available Across
-                <br />South Australia
+                <br />Greater Vancouver
               </h2>
             </div>
             <Link
