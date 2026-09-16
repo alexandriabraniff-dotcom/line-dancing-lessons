@@ -168,8 +168,14 @@ export default function Home() {
       {/* ── Our Story ── */}
       <section className="px-[var(--gutter)] py-[var(--section)]">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-[var(--gap)] items-center">
-          <div className="image-placeholder aspect-[4/5]">
-            <span>Instructor portrait / Teaching moment</span>
+          <div className="relative aspect-[3/4] overflow-hidden shadow-[0_10px_30px_-18px_rgba(30,15,11,0.35)]">
+            <Image
+              src="/our-story.jpeg"
+              alt="Two Wildflower Line Dancing instructors in cowboy hats and boots smiling in front of a brick wall"
+              fill
+              sizes="(min-width: 768px) 50vw, 100vw"
+              className="object-cover"
+            />
           </div>
 
           <div>
@@ -198,41 +204,10 @@ export default function Home() {
             <div className="mt-8">
               <Link
                 href="/about"
-                className="brygada font-bold text-xs border border-[#C483C8]/40 text-[#C483C8] px-7 py-3 tracking-[0.25em] uppercase hover:bg-[#C483C8] hover:text-[#F7EAD8] transition-all inline-block"
+                className="brygada inline-flex h-11 items-center justify-center bg-[#6B4841] px-6 text-[0.85rem] font-bold uppercase tracking-[0.18em] text-[#F7EAD8] transition-colors duration-300 hover:bg-[#1E0F0B] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#C483C8]"
               >
-                Read More About Us              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── CTA Banner ── */}
-      <section className="relative flex min-h-[33.34vw] md:min-h-[25vw] items-center">
-        <div className="image-placeholder !absolute inset-0 !border-x-0">
-          <span>CTA background / Group photo or venue</span>
-        </div>
-        <div className="absolute inset-0 bg-[#1E0F0B]/65" />
-        <div className="relative w-full px-[var(--gutter)] py-[var(--section-sm)]">
-          <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-8">
-            <div>
-              <p className="brygada font-bold text-[length:var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-3">
-                Be Part of the Fun
-              </p>
-              <h2 className="rye text-[#F7EAD8] uppercase tracking-wide" style={{ fontSize: "var(--text-h2)" }}>
-                Book Your Session
-              </h2>
-            </div>
-            <div className="flex flex-wrap gap-4">
-              <Link
-                href="/contact"
-                className="brygada font-bold text-xs border border-[#C483C8]/50 text-[#C483C8] px-7 py-3 tracking-[0.25em] uppercase hover:bg-[#C483C8] hover:text-[#1E0F0B] transition-all inline-block"
-              >
-                Get in Touch                </Link>
-              <Link
-                href="/services"
-                className="brygada font-bold text-xs border border-[#F7EAD8]/30 text-[#F7EAD8]/60 px-7 py-3 tracking-[0.25em] uppercase hover:text-[#F7EAD8] hover:border-[#F7EAD8]/60 transition-all inline-block"
-              >
-                See Services                </Link>
+                Read More About Us
+              </Link>
             </div>
           </div>
         </div>

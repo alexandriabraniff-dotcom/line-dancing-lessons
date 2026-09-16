@@ -66,7 +66,6 @@ const focusRing =
 const buttonBase =
   "brygada inline-flex h-11 items-center justify-center px-6 text-[0.85rem] font-bold uppercase tracking-[0.18em] transition-colors duration-300";
 const buttonOnLight = `${buttonBase} bg-[#6B4841] text-[#F7EAD8] hover:bg-[#1E0F0B] ${focusRing}`;
-const buttonOnDark = `${buttonBase} bg-[#F7EAD8] text-[#6B4841] hover:bg-[#C483C8] hover:text-[#1E0F0B] ${focusRing}`;
 
 const slug = (title: string) => title.toLowerCase().replace(/\s+/g, "-");
 
@@ -151,29 +150,6 @@ export default function ServicesPage() {
               </div>
             </article>
           ))}
-        </div>
-      </section>
-
-      {/* ── CTA Banner ── */}
-      <section className="relative flex min-h-[33.34vw] md:min-h-[25vw] items-center">
-        <div className="image-placeholder !absolute inset-0 !border-x-0">
-          <span>CTA background / Fun group shot</span>
-        </div>
-        <div className="absolute inset-0 bg-[#1E0F0B]/65" />
-        <div className="relative w-full px-[var(--gutter)] py-[var(--section-sm)]">
-          <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-8">
-            <div>
-              <p className="brygada font-bold text-[length:var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-3">
-                Sound Like Your Kind of Fun?
-              </p>
-              <h2 className="rye text-[#F7EAD8] uppercase tracking-wide" style={{ fontSize: "var(--text-h2)" }}>
-                Book Your Session
-              </h2>
-            </div>
-            <Link href="/contact" className={`${buttonOnDark} self-start md:self-center`}>
-              Get in Touch
-            </Link>
-          </div>
         </div>
       </section>
     </>
