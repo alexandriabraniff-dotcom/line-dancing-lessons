@@ -34,8 +34,8 @@ const services = [
     desc: "Looking for an activity that actually gets people engaged? Line dancing breaks the ice, gets everyone moving, and creates a shared experience your group won't forget.",
     details: [
       "Corporate team events",
-      "Bachelorette and stag parties",
-      "Fundraisers and galas",
+      "Stag parties",
+      "Fundraisers",
       "Community events",
       "Pop-up lessons",
     ],
