@@ -36,13 +36,21 @@ const photos = {
     src: "/gallery/boots-on-the-floor.jpeg",
     alt: "Dancers in cowboy boots mid-step on a wooden dance floor",
   },
+  streetLineDance: {
+    src: "/gallery/street-line-dance.jpg",
+    alt: "A crowd line dancing together on a closed downtown Vancouver street",
+  },
+  streetCrowd: {
+    src: "/gallery/street-crowd.jpg",
+    alt: "Dozens of people joining a line dance down a festival street in Vancouver",
+  },
 };
 
 const gallery: { featured: Photo; left: Photo[]; right: Photo[]; mobile: Photo[] } = {
   featured: photos.street,
-  left: [photos.danceFloor, photos.group, null, null],
-  right: [photos.boots, null, null, null],
-  mobile: [photos.street, photos.group, photos.danceFloor, photos.boots, null, null, null, null, null],
+  left: [photos.danceFloor, photos.group, photos.streetLineDance, null],
+  right: [photos.boots, null, null, photos.streetCrowd],
+  mobile: [photos.street, photos.group, photos.danceFloor, photos.boots, photos.streetLineDance, photos.streetCrowd, null, null, null],
 };
 
 function GallerySlot({ photo, sizes, className }: { photo: Photo; sizes: string; className: string }) {
