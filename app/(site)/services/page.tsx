@@ -11,13 +11,11 @@ export const metadata = {
 const services = [
   {
     title: "Weddings",
-    desc: "Your wedding day deserves something unforgettable. We work with brides, grooms, and bridal parties to create a first dance or group routine that will have the whole venue on its feet.",
+    desc: "Your wedding day deserves something unforgettable. We work with brides, grooms, and bridal parties to create a first dance or group routine that will have the whole venue on its feet. Then, at any point during the night, we can lead a line dancing lesson and teach all of your guests the steps, so everyone gets out on the dance floor together.",
     details: [
       "Bridal party choreography",
       "Couples first dance",
-      "Guest participation routines",
-      "Bachelorette and stag party lessons",
-      "Reception floor fillers",
+      "A line dancing lesson for all your guests",
     ],
     image: "/services/weddings.png",
   },
