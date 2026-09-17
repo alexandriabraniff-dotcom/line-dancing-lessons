@@ -20,7 +20,7 @@ export default function HomeHero() {
       className="relative isolate grid min-h-svh grid-rows-[auto_auto_1fr] bg-[#F7EAD8] lg:grid-cols-[1.1fr_1fr] lg:grid-rows-[auto_1fr]"
     >
       {/* Photo: arch-framed under the logo on phones, right half on desktop */}
-      <div className="relative row-start-2 mx-[var(--hero-gutter)] -mt-2 h-[calc(min(53svh,calc(100svh-25rem),calc((100vw-2*var(--hero-gutter))*1.25))+25px)] overflow-hidden rounded-t-[50vw] shadow-[0_18px_40px_-20px_rgba(30,15,11,0.5)] lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:mx-0 lg:mt-0 lg:h-auto lg:rounded-none lg:shadow-none">
+      <div className="relative row-start-2 mx-[var(--hero-gutter)] -mt-2 h-[calc(50svh-var(--hero-pad-top)-2.25rem)] overflow-hidden rounded-t-[50vw] shadow-[0_18px_40px_-20px_rgba(30,15,11,0.5)] lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:mx-0 lg:mt-0 lg:h-auto lg:rounded-none lg:shadow-none">
         <Image
           src="/hero-crowd.jpg"
           alt="A concert crowd raising cowboy hats under stage lights"
@@ -38,7 +38,7 @@ export default function HomeHero() {
           height={550}
           preload
           sizes="60vw"
-          className="absolute left-1/2 top-[calc(31%-5px)] w-[45%] -translate-x-1/2 -translate-y-1/2 drop-shadow-[0_8px_20px_rgba(30,15,11,0.45)] lg:hidden"
+          className="absolute left-1/2 top-[7svh] w-[45%] -translate-x-1/2 drop-shadow-[0_8px_20px_rgba(30,15,11,0.45)] lg:hidden"
         />
         {/* Soft shade behind the nav links on desktop */}
         <div
@@ -53,7 +53,7 @@ export default function HomeHero() {
       </div>
 
       {/* Copy */}
-      <div className="relative z-10 row-start-3 flex flex-col items-center justify-start px-[var(--hero-gutter)] pt-[5px] pb-[max(1rem,3svh)] lg:row-start-2 lg:justify-center lg:py-[max(1.5rem,4vh)] text-center lg:col-start-1 lg:items-start lg:text-left">
+      <div className="relative z-10 row-start-3 flex flex-col items-center justify-start px-[var(--hero-gutter)] pt-[var(--hero-gap-lg)] pb-[max(1rem,3svh)] lg:row-start-2 lg:justify-center lg:py-[max(1.5rem,4vh)] text-center lg:col-start-1 lg:items-start lg:text-left">
         <p
           className="fade-up text-[length:var(--hero-body)] leading-relaxed text-[#6B4841] lg:font-[family-name:var(--font-brygada)] lg:text-[length:var(--hero-eyebrow)] lg:font-bold lg:uppercase lg:tracking-[0.35em] lg:text-[#D49C84]"
           style={delay(0)}
