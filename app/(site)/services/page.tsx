@@ -135,7 +135,7 @@ export default function ServicesPage() {
                     {details.map((item) => (
                       <li
                         key={item}
-                        className="flex items-start gap-2 text-[0.8rem] leading-snug text-[#6B4841]/80 md:gap-3 md:text-[length:var(--text-body)]"
+                        className="flex items-start gap-2 text-[length:min(var(--text-body),calc(4.05vw-4.2px))] leading-snug text-[#6B4841]/80 md:gap-3 md:text-[length:var(--text-body)]"
                       >
                         <span aria-hidden className="mt-[0.5em] h-1.5 w-1.5 shrink-0 rounded-full bg-[#D49C84]" />
                         {item}
