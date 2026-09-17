@@ -38,7 +38,7 @@ export default function HomeHero() {
           height={550}
           preload
           sizes="60vw"
-          className="absolute left-1/2 top-[calc(7svh+var(--hero-pad-top)+2.25rem)] w-[45%] -translate-x-1/2 drop-shadow-[0_8px_20px_rgba(30,15,11,0.45)] lg:hidden"
+          className="absolute left-1/2 top-[calc(7svh+var(--hero-pad-top)+2.25rem)] w-[calc((100%-2*var(--hero-gutter))*0.45)] -translate-x-1/2 drop-shadow-[0_8px_20px_rgba(30,15,11,0.45)] lg:hidden"
         />
         {/* Soft shade behind the nav links on desktop */}
         <div
