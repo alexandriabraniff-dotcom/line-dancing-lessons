@@ -19,7 +19,7 @@ const services = [
       "Pre-wedding practice sessions",
       "Songs picked for your wedding",
     ],
-    image: "/services/weddings.png",
+    image: "/services/photos/weddings.jpg",
   },
   {
     title: "Birthdays",
@@ -31,7 +31,7 @@ const services = [
       "We come to your venue",
       "No experience needed",
     ],
-    image: "/services/birthdays.png",
+    image: "/services/photos/birthdays.jpg",
   },
   {
     title: "Social Events",
@@ -43,7 +43,7 @@ const services = [
       "Community events",
       "Pop-up lessons",
     ],
-    image: "/services/special-events.png",
+    image: "/services/photos/special-events.jpg",
   },
   {
     title: "Private Groups",
@@ -55,7 +55,7 @@ const services = [
       "Small or large groups",
       "Recurring lessons available",
     ],
-    image: "/services/private-lessons.png",
+    image: "/services/photos/private-lessons.jpg",
   },
 ];
 
@@ -101,7 +101,7 @@ export default function ServicesPage() {
               className="scroll-mt-[calc(var(--header-logo)+var(--header-pad-y)*2+1rem)] grid grid-cols-1 items-center gap-[max(1.25rem,2.2vw)] border border-[#6B4841]/10 bg-[#EDE0CC]/45 p-[max(1rem,1.6vw)] md:grid-cols-[auto_minmax(0,1fr)]"
             >
               {/* Artwork: width follows screen height so two cards fit on screen at once */}
-              <div className="relative mx-auto aspect-[7/9] w-[min(55%,14rem)] overflow-hidden md:mx-0 md:w-[max(9rem,min(22vw,26vh))]">
+              <div className="relative mx-auto aspect-[3/4] w-[min(55%,14rem)] overflow-hidden rounded-t-full md:mx-0 md:w-[max(9rem,min(22vw,26vh))]">
                 <Image
                   src={image}
                   alt={title}
