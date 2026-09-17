@@ -106,33 +106,28 @@ export default function ServicesPage() {
             <article
               key={title}
               id={slug(title)}
-              className="scroll-mt-[calc(var(--header-logo)+var(--header-pad-y)*2+1rem)] flex flex-col items-center gap-y-5 border border-[#6B4841]/10 bg-[#EDE0CC]/45 p-[max(1rem,1.6vw)] text-center md:grid md:grid-cols-[auto_minmax(0,1fr)] md:items-center md:gap-[max(1.25rem,2.2vw)] md:text-left"
+              className="scroll-mt-[calc(var(--header-logo)+var(--header-pad-y)*2+1rem)] grid grid-cols-[minmax(0,1fr)_minmax(0,1fr)] items-start gap-x-4 gap-y-5 border border-[#6B4841]/10 bg-[#EDE0CC]/45 p-[max(1rem,1.6vw)] text-center md:grid-cols-[auto_minmax(0,1fr)] md:items-center md:gap-[max(1.25rem,2.2vw)] md:text-left"
             >
-              {/* Phones: title, photo, then the rest. Desktop: photo beside the content. */}
-              <div className="relative order-2 aspect-[3/4] w-[min(55%,14rem)] overflow-hidden rounded-t-full md:order-none md:w-[max(9rem,min(22vw,26vh))]">
+              {/* Phones: title, then photo beside the list, then the write-up and button */}
+              <div className="relative col-start-1 row-start-2 aspect-[3/4] w-full overflow-hidden rounded-t-full md:col-auto md:row-auto md:w-[max(9rem,min(22vw,26vh))]">
                 <Image
                   src={image}
                   alt={title}
                   fill
-                  sizes="(min-width: 768px) 26vh, 55vw"
+                  sizes="(min-width: 768px) 26vh, 45vw"
                   className={`object-cover ${imageClass ?? ""}`}
                 />
               </div>
 
-              {/* `contents` on phones lets these sit directly in the card's column order */}
+              {/* `contents` on phones lets these place themselves in the card grid */}
               <div className="contents md:grid md:grid-cols-1 md:gap-x-[max(1.25rem,2.2vw)] md:gap-y-5 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] lg:grid-rows-[auto_auto_1fr]">
                 <h2
-                  className="rye order-1 text-[#6B4841] uppercase tracking-wide leading-tight md:order-none lg:col-start-1 lg:row-start-1"
-                  style={{ fontSize: "var(--text-h3)" }}
+                  className="rye col-span-2 row-start-1 text-[length:var(--text-h2)] text-[#6B4841] uppercase tracking-wide leading-tight md:col-auto md:row-auto md:text-[length:var(--text-h3)] lg:col-start-1 lg:row-start-1"
                 >
                   {title}
                 </h2>
 
-                <p className="order-3 text-[length:var(--text-body)] leading-relaxed text-[#6B4841]/80 md:order-none md:mt-3 lg:col-start-1 lg:row-start-2 lg:mt-0">
-                  {desc}
-                </p>
-
-                <div className="order-4 md:order-none lg:col-start-2 lg:row-start-1 lg:row-span-3 lg:border-l lg:border-[#6B4841]/15 lg:pl-[max(1.25rem,2.2vw)]">
+                <div className="col-start-2 row-start-2 text-left md:col-auto md:row-auto lg:col-start-2 lg:row-start-1 lg:row-span-3 lg:border-l lg:border-[#6B4841]/15 lg:pl-[max(1.25rem,2.2vw)]">
                   <p className="brygada text-[1rem] font-bold uppercase tracking-[0.25em] text-[#6B4841]/60">
                     What&apos;s Included
                   </p>
@@ -140,7 +135,7 @@ export default function ServicesPage() {
                     {details.map((item) => (
                       <li
                         key={item}
-                        className="flex items-start justify-center gap-3 text-[length:var(--text-body)] leading-snug text-[#6B4841]/80 md:justify-start"
+                        className="flex items-start gap-3 text-[length:var(--text-body)] leading-snug text-[#6B4841]/80"
                       >
                         <span aria-hidden className="mt-[0.5em] h-1.5 w-1.5 shrink-0 rounded-full bg-[#D49C84]" />
                         {item}
@@ -149,7 +144,11 @@ export default function ServicesPage() {
                   </ul>
                 </div>
 
-                <div className="order-5 md:order-none lg:col-start-1 lg:row-start-3 lg:self-start">
+                <p className="col-span-2 row-start-3 text-[length:var(--text-body)] leading-relaxed text-[#6B4841]/80 md:col-auto md:row-auto md:mt-3 lg:col-start-1 lg:row-start-2 lg:mt-0">
+                  {desc}
+                </p>
+
+                <div className="col-span-2 row-start-4 md:col-auto md:row-auto lg:col-start-1 lg:row-start-3 lg:self-start">
                   <BookingButton serviceKey={slug(title)} className={buttonOnLight} />
                 </div>
               </div>
