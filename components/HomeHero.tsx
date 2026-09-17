@@ -56,7 +56,7 @@ export default function HomeHero() {
       <div className="relative z-10 row-start-3 flex flex-col items-center justify-start px-[var(--hero-gutter)] pt-[calc(50svh-var(--hero-pad-top)-2.75rem+var(--hero-gap-lg))] pb-[max(1rem,3svh)] lg:pt-[max(1.5rem,4vh)] lg:row-start-2 lg:justify-center lg:py-[max(1.5rem,4vh)] text-center lg:col-start-1 lg:items-start lg:text-left">
         <h1
           id="hero-heading"
-          className="fade-up rye sr-only text-[length:max(2.3rem,calc(var(--vu)*4.4))] uppercase leading-[1.08] tracking-wide text-[#6B4841] lg:not-sr-only"
+          className="fade-up brygada font-bold sr-only text-[length:max(2.3rem,calc(var(--vu)*4.4))] uppercase leading-[1.08] tracking-wide text-[#6B4841] lg:not-sr-only"
           style={delay(0)}
         >
           Lessons for
@@ -65,7 +65,7 @@ export default function HomeHero() {
         </h1>
 
         <p
-          className="fade-up lg:mt-[var(--hero-gap-sm)] text-[length:var(--hero-body)] leading-relaxed text-[#6B4841] lg:font-[family-name:var(--font-brygada)] lg:text-[length:var(--hero-eyebrow)] lg:font-bold lg:uppercase lg:tracking-[0.35em] lg:text-[#D49C84]"
+          className="fade-up lg:mt-[var(--hero-gap-sm)] text-[length:var(--hero-body)] leading-relaxed text-[#6B4841] lg:font-[family-name:var(--font-rye)] lg:text-[length:var(--hero-eyebrow)] lg:font-bold lg:uppercase lg:tracking-[0.35em] lg:text-[#D49C84]"
           style={delay(80)}
         >
           Line Dancing Lessons &amp; Events
