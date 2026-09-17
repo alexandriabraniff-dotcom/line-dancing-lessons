@@ -98,7 +98,7 @@ function MobileMenu({
                   href={l.href}
                   onClick={onNavigate}
                   aria-current={active ? "page" : undefined}
-                  className={`rye block py-3 text-[clamp(1.9rem,9vw,3.5rem)] uppercase leading-none tracking-wide ${focusRing} ${
+                  className={`rye block py-3 text-[clamp(2.2rem,10.3vw,4rem)] uppercase leading-none tracking-wide ${focusRing} ${
                     active ? "text-[#C483C8]" : "text-[#F7EAD8] active:text-[#C483C8]"
                   }`}
                 >
@@ -113,13 +113,13 @@ function MobileMenu({
           className="fade-up mx-auto mt-12 w-full max-w-sm border-t border-[#F7EAD8]/15 pt-8 text-center"
           style={{ animationDelay: "360ms" }}
         >
-          <p className="brygada text-lg italic text-[#F2B8CE]">
+          <p className="brygada text-2xl italic text-[#F2B8CE]">
             It&apos;s more than a dance, it&apos;s a good time.
           </p>
           <Link
             href="/services"
             onClick={onNavigate}
-            className={`brygada mt-6 flex h-12 w-full items-center justify-center bg-[#F7EAD8] text-xs font-bold uppercase tracking-[0.25em] text-[#6B4841] ${focusRing}`}
+            className={`brygada mt-6 flex h-12 w-full items-center justify-center bg-[#F7EAD8] text-base font-bold uppercase tracking-[0.25em] text-[#6B4841] ${focusRing}`}
           >
             Book Your Event
           </Link>
@@ -278,7 +278,7 @@ export default function Nav() {
     <>
       <a
         href="#main"
-        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[80] focus:bg-[#6B4841] focus:px-5 focus:py-3 focus:text-[#F7EAD8] brygada font-bold text-xs uppercase tracking-[0.25em]"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[80] focus:bg-[#6B4841] focus:px-5 focus:py-3 focus:text-[#F7EAD8] brygada font-bold text-base uppercase tracking-[0.25em]"
       >
         Skip to content
       </a>

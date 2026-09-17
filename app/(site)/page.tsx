@@ -117,7 +117,7 @@ export default function Home() {
 
           {/* Help prompt */}
           <div className="mx-auto mt-[max(2.5rem,3.5vw)] max-w-xl">
-            <p className="brygada text-[length:clamp(1.1rem,1.4vw,1.5rem)] font-bold italic text-[#6B4841]">
+            <p className="brygada text-[length:clamp(1.38rem,1.75vw,1.88rem)] font-bold italic text-[#6B4841]">
               Can&apos;t find what you&apos;re looking for?
             </p>
             <p className="mt-2 text-[#6B4841]/75 text-[length:var(--text-body)] leading-relaxed">
@@ -125,7 +125,7 @@ export default function Home() {
             </p>
             <Link
               href="/contact"
-              className="brygada mt-5 inline-flex h-11 items-center justify-center bg-[#6B4841] px-6 text-[0.85rem] font-bold uppercase tracking-[0.18em] text-[#F7EAD8] transition-colors duration-300 hover:bg-[#1E0F0B] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#C483C8]"
+              className="brygada mt-5 inline-flex h-11 items-center justify-center bg-[#6B4841] px-6 text-[1.15rem] font-bold uppercase tracking-[0.18em] text-[#F7EAD8] transition-colors duration-300 hover:bg-[#1E0F0B] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#C483C8]"
             >
               Contact Us
             </Link>
@@ -228,7 +228,7 @@ export default function Home() {
             <div className="mt-8">
               <Link
                 href="/about"
-                className="brygada inline-flex h-11 items-center justify-center bg-[#6B4841] px-6 text-[0.85rem] font-bold uppercase tracking-[0.18em] text-[#F7EAD8] transition-colors duration-300 hover:bg-[#1E0F0B] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#C483C8]"
+                className="brygada inline-flex h-11 items-center justify-center bg-[#6B4841] px-6 text-[1.15rem] font-bold uppercase tracking-[0.18em] text-[#F7EAD8] transition-colors duration-300 hover:bg-[#1E0F0B] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#C483C8]"
               >
                 Read More About Us
               </Link>

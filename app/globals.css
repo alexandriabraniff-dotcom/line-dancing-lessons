@@ -36,22 +36,22 @@
   --hero-pad-top: max(0.75rem, calc(var(--vu) * 1.8));
   --hero-logo: max(min(22vw, 15vh), calc(var(--vu) * 9));
   --hero-logo-main: calc(var(--hero-logo) * 1.25);
-  --hero-eyebrow: max(0.62rem, calc(var(--vu) * 0.72));
-  --hero-title: max(1.85rem, calc(var(--vu) * 4.6));
-  --hero-body: max(0.95rem, calc(var(--vu) * 1.05));
+  --hero-eyebrow: max(0.84rem, calc(var(--vu) * 0.97));
+  --hero-title: max(2.13rem, calc(var(--vu) * 5.3));
+  --hero-body: max(1.19rem, calc(var(--vu) * 1.31));
   --hero-body-w: max(20rem, calc(var(--vu) * 48));
   --hero-gap-sm: max(0.75rem, calc(var(--vu) * 1.6));
   --hero-gap: max(1rem, calc(var(--vu) * 2));
   --hero-gap-lg: max(1.25rem, calc(var(--vu) * 3));
   --hero-btn-h: max(48px, calc(var(--vu) * 3.2));
   --hero-btn-px: max(2rem, calc(var(--vu) * 2.6));
-  --hero-btn-text: max(0.75rem, calc(var(--vu) * 0.72));
+  --hero-btn-text: max(1rem, calc(var(--vu) * 0.97));
 
-  --nav-link: max(0.8rem, calc(var(--vu) * 0.68));
+  --nav-link: max(1.05rem, calc(var(--vu) * 0.92));
   --nav-gap: max(1.25rem, calc(var(--vu) * 2.4));
   --nav-btn-h: max(44px, calc(var(--vu) * 2.9));
   --nav-btn-px: max(1.5rem, calc(var(--vu) * 1.8));
-  --nav-btn-text: max(0.75rem, calc(var(--vu) * 0.66));
+  --nav-btn-text: max(1rem, calc(var(--vu) * 0.89));
   --header-logo: max(56px, calc(var(--vu) * 3.6));
   --header-pad-y: max(0.5rem, calc(var(--vu) * 0.6));
 
@@ -66,11 +66,11 @@
   --gap-sm: clamp(0.75rem, 1.2vw, 1.25rem);
 
   /* Type scale */
-  --text-h1: clamp(2.1rem, 4.8vw, 4.4rem);
-  --text-h2: clamp(1.5rem, 2.6vw, 2.6rem);
-  --text-h3: clamp(1.3rem, 2.05vw, 2.15rem);
-  --text-eyebrow: clamp(0.55rem, 0.42vw + 0.42rem, 0.7rem);
-  --text-body: clamp(0.85rem, 0.45vw + 0.72rem, 1rem);
+  --text-h1: clamp(2.4rem, 5.5vw, 5.05rem);
+  --text-h2: clamp(1.75rem, 3vw, 3rem);
+  --text-h3: clamp(1.5rem, 2.35vw, 2.5rem);
+  --text-eyebrow: clamp(0.75rem, 0.57vw + 0.57rem, 0.95rem);
+  --text-body: clamp(1.06rem, 0.56vw + 0.9rem, 1.25rem);
 }
 
 * {
@@ -124,7 +124,7 @@ html {
 .section-label {
   font-family: var(--font-brygada), serif;
   font-weight: bold;
-  font-size: 0.65rem;
+  font-size: 0.88rem;
   letter-spacing: 0.3em;
   text-transform: uppercase;
   color: #D49C84;
@@ -152,7 +152,7 @@ html {
 
 .image-placeholder span {
   font-family: var(--font-rye), serif;
-  font-size: 0.6rem;
+  font-size: 0.8rem;
   letter-spacing: 0.25em;
   text-transform: uppercase;
   color: #D49C84;

@@ -8,12 +8,12 @@ const focusRing =
   "focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#C483C8]";
 
 const labelClass =
-  "brygada mb-2 block text-[0.72rem] font-bold uppercase tracking-[0.22em] text-[#6B4841]/80";
+  "brygada mb-2 block text-[0.97rem] font-bold uppercase tracking-[0.22em] text-[#6B4841]/80";
 
 const inputClass =
   "w-full border border-[#6B4841]/20 bg-[#FFFBF5] px-4 py-3 text-[length:var(--text-body)] text-[#6B4841] placeholder:text-[#6B4841]/35 transition-colors focus:border-[#C483C8] focus:outline-none focus:ring-2 focus:ring-[#C483C8]/30";
 
-const primaryButton = `brygada inline-flex h-12 items-center justify-center bg-[#6B4841] px-8 text-[0.85rem] font-bold uppercase tracking-[0.18em] text-[#F7EAD8] transition-colors duration-300 hover:bg-[#1E0F0B] disabled:cursor-wait disabled:opacity-70 ${focusRing}`;
+const primaryButton = `brygada inline-flex h-12 items-center justify-center bg-[#6B4841] px-8 text-[1.15rem] font-bold uppercase tracking-[0.18em] text-[#F7EAD8] transition-colors duration-300 hover:bg-[#1E0F0B] disabled:cursor-wait disabled:opacity-70 ${focusRing}`;
 
 type Status = "idle" | "sending" | "success" | "error";
 
@@ -209,7 +209,7 @@ export default function BookingButton({ serviceKey, className }: { serviceKey: s
             </div>
           ) : (
             <form ref={formRef} onSubmit={handleSubmit} className="pt-6">
-              <p className="mb-6 text-[0.85rem] text-[#6B4841]/65">
+              <p className="mb-6 text-[1.15rem] text-[#6B4841]/65">
                 Fields marked <span className="text-[#C483C8]">*</span> are required.
               </p>
 
@@ -230,7 +230,7 @@ export default function BookingButton({ serviceKey, className }: { serviceKey: s
               </div>
 
               {status === "error" && (
-                <p role="alert" className="mt-6 border border-[#B5483B]/30 bg-[#B5483B]/10 px-4 py-3 text-[0.95rem] text-[#8A2E24]">
+                <p role="alert" className="mt-6 border border-[#B5483B]/30 bg-[#B5483B]/10 px-4 py-3 text-[1.19rem] text-[#8A2E24]">
                   {errorMessage}
                 </p>
               )}

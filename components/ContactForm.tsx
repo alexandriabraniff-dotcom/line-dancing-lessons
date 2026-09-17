@@ -4,7 +4,7 @@ import { useState } from "react";
 import { contactService } from "@/lib/booking";
 
 const labelClass =
-  "brygada mb-2 block text-[0.72rem] font-bold uppercase tracking-[0.22em] text-[#6B4841]/80";
+  "brygada mb-2 block text-[0.97rem] font-bold uppercase tracking-[0.22em] text-[#6B4841]/80";
 
 const inputClass =
   "w-full border border-[#6B4841]/20 bg-[#FFFBF5] px-4 py-3 text-[length:var(--text-body)] text-[#6B4841] placeholder:text-[#6B4841]/35 transition-colors focus:border-[#C483C8] focus:outline-none focus:ring-2 focus:ring-[#C483C8]/30";
@@ -50,7 +50,7 @@ export default function ContactForm() {
         <button
           type="button"
           onClick={() => setStatus("idle")}
-          className="brygada mt-6 text-[0.8rem] font-bold uppercase tracking-[0.18em] text-[#6B4841] underline underline-offset-4"
+          className="brygada mt-6 text-[1.08rem] font-bold uppercase tracking-[0.18em] text-[#6B4841] underline underline-offset-4"
         >
           Send another message
         </button>
@@ -110,7 +110,7 @@ export default function ContactForm() {
       </div>
 
       {status === "error" && (
-        <p role="alert" className="border border-[#B5483B]/30 bg-[#B5483B]/10 px-4 py-3 text-[0.95rem] text-[#8A2E24]">
+        <p role="alert" className="border border-[#B5483B]/30 bg-[#B5483B]/10 px-4 py-3 text-[1.19rem] text-[#8A2E24]">
           Sorry, your message couldn&apos;t be sent. Please try again in a moment.
         </p>
       )}
@@ -118,7 +118,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === "sending"}
-        className="brygada inline-flex h-12 w-full items-center justify-center bg-[#6B4841] px-8 sm:w-auto text-[0.85rem] font-bold uppercase tracking-[0.18em] text-[#F7EAD8] transition-colors duration-300 hover:bg-[#1E0F0B] disabled:cursor-wait disabled:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#C483C8]"
+        className="brygada inline-flex h-12 w-full items-center justify-center bg-[#6B4841] px-8 sm:w-auto text-[1.15rem] font-bold uppercase tracking-[0.18em] text-[#F7EAD8] transition-colors duration-300 hover:bg-[#1E0F0B] disabled:cursor-wait disabled:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#C483C8]"
       >
         {status === "sending" ? "Sending..." : "Send Enquiry"}
       </button>

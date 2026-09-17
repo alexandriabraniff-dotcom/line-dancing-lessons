@@ -52,7 +52,7 @@ export default function HomeHero() {
 
         <h1
           id="hero-heading"
-          className="fade-up rye mt-[var(--hero-gap-sm)] text-[length:max(2rem,calc(var(--vu)*4.2))] uppercase leading-[1.08] tracking-wide text-[#6B4841]"
+          className="fade-up rye mt-[var(--hero-gap-sm)] text-[length:max(2.3rem,calc(var(--vu)*4.8))] uppercase leading-[1.08] tracking-wide text-[#6B4841]"
           style={delay(80)}
         >
           Lessons for

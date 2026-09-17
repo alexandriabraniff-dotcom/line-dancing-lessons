@@ -48,10 +48,10 @@ export default function ContactPage() {
             <dl className="divide-y divide-[#6B4841]/10 border-t border-[#6B4841]/10">
               {details.map(({ label, value }) => (
                 <div key={label} className="py-5">
-                  <dt className="brygada text-[0.72rem] font-bold uppercase tracking-[0.25em] text-[#D49C84]">
+                  <dt className="brygada text-[0.97rem] font-bold uppercase tracking-[0.25em] text-[#D49C84]">
                     {label}
                   </dt>
-                  <dd className="mt-1 break-words text-[length:clamp(1rem,1.2vw,1.2rem)] text-[#6B4841]">
+                  <dd className="mt-1 break-words text-[length:clamp(1.25rem,1.5vw,1.5rem)] text-[#6B4841]">
                     {value}
                   </dd>
                 </div>
@@ -59,14 +59,14 @@ export default function ContactPage() {
             </dl>
 
             <div className="border-b border-[#6B4841]/10 py-5">
-              <p className="brygada text-[0.72rem] font-bold uppercase tracking-[0.25em] text-[#D49C84]">
+              <p className="brygada text-[0.97rem] font-bold uppercase tracking-[0.25em] text-[#D49C84]">
                 Follow Along
               </p>
               <SocialLinks className="mt-3" />
             </div>
 
             <div className="mt-8">
-              <p className="brygada text-[length:clamp(1.05rem,1.3vw,1.35rem)] font-bold italic text-[#6B4841]">
+              <p className="brygada text-[length:clamp(1.31rem,1.63vw,1.69rem)] font-bold italic text-[#6B4841]">
                 Already know what you&apos;re booking?
               </p>
               <p className="mt-1 text-[length:var(--text-body)] leading-relaxed text-[#6B4841]/75">
@@ -75,7 +75,7 @@ export default function ContactPage() {
               </p>
               <Link
                 href="/services"
-                className={`brygada mt-5 inline-flex h-11 items-center justify-center border-[1.5px] border-[#6B4841] px-6 text-[0.85rem] font-bold uppercase tracking-[0.18em] text-[#6B4841] transition-colors duration-300 hover:bg-[#6B4841] hover:text-[#F7EAD8] ${focusRing}`}
+                className={`brygada mt-5 inline-flex h-11 items-center justify-center border-[1.5px] border-[#6B4841] px-6 text-[1.15rem] font-bold uppercase tracking-[0.18em] text-[#6B4841] transition-colors duration-300 hover:bg-[#6B4841] hover:text-[#F7EAD8] ${focusRing}`}
               >
                 View Services
               </Link>
@@ -90,7 +90,7 @@ export default function ContactPage() {
             >
               Send Us a Message
             </h2>
-            <p className="mt-2 mb-6 text-[0.85rem] text-[#6B4841]/65">
+            <p className="mt-2 mb-6 text-[1.15rem] text-[#6B4841]/65">
               Fields marked <span className="text-[#C483C8]">*</span> are required.
             </p>
             <ContactForm />

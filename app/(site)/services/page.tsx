@@ -64,7 +64,7 @@ const focusRing =
 
 /* Solid, high-contrast buttons (brown on cream, cream on dark banners) */
 const buttonBase =
-  "brygada inline-flex h-11 items-center justify-center px-6 text-[0.85rem] font-bold uppercase tracking-[0.18em] transition-colors duration-300";
+  "brygada inline-flex h-11 items-center justify-center px-6 text-[1.15rem] font-bold uppercase tracking-[0.18em] transition-colors duration-300";
 const buttonOnLight = `${buttonBase} bg-[#6B4841] text-[#F7EAD8] hover:bg-[#1E0F0B] ${focusRing}`;
 
 const slug = (title: string) => title.toLowerCase().replace(/\s+/g, "-");
@@ -126,7 +126,7 @@ export default function ServicesPage() {
                 </div>
 
                 <div className="lg:col-start-2 lg:row-start-1 lg:row-span-2 lg:border-l lg:border-[#6B4841]/15 lg:pl-[max(1.25rem,2.2vw)]">
-                  <p className="brygada text-[0.75rem] font-bold uppercase tracking-[0.25em] text-[#6B4841]/60">
+                  <p className="brygada text-[1rem] font-bold uppercase tracking-[0.25em] text-[#6B4841]/60">
                     What&apos;s Included
                   </p>
                   <ul className="mt-3 space-y-1.5">

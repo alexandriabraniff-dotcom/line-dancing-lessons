@@ -90,7 +90,7 @@ export default function AboutPage() {
               </p>
             </div>
             <div className="mt-8 border-t border-[#6B4841]/15 pt-6">
-              <p className="brygada text-[length:clamp(1.05rem,1.3vw,1.35rem)] font-bold italic text-[#6B4841]">
+              <p className="brygada text-[length:clamp(1.31rem,1.63vw,1.69rem)] font-bold italic text-[#6B4841]">
                 Have any questions?
               </p>
               <p className="mt-1 text-[#6B4841]/75 text-[length:var(--text-body)] leading-relaxed">
@@ -98,7 +98,7 @@ export default function AboutPage() {
               </p>
               <Link
                 href="/contact"
-                className={`brygada mt-5 inline-flex h-11 items-center justify-center bg-[#6B4841] px-6 text-[0.85rem] font-bold uppercase tracking-[0.18em] text-[#F7EAD8] transition-colors duration-300 hover:bg-[#1E0F0B] ${focusRing}`}
+                className={`brygada mt-5 inline-flex h-11 items-center justify-center bg-[#6B4841] px-6 text-[1.15rem] font-bold uppercase tracking-[0.18em] text-[#F7EAD8] transition-colors duration-300 hover:bg-[#1E0F0B] ${focusRing}`}
               >
                 Contact Us
               </Link>
@@ -148,7 +148,7 @@ export default function AboutPage() {
                 >
                   {name}
                 </h3>
-                <p className="brygada mt-1 text-[length:clamp(0.95rem,1.1vw,1.15rem)] italic text-[#6B4841]/70">
+                <p className="brygada mt-1 text-[length:clamp(1.19rem,1.38vw,1.44rem)] italic text-[#6B4841]/70">
                   What line dancing means to me
                 </p>
                 <p className="mt-3 text-[#6B4841]/80 text-[length:var(--text-body)] leading-relaxed">

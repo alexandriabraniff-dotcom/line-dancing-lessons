@@ -10,7 +10,7 @@ const focusRing =
   "focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#C483C8]";
 
 const headingClass =
-  "brygada mb-4 text-[0.72rem] font-bold uppercase tracking-[0.3em] text-[#D49C84]";
+  "brygada mb-4 text-[0.97rem] font-bold uppercase tracking-[0.3em] text-[#D49C84]";
 
 const linkClass = `text-[length:var(--text-body)] transition-colors hover:text-[#C483C8] ${focusRing}`;
 
@@ -53,7 +53,7 @@ function ContactRow({ icon, label, children }: { icon: keyof typeof icons; label
         </svg>
       </span>
       <span className="min-w-0">
-        <span className="block text-[0.68rem] uppercase tracking-[0.2em] text-[#F7EAD8]/45">{label}</span>
+        <span className="block text-[0.92rem] uppercase tracking-[0.2em] text-[#F7EAD8]/45">{label}</span>
         {children}
       </span>
     </li>
@@ -79,7 +79,7 @@ export default function Footer() {
                 className="h-auto w-[clamp(6rem,9vw,8rem)]"
               />
             </Link>
-            <p className="brygada mt-5 text-[length:clamp(1.05rem,1.3vw,1.35rem)] italic text-[#F2B8CE]">
+            <p className="brygada mt-5 text-[length:clamp(1.31rem,1.63vw,1.69rem)] italic text-[#F2B8CE]">
               It&apos;s more than a dance, it&apos;s a good time.
             </p>
             <p className="mt-3 max-w-xs text-[length:var(--text-body)] leading-relaxed text-[#F7EAD8]/65">
@@ -143,7 +143,7 @@ export default function Footer() {
             </ul>
             <Link
               href="/contact"
-              className={`brygada mt-6 flex h-12 w-full items-center justify-center bg-[#F7EAD8] px-6 text-[0.8rem] font-bold uppercase tracking-[0.18em] text-[#6B4841] transition-colors duration-300 hover:bg-[#C483C8] hover:text-[#1E0F0B] sm:inline-flex sm:w-auto lg:h-11 ${focusRing}`}
+              className={`brygada mt-6 flex h-12 w-full items-center justify-center bg-[#F7EAD8] px-6 text-[1.08rem] font-bold uppercase tracking-[0.18em] text-[#6B4841] transition-colors duration-300 hover:bg-[#C483C8] hover:text-[#1E0F0B] sm:inline-flex sm:w-auto lg:h-11 ${focusRing}`}
             >
               Contact Us
             </Link>
@@ -152,10 +152,10 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="mt-[var(--section-sm)] flex flex-col items-center gap-2 border-t border-[#F7EAD8]/10 pt-6 text-center sm:flex-row sm:justify-between sm:text-left">
-          <p className="text-[0.75rem] tracking-wider text-[#F7EAD8]/45">
+          <p className="text-[1rem] tracking-wider text-[#F7EAD8]/45">
             &copy; {new Date().getFullYear()} Wildflower Line Dancing. All rights reserved.
           </p>
-          <p className="text-[0.75rem] tracking-wider text-[#F7EAD8]/45">
+          <p className="text-[1rem] tracking-wider text-[#F7EAD8]/45">
             Website designed by{" "}
             <a
               href="https://alexandriabraniff.com"
