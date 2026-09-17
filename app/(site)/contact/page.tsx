@@ -1,4 +1,4 @@
-
+import ContactForm from "@/components/ContactForm";
 export const metadata = {
   title: "Contact Us",
   description:
@@ -75,69 +75,7 @@ export default function ContactPage() {
           <div>
             <p className="brygada font-bold text-[length:var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-8">Book Your Lesson</p>
 
-            <form className="space-y-7">
-              <div>
-                <label className="block brygada font-bold text-[length:var(--text-eyebrow)] tracking-[0.3em] uppercase text-[#6B4841]/50 mb-2">Your Name</label>
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Jane Smith"
-                  className="w-full bg-transparent border-b border-[#6B4841]/20 py-3 text-[#6B4841] placeholder:text-[#6B4841]/25 focus:outline-none focus:border-[#C483C8] transition-colors text-[length:var(--text-body)]"
-                />
-              </div>
-
-              <div>
-                <label className="block brygada font-bold text-[length:var(--text-eyebrow)] tracking-[0.3em] uppercase text-[#6B4841]/50 mb-2">Email Address</label>
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="jane@example.com"
-                  className="w-full bg-transparent border-b border-[#6B4841]/20 py-3 text-[#6B4841] placeholder:text-[#6B4841]/25 focus:outline-none focus:border-[#C483C8] transition-colors text-[length:var(--text-body)]"
-                />
-              </div>
-
-              <div>
-                <label className="block brygada font-bold text-[length:var(--text-eyebrow)] tracking-[0.3em] uppercase text-[#6B4841]/50 mb-2">Phone Number</label>
-                <input
-                  type="tel"
-                  name="phone"
-                  placeholder="(604) 555-0123"
-                  className="w-full bg-transparent border-b border-[#6B4841]/20 py-3 text-[#6B4841] placeholder:text-[#6B4841]/25 focus:outline-none focus:border-[#C483C8] transition-colors text-[length:var(--text-body)]"
-                />
-              </div>
-
-              <div>
-                <label className="block brygada font-bold text-[length:var(--text-eyebrow)] tracking-[0.3em] uppercase text-[#6B4841]/50 mb-2">Type of Event</label>
-                <select
-                  name="event"
-                  className="w-full bg-transparent border-b border-[#6B4841]/20 py-3 text-[#6B4841] focus:outline-none focus:border-[#C483C8] transition-colors text-[length:var(--text-body)] appearance-none"
-                  defaultValue=""
-                >
-                  <option value="" disabled>Select an option</option>
-                  <option value="wedding">Wedding</option>
-                  <option value="birthday">Birthday</option>
-                  <option value="social">Social Event</option>
-                  <option value="private">Private Group</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-
-              <div>
-                <label className="block brygada font-bold text-[length:var(--text-eyebrow)] tracking-[0.3em] uppercase text-[#6B4841]/50 mb-2">Tell Us More</label>
-                <textarea
-                  name="message"
-                  rows={5}
-                  placeholder="Date, location, group size, any special requests..."
-                  className="w-full bg-transparent border-b border-[#6B4841]/20 py-3 text-[#6B4841] placeholder:text-[#6B4841]/25 focus:outline-none focus:border-[#C483C8] transition-colors resize-none text-[length:var(--text-body)] leading-relaxed"
-                />
-              </div>
-
-              <button
-                type="submit"
-                className="brygada font-bold text-xs border border-[#C483C8]/40 text-[#C483C8] px-7 py-3 tracking-[0.25em] uppercase hover:bg-[#C483C8] hover:text-[#F7EAD8] transition-all"
-              >
-                Send Enquiry              </button>
-            </form>
+            <ContactForm />
           </div>
         </div>
       </section>

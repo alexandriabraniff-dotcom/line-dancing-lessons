@@ -145,6 +145,31 @@ export const bookingServices: BookingService[] = [
   },
 ];
 
+/* General enquiry form on the Contact page (not shown as a Book button) */
+export const contactService: BookingService = {
+  key: "contact",
+  title: "General",
+  image: "/icon.png",
+  intro: "",
+  fields: [
+    ...contactFields,
+    {
+      name: "eventType",
+      label: "Type of Event",
+      type: "select",
+      options: ["Wedding", "Birthday", "Social Event", "Private Group", "Other"],
+    },
+    {
+      name: "message",
+      label: "Tell Us More",
+      type: "textarea",
+      required: true,
+      placeholder: "Date, location, group size, any special requests...",
+    },
+  ],
+};
+
 export function getBookingService(key: string) {
+  if (key === contactService.key) return contactService;
   return bookingServices.find((service) => service.key === key);
 }
