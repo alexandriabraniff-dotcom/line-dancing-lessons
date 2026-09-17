@@ -6,7 +6,7 @@ const focusRing =
   "focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#C483C8]";
 
 const buttonBase =
-  "brygada inline-flex h-[45px] lg:h-[var(--hero-btn-h)] items-center justify-center border-[1.5px] px-[var(--hero-btn-px)] text-[length:var(--hero-btn-text)] font-bold uppercase tracking-[0.25em] transition-colors duration-300";
+  "brygada inline-flex whitespace-nowrap h-[45px] lg:h-[var(--hero-btn-h)] items-center justify-center border-[1.5px] px-[var(--hero-btn-px)] text-[length:var(--hero-btn-text)] font-bold uppercase tracking-[0.25em] transition-colors duration-300";
 
 const delay = (ms: number) => ({ animationDelay: `${ms}ms` });
 
@@ -65,8 +65,8 @@ export default function HomeHero() {
         </h1>
 
         <p
-          className="fade-up brygada sr-only mt-[var(--hero-gap)] text-[length:var(--hero-eyebrow)] font-bold uppercase tracking-[0.35em] text-[#D49C84] lg:not-sr-only"
-          style={delay(80)}
+          className="fade-up brygada sr-only text-[length:var(--hero-eyebrow)] font-bold uppercase tracking-[0.35em] text-[#D49C84] lg:not-sr-only"
+          style={{ ...delay(80), marginTop: "var(--hero-gap)" }}
         >
           Lessons for Every Occasion
         </p>

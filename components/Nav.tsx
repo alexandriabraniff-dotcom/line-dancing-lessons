@@ -174,7 +174,7 @@ function NavBar({ hero }: { hero: boolean }) {
               <Logo className="w-[var(--header-logo)]" />
             )}
           </Link>
-          {hero && <SocialLinks className="hidden lg:flex" />}
+          {hero && <SocialLinks className="hidden xl:flex" />}
         </div>
 
         {/* Links, CTA and menu toggle, right (over the photo in the hero) */}
