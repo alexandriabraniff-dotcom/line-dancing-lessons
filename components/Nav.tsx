@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
+import SocialLinks from "@/components/SocialLinks";
 
 const links = [
   { href: "/", label: "Home" },
@@ -152,24 +153,26 @@ function NavBar({ hero }: { hero: boolean }) {
     <>
       <nav
         aria-label={hero ? "Main" : "Site"}
-        className={`flex w-full items-center justify-between gap-6 px-[var(--hero-gutter)] ${
-          hero ? "pt-[var(--hero-pad-top)]" : "py-[var(--header-pad-y)]"
-        }`}
+        className={
+          hero
+            ? "grid w-full grid-cols-[1fr_auto] items-center pt-[var(--hero-pad-top)] lg:grid-cols-2"
+            : "flex w-full items-center justify-between gap-6 px-[var(--hero-gutter)] py-[var(--header-pad-y)]"
+        }
       >
-        {/* Logo, top left */}
-        <Link href="/" aria-label="Wildflower Line Dancing, home" className={`block shrink-0 ${focusRing}`}>
-          <Logo
-            preload={hero}
-            className={
-              hero
-                ? "w-[var(--hero-logo)] drop-shadow-[0_8px_24px_rgba(30,15,11,0.45)]"
-                : "w-[var(--header-logo)]"
-            }
-          />
-        </Link>
+        {/* Logo (plus social icons in the hero), top left */}
+        <div className={hero ? "flex items-center gap-[var(--nav-gap)] pl-[var(--hero-gutter)]" : "contents"}>
+          <Link href="/" aria-label="Wildflower Line Dancing, home" className={`block shrink-0 ${focusRing}`}>
+            <Logo preload={hero} className={hero ? "w-[var(--hero-logo)]" : "w-[var(--header-logo)]"} />
+          </Link>
+          {hero && <SocialLinks className="hidden sm:flex" />}
+        </div>
 
-        {/* Links, CTA and menu toggle, right */}
-        <div className="flex items-center gap-[var(--nav-gap)]">
+        {/* Links, CTA and menu toggle, right (over the photo in the hero) */}
+        <div
+          className={`flex items-center justify-end gap-[var(--nav-gap)] ${
+            hero ? "pr-[var(--hero-gutter)] lg:pl-[var(--hero-gutter)]" : ""
+          }`}
+        >
           <ul className="hidden items-center gap-[var(--nav-gap)] lg:flex">
             {links.map((l) => {
               const active = pathname === l.href;
@@ -181,8 +184,8 @@ function NavBar({ hero }: { hero: boolean }) {
                     className={`nav-link brygada block py-2 text-[length:var(--nav-link)] font-bold uppercase tracking-[0.25em] transition-colors duration-300 ${focusRing} ${
                       hero
                         ? active
-                          ? "text-[#C483C8]"
-                          : "text-[#F7EAD8] hover:text-[#C483C8]"
+                          ? "text-[#C483C8] drop-shadow-[0_1px_6px_rgba(30,15,11,0.6)]"
+                          : "text-[#F7EAD8] drop-shadow-[0_1px_6px_rgba(30,15,11,0.6)] hover:text-[#C483C8]"
                         : active
                           ? "text-[#6B4841]"
                           : "text-[#6B4841]/75 hover:text-[#6B4841]"
@@ -213,9 +216,7 @@ function NavBar({ hero }: { hero: boolean }) {
             aria-expanded={open}
             aria-controls="mobile-menu"
             aria-label="Open menu"
-            className={`relative -mr-2 h-11 w-11 lg:hidden ${focusRing} ${
-              hero ? "text-[#F7EAD8] drop-shadow-md" : "text-[#6B4841]"
-            }`}
+            className={`relative -mr-2 h-11 w-11 text-[#6B4841] lg:hidden ${focusRing}`}
           >
             <span aria-hidden className="absolute left-1/2 top-1/2 h-[1.5px] w-6 -translate-x-1/2 -translate-y-[7px] bg-current" />
             <span aria-hidden className="absolute left-1/2 top-1/2 h-[1.5px] w-6 -translate-x-1/2 bg-current" />
