@@ -162,7 +162,7 @@ function NavBar({ hero }: { hero: boolean }) {
         {/* Logo (plus social icons in the hero), top left */}
         <div className={hero ? "flex items-center gap-[var(--nav-gap)] pl-[var(--hero-gutter)]" : "contents"}>
           <Link href="/" aria-label="Wildflower Line Dancing, home" className={`block shrink-0 ${focusRing}`}>
-            <Logo preload={hero} className={hero ? "w-[var(--hero-logo)]" : "w-[var(--header-logo)]"} />
+            <Logo preload={hero} className={hero ? "w-[var(--hero-logo-main)]" : "w-[var(--header-logo)]"} />
           </Link>
           {hero && <SocialLinks className="hidden sm:flex" />}
         </div>

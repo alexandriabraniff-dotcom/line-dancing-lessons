@@ -35,6 +35,7 @@
   --hero-gutter: max(1.25rem, 3.5vw);
   --hero-pad-top: max(0.75rem, calc(var(--vu) * 1.8));
   --hero-logo: max(min(22vw, 15vh), calc(var(--vu) * 9));
+  --hero-logo-main: calc(var(--hero-logo) * 1.25);
   --hero-eyebrow: max(0.62rem, calc(var(--vu) * 0.72));
   --hero-title: max(1.85rem, calc(var(--vu) * 4.6));
   --hero-body: max(0.95rem, calc(var(--vu) * 1.05));
