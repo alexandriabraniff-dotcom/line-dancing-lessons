@@ -164,9 +164,7 @@ function NavBar({ hero }: { hero: boolean }) {
           <Link href="/" aria-label="Wildflower Line Dancing, home" className={`block shrink-0 ${focusRing}`}>
             {hero ? (
               <>
-                {/* Cream logo over the photo on phones, standard logo on desktop */}
-                <Logo cream preload className="w-[min(44vw,22svh)] lg:hidden" />
-                <Logo preload className="hidden w-[var(--hero-logo-main)] lg:block" />
+                                <Logo preload className="w-[min(36vw,17svh)] lg:w-[var(--hero-logo-main)]" />
               </>
             ) : (
               <Logo className="w-[var(--header-logo)]" />
@@ -224,7 +222,7 @@ function NavBar({ hero }: { hero: boolean }) {
             aria-expanded={open}
             aria-controls="mobile-menu"
             aria-label="Open menu"
-            className={`relative -mr-2 h-11 w-11 lg:hidden ${focusRing} ${hero ? "text-[#F7EAD8]" : "text-[#6B4841]"}`}
+            className={`relative -mr-2 h-11 w-11 lg:hidden text-[#6B4841] ${focusRing}`}
           >
             <span aria-hidden className="absolute left-1/2 top-1/2 h-[1.5px] w-6 -translate-x-1/2 -translate-y-[7px] bg-current" />
             <span aria-hidden className="absolute left-1/2 top-1/2 h-[1.5px] w-6 -translate-x-1/2 bg-current" />

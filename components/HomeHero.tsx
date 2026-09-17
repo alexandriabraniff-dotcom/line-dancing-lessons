@@ -17,10 +17,10 @@ export default function HomeHero() {
     <section
       id="home-hero"
       aria-labelledby="hero-heading"
-      className="relative isolate grid min-h-svh grid-rows-[auto_1fr] bg-[#1E0F0B] lg:grid-cols-[1.1fr_1fr] lg:bg-[#F7EAD8]"
+      className="relative isolate grid min-h-svh grid-rows-[auto_auto_1fr] bg-[#F7EAD8] lg:grid-cols-[1.1fr_1fr] lg:grid-rows-[auto_1fr]"
     >
-      {/* Photo: full-screen background on phones, right half on desktop */}
-      <div className="absolute inset-0 overflow-hidden lg:relative lg:inset-auto lg:col-start-2 lg:row-span-2 lg:row-start-1">
+      {/* Photo: arch-framed under the logo on phones, right half on desktop */}
+      <div className="relative row-start-2 mx-auto mt-[max(0.5rem,1.5svh)] aspect-[4/5] h-[30svh] overflow-hidden rounded-t-full shadow-[0_18px_40px_-20px_rgba(30,15,11,0.5)] lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:mx-0 lg:mt-0 lg:aspect-auto lg:h-auto lg:rounded-none lg:shadow-none">
         <Image
           src="/hero-crowd.jpg"
           alt="A concert crowd raising cowboy hats under stage lights"
@@ -29,8 +29,6 @@ export default function HomeHero() {
           sizes="(min-width: 1024px) 50vw, 100vw"
           className="object-cover object-[50%_70%] lg:object-[50%_60%]"
         />
-        {/* Dark tint so cream text reads on phones */}
-        <div aria-hidden className="absolute inset-0 bg-[#1E0F0B]/40 lg:hidden" />
         {/* Soft shade behind the nav links on desktop */}
         <div
           aria-hidden
@@ -44,9 +42,9 @@ export default function HomeHero() {
       </div>
 
       {/* Copy */}
-      <div className="relative z-10 row-start-2 flex flex-col items-center justify-center px-[var(--hero-gutter)] py-[max(1.5rem,4vh)] text-center lg:col-start-1 lg:items-start lg:text-left">
+      <div className="relative z-10 row-start-3 flex flex-col items-center justify-center px-[var(--hero-gutter)] py-[max(1rem,3svh)] lg:row-start-2 lg:py-[max(1.5rem,4vh)] text-center lg:col-start-1 lg:items-start lg:text-left">
         <p
-          className="fade-up text-[length:var(--hero-body)] leading-relaxed text-[#F7EAD8] lg:font-[family-name:var(--font-brygada)] lg:text-[length:var(--hero-eyebrow)] lg:font-bold lg:uppercase lg:tracking-[0.35em] lg:text-[#D49C84]"
+          className="fade-up text-[length:var(--hero-body)] leading-relaxed text-[#6B4841] lg:font-[family-name:var(--font-brygada)] lg:text-[length:var(--hero-eyebrow)] lg:font-bold lg:uppercase lg:tracking-[0.35em] lg:text-[#D49C84]"
           style={delay(0)}
         >
           Line Dancing Lessons &amp; Events
@@ -63,7 +61,7 @@ export default function HomeHero() {
         </h1>
 
         <p
-          className="fade-up mt-2 max-w-[34rem] text-[length:var(--hero-body)] leading-relaxed text-[#F7EAD8] lg:mt-[var(--hero-gap)] lg:text-[#6B4841]/80"
+          className="fade-up mt-2 max-w-[34rem] text-[length:var(--hero-body)] leading-relaxed text-[#6B4841] lg:mt-[var(--hero-gap)] lg:text-[#6B4841]/80"
           style={delay(160)}
         >
           Beginner and intermediate line dancing for weddings, birthdays, social events and private groups.
@@ -75,13 +73,13 @@ export default function HomeHero() {
         >
           <Link
             href="/services"
-            className={`${buttonBase} border-[#F7EAD8] bg-[#F7EAD8] text-[#6B4841] hover:bg-[#C483C8] hover:border-[#C483C8] lg:border-[#6B4841] lg:bg-[#6B4841] lg:text-[#F7EAD8] lg:hover:border-[#1E0F0B] lg:hover:bg-[#1E0F0B] ${focusRing}`}
+            className={`${buttonBase} border-[#6B4841] bg-[#6B4841] text-[#F7EAD8] hover:border-[#1E0F0B] hover:bg-[#1E0F0B] ${focusRing}`}
           >
             Book Your Event
           </Link>
           <Link
             href="/contact"
-            className={`${buttonBase} border-[#F7EAD8] text-[#F7EAD8] hover:bg-[#F7EAD8] hover:text-[#6B4841] lg:border-[#6B4841] lg:text-[#6B4841] lg:hover:bg-[#6B4841] lg:hover:text-[#F7EAD8] ${focusRing}`}
+            className={`${buttonBase} border-[#6B4841] text-[#6B4841] hover:bg-[#6B4841] hover:text-[#F7EAD8] ${focusRing}`}
           >
             Contact Us
           </Link>
