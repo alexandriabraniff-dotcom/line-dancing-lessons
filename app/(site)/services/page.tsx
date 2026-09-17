@@ -106,10 +106,10 @@ export default function ServicesPage() {
             <article
               key={title}
               id={slug(title)}
-              className="scroll-mt-[calc(var(--header-logo)+var(--header-pad-y)*2+1rem)] grid grid-cols-1 items-center gap-[max(1.25rem,2.2vw)] border border-[#6B4841]/10 bg-[#EDE0CC]/45 p-[max(1rem,1.6vw)] md:grid-cols-[auto_minmax(0,1fr)]"
+              className="scroll-mt-[calc(var(--header-logo)+var(--header-pad-y)*2+1rem)] flex flex-col items-center gap-y-5 border border-[#6B4841]/10 bg-[#EDE0CC]/45 p-[max(1rem,1.6vw)] text-center md:grid md:grid-cols-[auto_minmax(0,1fr)] md:items-center md:gap-[max(1.25rem,2.2vw)] md:text-left"
             >
-              {/* Artwork: width follows screen height so two cards fit on screen at once */}
-              <div className="relative mx-auto aspect-[3/4] w-[min(55%,14rem)] overflow-hidden rounded-t-full md:mx-0 md:w-[max(9rem,min(22vw,26vh))]">
+              {/* Phones: title, photo, then the rest. Desktop: photo beside the content. */}
+              <div className="relative order-2 aspect-[3/4] w-[min(55%,14rem)] overflow-hidden rounded-t-full md:order-none md:w-[max(9rem,min(22vw,26vh))]">
                 <Image
                   src={image}
                   alt={title}
@@ -119,21 +119,20 @@ export default function ServicesPage() {
                 />
               </div>
 
-              {/* Content: description + button on the left, what's included on the right */}
-              <div className="grid grid-cols-1 gap-x-[max(1.25rem,2.2vw)] gap-y-5 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] lg:grid-rows-[auto_1fr]">
-                <div className="lg:col-start-1 lg:row-start-1">
-                  <h2
-                    className="rye text-[#6B4841] uppercase tracking-wide leading-tight"
-                    style={{ fontSize: "var(--text-h3)" }}
-                  >
-                    {title}
-                  </h2>
-                  <p className="mt-3 text-[length:var(--text-body)] leading-relaxed text-[#6B4841]/80">
-                    {desc}
-                  </p>
-                </div>
+              {/* `contents` on phones lets these sit directly in the card's column order */}
+              <div className="contents md:grid md:grid-cols-1 md:gap-x-[max(1.25rem,2.2vw)] md:gap-y-5 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] lg:grid-rows-[auto_auto_1fr]">
+                <h2
+                  className="rye order-1 text-[#6B4841] uppercase tracking-wide leading-tight md:order-none lg:col-start-1 lg:row-start-1"
+                  style={{ fontSize: "var(--text-h3)" }}
+                >
+                  {title}
+                </h2>
 
-                <div className="lg:col-start-2 lg:row-start-1 lg:row-span-2 lg:border-l lg:border-[#6B4841]/15 lg:pl-[max(1.25rem,2.2vw)]">
+                <p className="order-3 text-[length:var(--text-body)] leading-relaxed text-[#6B4841]/80 md:order-none md:mt-3 lg:col-start-1 lg:row-start-2 lg:mt-0">
+                  {desc}
+                </p>
+
+                <div className="order-4 md:order-none lg:col-start-2 lg:row-start-1 lg:row-span-3 lg:border-l lg:border-[#6B4841]/15 lg:pl-[max(1.25rem,2.2vw)]">
                   <p className="brygada text-[1rem] font-bold uppercase tracking-[0.25em] text-[#6B4841]/60">
                     What&apos;s Included
                   </p>
@@ -141,7 +140,7 @@ export default function ServicesPage() {
                     {details.map((item) => (
                       <li
                         key={item}
-                        className="flex items-start gap-3 text-[length:var(--text-body)] leading-snug text-[#6B4841]/80"
+                        className="flex items-start justify-center gap-3 text-[length:var(--text-body)] leading-snug text-[#6B4841]/80 md:justify-start"
                       >
                         <span aria-hidden className="mt-[0.5em] h-1.5 w-1.5 shrink-0 rounded-full bg-[#D49C84]" />
                         {item}
@@ -150,7 +149,7 @@ export default function ServicesPage() {
                   </ul>
                 </div>
 
-                <div className="lg:col-start-1 lg:row-start-2 lg:self-start">
+                <div className="order-5 md:order-none lg:col-start-1 lg:row-start-3 lg:self-start">
                   <BookingButton serviceKey={slug(title)} className={buttonOnLight} />
                 </div>
               </div>
