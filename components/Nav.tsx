@@ -17,10 +17,10 @@ const links = [
 const focusRing =
   "focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#C483C8]";
 
-function Logo({ className, preload = false, inverted = false }: { className: string; preload?: boolean; inverted?: boolean }) {
+function Logo({ className, preload = false, cream = false }: { className: string; preload?: boolean; cream?: boolean }) {
   return (
     <Image
-      src={inverted ? "/wildflower-logo-cream.png" : "/wildflower-logo.png"}
+      src={cream ? "/wildflower-logo-cream.png" : "/wildflower-logo.png"}
       alt="Wildflower Line Dancing"
       width={550}
       height={550}
@@ -74,7 +74,7 @@ function MobileMenu({
     >
       <div className="relative z-10 flex items-center justify-between px-[var(--hero-gutter)] pt-[var(--hero-pad-top)]">
         <Link href="/" onClick={onNavigate} className={focusRing}>
-          <Logo inverted className="w-[var(--hero-logo)]" />
+          <Logo cream className="w-[var(--hero-logo)]" />
         </Link>
         <button
           type="button"
@@ -162,10 +162,15 @@ function NavBar({ hero }: { hero: boolean }) {
         {/* Logo (plus social icons in the hero), top left */}
         <div className={hero ? "col-start-2 flex items-center justify-center gap-[var(--nav-gap)] lg:col-start-1 lg:justify-start lg:pl-[var(--hero-gutter)]" : "contents"}>
           <Link href="/" aria-label="Wildflower Line Dancing, home" className={`block shrink-0 ${focusRing}`}>
-            <Logo
-              preload={hero}
-              className={hero ? "w-[min(44vw,22svh)] lg:w-[var(--hero-logo-main)]" : "w-[var(--header-logo)]"}
-            />
+            {hero ? (
+              <>
+                {/* Cream logo over the photo on phones, standard logo on desktop */}
+                <Logo cream preload className="w-[min(44vw,22svh)] lg:hidden" />
+                <Logo preload className="hidden w-[var(--hero-logo-main)] lg:block" />
+              </>
+            ) : (
+              <Logo className="w-[var(--header-logo)]" />
+            )}
           </Link>
           {hero && <SocialLinks className="hidden lg:flex" />}
         </div>
@@ -219,7 +224,7 @@ function NavBar({ hero }: { hero: boolean }) {
             aria-expanded={open}
             aria-controls="mobile-menu"
             aria-label="Open menu"
-            className={`relative -mr-2 h-11 w-11 text-[#6B4841] lg:hidden ${focusRing}`}
+            className={`relative -mr-2 h-11 w-11 lg:hidden ${focusRing} ${hero ? "text-[#F7EAD8]" : "text-[#6B4841]"}`}
           >
             <span aria-hidden className="absolute left-1/2 top-1/2 h-[1.5px] w-6 -translate-x-1/2 -translate-y-[7px] bg-current" />
             <span aria-hidden className="absolute left-1/2 top-1/2 h-[1.5px] w-6 -translate-x-1/2 bg-current" />
