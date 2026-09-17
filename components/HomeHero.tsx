@@ -56,23 +56,17 @@ export default function HomeHero() {
       <div className="relative z-10 row-start-3 flex flex-col items-center justify-start px-[var(--hero-gutter)] pt-[calc(50svh-var(--hero-pad-top)-2.75rem+var(--hero-gap-lg))] pb-[max(1rem,3svh)] lg:pt-[max(1.5rem,4vh)] lg:row-start-2 lg:justify-center lg:py-[max(1.5rem,4vh)] text-center lg:col-start-1 lg:items-start lg:text-left">
         <h1
           id="hero-heading"
-          className="fade-up text-[length:var(--hero-body)] leading-relaxed text-[#6B4841] lg:font-[family-name:var(--font-rye)] lg:text-[length:max(2.3rem,calc(var(--vu)*3.9))] lg:uppercase lg:leading-[1.08] lg:tracking-wide lg:whitespace-nowrap"
+          className="fade-up rye text-[length:clamp(1.7rem,8vw,2.6rem)] uppercase leading-[1.08] tracking-wide text-[#6B4841] lg:whitespace-nowrap lg:text-[length:max(2.3rem,calc(var(--vu)*3.9))]"
           style={delay(0)}
         >
           Line Dancing{" "}
-          <br className="hidden lg:block" />
+          <br />
           Lessons &amp; Events
         </h1>
 
-        <p
-          className="fade-up brygada sr-only text-[length:var(--hero-eyebrow)] font-bold uppercase tracking-[0.35em] text-[#D49C84] lg:not-sr-only"
-          style={{ ...delay(80), marginTop: "var(--hero-gap)" }}
-        >
-          Lessons for Every Occasion
-        </p>
 
         <p
-          className="fade-up mt-2 max-w-[34rem] text-[length:var(--hero-body)] leading-relaxed text-[#6B4841] lg:mt-[var(--hero-gap)] lg:text-[#6B4841]/80"
+          className="fade-up mt-3 max-w-[34rem] text-[length:var(--hero-body)] leading-relaxed text-[#6B4841] lg:mt-[var(--hero-gap)] lg:text-[#6B4841]/80"
           style={delay(160)}
         >
           Beginner and intermediate line dancing for weddings, birthdays, social events and private groups.
