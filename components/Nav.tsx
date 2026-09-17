@@ -20,7 +20,7 @@ const focusRing =
 function Logo({ className, preload = false, inverted = false }: { className: string; preload?: boolean; inverted?: boolean }) {
   return (
     <Image
-      src={inverted ? "/wildflower-logo-dark.png" : "/wildflower-logo.png"}
+      src={inverted ? "/wildflower-logo-cream.png" : "/wildflower-logo.png"}
       alt="Wildflower Line Dancing"
       width={550}
       height={550}
