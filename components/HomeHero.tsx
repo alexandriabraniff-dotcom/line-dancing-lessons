@@ -37,7 +37,7 @@ export default function HomeHero() {
       </div>
 
       {/* Navbar spans both halves */}
-      <div className="relative z-20 row-start-1 lg:col-span-2">
+      <div className="relative z-20 row-start-1 lg:col-start-1 lg:col-span-2">
         <HeroNav />
       </div>
 
