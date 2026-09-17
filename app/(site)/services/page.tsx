@@ -101,12 +101,12 @@ export default function ServicesPage() {
 
       {/* ── Service Cards ── */}
       <section className="px-[var(--gutter)] pb-[var(--section)]">
-        <div className="max-w-6xl mx-auto flex flex-col gap-[max(1rem,1.5vw)]">
+        <div className="max-w-6xl mx-auto flex flex-col md:gap-[max(1rem,1.5vw)]">
           {services.map(({ title, desc, details, image, imageClass }) => (
             <article
               key={title}
               id={slug(title)}
-              className="scroll-mt-[calc(var(--header-logo)+var(--header-pad-y)*2+1rem)] grid grid-cols-[minmax(0,1fr)_minmax(0,1fr)] items-start gap-x-4 gap-y-5 border border-[#6B4841]/10 bg-[#EDE0CC]/45 p-[max(1rem,1.6vw)] text-center md:grid-cols-[auto_minmax(0,1fr)] md:items-center md:gap-[max(1.25rem,2.2vw)] md:text-left"
+              className="scroll-mt-[calc(var(--header-logo)+var(--header-pad-y)*2+1rem)] grid grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] items-start gap-x-3 gap-y-5 border-t border-[#6B4841]/20 py-7 text-center last:border-b md:grid-cols-[auto_minmax(0,1fr)] md:items-center md:gap-[max(1.25rem,2.2vw)] md:rounded-none md:border md:border-[#6B4841]/10 md:bg-[#EDE0CC]/45 md:p-[max(1rem,1.6vw)] md:text-left"
             >
               {/* Phones: title, then photo beside the list, then the write-up and button */}
               <div className="relative col-start-1 row-start-2 aspect-[3/4] w-full overflow-hidden rounded-t-full md:col-auto md:row-auto md:w-[max(9rem,min(22vw,26vh))]">
@@ -128,14 +128,14 @@ export default function ServicesPage() {
                 </h2>
 
                 <div className="col-start-2 row-start-2 text-left md:col-auto md:row-auto lg:col-start-2 lg:row-start-1 lg:row-span-3 lg:border-l lg:border-[#6B4841]/15 lg:pl-[max(1.25rem,2.2vw)]">
-                  <p className="brygada text-[1rem] font-bold uppercase tracking-[0.25em] text-[#6B4841]/60">
+                  <p className="brygada text-[0.8rem] font-bold uppercase tracking-[0.18em] text-[#6B4841]/60 md:text-[1rem] md:tracking-[0.25em]">
                     What&apos;s Included
                   </p>
-                  <ul className="mt-3 space-y-1.5">
+                  <ul className="mt-2 space-y-1.5 md:mt-3">
                     {details.map((item) => (
                       <li
                         key={item}
-                        className="flex items-start gap-3 text-[length:var(--text-body)] leading-snug text-[#6B4841]/80"
+                        className="flex items-start gap-2 text-[0.72rem] leading-snug text-[#6B4841]/80 md:gap-3 md:text-[length:var(--text-body)]"
                       >
                         <span aria-hidden className="mt-[0.5em] h-1.5 w-1.5 shrink-0 rounded-full bg-[#D49C84]" />
                         {item}
