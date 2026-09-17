@@ -104,7 +104,7 @@ export default function BookingButton({ serviceKey, className }: { serviceKey: s
             {field.options?.map((option) => (
               <label
                 key={option}
-                className="flex cursor-pointer items-center gap-3 border border-[#6B4841]/20 bg-[#FFFBF5] px-4 py-3 text-[length:var(--text-body)] text-[#6B4841] transition-colors has-[:checked]:border-[#6B4841] has-[:checked]:bg-[#6B4841]/[0.06]"
+                className="flex w-full cursor-pointer items-center gap-3 border sm:w-auto border-[#6B4841]/20 bg-[#FFFBF5] px-4 py-3 text-[length:var(--text-body)] text-[#6B4841] transition-colors has-[:checked]:border-[#6B4841] has-[:checked]:bg-[#6B4841]/[0.06]"
               >
                 <input type="checkbox" name={field.name} value={option} className="h-4 w-4 accent-[#6B4841]" />
                 {option}
