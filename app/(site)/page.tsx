@@ -105,7 +105,7 @@ export default function Home() {
                 href={`/services#${section}`}
                 className="group shrink-0 w-[65vw] sm:w-auto snap-start focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#C483C8]"
               >
-                <div className="relative aspect-[7/9] overflow-hidden shadow-[0_10px_30px_-18px_rgba(30,15,11,0.35)] transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-[0_18px_40px_-18px_rgba(30,15,11,0.45)]">
+                <div className="relative aspect-[7/9] overflow-hidden transition-all duration-300 group-hover:-translate-y-1">
                   <Image
                     src={image}
                     alt={title}
