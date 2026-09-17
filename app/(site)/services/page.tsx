@@ -8,7 +8,13 @@ export const metadata = {
   alternates: { canonical: "/services" },
 };
 
-const services = [
+const services: {
+  title: string;
+  desc: string;
+  details: string[];
+  image: string;
+  imageClass?: string;
+}[] = [
   {
     title: "Weddings",
     desc: "Your wedding day deserves something unforgettable. We work with brides, grooms, and bridal parties to create a first dance or group routine that will have the whole venue on its feet. Then, at any point during the night, we can lead a line dancing lesson and teach all of your guests the steps, so everyone gets out on the dance floor together.",
@@ -56,6 +62,8 @@ const services = [
       "Recurring lessons available",
     ],
     image: "/services/photos/private-lessons.jpg",
+    /* Zoomed so the boots are framed like the homepage poster */
+    imageClass: "scale-[1.45] object-[52%_42%]",
   },
 ];
 
@@ -94,7 +102,7 @@ export default function ServicesPage() {
       {/* ── Service Cards ── */}
       <section className="px-[var(--gutter)] pb-[var(--section)]">
         <div className="max-w-6xl mx-auto flex flex-col gap-[max(1rem,1.5vw)]">
-          {services.map(({ title, desc, details, image }) => (
+          {services.map(({ title, desc, details, image, imageClass }) => (
             <article
               key={title}
               id={slug(title)}
@@ -107,7 +115,7 @@ export default function ServicesPage() {
                   alt={title}
                   fill
                   sizes="(min-width: 768px) 26vh, 55vw"
-                  className="object-cover"
+                  className={`object-cover ${imageClass ?? ""}`}
                 />
               </div>
 
