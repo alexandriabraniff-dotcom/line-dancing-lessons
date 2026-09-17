@@ -2,7 +2,7 @@
    Used by the footer and Contact page. Set `phone` to show it. */
 export const site = {
   email: "wildflowerlinedancing@gmail.com",
-  phone: null as string | null,
+  phone: "(250) 650-1391" as string | null,
   serviceArea: "Greater Vancouver",
   socials: [
     { name: "Instagram", handle: "@wildflowerlinedancing", href: "https://www.instagram.com/wildflowerlinedancing/" },
