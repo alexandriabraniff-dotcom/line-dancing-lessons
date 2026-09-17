@@ -10,7 +10,7 @@ const focusRing =
   "focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#C483C8]";
 
 const headingClass =
-  "brygada mb-4 text-[0.97rem] font-bold uppercase tracking-[0.3em] text-[#D49C84]";
+  "brygada mb-4 whitespace-nowrap text-[0.97rem] font-bold uppercase tracking-[0.18em] text-[#D49C84]";
 
 const linkClass = `text-[length:var(--text-body)] transition-colors hover:text-[#C483C8] ${focusRing}`;
 
