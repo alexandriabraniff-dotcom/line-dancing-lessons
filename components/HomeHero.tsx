@@ -44,7 +44,7 @@ export default function HomeHero() {
         <div aria-hidden className="absolute inset-x-0 bottom-0 h-1/2 bg-linear-to-t from-[#1E0F0B]/80 to-transparent lg:hidden" />
         <h1
           id="hero-heading"
-          className="fade-up rye absolute inset-x-0 bottom-[calc(0.75rem+var(--hero-body)*0.3125)] px-3 text-center text-[length:clamp(1.7rem,8vw,2.6rem)] uppercase leading-[1.08] tracking-wide text-[#F7EAD8] lg:hidden"
+          className="fade-up rye absolute inset-x-0 bottom-[calc(0.75rem+var(--hero-body)*0.3125)] whitespace-nowrap text-center text-[length:clamp(1.4rem,7.4vw,2.4rem)] uppercase leading-[1.08] tracking-wide text-[#F7EAD8] lg:hidden"
           style={delay(0)}
         >
           Line Dancing
