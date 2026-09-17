@@ -99,7 +99,11 @@ const structuredData = {
         "@type": "Place",
         name: "Greater Vancouver, British Columbia, Canada",
       },
-      sameAs: ["https://www.instagram.com/wildflowerlinedancing/"],
+      sameAs: [
+        "https://www.instagram.com/wildflowerlinedancing/",
+        "https://www.facebook.com/wildflowerlinedancing",
+        "https://www.tiktok.com/@wildflowerlinedancing",
+      ],
     },
   ],
 };

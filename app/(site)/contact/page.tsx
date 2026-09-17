@@ -1,5 +1,7 @@
 import Link from "next/link";
 import ContactForm from "@/components/ContactForm";
+import SocialLinks from "@/components/SocialLinks";
+import { site } from "@/lib/site";
 
 export const metadata = {
   title: "Contact Us",
@@ -12,17 +14,7 @@ const focusRing =
   "focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#C483C8]";
 
 const details = [
-  {
-    label: "Email",
-    value: "wildflowerlinedancing@gmail.com",
-    href: "mailto:wildflowerlinedancing@gmail.com",
-  },
-  {
-    label: "Instagram",
-    value: "@wildflowerlinedancing",
-    href: "https://www.instagram.com/wildflowerlinedancing/",
-  },
-  { label: "Service Area", value: "Vancouver and the Lower Mainland" },
+  { label: "We Come to You", value: `Your venue, home or office, anywhere in ${site.serviceArea}` },
   { label: "Response Time", value: "Within 24 hours" },
 ];
 
@@ -53,29 +45,25 @@ export default function ContactPage() {
         <div className="max-w-6xl mx-auto grid grid-cols-1 gap-[var(--gap)] md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] md:items-start">
           {/* Details */}
           <div>
-            <dl className="divide-y divide-[#6B4841]/10 border-y border-[#6B4841]/10">
-              {details.map(({ label, value, href }) => (
+            <dl className="divide-y divide-[#6B4841]/10 border-t border-[#6B4841]/10">
+              {details.map(({ label, value }) => (
                 <div key={label} className="py-5">
                   <dt className="brygada text-[0.72rem] font-bold uppercase tracking-[0.25em] text-[#D49C84]">
                     {label}
                   </dt>
                   <dd className="mt-1 break-words text-[length:clamp(1rem,1.2vw,1.2rem)] text-[#6B4841]">
-                    {href ? (
-                      <a
-                        href={href}
-                        target={href.startsWith("http") ? "_blank" : undefined}
-                        rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-                        className={`underline decoration-[#6B4841]/25 underline-offset-4 transition-colors hover:decoration-[#6B4841] ${focusRing}`}
-                      >
-                        {value}
-                      </a>
-                    ) : (
-                      value
-                    )}
+                    {value}
                   </dd>
                 </div>
               ))}
             </dl>
+
+            <div className="border-b border-[#6B4841]/10 py-5">
+              <p className="brygada text-[0.72rem] font-bold uppercase tracking-[0.25em] text-[#D49C84]">
+                Follow Along
+              </p>
+              <SocialLinks className="mt-3" />
+            </div>
 
             <div className="mt-8">
               <p className="brygada text-[length:clamp(1.05rem,1.3vw,1.35rem)] font-bold italic text-[#6B4841]">
