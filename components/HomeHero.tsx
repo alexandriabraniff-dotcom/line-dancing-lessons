@@ -17,7 +17,7 @@ export default function HomeHero() {
     <section
       id="home-hero"
       aria-labelledby="hero-heading"
-      className="relative isolate grid min-h-svh grid-rows-[auto_1fr_minmax(34svh,auto)] bg-[#F7EAD8] lg:grid-cols-2 lg:grid-rows-[auto_1fr]"
+      className="relative isolate grid min-h-svh grid-rows-[auto_1fr_minmax(34svh,auto)] bg-[#F7EAD8] lg:grid-cols-[1.1fr_1fr] lg:grid-rows-[auto_1fr]"
     >
       {/* Photo: right half on desktop, bottom band on phones */}
       <div className="relative row-start-3 overflow-hidden lg:col-start-2 lg:row-span-2 lg:row-start-1">
@@ -52,7 +52,7 @@ export default function HomeHero() {
 
         <h1
           id="hero-heading"
-          className="fade-up rye mt-[var(--hero-gap-sm)] text-[length:max(2.3rem,calc(var(--vu)*4.8))] uppercase leading-[1.08] tracking-wide text-[#6B4841]"
+          className="fade-up rye mt-[var(--hero-gap-sm)] text-[length:max(2.3rem,calc(var(--vu)*4.4))] uppercase leading-[1.08] tracking-wide text-[#6B4841]"
           style={delay(80)}
         >
           Lessons for
