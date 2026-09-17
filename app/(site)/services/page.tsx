@@ -63,7 +63,7 @@ const services: {
     ],
     image: "/services/photos/private-lessons.jpg",
     /* Zoomed so the boots are framed like the homepage poster */
-    imageClass: "scale-[1.3] object-[58%_40%]",
+    imageClass: "scale-[1.4] translate-x-[-15px] object-[58%_40%]",
   },
 ];
 
