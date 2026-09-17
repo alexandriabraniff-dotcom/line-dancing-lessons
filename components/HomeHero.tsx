@@ -20,7 +20,7 @@ export default function HomeHero() {
       className="relative isolate grid min-h-svh grid-rows-[auto_minmax(0,1fr)_auto] bg-[#F7EAD8] lg:grid-cols-[1.1fr_1fr] lg:grid-rows-[auto_1fr]"
     >
       {/* Photo: arch under the menu on phones (ends at 50% of screen), right half on desktop */}
-      <div className="relative row-start-2 mx-[var(--hero-gutter)] mt-[calc(var(--hero-gutter)-var(--hero-pad-top)-2.75rem)] min-h-[calc(50svh-var(--hero-gutter))] overflow-hidden rounded-t-[50vw] lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:mx-0 lg:mt-0 lg:h-auto lg:rounded-none">
+      <div className="relative row-start-2 mx-[var(--hero-gutter)] mt-[calc(var(--hero-gutter)-var(--hero-pad-top)-2.75rem)] min-h-[calc(50svh-var(--hero-gutter))] overflow-hidden rounded-t-[calc((100vw-2*var(--hero-gutter))*0.225)] lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:mx-0 lg:mt-0 lg:h-auto lg:rounded-none">
         <Image
           src="/hero-crowd.jpg"
           alt="A concert crowd raising cowboy hats under stage lights"
