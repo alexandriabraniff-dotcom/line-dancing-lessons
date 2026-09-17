@@ -177,7 +177,7 @@ export default function BookingButton({ serviceKey, className }: { serviceKey: s
         <div className="-mt-12 px-[max(1.25rem,4vw)] pb-10 pt-10 md:px-12 md:pb-12">
           {/* Heading */}
           <div className="flex items-center gap-5 border-b border-[#6B4841]/15 pb-6 pr-10">
-            <div className="relative aspect-[3/4] w-16 shrink-0 overflow-hidden shadow-[0_8px_20px_-12px_rgba(30,15,11,0.4)] sm:w-20">
+            <div className="relative aspect-[7/9] w-16 shrink-0 overflow-hidden shadow-[0_8px_20px_-12px_rgba(30,15,11,0.4)] sm:w-20">
               <Image src={service.image} alt="" fill sizes="80px" className="object-cover" />
             </div>
             <div>

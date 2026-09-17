@@ -101,7 +101,7 @@ export default function ServicesPage() {
               className="scroll-mt-[calc(var(--header-logo)+var(--header-pad-y)*2+1rem)] grid grid-cols-1 items-center gap-[max(1.25rem,2.2vw)] border border-[#6B4841]/10 bg-[#EDE0CC]/45 p-[max(1rem,1.6vw)] md:grid-cols-[auto_minmax(0,1fr)]"
             >
               {/* Artwork: width follows screen height so two cards fit on screen at once */}
-              <div className="relative mx-auto aspect-[3/4] w-[min(55%,14rem)] overflow-hidden shadow-[0_10px_30px_-18px_rgba(30,15,11,0.35)] md:mx-0 md:w-[max(9rem,min(22vw,26vh))]">
+              <div className="relative mx-auto aspect-[7/9] w-[min(55%,14rem)] overflow-hidden shadow-[0_10px_30px_-18px_rgba(30,15,11,0.35)] md:mx-0 md:w-[max(9rem,min(22vw,26vh))]">
                 <Image
                   src={image}
                   alt={title}
