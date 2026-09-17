@@ -22,12 +22,12 @@ export default function HomeHero() {
       {/* Photo: right half on desktop, bottom band on phones */}
       <div className="relative row-start-3 overflow-hidden lg:col-start-2 lg:row-span-2 lg:row-start-1">
         <Image
-          src="/hero-bg.png"
-          alt="Dancers in cowboy boots line dancing under string lights"
+          src="/hero-crowd.jpg"
+          alt="A concert crowd raising cowboy hats under stage lights"
           fill
           preload
           sizes="(min-width: 1024px) 50vw, 100vw"
-          className="object-cover object-center"
+          className="object-cover object-[50%_72%] lg:object-[50%_60%]"
         />
         {/* Soft shade behind the nav links on desktop */}
         <div
