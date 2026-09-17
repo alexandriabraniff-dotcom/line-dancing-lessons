@@ -53,7 +53,7 @@ export default function HomeHero() {
       </div>
 
       {/* Copy */}
-      <div className="relative z-10 row-start-3 flex flex-col items-center justify-center px-[var(--hero-gutter)] pt-3 pb-[max(var(--hero-gap-lg),6svh)] lg:row-start-2 lg:pt-[var(--hero-gap-lg)] lg:pb-[var(--hero-gap-lg)] lg:py-[max(1.5rem,4vh)] text-center lg:col-start-1 lg:items-start lg:text-left">
+      <div className="relative z-10 row-start-3 flex flex-col items-center justify-center px-[var(--hero-gutter)] pt-3 pb-[var(--hero-gap-lg)] lg:row-start-2 lg:pt-[var(--hero-gap-lg)] lg:pb-[var(--hero-gap-lg)] lg:py-[max(1.5rem,4vh)] text-center lg:col-start-1 lg:items-start lg:text-left">
         <h1
           id="hero-heading"
           className="fade-up rye text-[length:clamp(1.7rem,8vw,2.6rem)] uppercase leading-[1.08] tracking-wide text-[#6B4841] lg:whitespace-nowrap lg:text-[length:max(2.3rem,calc(var(--vu)*3.9))]"
