@@ -235,14 +235,7 @@ export default function BookingButton({ serviceKey, className }: { serviceKey: s
                 </p>
               )}
 
-              <div className="mt-8 flex flex-col-reverse gap-3 sm:flex-row sm:items-center sm:justify-between">
-                <button
-                  type="button"
-                  onClick={close}
-                  className={`brygada h-12 text-[0.8rem] font-bold uppercase tracking-[0.18em] text-[#6B4841]/70 transition-colors hover:text-[#6B4841] ${focusRing}`}
-                >
-                  Cancel
-                </button>
+              <div className="mt-8 flex flex-col sm:flex-row sm:justify-end">
                 <button type="submit" disabled={status === "sending"} className={primaryButton}>
                   {status === "sending" ? "Sending..." : "Send Enquiry"}
                 </button>
