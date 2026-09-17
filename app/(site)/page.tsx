@@ -82,6 +82,9 @@ export default function Home() {
       {/* ── Hero ── */}
       <HomeHero />
 
+      {/* Divider between hero and services on phones */}
+      <div aria-hidden className="mx-[var(--gutter)] h-px bg-[#6B4841]/25 lg:hidden" />
+
       {/* ── Book by Occasion ── */}
       <section id="our-services" className="px-[var(--gutter)] py-[var(--section)]">
         <div className="max-w-6xl mx-auto text-center">
