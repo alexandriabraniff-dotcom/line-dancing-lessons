@@ -1,19 +1,39 @@
+import Link from "next/link";
 import ContactForm from "@/components/ContactForm";
+
 export const metadata = {
   title: "Contact Us",
   description:
-    "Book a line dancing lesson in Vancouver for your wedding, birthday, bachelorette party, corporate event or private group. We reply to every enquiry within 24 hours.",
+    "Book a line dancing lesson in Vancouver for your wedding, birthday, corporate event or private group. We reply to every enquiry within 24 hours.",
   alternates: { canonical: "/contact" },
 };
+
+const focusRing =
+  "focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#C483C8]";
+
+const details = [
+  {
+    label: "Email",
+    value: "wildflowerlinedancing@gmail.com",
+    href: "mailto:wildflowerlinedancing@gmail.com",
+  },
+  {
+    label: "Instagram",
+    value: "@wildflowerlinedancing",
+    href: "https://www.instagram.com/wildflowerlinedancing/",
+  },
+  { label: "Service Area", value: "Vancouver and the Lower Mainland" },
+  { label: "Response Time", value: "Within 24 hours" },
+];
 
 export default function ContactPage() {
   return (
     <>
       {/* ── Header ── */}
-      <section className="px-[var(--gutter)] pt-[var(--section-top)] pb-6">
+      <section className="px-[var(--gutter)] pt-[var(--section-top)] pb-[var(--section-sm)]">
         <div className="max-w-6xl mx-auto text-center">
           <p className="brygada font-bold text-[length:var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-3">
-            We Respond Within 24 Hours
+            We&apos;d Love to Hear From You
           </p>
           <h1
             className="rye text-[#6B4841] uppercase tracking-wide"
@@ -21,60 +41,70 @@ export default function ContactPage() {
           >
             Get in Touch
           </h1>
+          <p className="mx-auto mt-4 max-w-[38rem] text-[length:var(--text-body)] leading-relaxed text-[#6B4841]/75">
+            Have a question or an idea for your event? Send us a message and we&apos;ll get back to you
+            within 24 hours.
+          </p>
         </div>
       </section>
 
-      {/* ── Hero Image ── */}
+      {/* ── Details + Form ── */}
       <section className="px-[var(--gutter)] pb-[var(--section)]">
-        <div className="max-w-6xl mx-auto">
-          <div className="image-placeholder w-full aspect-[2.8/1]">
-            <span>Contact hero / Fun, inviting shot</span>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Form + Info ── */}
-      <section className="px-[var(--gutter)] pb-[var(--section)]">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-[var(--gap)]">
-          {/* Left: Image + Info */}
+        <div className="max-w-6xl mx-auto grid grid-cols-1 gap-[var(--gap)] md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] md:items-start">
+          {/* Details */}
           <div>
-            <div className="image-placeholder aspect-[4/5] mb-10">
-              <span>Contact visual / Friendly, approachable</span>
-            </div>
-
-            <p className="brygada font-bold text-[length:var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-4">What to Expect</p>
-            <ul className="space-y-3 mb-10">
-              {[
-                "We respond to all enquiries within 24 hours",
-                "Sessions can be held at your venue or a location of your choice",
-                "No dance experience required",
-                "All group sizes catered for",
-                "Custom playlists and routines available",
-                "Packages tailored to your budget",
-              ].map((item) => (
-                <li key={item} className="flex gap-3 text-[length:var(--text-body)] text-[#6B4841]/65 leading-relaxed">
-                  <span className="text-[#D49C84] text-xs mt-0.5">&#10022;</span>
-                  {item}
-                </li>
+            <dl className="divide-y divide-[#6B4841]/10 border-y border-[#6B4841]/10">
+              {details.map(({ label, value, href }) => (
+                <div key={label} className="py-5">
+                  <dt className="brygada text-[0.72rem] font-bold uppercase tracking-[0.25em] text-[#D49C84]">
+                    {label}
+                  </dt>
+                  <dd className="mt-1 break-words text-[length:clamp(1rem,1.2vw,1.2rem)] text-[#6B4841]">
+                    {href ? (
+                      <a
+                        href={href}
+                        target={href.startsWith("http") ? "_blank" : undefined}
+                        rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+                        className={`underline decoration-[#6B4841]/25 underline-offset-4 transition-colors hover:decoration-[#6B4841] ${focusRing}`}
+                      >
+                        {value}
+                      </a>
+                    ) : (
+                      value
+                    )}
+                  </dd>
+                </div>
               ))}
-            </ul>
+            </dl>
 
-            <div className="border-t border-[#6B4841]/10 pt-8">
-              <p className="rye text-[length:var(--text-h3)] tracking-[0.15em] uppercase text-[#6B4841] mb-2">Not Sure Yet?</p>
-              <p className="text-[#6B4841]/55 text-[length:var(--text-body)] leading-relaxed mb-4">
-                Send us a message anyway. We love chatting about all things dance and will help you
-                figure out exactly what you need.
+            <div className="mt-8">
+              <p className="brygada text-[length:clamp(1.05rem,1.3vw,1.35rem)] font-bold italic text-[#6B4841]">
+                Already know what you&apos;re booking?
               </p>
-              <p className="brygada font-bold text-[#6B4841]/70 text-base">
-                It&apos;s more than a dance, it&apos;s a good time.
+              <p className="mt-1 text-[length:var(--text-body)] leading-relaxed text-[#6B4841]/75">
+                Head to our services to send a booking request for your wedding, birthday, social event
+                or private group.
               </p>
+              <Link
+                href="/services"
+                className={`brygada mt-5 inline-flex h-11 items-center justify-center border-[1.5px] border-[#6B4841] px-6 text-[0.85rem] font-bold uppercase tracking-[0.18em] text-[#6B4841] transition-colors duration-300 hover:bg-[#6B4841] hover:text-[#F7EAD8] ${focusRing}`}
+              >
+                View Services
+              </Link>
             </div>
           </div>
 
-          {/* Right: Form */}
-          <div>
-            <p className="brygada font-bold text-[length:var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-8">Book Your Lesson</p>
-
+          {/* Form */}
+          <div className="border border-[#6B4841]/10 bg-[#EDE0CC]/45 p-[max(1.25rem,2.5vw)]">
+            <h2
+              className="rye text-[#6B4841] uppercase tracking-wide leading-tight"
+              style={{ fontSize: "var(--text-h3)" }}
+            >
+              Send Us a Message
+            </h2>
+            <p className="mt-2 mb-6 text-[0.85rem] text-[#6B4841]/65">
+              Fields marked <span className="text-[#C483C8]">*</span> are required.
+            </p>
             <ContactForm />
           </div>
         </div>

@@ -214,15 +214,15 @@ export default function Home() {
             </h2>
             <div className="space-y-4 text-[#6B4841]/70 text-[length:var(--text-body)] leading-relaxed">
               <p>
-                Line dancing has a way of bringing people together like nothing else.
-                Whether it&apos;s a bride and her bridesmaids learning a surprise routine,
-                a group of friends celebrating a birthday, or a corporate team letting
-                loose after hours, the magic is always the same.
+                Line dancing has a way of bringing your people together like nothing else.
+                Whether you&apos;re learning a surprise routine with your bridesmaids,
+                celebrating a birthday with your friends, or letting loose after hours
+                with your team, the magic is always the same.
               </p>
               <p>
-                Our instructors are passionate about making every session fun, inclusive,
-                and memorable. We meet you where you are, and we leave you wanting to
-                dance every chance you get.
+                We&apos;re passionate about making every session fun, easy and memorable
+                for you. We&apos;ll meet you exactly where you are, and we&apos;ll leave you
+                wanting to dance every chance you get.
               </p>
             </div>
             <div className="mt-8">

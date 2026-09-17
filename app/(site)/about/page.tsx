@@ -73,18 +73,20 @@ export default function AboutPage() {
             </h2>
             <div className="space-y-4 text-[#6B4841]/80 text-[length:var(--text-body)] leading-relaxed">
               <p>
-                No experience needed, no two left feet too clumsy, no event too big or too small.
-                Just boots, beats, and a whole lot of good times.
+                You don&apos;t need any experience, you&apos;re never too clumsy, and your event is
+                never too big or too small. Just bring your boots and we&apos;ll bring the beats and a
+                whole lot of good times.
               </p>
               <p>
-                Line dancing has a way of bringing people together like nothing else. Whether it&apos;s a
-                bride and her bridesmaids learning a surprise routine, a group of friends celebrating
-                a birthday, or a corporate team letting loose after hours, the magic is always the same.
+                Line dancing has a way of bringing your people together like nothing else. Whether
+                you&apos;re learning a surprise routine with your bridesmaids, celebrating a birthday
+                with your friends, or letting loose after hours with your team, the magic is always
+                the same.
               </p>
               <p>
-                What started as a love of country music and community has grown into something bigger.
-                Wildflower is about creating spaces across Vancouver where people can let go, laugh,
-                learn something new, and walk away feeling a little lighter than they came in.
+                We started Wildflower out of a love for country music and community, and it&apos;s grown
+                into something bigger. We want to give you a space in Vancouver where you can let go,
+                laugh, learn something new, and walk away feeling a little lighter than when you came in.
               </p>
             </div>
             <div className="mt-8 border-t border-[#6B4841]/15 pt-6">
