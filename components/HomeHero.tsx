@@ -16,7 +16,7 @@ export default function HomeHero() {
   return (
     <section
       id="home-hero"
-      aria-labelledby="hero-heading"
+      aria-label="Line Dancing Lessons & Events"
       className="relative isolate grid min-h-svh grid-rows-[auto_minmax(0,1fr)_auto] bg-[#F7EAD8] lg:grid-cols-[1.1fr_1fr] lg:grid-rows-[auto_1fr]"
     >
       {/* Photo: arch under the menu on phones (ends at 50% of screen), right half on desktop */}
@@ -40,6 +40,17 @@ export default function HomeHero() {
           sizes="60vw"
           className="absolute left-1/2 top-[7svh] w-[45%] -translate-x-1/2 drop-shadow-[0_8px_20px_rgba(30,15,11,0.45)] lg:hidden"
         />
+        {/* Phones: title on the photo, one text-gap above the arch's bottom edge */}
+        <div aria-hidden className="absolute inset-x-0 bottom-0 h-1/2 bg-linear-to-t from-[#1E0F0B]/80 to-transparent lg:hidden" />
+        <h1
+          id="hero-heading"
+          className="fade-up rye absolute inset-x-0 bottom-[calc(0.75rem+var(--hero-body)*0.3125)] px-3 text-center text-[length:clamp(1.7rem,8vw,2.6rem)] uppercase leading-[1.08] tracking-wide text-[#F7EAD8] lg:hidden"
+          style={delay(0)}
+        >
+          Line Dancing
+          <br />
+          Lessons &amp; Events
+        </h1>
         {/* Soft shade behind the nav links on desktop */}
         <div
           aria-hidden
@@ -53,20 +64,19 @@ export default function HomeHero() {
       </div>
 
       {/* Copy */}
-      <div className="relative z-10 row-start-3 flex flex-col items-center justify-center px-[var(--hero-gutter)] pt-[calc(0.75rem+var(--hero-body)*0.3125)] pb-[var(--hero-gap-lg)] lg:row-start-2 lg:pt-[var(--hero-gap-lg)] lg:pb-[var(--hero-gap-lg)] lg:py-[max(1.5rem,4vh)] text-center lg:col-start-1 lg:items-start lg:text-left">
+      <div className="relative z-10 row-start-3 flex flex-col items-center justify-center px-[var(--hero-gutter)] pt-3 pb-[var(--hero-gap-lg)] lg:row-start-2 lg:pt-[var(--hero-gap-lg)] lg:pb-[var(--hero-gap-lg)] lg:py-[max(1.5rem,4vh)] text-center lg:col-start-1 lg:items-start lg:text-left">
         <h1
-          id="hero-heading"
-          className="fade-up rye text-[length:clamp(1.7rem,8vw,2.6rem)] uppercase leading-[1.08] tracking-wide text-[#6B4841] lg:whitespace-nowrap lg:text-[length:max(2.3rem,calc(var(--vu)*3.9))]"
+          className="fade-up rye hidden uppercase leading-[1.08] tracking-wide text-[#6B4841] lg:block lg:whitespace-nowrap lg:text-[length:max(2.3rem,calc(var(--vu)*3.9))]"
           style={delay(0)}
         >
-          Line Dancing{" "}
+          Line Dancing
           <br />
           Lessons &amp; Events
         </h1>
 
 
         <p
-          className="fade-up mt-3 max-w-[34rem] text-[length:var(--hero-body)] leading-relaxed text-[#6B4841] lg:mt-[var(--hero-gap)] lg:text-[#6B4841]/80"
+          className="fade-up max-w-[34rem] text-[length:var(--hero-body)] leading-relaxed text-[#6B4841] lg:mt-[var(--hero-gap)] lg:text-[#6B4841]/80"
           style={delay(160)}
         >
           Beginner and intermediate line dancing for weddings, birthdays, social events and private groups.
