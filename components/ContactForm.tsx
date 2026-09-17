@@ -4,10 +4,10 @@ import { useState } from "react";
 import { contactService } from "@/lib/booking";
 
 const labelClass =
-  "block brygada font-bold text-[length:var(--text-eyebrow)] tracking-[0.3em] uppercase text-[#6B4841]/60 mb-2";
+  "brygada mb-2 block text-[0.72rem] font-bold uppercase tracking-[0.22em] text-[#6B4841]/80";
 
 const inputClass =
-  "w-full bg-transparent border-b border-[#6B4841]/20 py-3 text-[#6B4841] placeholder:text-[#6B4841]/30 focus:outline-none focus:border-[#C483C8] transition-colors text-[length:var(--text-body)]";
+  "w-full border border-[#6B4841]/20 bg-[#FFFBF5] px-4 py-3 text-[length:var(--text-body)] text-[#6B4841] placeholder:text-[#6B4841]/35 transition-colors focus:border-[#C483C8] focus:outline-none focus:ring-2 focus:ring-[#C483C8]/30";
 
 type Status = "idle" | "sending" | "success" | "error";
 
@@ -40,7 +40,7 @@ export default function ContactForm() {
 
   if (status === "success") {
     return (
-      <div role="status" className="border border-[#6B4841]/15 bg-[#EDE0CC]/45 px-6 py-10 text-center">
+      <div role="status" className="py-10 text-center">
         <p className="rye uppercase tracking-wide text-[#6B4841]" style={{ fontSize: "var(--text-h3)" }}>
           Thank you{firstName ? `, ${firstName}` : ""}!
         </p>
@@ -59,7 +59,7 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-7">
+    <form onSubmit={handleSubmit} className="space-y-5">
       {contactService.fields.map((field) => {
         const id = `contact-${field.name}`;
         return (
@@ -75,10 +75,10 @@ export default function ContactForm() {
                 rows={5}
                 required={field.required}
                 placeholder={field.placeholder}
-                className={`${inputClass} resize-none leading-relaxed`}
+                className={`${inputClass} resize-y leading-relaxed`}
               />
             ) : field.type === "select" ? (
-              <select id={id} name={field.name} defaultValue="" className={`${inputClass} appearance-none`}>
+              <select id={id} name={field.name} defaultValue="" className={`${inputClass} appearance-none bg-[url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' stroke='%236B4841' stroke-width='1.5'%3E%3Cpath d='M1 1l5 5 5-5'/%3E%3C/svg%3E")] bg-[position:right_1rem_center] bg-no-repeat pr-10`}>
                 <option value="" disabled>
                   Select an option
                 </option>
@@ -118,7 +118,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === "sending"}
-        className="brygada inline-flex h-12 items-center justify-center bg-[#6B4841] px-8 text-[0.85rem] font-bold uppercase tracking-[0.18em] text-[#F7EAD8] transition-colors duration-300 hover:bg-[#1E0F0B] disabled:cursor-wait disabled:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#C483C8]"
+        className="brygada inline-flex h-12 w-full items-center justify-center bg-[#6B4841] px-8 sm:w-auto text-[0.85rem] font-bold uppercase tracking-[0.18em] text-[#F7EAD8] transition-colors duration-300 hover:bg-[#1E0F0B] disabled:cursor-wait disabled:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#C483C8]"
       >
         {status === "sending" ? "Sending..." : "Send Enquiry"}
       </button>
