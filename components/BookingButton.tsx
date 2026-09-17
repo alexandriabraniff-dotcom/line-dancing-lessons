@@ -13,7 +13,7 @@ const labelClass =
 const inputClass =
   "w-full border border-[#6B4841]/20 bg-[#FFFBF5] px-4 py-3 text-[length:var(--text-body)] text-[#6B4841] placeholder:text-[#6B4841]/35 transition-colors focus:border-[#C483C8] focus:outline-none focus:ring-2 focus:ring-[#C483C8]/30";
 
-const primaryButton = `brygada inline-flex h-12 items-center justify-center bg-[#6B4841] px-8 text-[1.15rem] font-bold uppercase tracking-[0.18em] text-[#F7EAD8] transition-colors duration-300 hover:bg-[#1E0F0B] disabled:cursor-wait disabled:opacity-70 ${focusRing}`;
+const primaryButton = `brygada inline-flex h-[45px] lg:h-12 items-center justify-center bg-[#6B4841] px-8 text-[1.15rem] font-bold uppercase tracking-[0.18em] text-[#F7EAD8] transition-colors duration-300 hover:bg-[#1E0F0B] disabled:cursor-wait disabled:opacity-70 ${focusRing}`;
 
 type Status = "idle" | "sending" | "success" | "error";
 

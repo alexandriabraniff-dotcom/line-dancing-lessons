@@ -98,7 +98,7 @@ export default function AboutPage() {
               </p>
               <Link
                 href="/contact"
-                className={`brygada mt-5 inline-flex h-11 items-center justify-center bg-[#6B4841] px-6 text-[1.15rem] font-bold uppercase tracking-[0.18em] text-[#F7EAD8] transition-colors duration-300 hover:bg-[#1E0F0B] ${focusRing}`}
+                className={`brygada mt-5 inline-flex h-[45px] lg:h-11 items-center justify-center bg-[#6B4841] px-6 text-[1.15rem] font-bold uppercase tracking-[0.18em] text-[#F7EAD8] transition-colors duration-300 hover:bg-[#1E0F0B] ${focusRing}`}
               >
                 Contact Us
               </Link>

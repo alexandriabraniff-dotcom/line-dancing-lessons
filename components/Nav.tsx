@@ -119,7 +119,7 @@ function MobileMenu({
           <Link
             href="/services"
             onClick={onNavigate}
-            className={`brygada mt-6 flex h-12 w-full items-center justify-center bg-[#F7EAD8] text-base font-bold uppercase tracking-[0.25em] text-[#6B4841] ${focusRing}`}
+            className={`brygada mt-6 flex h-[45px] w-full items-center justify-center bg-[#F7EAD8] text-base font-bold uppercase tracking-[0.25em] text-[#6B4841] ${focusRing}`}
           >
             Book Your Event
           </Link>
@@ -226,7 +226,7 @@ function NavBar({ hero }: { hero: boolean }) {
             aria-expanded={open}
             aria-controls="mobile-menu"
             aria-label="Open menu"
-            className={`relative -mr-2 h-11 w-11 lg:hidden text-[#6B4841] ${focusRing}`}
+            className={`relative -mr-2 h-11 w-11 lg:hidden ${hero ? "text-[#F7EAD8] drop-shadow-md" : "text-[#6B4841]"} ${focusRing}`}
           >
             <span aria-hidden className="absolute left-1/2 top-1/2 h-[1.5px] w-6 -translate-x-1/2 -translate-y-[7px] bg-current" />
             <span aria-hidden className="absolute left-1/2 top-1/2 h-[1.5px] w-6 -translate-x-1/2 bg-current" />

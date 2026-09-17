@@ -118,7 +118,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === "sending"}
-        className="brygada inline-flex h-12 w-full items-center justify-center bg-[#6B4841] px-8 sm:w-auto text-[1.15rem] font-bold uppercase tracking-[0.18em] text-[#F7EAD8] transition-colors duration-300 hover:bg-[#1E0F0B] disabled:cursor-wait disabled:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#C483C8]"
+        className="brygada inline-flex h-[45px] lg:h-12 w-full items-center justify-center bg-[#6B4841] px-8 sm:w-auto text-[1.15rem] font-bold uppercase tracking-[0.18em] text-[#F7EAD8] transition-colors duration-300 hover:bg-[#1E0F0B] disabled:cursor-wait disabled:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#C483C8]"
       >
         {status === "sending" ? "Sending..." : "Send Enquiry"}
       </button>
