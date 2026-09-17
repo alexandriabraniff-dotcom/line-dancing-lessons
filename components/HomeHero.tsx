@@ -30,7 +30,7 @@ export default function HomeHero() {
           className="object-cover object-[50%_70%] lg:object-[50%_60%]"
         />
         {/* Dark tint so cream text reads on phones */}
-        <div aria-hidden className="absolute inset-0 bg-[#1E0F0B]/60 lg:hidden" />
+        <div aria-hidden className="absolute inset-0 bg-[#1E0F0B]/40 lg:hidden" />
         {/* Soft shade behind the nav links on desktop */}
         <div
           aria-hidden
