@@ -10,7 +10,7 @@ const focusRing =
   "focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#C483C8]";
 
 const headingClass =
-  "brygada mb-5 text-[0.72rem] font-bold uppercase tracking-[0.3em] text-[#D49C84]";
+  "brygada mb-4 text-[0.72rem] font-bold uppercase tracking-[0.3em] text-[#D49C84]";
 
 const linkClass = `text-[length:var(--text-body)] transition-colors hover:text-[#C483C8] ${focusRing}`;
 
@@ -29,15 +29,46 @@ const services = [
   { key: "private-groups", label: "Private Groups" },
 ];
 
+const icons = {
+  email: (
+    <path d="M3 6.5A1.5 1.5 0 0 1 4.5 5h15A1.5 1.5 0 0 1 21 6.5v11a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 17.5v-11zm1.5.3 7.5 5.7 7.5-5.7" />
+  ),
+  phone: (
+    <path d="M6.6 3.5h2.6l1.4 4.2-2 1.4a11.6 11.6 0 0 0 5.3 5.3l1.4-2 4.2 1.4v2.6a2 2 0 0 1-2.2 2A16.6 16.6 0 0 1 4.6 5.7a2 2 0 0 1 2-2.2z" />
+  ),
+  area: (
+    <>
+      <path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z" />
+      <circle cx="12" cy="10" r="2.3" />
+    </>
+  ),
+};
+
+function ContactRow({ icon, label, children }: { icon: keyof typeof icons; label: string; children: React.ReactNode }) {
+  return (
+    <li className="flex items-start gap-3">
+      <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#F7EAD8]/[0.08] text-[#D49C84]">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.6} strokeLinejoin="round" className="h-[1.1rem] w-[1.1rem]">
+          {icons[icon]}
+        </svg>
+      </span>
+      <span className="min-w-0">
+        <span className="block text-[0.68rem] uppercase tracking-[0.2em] text-[#F7EAD8]/45">{label}</span>
+        {children}
+      </span>
+    </li>
+  );
+}
+
 export default function Footer() {
   const pathname = usePathname();
 
   return (
     <footer className="grain relative bg-[#1E0F0B] text-[#F7EAD8]">
       <div className="relative z-10 mx-auto max-w-7xl px-[var(--gutter)] pt-[var(--section)] pb-[clamp(1.5rem,2.5vw,2.5rem)]">
-        <div className="grid grid-cols-1 gap-x-[var(--gap)] gap-y-12 sm:grid-cols-2 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,0.8fr)_minmax(0,0.9fr)_minmax(0,1.2fr)]">
-          {/* Brand */}
-          <div>
+        <div className="grid grid-cols-2 gap-x-[var(--gap)] gap-y-10 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,0.8fr)_minmax(0,0.9fr)_minmax(0,1.2fr)] lg:gap-y-12">
+          {/* Brand: centred on phones and tablets, left aligned on desktop */}
+          <div className="col-span-2 flex flex-col items-center border-b border-[#F7EAD8]/10 pb-10 text-center lg:col-span-1 lg:items-start lg:border-b-0 lg:pb-0 lg:text-left">
             <Link href="/" aria-label="Wildflower Line Dancing, home" className={`inline-block ${focusRing}`}>
               <Image
                 src="/logo.png"
@@ -52,8 +83,8 @@ export default function Footer() {
               It&apos;s more than a dance, it&apos;s a good time.
             </p>
             <p className="mt-3 max-w-xs text-[length:var(--text-body)] leading-relaxed text-[#F7EAD8]/65">
-              Beginner and intermediate friendly line dancing for weddings, birthdays, events and
-              private groups across {site.serviceArea}.
+              Beginner and intermediate friendly line dancing for weddings, birthdays, events and private
+              groups across {site.serviceArea}.
             </p>
             <SocialLinks tone="dark" className="mt-6" />
           </div>
@@ -90,32 +121,29 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Get in touch */}
-          <div>
+          {/* Get in touch: its own card on phones and tablets */}
+          <div className="col-span-2 border border-[#F7EAD8]/10 bg-[#F7EAD8]/[0.03] p-6 lg:col-span-1 lg:border-0 lg:bg-transparent lg:p-0">
             <p className={headingClass}>Get in Touch</p>
             <ul className="space-y-4">
-              <li>
-                <span className="block text-[0.7rem] uppercase tracking-[0.2em] text-[#F7EAD8]/45">Email</span>
+              <ContactRow icon="email" label="Email">
                 <a href={`mailto:${site.email}`} className={`${linkClass} break-all text-[#F7EAD8]`}>
                   {site.email}
                 </a>
-              </li>
+              </ContactRow>
               {site.phone && (
-                <li>
-                  <span className="block text-[0.7rem] uppercase tracking-[0.2em] text-[#F7EAD8]/45">Phone</span>
+                <ContactRow icon="phone" label="Phone">
                   <a href={phoneHref(site.phone)} className={`${linkClass} text-[#F7EAD8]`}>
                     {site.phone}
                   </a>
-                </li>
+                </ContactRow>
               )}
-              <li>
-                <span className="block text-[0.7rem] uppercase tracking-[0.2em] text-[#F7EAD8]/45">We Come to You</span>
+              <ContactRow icon="area" label="We Come to You">
                 <span className="text-[length:var(--text-body)] text-[#F7EAD8]">Anywhere in {site.serviceArea}</span>
-              </li>
+              </ContactRow>
             </ul>
             <Link
               href="/contact"
-              className={`brygada mt-7 inline-flex h-11 items-center justify-center bg-[#F7EAD8] px-6 text-[0.8rem] font-bold uppercase tracking-[0.18em] text-[#6B4841] transition-colors duration-300 hover:bg-[#C483C8] hover:text-[#1E0F0B] ${focusRing}`}
+              className={`brygada mt-6 flex h-12 w-full items-center justify-center bg-[#F7EAD8] px-6 text-[0.8rem] font-bold uppercase tracking-[0.18em] text-[#6B4841] transition-colors duration-300 hover:bg-[#C483C8] hover:text-[#1E0F0B] sm:inline-flex sm:w-auto lg:h-11 ${focusRing}`}
             >
               Contact Us
             </Link>
@@ -123,7 +151,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-[var(--section-sm)] flex flex-col gap-3 border-t border-[#F7EAD8]/10 pt-6 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-[var(--section-sm)] flex flex-col items-center gap-2 border-t border-[#F7EAD8]/10 pt-6 text-center sm:flex-row sm:justify-between sm:text-left">
           <p className="text-[0.75rem] tracking-wider text-[#F7EAD8]/45">
             &copy; {new Date().getFullYear()} Wildflower Line Dancing. All rights reserved.
           </p>

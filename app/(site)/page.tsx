@@ -8,10 +8,10 @@ export const metadata = {
 
 /* Card artwork is 3:4 portrait with the title designed into the image */
 const occasions = [
-  { title: "Weddings", image: "/services/weddings.png" },
-  { title: "Birthdays", image: "/services/birthdays.png" },
-  { title: "Special Events", image: "/services/special-events.png" },
-  { title: "Private Lessons", image: "/services/private-lessons.png" },
+  { title: "Weddings", image: "/services/weddings.png", section: "weddings" },
+  { title: "Birthdays", image: "/services/birthdays.png", section: "birthdays" },
+  { title: "Special Events", image: "/services/special-events.png", section: "social-events" },
+  { title: "Private Lessons", image: "/services/private-lessons.png", section: "private-groups" },
 ];
 
 /* ── Gallery ──────────────────────────────────────────────
@@ -96,10 +96,10 @@ export default function Home() {
           </h2>
 
           <div className="mt-12 flex gap-5 overflow-x-auto pb-4 snap-x snap-mandatory sm:grid sm:grid-cols-4 sm:overflow-visible sm:pb-0">
-            {occasions.map(({ title, image }) => (
+            {occasions.map(({ title, image, section }) => (
               <Link
                 key={title}
-                href="/services"
+                href={`/services#${section}`}
                 className="group shrink-0 w-[65vw] sm:w-auto snap-start focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#C483C8]"
               >
                 <div className="relative aspect-[3/4] overflow-hidden shadow-[0_10px_30px_-18px_rgba(30,15,11,0.35)] transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-[0_18px_40px_-18px_rgba(30,15,11,0.45)]">
