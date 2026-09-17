@@ -210,7 +210,7 @@ function NavBar({ hero }: { hero: boolean }) {
 
           <Link
             href="/services"
-            className={`brygada hidden h-[var(--nav-btn-h)] shrink-0 items-center whitespace-nowrap border-[1.5px] px-[var(--nav-btn-px)] text-[length:var(--nav-btn-text)] font-bold uppercase tracking-[0.22em] transition-colors duration-300 lg:inline-flex ${focusRing} ${
+            className={`brygada hidden h-[var(--nav-btn-h)] shrink-0 items-center whitespace-nowrap ${hero ? "xl:inline-flex" : "lg:inline-flex"} border-[1.5px] px-[var(--nav-btn-px)] text-[length:var(--nav-btn-text)] font-bold uppercase tracking-[0.22em] transition-colors duration-300 ${focusRing} ${
               hero
                 ? "border-[#F7EAD8] text-[#F7EAD8] hover:bg-[#F7EAD8] hover:text-[#6B4841]"
                 : "border-[#6B4841] bg-[#6B4841] text-[#F7EAD8] hover:border-[#1E0F0B] hover:bg-[#1E0F0B]"
