@@ -43,9 +43,10 @@ export default function HomeHero() {
         {/* Phones: dark brown title on a soft cream haze, centred between logo and arch bottom */}
         <h1
           id="hero-heading"
-          className="fade-up rye absolute inset-x-0 top-[calc((7svh+(100vw-2*var(--hero-gutter))*0.45+100%)/2)] -translate-y-1/2 whitespace-nowrap bg-[radial-gradient(ellipse_65%_60%_at_center,rgba(247,234,216,0.92)_0%,rgba(247,234,216,0.78)_35%,rgba(247,234,216,0.35)_65%,rgba(247,234,216,0)_100%)] py-10 text-center text-[length:clamp(1.4rem,7.4vw,2.4rem)] uppercase leading-[1.08] tracking-wide text-[#6B4841] lg:hidden"
+          className="fade-up rye absolute inset-x-0 top-[calc((7svh+(100vw-2*var(--hero-gutter))*0.45+100%)/2)] -translate-y-1/2 isolate whitespace-nowrap py-10 text-center text-[length:clamp(1.4rem,7.4vw,2.4rem)] uppercase leading-[1.08] tracking-wide text-[#6B4841] lg:hidden"
           style={delay(0)}
         >
+          <span aria-hidden className="absolute inset-x-[4%] inset-y-[22%] -z-10 rounded-full bg-[#F7EAD8]/80 blur-xl" />
           Line Dancing
           <br />
           Lessons &amp; Events
