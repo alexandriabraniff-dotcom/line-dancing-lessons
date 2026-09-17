@@ -32,13 +32,13 @@ export default function HomeHero() {
         {/* Phones: logo centred on the arch photo */}
         <div aria-hidden className="absolute inset-0 bg-[#1E0F0B]/25 lg:hidden" />
         <Image
-          src="/wildflower-logo-cream.png"
+          src="/wildflower-logo.png"
           alt="Wildflower Line Dancing"
           width={550}
           height={550}
           preload
           sizes="60vw"
-          className="absolute left-1/2 top-[46%] w-[58%] -translate-x-1/2 -translate-y-1/2 drop-shadow-[0_4px_16px_rgba(30,15,11,0.6)] lg:hidden"
+          className="absolute left-1/2 top-[31%] w-[58%] -translate-x-1/2 -translate-y-1/2 drop-shadow-[0_8px_20px_rgba(30,15,11,0.45)] lg:hidden"
         />
         {/* Soft shade behind the nav links on desktop */}
         <div
