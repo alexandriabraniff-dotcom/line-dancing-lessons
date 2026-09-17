@@ -17,10 +17,10 @@ const links = [
 const focusRing =
   "focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#C483C8]";
 
-function Logo({ className, preload = false }: { className: string; preload?: boolean }) {
+function Logo({ className, preload = false, inverted = false }: { className: string; preload?: boolean; inverted?: boolean }) {
   return (
     <Image
-      src="/wildflower-logo.png"
+      src={inverted ? "/wildflower-logo-inverted.png" : "/wildflower-logo.png"}
       alt="Wildflower Line Dancing"
       width={550}
       height={550}
@@ -74,7 +74,7 @@ function MobileMenu({
     >
       <div className="relative z-10 flex items-center justify-between px-[var(--hero-gutter)] pt-[var(--hero-pad-top)]">
         <Link href="/" onClick={onNavigate} className={focusRing}>
-          <Logo className="w-[var(--hero-logo)]" />
+          <Logo inverted className="w-[var(--hero-logo)]" />
         </Link>
         <button
           type="button"
