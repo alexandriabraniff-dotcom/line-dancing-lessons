@@ -19,8 +19,8 @@ export default function HomeHero() {
       aria-labelledby="hero-heading"
       className="relative isolate grid min-h-svh grid-rows-[auto_auto_1fr] bg-[#F7EAD8] lg:grid-cols-[1.1fr_1fr] lg:grid-rows-[auto_1fr]"
     >
-      {/* Photo: full-bleed top half of the screen on phones, right half on desktop */}
-      <div className="absolute inset-x-0 top-0 h-[50svh] overflow-hidden lg:relative lg:inset-auto lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:h-auto">
+      {/* Photo: arch under the menu on phones (ends at 50% of screen), right half on desktop */}
+      <div className="relative row-start-2 mx-[var(--hero-gutter)] -mt-2 h-[calc(50svh-var(--hero-pad-top)-2.25rem)] overflow-hidden rounded-t-[50vw] shadow-[0_18px_40px_-20px_rgba(30,15,11,0.5)] lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:mx-0 lg:mt-0 lg:h-auto lg:rounded-none lg:shadow-none">
         <Image
           src="/hero-crowd.jpg"
           alt="A concert crowd raising cowboy hats under stage lights"
@@ -38,7 +38,7 @@ export default function HomeHero() {
           height={550}
           preload
           sizes="60vw"
-          className="absolute left-1/2 top-[calc(7svh+var(--hero-pad-top)+2.25rem)] w-[calc((100%-2*var(--hero-gutter))*0.45)] -translate-x-1/2 drop-shadow-[0_8px_20px_rgba(30,15,11,0.45)] lg:hidden"
+          className="absolute left-1/2 top-[7svh] w-[45%] -translate-x-1/2 drop-shadow-[0_8px_20px_rgba(30,15,11,0.45)] lg:hidden"
         />
         {/* Soft shade behind the nav links on desktop */}
         <div
@@ -53,7 +53,7 @@ export default function HomeHero() {
       </div>
 
       {/* Copy */}
-      <div className="relative z-10 row-start-3 flex flex-col items-center justify-start px-[var(--hero-gutter)] pt-[calc(50svh-var(--hero-pad-top)-2.75rem+var(--hero-gap-lg))] pb-[max(1rem,3svh)] lg:pt-[max(1.5rem,4vh)] lg:row-start-2 lg:justify-center lg:py-[max(1.5rem,4vh)] text-center lg:col-start-1 lg:items-start lg:text-left">
+      <div className="relative z-10 row-start-3 flex flex-col items-center justify-start px-[var(--hero-gutter)] pt-[var(--hero-gap-lg)] pb-[max(1rem,3svh)] lg:row-start-2 lg:justify-center lg:py-[max(1.5rem,4vh)] text-center lg:col-start-1 lg:items-start lg:text-left">
         <h1
           id="hero-heading"
           className="fade-up rye text-[length:clamp(1.7rem,8vw,2.6rem)] uppercase leading-[1.08] tracking-wide text-[#6B4841] lg:whitespace-nowrap lg:text-[length:max(2.3rem,calc(var(--vu)*3.9))]"

@@ -226,7 +226,7 @@ function NavBar({ hero }: { hero: boolean }) {
             aria-expanded={open}
             aria-controls="mobile-menu"
             aria-label="Open menu"
-            className={`relative -mr-2 h-11 w-11 lg:hidden ${hero ? "text-[#F7EAD8] drop-shadow-md" : "text-[#6B4841]"} ${focusRing}`}
+            className={`relative -mr-2 h-11 w-11 lg:hidden text-[#6B4841] ${focusRing}`}
           >
             <span aria-hidden className="absolute left-1/2 top-1/2 h-[1.5px] w-6 -translate-x-1/2 -translate-y-[7px] bg-current" />
             <span aria-hidden className="absolute left-1/2 top-1/2 h-[1.5px] w-6 -translate-x-1/2 bg-current" />
