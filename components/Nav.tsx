@@ -161,7 +161,11 @@ function NavBar({ hero }: { hero: boolean }) {
       >
         {/* Logo (plus social icons in the hero), top left */}
         <div className={hero ? "col-start-2 flex items-center justify-center gap-[var(--nav-gap)] lg:col-start-1 lg:justify-start lg:pl-[var(--hero-gutter)]" : "contents"}>
-          <Link href="/" aria-label="Wildflower Line Dancing, home" className={`block shrink-0 ${focusRing}`}>
+          <Link
+            href="/"
+            aria-label="Wildflower Line Dancing, home"
+            className={`${hero ? "hidden lg:block" : "block"} shrink-0 ${focusRing}`}
+          >
             {hero ? (
               <>
                                 <Logo preload className="w-[min(36vw,17svh)] lg:w-[var(--hero-logo-main)]" />

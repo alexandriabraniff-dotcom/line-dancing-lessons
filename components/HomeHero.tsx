@@ -20,7 +20,7 @@ export default function HomeHero() {
       className="relative isolate grid min-h-svh grid-rows-[auto_auto_1fr] bg-[#F7EAD8] lg:grid-cols-[1.1fr_1fr] lg:grid-rows-[auto_1fr]"
     >
       {/* Photo: arch-framed under the logo on phones, right half on desktop */}
-      <div className="relative row-start-2 mx-auto mt-[max(0.5rem,1.5svh)] aspect-[4/5] h-[30svh] overflow-hidden rounded-t-full shadow-[0_18px_40px_-20px_rgba(30,15,11,0.5)] lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:mx-0 lg:mt-0 lg:aspect-auto lg:h-auto lg:rounded-none lg:shadow-none">
+      <div className="relative row-start-2 mx-auto -mt-2 aspect-[4/5] h-[min(46svh,calc((100vw-2.5rem)*1.25))] overflow-hidden rounded-t-full shadow-[0_18px_40px_-20px_rgba(30,15,11,0.5)] lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:mx-0 lg:mt-0 lg:aspect-auto lg:h-auto lg:rounded-none lg:shadow-none">
         <Image
           src="/hero-crowd.jpg"
           alt="A concert crowd raising cowboy hats under stage lights"
@@ -28,6 +28,17 @@ export default function HomeHero() {
           preload
           sizes="(min-width: 1024px) 50vw, 100vw"
           className="object-cover object-[50%_70%] lg:object-[50%_60%]"
+        />
+        {/* Phones: logo centred on the arch photo */}
+        <div aria-hidden className="absolute inset-0 bg-[#1E0F0B]/25 lg:hidden" />
+        <Image
+          src="/wildflower-logo-cream.png"
+          alt="Wildflower Line Dancing"
+          width={550}
+          height={550}
+          preload
+          sizes="60vw"
+          className="absolute left-1/2 top-[46%] w-[58%] -translate-x-1/2 -translate-y-1/2 drop-shadow-[0_4px_16px_rgba(30,15,11,0.6)] lg:hidden"
         />
         {/* Soft shade behind the nav links on desktop */}
         <div
