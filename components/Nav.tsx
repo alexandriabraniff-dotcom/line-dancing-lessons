@@ -155,22 +155,25 @@ function NavBar({ hero }: { hero: boolean }) {
         aria-label={hero ? "Main" : "Site"}
         className={
           hero
-            ? "grid w-full grid-cols-[1fr_auto] items-center pt-[var(--hero-pad-top)] lg:grid-cols-[1.1fr_1fr]"
+            ? "grid w-full grid-cols-[1fr_auto_1fr] items-center pt-[var(--hero-pad-top)] lg:grid-cols-[1.1fr_1fr]"
             : "flex w-full items-center justify-between gap-6 px-[var(--hero-gutter)] py-[var(--header-pad-y)]"
         }
       >
         {/* Logo (plus social icons in the hero), top left */}
-        <div className={hero ? "flex items-center gap-[var(--nav-gap)] pl-[var(--hero-gutter)]" : "contents"}>
+        <div className={hero ? "col-start-2 flex items-center justify-center gap-[var(--nav-gap)] lg:col-start-1 lg:justify-start lg:pl-[var(--hero-gutter)]" : "contents"}>
           <Link href="/" aria-label="Wildflower Line Dancing, home" className={`block shrink-0 ${focusRing}`}>
-            <Logo preload={hero} className={hero ? "w-[var(--hero-logo-main)]" : "w-[var(--header-logo)]"} />
+            <Logo
+              preload={hero}
+              className={hero ? "w-[min(44vw,22svh)] lg:w-[var(--hero-logo-main)]" : "w-[var(--header-logo)]"}
+            />
           </Link>
-          {hero && <SocialLinks className="hidden sm:flex" />}
+          {hero && <SocialLinks className="hidden lg:flex" />}
         </div>
 
         {/* Links, CTA and menu toggle, right (over the photo in the hero) */}
         <div
           className={`flex items-center justify-end gap-[var(--nav-gap)] ${
-            hero ? "pr-[var(--hero-gutter)] lg:pl-[var(--hero-gutter)]" : ""
+            hero ? "col-start-3 pr-[var(--hero-gutter)] lg:col-start-2 lg:pl-[var(--hero-gutter)]" : ""
           }`}
         >
           <ul className="hidden items-center gap-[var(--nav-gap)] whitespace-nowrap lg:flex">
