@@ -71,10 +71,10 @@ export default function Footer() {
           <div className="col-span-2 flex flex-col items-center border-b border-[#F7EAD8]/10 pb-10 text-center lg:col-span-1 lg:items-start lg:border-b-0 lg:pb-0 lg:text-left">
             <Link href="/" aria-label="Wildflower Line Dancing, home" className={`inline-block ${focusRing}`}>
               <Image
-                src="/logo.png"
+                src="/wildflower-logo.png"
                 alt="Wildflower Line Dancing"
-                width={584}
-                height={584}
+                width={550}
+                height={550}
                 sizes="140px"
                 className="h-auto w-[clamp(6rem,9vw,8rem)]"
               />

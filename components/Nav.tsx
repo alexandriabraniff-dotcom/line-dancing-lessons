@@ -19,10 +19,10 @@ const focusRing =
 function Logo({ className, preload = false }: { className: string; preload?: boolean }) {
   return (
     <Image
-      src="/logo.png"
+      src="/wildflower-logo.png"
       alt="Wildflower Line Dancing"
-      width={584}
-      height={584}
+      width={550}
+      height={550}
       preload={preload}
       sizes="(min-width: 2000px) 300px, 180px"
       className={`h-auto ${className}`}
