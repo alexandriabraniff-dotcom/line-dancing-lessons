@@ -40,10 +40,10 @@ export default function HomeHero() {
           sizes="60vw"
           className="absolute left-1/2 top-[7svh] w-[45%] -translate-x-1/2 drop-shadow-[0_8px_20px_rgba(30,15,11,0.45)] lg:hidden"
         />
-        {/* Phones: dark brown title with a white outline, centred between logo and arch bottom */}
+        {/* Phones: cream title centred between logo and arch bottom */}
         <h1
           id="hero-heading"
-          className="fade-up rye absolute inset-x-0 top-[calc((7svh+(100vw-2*var(--hero-gutter))*0.45+100%)/2)] -translate-y-1/2 whitespace-nowrap text-center text-[length:clamp(1.4rem,7.4vw,2.4rem)] uppercase leading-[1.08] tracking-wide text-[#6B4841] [text-shadow:-1.5px_-1.5px_0_#fff,1.5px_-1.5px_0_#fff,-1.5px_1.5px_0_#fff,1.5px_1.5px_0_#fff,0_-1.5px_0_#fff,0_1.5px_0_#fff,-1.5px_0_0_#fff,1.5px_0_0_#fff] lg:hidden"
+          className="fade-up rye absolute inset-x-0 top-[calc((7svh+(100vw-2*var(--hero-gutter))*0.45+100%)/2)] -translate-y-1/2 whitespace-nowrap text-center text-[length:clamp(1.4rem,7.4vw,2.4rem)] uppercase leading-[1.08] tracking-wide text-[#F7EAD8] lg:hidden"
           style={delay(0)}
         >
           Line Dancing
