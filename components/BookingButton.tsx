@@ -14,7 +14,7 @@ const labelClass =
 const inputClass =
   "w-full border border-[#6B4841]/20 bg-[#FFFBF5] px-4 py-3 text-[length:var(--text-body)] text-[#6B4841] placeholder:text-[#6B4841]/35 transition-colors focus:border-[#C483C8] focus:outline-none focus:ring-2 focus:ring-[#C483C8]/30";
 
-const primaryButton = `brygada inline-flex h-[45px] lg:h-12 items-center justify-center bg-[#6B4841] px-8 text-[1.15rem] font-bold lowercase tracking-[0.18em] text-[#F7EAD8] transition-colors duration-300 hover:bg-[#1E0F0B] disabled:cursor-wait disabled:opacity-70 ${focusRing}`;
+const primaryButton = `brygada inline-flex h-[45px] lg:h-12 items-center justify-center bg-[#6B4841] px-8 text-[1.15rem] font-bold tracking-[0.18em] text-[#F7EAD8] transition-colors duration-300 hover:bg-[#1E0F0B] disabled:cursor-wait disabled:opacity-70 ${focusRing}`;
 
 type Status = "idle" | "sending" | "success" | "error";
 
@@ -157,7 +157,7 @@ export default function BookingButton({ serviceKey, className }: { serviceKey: s
   return (
     <>
       <button type="button" onClick={open} className={className}>
-        Book {service.title}
+        Book {service.title.toLowerCase()}
       </button>
 
       <dialog
@@ -241,7 +241,7 @@ export default function BookingButton({ serviceKey, className }: { serviceKey: s
 
               <div className="mt-8 flex flex-col sm:flex-row sm:justify-end">
                 <button type="submit" disabled={status === "sending"} className={primaryButton}>
-                  {status === "sending" ? "Sending..." : "Send Enquiry"}
+                  {status === "sending" ? "Sending..." : "Send enquiry"}
                 </button>
               </div>
             </form>

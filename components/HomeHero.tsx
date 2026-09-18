@@ -6,7 +6,7 @@ const focusRing =
   "focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#C483C8]";
 
 const buttonBase =
-  "brygada inline-flex whitespace-nowrap h-[45px] lg:h-[var(--hero-btn-h)] items-center justify-center border-[1.5px] px-[var(--hero-btn-px)] text-[length:var(--hero-btn-text)] font-bold lowercase tracking-[0.25em] transition-colors duration-300";
+  "brygada inline-flex whitespace-nowrap h-[45px] lg:h-[var(--hero-btn-h)] items-center justify-center border-[1.5px] px-[var(--hero-btn-px)] text-[length:var(--hero-btn-text)] font-bold tracking-[0.25em] transition-colors duration-300";
 
 const delay = (ms: number) => ({ animationDelay: `${ms}ms` });
 
@@ -92,13 +92,13 @@ export default function HomeHero() {
             href="/services"
             className={`${buttonBase} border-[#6B4841] bg-[#6B4841] text-[#F7EAD8] hover:bg-transparent hover:text-[#6B4841] ${focusRing}`}
           >
-            Book Your Event
+            Book your event
           </Link>
           <Link
             href="/contact"
             className={`${buttonBase} border-[#6B4841] text-[#6B4841] hover:bg-[#6B4841] hover:text-[#F7EAD8] ${focusRing}`}
           >
-            Contact Us
+            Contact us
           </Link>
         </div>
       </div>

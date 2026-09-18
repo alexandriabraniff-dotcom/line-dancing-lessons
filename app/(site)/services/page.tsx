@@ -72,7 +72,7 @@ const focusRing =
 
 /* Solid, high-contrast buttons (brown on cream, cream on dark banners) */
 const buttonBase =
-  "brygada inline-flex h-[45px] lg:h-11 items-center justify-center px-6 text-[1.15rem] font-bold lowercase tracking-[0.18em] transition-colors duration-300";
+  "brygada inline-flex h-[45px] lg:h-11 items-center justify-center px-6 text-[1.15rem] font-bold tracking-[0.18em] transition-colors duration-300";
 const buttonOnLight = `${buttonBase} bg-[#6B4841] text-[#F7EAD8] hover:bg-[#1E0F0B] ${focusRing}`;
 
 const slug = (title: string) => title.toLowerCase().replace(/\s+/g, "-");
