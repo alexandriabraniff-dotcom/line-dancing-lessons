@@ -128,14 +128,14 @@ export default function ServicesPage() {
                 </h2>
 
                 <div className="col-start-2 row-start-2 mt-[calc((100vw-2*var(--gutter)-0.75rem)/4)] text-left md:col-auto md:mt-0 md:row-auto lg:col-start-2 lg:row-start-1 lg:row-span-3 lg:border-l lg:border-[#6B4841]/15 lg:pl-[max(1.25rem,2.2vw)]">
-                  <p className="brygada text-[0.85rem] font-bold uppercase tracking-[0.18em] text-[#6B4841]/60 md:text-[1rem] md:tracking-[0.25em]">
+                  <p className="brygada text-[length:var(--text-body)] font-bold uppercase tracking-[0.12em] text-[#6B4841]/60 md:text-[1rem] md:tracking-[0.25em]">
                     What&apos;s Included
                   </p>
                   <ul className="mt-2 space-y-1.5 md:mt-3">
                     {details.map((item) => (
                       <li
                         key={item}
-                        className="flex items-start gap-1.5 tracking-[-0.01em] text-[length:min(var(--text-body),calc(3.55vw-3.3px))] leading-snug text-[#6B4841]/80 md:gap-3 md:tracking-normal md:text-[length:var(--text-body)]"
+                        className="flex items-start gap-1.5 tracking-[-0.01em] text-[length:var(--text-body)] leading-snug text-[#6B4841]/80 md:gap-3 md:tracking-normal md:text-[length:var(--text-body)]"
                       >
                         <span aria-hidden className="mt-[0.5em] h-1.5 w-1.5 shrink-0 rounded-full bg-[#D49C84]" />
                         {item}
