@@ -4,6 +4,8 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { getBookingService, type BookingField } from "@/lib/booking";
 
+const outlineNone = "focus:outline-none";
+
 const focusRing =
   "focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#C483C8]";
 
@@ -34,6 +36,7 @@ export default function BookingButton({ serviceKey, className }: { serviceKey: s
     const now = new Date();
     setToday(new Date(now.getTime() - now.getTimezoneOffset() * 60000).toISOString().slice(0, 10));
     dialog.showModal();
+    dialog.focus();
     document.body.style.overflow = "hidden";
   };
 
@@ -160,15 +163,16 @@ export default function BookingButton({ serviceKey, className }: { serviceKey: s
         onClick={(event) => {
           if (event.target === dialogRef.current) close();
         }}
+        tabIndex={-1}
         aria-labelledby={`${service.key}-booking-title`}
-        className="m-0 h-[100dvh] max-h-[100dvh] w-[100vw] max-w-[100vw] overflow-x-clip overflow-y-auto overscroll-contain bg-[#F7EAD8] p-0 text-[#6B4841] backdrop:bg-[#1E0F0B]/75 backdrop:backdrop-blur-sm md:m-auto md:h-auto md:max-h-[92vh] md:w-[min(56rem,92vw)] md:shadow-[0_30px_80px_-20px_rgba(30,15,11,0.6)]"
+        className="m-0 outline-none h-[100dvh] max-h-[100dvh] w-[100vw] max-w-[100vw] overflow-x-clip overflow-y-auto overscroll-contain bg-[#F7EAD8] p-0 text-[#6B4841] backdrop:bg-[#1E0F0B]/75 backdrop:backdrop-blur-sm md:m-auto md:h-auto md:max-h-[92vh] md:w-[min(56rem,92vw)] md:shadow-[0_30px_80px_-20px_rgba(30,15,11,0.6)]"
       >
         {/* Close */}
         <button
           type="button"
           onClick={close}
           aria-label="Close booking form"
-          className={`sticky top-0 z-20 ml-auto flex h-14 w-14 shrink-0 items-center justify-center bg-[#F7EAD8] text-[#6B4841] transition-colors hover:text-[#1E0F0B] ${focusRing}`}
+          className={`relative z-20 ml-auto flex h-14 w-14 shrink-0 items-center justify-center text-[#6B4841] transition-colors hover:text-[#1E0F0B] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#6B4841] ${outlineNone}`}
         >
           <span aria-hidden className="absolute h-[1.5px] w-6 rotate-45 bg-current" />
           <span aria-hidden className="absolute h-[1.5px] w-6 -rotate-45 bg-current" />
