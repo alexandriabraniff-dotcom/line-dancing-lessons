@@ -79,7 +79,7 @@ export default function Footer() {
                 className="h-auto w-[clamp(6rem,9vw,8rem)]"
               />
             </Link>
-            <p className="brygada mt-5 text-[length:clamp(1.05rem,1.3vw,1.35rem)] font-bold uppercase leading-relaxed tracking-[0.25em] text-[#F7EAD8]">
+            <p className="brygada mt-5 text-[length:clamp(1.05rem,1.3vw,1.35rem)] font-bold uppercase leading-relaxed tracking-[0.25em] text-[#C483C8]">
               It&apos;s more than a dance, it&apos;s a good time.
             </p>
             <p className="mt-3 max-w-xs text-[length:var(--text-body)] leading-relaxed text-[#F7EAD8]/65">

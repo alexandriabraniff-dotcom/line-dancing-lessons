@@ -137,8 +137,16 @@ export default function Home() {
       </section>
 
       {/* ── Gallery ── */}
-      <section id="gallery" className="bg-[#1E0F0B] px-[var(--gutter)] py-[var(--section)]">
-        <div className="max-w-6xl mx-auto">
+      <section id="gallery" className="relative isolate overflow-hidden bg-[#1E0F0B] px-[var(--gutter)] py-[var(--section)]">
+        <Image
+          src="/concrete-wall.jpg"
+          alt=""
+          fill
+          sizes="100vw"
+          className="-z-20 object-cover"
+        />
+        <div aria-hidden className="absolute inset-0 -z-10 bg-[#1E0F0B]/75" />
+        <div className="relative max-w-6xl mx-auto">
           <div className="text-center mb-14">
             <p className="brygada font-bold text-[length:var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-3">
               See Us in Action
@@ -194,7 +202,7 @@ export default function Home() {
 
       {/* ── Our Story ── */}
       <section className="px-[var(--gutter)] py-[var(--section)]">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-[var(--gap)] items-center">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-[var(--gap)] items-center text-center md:text-left">
           <div className="relative aspect-[3/4] overflow-hidden shadow-[0_10px_30px_-18px_rgba(30,15,11,0.35)]">
             <Image
               src="/our-story.jpeg"
@@ -231,7 +239,7 @@ export default function Home() {
             <div className="mt-8">
               <Link
                 href="/about"
-                className="brygada inline-flex h-[45px] lg:h-11 items-center justify-center bg-[#6B4841] px-6 text-[1.15rem] font-bold uppercase tracking-[0.18em] text-[#F7EAD8] transition-colors duration-300 hover:bg-[#1E0F0B] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#C483C8]"
+                className="brygada mx-auto inline-flex h-[45px] lg:h-11 items-center justify-center bg-[#6B4841] md:mx-0 px-6 text-[1.15rem] font-bold uppercase tracking-[0.18em] text-[#F7EAD8] transition-colors duration-300 hover:bg-[#1E0F0B] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#C483C8]"
               >
                 Read More About Us
               </Link>
