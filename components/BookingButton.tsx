@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { getBookingService, type BookingField } from "@/lib/booking";
 
@@ -180,22 +179,19 @@ export default function BookingButton({ serviceKey, className }: { serviceKey: s
 
         <div className="px-[max(1.25rem,5vw)] pb-[max(2.5rem,env(safe-area-inset-bottom))] pt-2 md:-mt-14 md:px-12 md:pb-12 md:pt-10">
           {/* Heading */}
-          <div className="flex flex-col items-center gap-4 border-b border-[#6B4841]/15 pb-6 text-center md:flex-row md:items-center md:gap-5 md:pr-10 md:text-left">
-            <div className="relative aspect-[7/9] w-24 shrink-0 overflow-hidden md:w-20">
-              <Image src={service.image} alt="" fill sizes="(min-width: 768px) 80px, 96px" className="object-cover" />
-            </div>
+          <div className="border-b border-[#6B4841]/15 pb-6 text-center md:pr-10 md:text-left">
             <div>
-              <p className="brygada text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.35em] text-[#D49C84]">
+              <p className="brygada text-[length:var(--text-body)] font-bold uppercase tracking-[0.3em] text-[#D49C84]">
                 Book Your Event
               </p>
               <h2
                 id={`${service.key}-booking-title`}
-                className="rye mt-1 uppercase leading-tight tracking-wide"
-                style={{ fontSize: "var(--text-h3)" }}
+                className="rye mt-2 uppercase leading-tight tracking-wide"
+                style={{ fontSize: "var(--text-h2)" }}
               >
                 {service.title}
               </h2>
-              <p className="mx-auto mt-2 max-w-sm text-[length:var(--text-body)] leading-relaxed text-[#6B4841]/75 md:mx-0 md:mt-1 md:max-w-none">
+              <p className="mx-auto mt-3 max-w-md text-[length:clamp(1rem,1.15vw,1.2rem)] leading-relaxed text-[#6B4841]/75 md:mx-0 md:max-w-none">
                 {service.intro}
               </p>
             </div>
