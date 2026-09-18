@@ -90,9 +90,7 @@ export default function ContactPage() {
             >
               Send Us a Message
             </h2>
-            <p className="mt-2 mb-6 text-[1.15rem] text-[#6B4841]/65">
-              Fields marked <span className="text-[#C483C8]">*</span> are required.
-            </p>
+            <p className="mt-2 mb-6 text-[1.15rem] text-[#6B4841]/65">All fields are required.</p>
             <ContactForm />
           </div>
         </div>

@@ -73,6 +73,15 @@ export default function BookingButton({ serviceKey, className }: { serviceKey: s
       values[field.name] = field.type === "checkboxes" ? data.getAll(field.name).map(String) : String(data.get(field.name) ?? "");
     }
 
+    const missingChoice = service.fields.find(
+      (field) => field.type === "checkboxes" && field.required && (values[field.name] as string[]).length === 0,
+    );
+    if (missingChoice) {
+      setStatus("error");
+      setErrorMessage(`Please choose at least one option under "${missingChoice.label}".`);
+      return;
+    }
+
     setStatus("sending");
     setErrorMessage("");
     try {
@@ -93,15 +102,11 @@ export default function BookingButton({ serviceKey, className }: { serviceKey: s
 
   const renderField = (field: BookingField) => {
     const id = `${service.key}-${field.name}`;
-    const required = field.required ? <span className="text-[#C483C8]"> *</span> : null;
 
     if (field.type === "checkboxes") {
       return (
         <fieldset>
-          <legend className={labelClass}>
-            {field.label}
-            {required}
-          </legend>
+          <legend className={labelClass}>{field.label}</legend>
           <div className="flex flex-wrap gap-3">
             {field.options?.map((option) => (
               <label
@@ -121,7 +126,6 @@ export default function BookingButton({ serviceKey, className }: { serviceKey: s
       <>
         <label htmlFor={id} className={labelClass}>
           {field.label}
-          {required}
         </label>
         {field.type === "textarea" ? (
           <textarea id={id} name={field.name} rows={4} placeholder={field.placeholder} className={`${inputClass} max-w-full resize-y`} />
@@ -211,9 +215,7 @@ export default function BookingButton({ serviceKey, className }: { serviceKey: s
             </div>
           ) : (
             <form ref={formRef} onSubmit={handleSubmit} className="pt-6">
-              <p className="mb-6 text-[1.15rem] text-[#6B4841]/65">
-                Fields marked <span className="text-[#C483C8]">*</span> are required.
-              </p>
+              <p className="mb-6 text-[1.15rem] text-[#6B4841]/65">All fields are required.</p>
 
               <div className="grid grid-cols-1 gap-x-6 gap-y-5 md:grid-cols-2">
                 {service.fields.map((field) => (

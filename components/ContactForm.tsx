@@ -66,7 +66,6 @@ export default function ContactForm() {
           <div key={field.name}>
             <label htmlFor={id} className={labelClass}>
               {field.label}
-              {field.required && <span className="text-[#C483C8]"> *</span>}
             </label>
             {field.type === "textarea" ? (
               <textarea
@@ -78,7 +77,7 @@ export default function ContactForm() {
                 className={`${inputClass} resize-y leading-relaxed`}
               />
             ) : field.type === "select" ? (
-              <select id={id} name={field.name} defaultValue="" className={`${inputClass} h-12 appearance-none bg-[url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' stroke='%236B4841' stroke-width='1.5'%3E%3Cpath d='M1 1l5 5 5-5'/%3E%3C/svg%3E")] bg-[position:right_1rem_center] bg-no-repeat pr-10`}>
+              <select id={id} name={field.name} required={field.required} defaultValue="" className={`${inputClass} h-12 appearance-none bg-[url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' stroke='%236B4841' stroke-width='1.5'%3E%3Cpath d='M1 1l5 5 5-5'/%3E%3C/svg%3E")] bg-[position:right_1rem_center] bg-no-repeat pr-10`}>
                 <option value="" disabled>
                   Select an option
                 </option>
