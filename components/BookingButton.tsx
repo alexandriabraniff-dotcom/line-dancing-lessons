@@ -124,7 +124,7 @@ export default function BookingButton({ serviceKey, className }: { serviceKey: s
         {field.type === "textarea" ? (
           <textarea id={id} name={field.name} rows={4} placeholder={field.placeholder} className={`${inputClass} max-w-full resize-y`} />
         ) : field.type === "select" ? (
-          <select id={id} name={field.name} required={field.required} defaultValue="" className={`${inputClass} appearance-none bg-[url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' stroke='%236B4841' stroke-width='1.5'%3E%3Cpath d='M1 1l5 5 5-5'/%3E%3C/svg%3E")] bg-[position:right_1rem_center] bg-no-repeat pr-10`}>
+          <select id={id} name={field.name} required={field.required} defaultValue="" className={`${inputClass} h-12 appearance-none bg-[url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' stroke='%236B4841' stroke-width='1.5'%3E%3Cpath d='M1 1l5 5 5-5'/%3E%3C/svg%3E")] bg-[position:right_1rem_center] bg-no-repeat pr-10`}>
             <option value="" disabled>
               Select an option
             </option>
@@ -141,7 +141,7 @@ export default function BookingButton({ serviceKey, className }: { serviceKey: s
             placeholder={field.placeholder}
             min={field.type === "date" ? today : undefined}
             autoComplete={field.name === "name" ? "name" : field.name === "email" ? "email" : field.name === "phone" ? "tel" : undefined}
-            className={inputClass}
+            className={`${inputClass} h-12 appearance-none [&::-webkit-date-and-time-value]:m-0 [&::-webkit-date-and-time-value]:text-left [&::-webkit-datetime-edit]:p-0`}
           />
         )}
       </>
