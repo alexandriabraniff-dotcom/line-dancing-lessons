@@ -137,16 +137,8 @@ export default function Home() {
       </section>
 
       {/* ── Gallery ── */}
-      <section id="gallery" className="relative isolate overflow-hidden bg-[#1E0F0B] px-[var(--gutter)] py-[var(--section)]">
-        <Image
-          src="/concrete-wall.jpg"
-          alt=""
-          fill
-          sizes="100vw"
-          className="-z-20 object-cover"
-        />
-        <div aria-hidden className="absolute inset-0 -z-10 bg-black/50" />
-        <div className="relative max-w-6xl mx-auto">
+      <section id="gallery" className="bg-[#1E0F0B] px-[var(--gutter)] py-[var(--section)]">
+        <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14">
             <p className="brygada font-bold text-[length:var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-3">
               See Us in Action
