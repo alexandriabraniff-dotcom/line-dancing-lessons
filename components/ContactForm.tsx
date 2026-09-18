@@ -102,10 +102,10 @@ export default function ContactForm() {
       })}
 
       {/* Honeypot for spam bots */}
-      <div aria-hidden className="absolute left-[-9999px] h-px w-px overflow-hidden">
+      <div aria-hidden className="absolute h-px w-px overflow-hidden [clip-path:inset(50%)]">
         <label>
           Website
-          <input type="text" name="website" tabIndex={-1} autoComplete="off" />
+          <input type="text" name="website" tabIndex={-1} autoComplete="off" className="w-px" />
         </label>
       </div>
 

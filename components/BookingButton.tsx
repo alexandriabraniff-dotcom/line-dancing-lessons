@@ -122,7 +122,7 @@ export default function BookingButton({ serviceKey, className }: { serviceKey: s
           {required}
         </label>
         {field.type === "textarea" ? (
-          <textarea id={id} name={field.name} rows={4} placeholder={field.placeholder} className={`${inputClass} resize-y`} />
+          <textarea id={id} name={field.name} rows={4} placeholder={field.placeholder} className={`${inputClass} max-w-full resize-y`} />
         ) : field.type === "select" ? (
           <select id={id} name={field.name} required={field.required} defaultValue="" className={`${inputClass} appearance-none bg-[url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' stroke='%236B4841' stroke-width='1.5'%3E%3Cpath d='M1 1l5 5 5-5'/%3E%3C/svg%3E")] bg-[position:right_1rem_center] bg-no-repeat pr-10`}>
             <option value="" disabled>
@@ -161,7 +161,7 @@ export default function BookingButton({ serviceKey, className }: { serviceKey: s
           if (event.target === dialogRef.current) close();
         }}
         aria-labelledby={`${service.key}-booking-title`}
-        className="m-0 h-[100dvh] max-h-[100dvh] w-full max-w-none overflow-y-auto overscroll-contain bg-[#F7EAD8] p-0 text-[#6B4841] backdrop:bg-[#1E0F0B]/75 backdrop:backdrop-blur-sm md:m-auto md:h-auto md:max-h-[92vh] md:w-[min(56rem,92vw)] md:shadow-[0_30px_80px_-20px_rgba(30,15,11,0.6)]"
+        className="m-0 h-[100dvh] max-h-[100dvh] w-[100vw] max-w-[100vw] overflow-x-clip overflow-y-auto overscroll-contain bg-[#F7EAD8] p-0 text-[#6B4841] backdrop:bg-[#1E0F0B]/75 backdrop:backdrop-blur-sm md:m-auto md:h-auto md:max-h-[92vh] md:w-[min(56rem,92vw)] md:shadow-[0_30px_80px_-20px_rgba(30,15,11,0.6)]"
       >
         {/* Close */}
         <button
@@ -217,17 +217,17 @@ export default function BookingButton({ serviceKey, className }: { serviceKey: s
 
               <div className="grid grid-cols-1 gap-x-6 gap-y-5 md:grid-cols-2">
                 {service.fields.map((field) => (
-                  <div key={field.name} className={field.wide || field.type === "textarea" ? "md:col-span-2" : ""}>
+                  <div key={field.name} className={`min-w-0 ${field.wide || field.type === "textarea" ? "md:col-span-2" : ""}`}>
                     {renderField(field)}
                   </div>
                 ))}
               </div>
 
               {/* Honeypot for spam bots, hidden from people and screen readers */}
-              <div aria-hidden className="absolute left-[-9999px] h-px w-px overflow-hidden">
+              <div aria-hidden className="absolute h-px w-px overflow-hidden [clip-path:inset(50%)]">
                 <label>
                   Website
-                  <input type="text" name="website" tabIndex={-1} autoComplete="off" />
+                  <input type="text" name="website" tabIndex={-1} autoComplete="off" className="w-px" />
                 </label>
               </div>
 
