@@ -94,7 +94,7 @@ export default function ServicesPage() {
           </h1>
           <p className="mx-auto mt-4 max-w-[38rem] text-[length:var(--text-body)] leading-relaxed text-[#6B4841]/75">
             Every session is tailored to your group, your venue and your vibe. Pick your occasion
-            below and we&apos;ll take care of the steps.
+            down below and we&apos;ll book a meeting with you to plan your day.
           </p>
         </div>
       </section>
