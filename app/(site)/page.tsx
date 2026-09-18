@@ -145,7 +145,7 @@ export default function Home() {
           sizes="100vw"
           className="-z-20 object-cover"
         />
-        <div aria-hidden className="absolute inset-0 -z-10 bg-[#1E0F0B]/55" />
+        <div aria-hidden className="absolute inset-0 -z-10 bg-black/50" />
         <div className="relative max-w-6xl mx-auto">
           <div className="text-center mb-14">
             <p className="brygada font-bold text-[length:var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-3">

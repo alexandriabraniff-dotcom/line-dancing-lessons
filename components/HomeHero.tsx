@@ -40,16 +40,19 @@ export default function HomeHero() {
           sizes="60vw"
           className="absolute left-1/2 top-[7svh] w-[45%] -translate-x-1/2 drop-shadow-[0_8px_20px_rgba(30,15,11,0.45)] lg:hidden"
         />
-        {/* Phones: cream title centred between logo and arch bottom */}
-        <h1
-          id="hero-heading"
-          className="fade-up rye absolute inset-x-0 top-[calc((7svh+(100vw-2*var(--hero-gutter))*0.45+100%)/2)] -translate-y-1/2 whitespace-nowrap text-center text-[length:clamp(1.4rem,7.4vw,2.4rem)] uppercase leading-[1.08] tracking-wide text-[#F7EAD8] lg:hidden"
-          style={delay(0)}
-        >
-          Line Dancing
-          <br />
-          Lessons &amp; Events
-        </h1>
+        {/* Phones: cream title centred between the logo and the bottom of the arch.
+            The wrapper does the centring so the fade-up transform can't shift it. */}
+        <div className="absolute inset-x-0 bottom-0 top-[calc(7svh+(100vw-2*var(--hero-gutter))*0.45)] flex items-center justify-center lg:hidden">
+          <h1
+            id="hero-heading"
+            className="fade-up rye whitespace-nowrap text-center text-[length:clamp(1.4rem,7.4vw,2.4rem)] uppercase leading-[1.08] tracking-wide text-[#F7EAD8]"
+            style={delay(0)}
+          >
+            Line Dancing
+            <br />
+            Lessons &amp; Events
+          </h1>
+        </div>
         {/* Soft shade behind the nav links on desktop */}
         <div
           aria-hidden
