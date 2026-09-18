@@ -161,24 +161,24 @@ export default function BookingButton({ serviceKey, className }: { serviceKey: s
           if (event.target === dialogRef.current) close();
         }}
         aria-labelledby={`${service.key}-booking-title`}
-        className="m-0 h-full max-h-none w-full max-w-none overflow-y-auto bg-[#F7EAD8] p-0 text-[#6B4841] backdrop:bg-[#1E0F0B]/75 backdrop:backdrop-blur-sm md:m-auto md:h-auto md:max-h-[92vh] md:w-[min(56rem,92vw)] md:shadow-[0_30px_80px_-20px_rgba(30,15,11,0.6)]"
+        className="m-0 h-[100dvh] max-h-[100dvh] w-full max-w-none overflow-y-auto overscroll-contain bg-[#F7EAD8] p-0 text-[#6B4841] backdrop:bg-[#1E0F0B]/75 backdrop:backdrop-blur-sm md:m-auto md:h-auto md:max-h-[92vh] md:w-[min(56rem,92vw)] md:shadow-[0_30px_80px_-20px_rgba(30,15,11,0.6)]"
       >
         {/* Close */}
         <button
           type="button"
           onClick={close}
           aria-label="Close booking form"
-          className={`sticky top-0 z-10 ml-auto flex h-12 w-12 items-center justify-center bg-[#F7EAD8] text-[#6B4841] transition-colors hover:text-[#1E0F0B] ${focusRing}`}
+          className={`sticky top-0 z-20 ml-auto flex h-14 w-14 shrink-0 items-center justify-center bg-[#F7EAD8] text-[#6B4841] transition-colors hover:text-[#1E0F0B] ${focusRing}`}
         >
           <span aria-hidden className="absolute h-[1.5px] w-6 rotate-45 bg-current" />
           <span aria-hidden className="absolute h-[1.5px] w-6 -rotate-45 bg-current" />
         </button>
 
-        <div className="-mt-12 px-[max(1.25rem,4vw)] pb-10 pt-10 md:px-12 md:pb-12">
+        <div className="px-[max(1.25rem,5vw)] pb-[max(2.5rem,env(safe-area-inset-bottom))] pt-2 md:-mt-14 md:px-12 md:pb-12 md:pt-10">
           {/* Heading */}
-          <div className="flex items-center gap-5 border-b border-[#6B4841]/15 pb-6 pr-10">
-            <div className="relative aspect-[7/9] w-16 shrink-0 overflow-hidden sm:w-20">
-              <Image src={service.image} alt="" fill sizes="80px" className="object-cover" />
+          <div className="flex flex-col items-center gap-4 border-b border-[#6B4841]/15 pb-6 text-center md:flex-row md:items-center md:gap-5 md:pr-10 md:text-left">
+            <div className="relative aspect-[7/9] w-24 shrink-0 overflow-hidden md:w-20">
+              <Image src={service.image} alt="" fill sizes="(min-width: 768px) 80px, 96px" className="object-cover" />
             </div>
             <div>
               <p className="brygada text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.35em] text-[#D49C84]">
@@ -191,7 +191,9 @@ export default function BookingButton({ serviceKey, className }: { serviceKey: s
               >
                 {service.title}
               </h2>
-              <p className="mt-1 text-[length:var(--text-body)] leading-relaxed text-[#6B4841]/75">{service.intro}</p>
+              <p className="mx-auto mt-2 max-w-sm text-[length:var(--text-body)] leading-relaxed text-[#6B4841]/75 md:mx-0 md:mt-1 md:max-w-none">
+                {service.intro}
+              </p>
             </div>
           </div>
 
