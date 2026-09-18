@@ -130,7 +130,7 @@ export default function Home() {
               href="/contact"
               className="brygada mt-5 inline-flex h-[45px] lg:h-11 items-center justify-center bg-[#6B4841] px-6 text-[1.15rem] font-bold tracking-[0.18em] text-[#F7EAD8] transition-colors duration-300 hover:bg-[#1E0F0B] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#C483C8]"
             >
-              Contact us
+              Contact Us
             </Link>
           </div>
         </div>
@@ -233,7 +233,7 @@ export default function Home() {
                 href="/about"
                 className="brygada mx-auto inline-flex h-[45px] lg:h-11 items-center justify-center bg-[#6B4841] md:mx-0 px-6 text-[1.15rem] font-bold tracking-[0.18em] text-[#F7EAD8] transition-colors duration-300 hover:bg-[#1E0F0B] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#C483C8]"
               >
-                Read more about us
+                Read More About Us
               </Link>
             </div>
           </div>

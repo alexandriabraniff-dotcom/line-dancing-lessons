@@ -145,7 +145,7 @@ export default function Footer() {
               href="/contact"
               className={`brygada mt-6 flex h-[45px] w-full items-center justify-center bg-[#F7EAD8] px-6 text-[1.08rem] font-bold tracking-[0.18em] text-[#6B4841] transition-colors duration-300 hover:bg-[#C483C8] hover:text-[#1E0F0B] sm:inline-flex sm:w-auto lg:h-11 ${focusRing}`}
             >
-              Contact us
+              Contact Us
             </Link>
           </div>
         </div>

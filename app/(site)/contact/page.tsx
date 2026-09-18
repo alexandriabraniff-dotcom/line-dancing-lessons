@@ -77,7 +77,7 @@ export default function ContactPage() {
                 href="/services"
                 className={`brygada mt-5 inline-flex h-[45px] lg:h-11 items-center justify-center border-[1.5px] border-[#6B4841] px-6 text-[1.15rem] font-bold tracking-[0.18em] text-[#6B4841] transition-colors duration-300 hover:bg-[#6B4841] hover:text-[#F7EAD8] ${focusRing}`}
               >
-                View services
+                View Services
               </Link>
             </div>
           </div>

@@ -52,7 +52,7 @@ export default function ContactForm() {
           onClick={() => setStatus("idle")}
           className="brygada mt-6 text-[1.08rem] font-bold tracking-[0.18em] text-[#6B4841] underline underline-offset-4"
         >
-          Send another message
+          Send Another Message
         </button>
       </div>
     );
@@ -119,7 +119,7 @@ export default function ContactForm() {
         disabled={status === "sending"}
         className="brygada inline-flex h-[45px] lg:h-12 w-full items-center justify-center bg-[#6B4841] px-8 sm:w-auto text-[1.15rem] font-bold tracking-[0.18em] text-[#F7EAD8] transition-colors duration-300 hover:bg-[#1E0F0B] disabled:cursor-wait disabled:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#C483C8]"
       >
-        {status === "sending" ? "Sending..." : "Send enquiry"}
+        {status === "sending" ? "Sending..." : "Send Enquiry"}
       </button>
     </form>
   );

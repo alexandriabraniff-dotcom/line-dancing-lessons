@@ -157,7 +157,7 @@ export default function BookingButton({ serviceKey, className }: { serviceKey: s
   return (
     <>
       <button type="button" onClick={open} className={className}>
-        Book {service.title.toLowerCase()}
+        Book {service.title}
       </button>
 
       <dialog
@@ -241,7 +241,7 @@ export default function BookingButton({ serviceKey, className }: { serviceKey: s
 
               <div className="mt-8 flex flex-col sm:flex-row sm:justify-end">
                 <button type="submit" disabled={status === "sending"} className={primaryButton}>
-                  {status === "sending" ? "Sending..." : "Send enquiry"}
+                  {status === "sending" ? "Sending..." : "Send Enquiry"}
                 </button>
               </div>
             </form>

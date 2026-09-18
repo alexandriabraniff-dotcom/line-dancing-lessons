@@ -92,13 +92,13 @@ export default function HomeHero() {
             href="/services"
             className={`${buttonBase} border-[#6B4841] bg-[#6B4841] text-[#F7EAD8] hover:bg-transparent hover:text-[#6B4841] ${focusRing}`}
           >
-            Book your event
+            Book Your Event
           </Link>
           <Link
             href="/contact"
             className={`${buttonBase} border-[#6B4841] text-[#6B4841] hover:bg-[#6B4841] hover:text-[#F7EAD8] ${focusRing}`}
           >
-            Contact us
+            Contact Us
           </Link>
         </div>
       </div>

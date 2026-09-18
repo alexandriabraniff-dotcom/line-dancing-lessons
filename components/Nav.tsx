@@ -98,7 +98,7 @@ function MobileMenu({
                   href={l.href}
                   onClick={onNavigate}
                   aria-current={active ? "page" : undefined}
-                  className={`rye block py-3 text-[clamp(2.2rem,10.3vw,4rem)] uppercase leading-none tracking-wide ${focusRing} ${
+                  className={`rye block py-3 text-[clamp(2.2rem,10.3vw,4rem)] leading-none tracking-wide ${focusRing} ${
                     active ? "text-[#C483C8]" : "text-[#F7EAD8] active:text-[#C483C8]"
                   }`}
                 >
@@ -121,7 +121,7 @@ function MobileMenu({
             onClick={onNavigate}
             className={`brygada mt-6 flex h-[45px] w-full items-center justify-center bg-[#F7EAD8] text-base font-bold tracking-[0.25em] text-[#6B4841] ${focusRing}`}
           >
-            Book your event
+            Book Your Event
           </Link>
         </div>
       </div>
@@ -191,7 +191,7 @@ function NavBar({ hero }: { hero: boolean }) {
                   <Link
                     href={l.href}
                     aria-current={active ? "page" : undefined}
-                    className={`nav-link brygada block py-2 text-[length:var(--nav-link)] font-bold uppercase tracking-[0.25em] transition-colors duration-300 ${focusRing} ${
+                    className={`nav-link brygada block py-2 text-[length:var(--nav-link)] font-bold tracking-[0.25em] transition-colors duration-300 ${focusRing} ${
                       hero
                         ? active
                           ? "text-[#C483C8] drop-shadow-[0_1px_6px_rgba(30,15,11,0.6)]"
@@ -216,7 +216,7 @@ function NavBar({ hero }: { hero: boolean }) {
                 : "border-[#6B4841] bg-[#6B4841] text-[#F7EAD8] hover:border-[#1E0F0B] hover:bg-[#1E0F0B]"
             }`}
           >
-            Book your event
+            Book Your Event
           </Link>
 
           <button
