@@ -113,7 +113,7 @@ function MobileMenu({
           className="fade-up mx-auto mt-12 w-full max-w-sm border-t border-[#F7EAD8]/15 pt-8 text-center"
           style={{ animationDelay: "360ms" }}
         >
-          <p className="brygada text-2xl italic text-[#F2B8CE]">
+          <p className="brygada text-xl font-bold uppercase leading-relaxed tracking-[0.25em] text-[#F7EAD8]">
             It&apos;s more than a dance, it&apos;s a good time.
           </p>
           <Link
