@@ -106,7 +106,7 @@ export default function ServicesPage() {
             <article
               key={title}
               id={slug(title)}
-              className="scroll-mt-[calc(var(--header-logo)+var(--header-pad-y)*2+1rem)] grid grid-cols-[minmax(0,0.8fr)_minmax(0,1.25fr)] items-start gap-x-3 gap-y-5 border-t border-[#6B4841]/20 py-7 text-center last:border-b md:grid-cols-[auto_minmax(0,1fr)] md:items-center md:gap-[max(1.25rem,2.2vw)] md:rounded-none md:border md:border-[#6B4841]/10 md:bg-[#EDE0CC]/45 md:p-[max(1rem,1.6vw)] md:text-left"
+              className="scroll-mt-[calc(var(--header-logo)+var(--header-pad-y)*2+1rem)] grid grid-cols-2 items-start gap-x-3 gap-y-5 border-t border-[#6B4841]/20 py-7 text-center last:border-b md:grid-cols-[auto_minmax(0,1fr)] md:items-center md:gap-[max(1.25rem,2.2vw)] md:rounded-none md:border md:border-[#6B4841]/10 md:bg-[#EDE0CC]/45 md:p-[max(1rem,1.6vw)] md:text-left"
             >
               {/* Phones: title, then photo beside the list, then the write-up and button */}
               <div className="relative col-start-1 row-start-2 aspect-[3/4] w-full overflow-hidden rounded-t-full md:col-auto md:row-auto md:w-[max(9rem,min(22vw,26vh))]">
@@ -127,7 +127,7 @@ export default function ServicesPage() {
                   {title}
                 </h2>
 
-                <div className="col-start-2 row-start-2 mt-[calc((100vw-2*var(--gutter)-0.75rem)*0.1951)] text-left md:col-auto md:mt-0 md:row-auto lg:col-start-2 lg:row-start-1 lg:row-span-3 lg:border-l lg:border-[#6B4841]/15 lg:pl-[max(1.25rem,2.2vw)]">
+                <div className="col-start-2 row-start-2 mt-[calc((100vw-2*var(--gutter)-0.75rem)/4)] text-left md:col-auto md:mt-0 md:row-auto lg:col-start-2 lg:row-start-1 lg:row-span-3 lg:border-l lg:border-[#6B4841]/15 lg:pl-[max(1.25rem,2.2vw)]">
                   <p className="brygada text-[0.85rem] font-bold uppercase tracking-[0.18em] text-[#6B4841]/60 md:text-[1rem] md:tracking-[0.25em]">
                     What&apos;s Included
                   </p>
@@ -135,7 +135,7 @@ export default function ServicesPage() {
                     {details.map((item) => (
                       <li
                         key={item}
-                        className="flex items-start gap-1.5 tracking-[-0.01em] text-[length:min(var(--text-body),calc(4.25vw-3.5px))] leading-snug text-[#6B4841]/80 md:gap-3 md:tracking-normal md:text-[length:var(--text-body)]"
+                        className="flex items-start gap-1.5 tracking-[-0.01em] text-[length:min(var(--text-body),calc(3.55vw-3.3px))] leading-snug text-[#6B4841]/80 md:gap-3 md:tracking-normal md:text-[length:var(--text-body)]"
                       >
                         <span aria-hidden className="mt-[0.5em] h-1.5 w-1.5 shrink-0 rounded-full bg-[#D49C84]" />
                         {item}
