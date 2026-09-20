@@ -20,7 +20,18 @@ type Status = "idle" | "sending" | "success" | "error";
 
 /* Button that opens a booking form popup for one service.
    The popup can also be opened directly with a link to /services#book-<service key>. */
-export default function BookingButton({ serviceKey, className }: { serviceKey: string; className: string }) {
+export default function BookingButton({
+  serviceKey,
+  className,
+  label,
+  eyebrow,
+}: {
+  serviceKey: string;
+  className: string;
+  /* Defaults to "Book <service>" */
+  label?: string;
+  eyebrow?: string;
+}) {
   const service = getBookingService(serviceKey);
   const dialogRef = useRef<HTMLDialogElement>(null);
   const formRef = useRef<HTMLFormElement>(null);
@@ -157,7 +168,7 @@ export default function BookingButton({ serviceKey, className }: { serviceKey: s
   return (
     <>
       <button type="button" onClick={open} className={className}>
-        Book {service.title}
+        {label ?? `Book ${service.title}`}
       </button>
 
       <dialog
@@ -186,7 +197,7 @@ export default function BookingButton({ serviceKey, className }: { serviceKey: s
           <div className="border-b border-[#6B4841]/15 pb-6 text-center md:pr-10 md:text-left">
             <div>
               <p className="brygada text-[length:var(--text-body)] font-bold uppercase tracking-[0.3em] text-[#D49C84]">
-                Book Your Event
+                {eyebrow ?? "Book Your Event"}
               </p>
               <h2
                 id={`${service.key}-booking-title`}

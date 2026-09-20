@@ -15,6 +15,8 @@ const headingClass =
 const linkClass = `text-[length:var(--text-body)] transition-colors hover:text-[#C483C8] ${focusRing}`;
 
 const pages = [
+  /* TEMPORARY: special event page, remove with lib/event.ts */
+  { href: "/competition", label: "Competition" },
   { href: "/", label: "Home" },
   { href: "/about", label: "About Us" },
   { href: "/services", label: "Services" },

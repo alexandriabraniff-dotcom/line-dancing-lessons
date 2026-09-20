@@ -178,7 +178,58 @@ export const contactService: BookingService = {
   ],
 };
 
+/* TEMPORARY: sign-up form for the "Dance Till You Die" event (see lib/event.ts).
+   Delete this block after October 25. */
+export const competitionService: BookingService = {
+  key: "competition",
+  title: "Dance Till You Die",
+  image: "/services/special-events.png",
+  intro:
+    "Put your name down for October 25 and we'll send you the times, the venue and everything else as soon as it's locked in.",
+  fields: [
+    ...contactFields,
+    {
+      name: "entering",
+      label: "What Are You Entering?",
+      type: "checkboxes",
+      required: true,
+      options: ["Dance competition", "Costume contest", "Just coming to dance"],
+      wide: true,
+    },
+    {
+      name: "entryType",
+      label: "Dancing Solo or With a Partner?",
+      type: "select",
+      required: true,
+      options: ["Solo", "With a partner", "Not competing"],
+    },
+    {
+      name: "experience",
+      label: "Experience Level",
+      type: "select",
+      required: true,
+      options: ["Complete beginner", "Some experience", "Intermediate", "Been dancing for years"],
+    },
+    {
+      name: "guests",
+      label: "How Many Of You Are Coming?",
+      type: "select",
+      required: true,
+      options: ["Just me", "2 to 4", "5 to 10", "More than 10"],
+    },
+    {
+      name: "message",
+      label: "Anything Else We Should Know?",
+      type: "textarea",
+      required: true,
+      placeholder: "Costume idea, questions about the rules, anything at all...",
+      wide: true,
+    },
+  ],
+};
+
 export function getBookingService(key: string) {
   if (key === contactService.key) return contactService;
+  if (key === competitionService.key) return competitionService;
   return bookingServices.find((service) => service.key === key);
 }

@@ -6,8 +6,12 @@ import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import SocialLinks from "@/components/SocialLinks";
+/* TEMPORARY: special event nav button, remove with lib/event.ts */
+import { specialEvent } from "@/lib/event";
 
 const links = [
+  /* TEMPORARY: sits to the left of Home until the event is over */
+  { href: specialEvent.href, label: specialEvent.navLabel },
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
@@ -16,6 +20,54 @@ const links = [
 
 const focusRing =
   "focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#C483C8]";
+
+/* ── TEMPORARY: hand-drawn style arrow pointing at the Competition button.
+   Only on the homepage hero. Remove with lib/event.ts. ── */
+function EventNoteDesktop() {
+  return (
+    <div className="pointer-events-none absolute left-1/2 top-full z-20 mt-1 hidden -translate-x-[35%] items-start gap-1.5 lg:flex">
+      <svg
+        aria-hidden
+        viewBox="0 0 44 40"
+        className="mt-1 w-[max(1.9rem,calc(var(--vu)*2.2))] shrink-0 text-[#C483C8]"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M40 37C25 34 13 26 9 7" />
+        <path d="M9 5 3 16M9 5l9 7" />
+      </svg>
+      <p className="brygada whitespace-nowrap pt-[0.4rem] text-[length:max(0.95rem,calc(var(--vu)*0.88))] font-bold italic text-[#F7EAD8] drop-shadow-[0_1px_6px_rgba(30,15,11,0.8)]">
+        {specialEvent.heroNote}
+      </p>
+    </div>
+  );
+}
+
+function EventNoteMobile() {
+  return (
+    <div className="pointer-events-none absolute right-0 top-full z-20 mt-1 flex items-start gap-1 lg:hidden">
+      <p className="brygada whitespace-nowrap pt-[0.15rem] text-[0.78rem] font-bold italic leading-tight text-[#F7EAD8] drop-shadow-[0_1px_6px_rgba(30,15,11,0.9)]">
+        {specialEvent.heroNote}
+      </p>
+      <svg
+        aria-hidden
+        viewBox="0 0 30 26"
+        className="mt-[0.1rem] w-[1.4rem] shrink-0 text-[#C483C8]"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M2 23C11 21 21 15 25 4" />
+        <path d="M26 3 15 5m11-2 1 11" />
+      </svg>
+    </div>
+  );
+}
 
 function Logo({ className, preload = false, cream = false }: { className: string; preload?: boolean; cream?: boolean }) {
   return (
@@ -180,14 +232,16 @@ function NavBar({ hero }: { hero: boolean }) {
         {/* Links, CTA and menu toggle, right (over the photo in the hero) */}
         <div
           className={`flex items-center justify-end gap-[var(--nav-gap)] ${
-            hero ? "col-start-3 pr-[var(--hero-gutter)] lg:col-start-2 lg:pl-[var(--hero-gutter)]" : ""
+            hero ? "relative col-start-3 pr-[var(--hero-gutter)] lg:col-start-2 lg:pl-[var(--hero-gutter)]" : ""
           }`}
         >
           <ul className="hidden items-center gap-[var(--nav-gap)] whitespace-nowrap lg:flex">
             {links.map((l) => {
               const active = pathname === l.href;
+              /* TEMPORARY: event note hangs off the Competition button in the hero */
+              const isEvent = l.href === specialEvent.href;
               return (
-                <li key={l.href}>
+                <li key={l.href} className={isEvent ? "relative" : undefined}>
                   <Link
                     href={l.href}
                     aria-current={active ? "page" : undefined}
@@ -203,6 +257,7 @@ function NavBar({ hero }: { hero: boolean }) {
                   >
                     {l.label}
                   </Link>
+                  {hero && isEvent && <EventNoteDesktop />}
                 </li>
               );
             })}
@@ -218,6 +273,9 @@ function NavBar({ hero }: { hero: boolean }) {
           >
             Book Your Event
           </Link>
+
+          {/* TEMPORARY: event note pointing at the menu button on phones */}
+          {hero && <EventNoteMobile />}
 
           <button
             ref={toggleRef}
