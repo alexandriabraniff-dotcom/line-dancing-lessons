@@ -28,18 +28,18 @@ function EventNoteDesktop() {
     <div className="pointer-events-none absolute left-1/2 top-full z-20 mt-1 hidden -translate-x-[0.6rem] items-start gap-2 lg:flex">
       <svg
         aria-hidden
-        viewBox="0 0 44 40"
-        className="mt-1 w-[max(2.4rem,calc(var(--vu)*2.9))] shrink-0 text-[#C483C8]"
+        viewBox="0 0 64 48"
+        className="mt-1 w-[max(3.3rem,calc(var(--vu)*4))] shrink-0 text-[#C483C8]"
         fill="none"
         stroke="currentColor"
         strokeWidth="2.5"
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        <path d="M40 37C25 34 13 26 9 7" />
-        <path d="M9 5 3 16M9 5l9 7" />
+        <path d="M60 45C38 41 16 31 9 7" />
+        <path d="M9 5 2 17M9 5l10 8" />
       </svg>
-      <p className="brygada whitespace-nowrap pt-[0.5rem] text-[length:max(1.35rem,calc(var(--vu)*1.3))] font-bold italic text-[#C483C8] drop-shadow-[0_2px_8px_rgba(30,15,11,0.95)]">
+      <p className="brygada whitespace-nowrap pt-[1.15rem] text-[length:max(1.35rem,calc(var(--vu)*1.3))] font-bold italic text-[#C483C8] drop-shadow-[0_2px_8px_rgba(30,15,11,0.95)]">
         {specialEvent.heroNote}
       </p>
     </div>
@@ -49,21 +49,21 @@ function EventNoteDesktop() {
 function EventNoteMobile() {
   return (
     <div className="pointer-events-none absolute right-0 top-full z-20 mt-1 flex items-start gap-1 lg:hidden">
-      <p className="brygada whitespace-nowrap pt-[0.1rem] text-[0.95rem] font-bold italic leading-tight text-[#C483C8] drop-shadow-[0_2px_8px_rgba(30,15,11,0.95)]">
+      <p className="brygada whitespace-nowrap pt-[0.4rem] text-[0.95rem] font-bold italic leading-tight text-[#C483C8] drop-shadow-[0_2px_8px_rgba(30,15,11,0.95)]">
         {specialEvent.heroNote}
       </p>
       <svg
         aria-hidden
-        viewBox="0 0 30 26"
-        className="mt-[0.15rem] w-[1.6rem] shrink-0 text-[#C483C8]"
+        viewBox="0 0 40 30"
+        className="mt-[0.15rem] w-[2.1rem] shrink-0 text-[#C483C8]"
         fill="none"
         stroke="currentColor"
         strokeWidth="2.5"
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        <path d="M2 23C11 21 21 15 25 4" />
-        <path d="M26 3 15 5m11-2 1 11" />
+        <path d="M2 27C15 25 29 18 34 4" />
+        <path d="M35 3 23 5m12-2 1 12" />
       </svg>
     </div>
   );
