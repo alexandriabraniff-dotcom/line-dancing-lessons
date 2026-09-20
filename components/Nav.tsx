@@ -25,11 +25,11 @@ const focusRing =
    Only on the homepage hero. Remove with lib/event.ts. ── */
 function EventNoteDesktop() {
   return (
-    <div className="pointer-events-none absolute left-1/2 top-full z-20 mt-1 hidden -translate-x-[35%] items-start gap-1.5 lg:flex">
+    <div className="pointer-events-none absolute left-1/2 top-full z-20 mt-1 hidden -translate-x-[0.6rem] items-start gap-2 lg:flex">
       <svg
         aria-hidden
         viewBox="0 0 44 40"
-        className="mt-1 w-[max(1.9rem,calc(var(--vu)*2.2))] shrink-0 text-[#C483C8]"
+        className="mt-1 w-[max(2.4rem,calc(var(--vu)*2.9))] shrink-0 text-[#C483C8]"
         fill="none"
         stroke="currentColor"
         strokeWidth="2.5"
@@ -39,7 +39,7 @@ function EventNoteDesktop() {
         <path d="M40 37C25 34 13 26 9 7" />
         <path d="M9 5 3 16M9 5l9 7" />
       </svg>
-      <p className="brygada whitespace-nowrap pt-[0.4rem] text-[length:max(0.95rem,calc(var(--vu)*0.88))] font-bold italic text-[#F7EAD8] drop-shadow-[0_1px_6px_rgba(30,15,11,0.8)]">
+      <p className="brygada whitespace-nowrap pt-[0.5rem] text-[length:max(1.35rem,calc(var(--vu)*1.3))] font-bold italic text-[#C483C8] drop-shadow-[0_2px_8px_rgba(30,15,11,0.95)]">
         {specialEvent.heroNote}
       </p>
     </div>
@@ -49,13 +49,13 @@ function EventNoteDesktop() {
 function EventNoteMobile() {
   return (
     <div className="pointer-events-none absolute right-0 top-full z-20 mt-1 flex items-start gap-1 lg:hidden">
-      <p className="brygada whitespace-nowrap pt-[0.15rem] text-[0.78rem] font-bold italic leading-tight text-[#F7EAD8] drop-shadow-[0_1px_6px_rgba(30,15,11,0.9)]">
+      <p className="brygada whitespace-nowrap pt-[0.1rem] text-[0.95rem] font-bold italic leading-tight text-[#C483C8] drop-shadow-[0_2px_8px_rgba(30,15,11,0.95)]">
         {specialEvent.heroNote}
       </p>
       <svg
         aria-hidden
         viewBox="0 0 30 26"
-        className="mt-[0.1rem] w-[1.4rem] shrink-0 text-[#C483C8]"
+        className="mt-[0.15rem] w-[1.6rem] shrink-0 text-[#C483C8]"
         fill="none"
         stroke="currentColor"
         strokeWidth="2.5"
