@@ -1,5 +1,3 @@
-import Link from "next/link";
-import BookingButton from "@/components/BookingButton";
 import { specialEvent } from "@/lib/event";
 
 /* ── TEMPORARY PAGE: "Dance Till You Die", October 25 ──────────────────
@@ -9,7 +7,7 @@ import { specialEvent } from "@/lib/event";
 export const metadata = {
   title: `${specialEvent.name}, Halloween Line Dancing Competition`,
   description:
-    "Dance Till You Die, a Halloween line dancing night in Greater Vancouver on October 25 with a dance competition, prizes and a costume contest. Beginners welcome.",
+    "Dance Till You Die, a Halloween line dancing night at The Yale Saloon in Vancouver on Sunday October 25. Lesson at 8PM, dance competition from 9PM, costume contest, prizes at midnight.",
   alternates: { canonical: "/competition" },
 };
 
@@ -19,8 +17,30 @@ const focusRing =
 const buttonBase =
   "brygada inline-flex h-[45px] lg:h-11 items-center justify-center px-6 text-[1.15rem] font-bold tracking-[0.18em] transition-colors duration-300";
 const buttonOnLight = `${buttonBase} bg-[#6B4841] text-[#F7EAD8] hover:bg-[#1E0F0B] ${focusRing}`;
-const buttonOutline = `${buttonBase} border-[1.5px] border-[#6B4841] text-[#6B4841] hover:bg-[#6B4841] hover:text-[#F7EAD8] ${focusRing}`;
 const buttonOnDark = `${buttonBase} bg-[#F7EAD8] text-[#6B4841] hover:bg-[#C483C8] hover:text-[#1E0F0B] ${focusRing}`;
+
+/* Sign-up lives on The Yale Saloon's ticket page. Until that link exists the
+   button says so instead of going nowhere. */
+function TicketButton({ label, className }: { label: string; className: string }) {
+  if (!specialEvent.ticketsUrl) {
+    return (
+      <span aria-disabled="true" className={`${className} cursor-default opacity-70`}>
+        Sign Up Opens Soon
+      </span>
+    );
+  }
+
+  return (
+    <a
+      href={specialEvent.ticketsUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={className}
+    >
+      {label}
+    </a>
+  );
+}
 
 function Bullet({ tone = "tan" }: { tone?: "tan" | "purple" }) {
   return (
@@ -55,16 +75,8 @@ export default function CompetitionPage() {
             {specialEvent.intro}
           </p>
 
-          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
-            <BookingButton
-              serviceKey="competition"
-              label="Sign Me Up"
-              eyebrow={specialEvent.eyebrow}
-              className={buttonOnLight}
-            />
-            <Link href="/contact" className={buttonOutline}>
-              Ask a Question
-            </Link>
+          <div className="mt-8 flex justify-center">
+            <TicketButton label={specialEvent.ticketsLabel} className={buttonOnLight} />
           </div>
         </div>
       </section>
@@ -74,7 +86,10 @@ export default function CompetitionPage() {
         <div className="max-w-6xl mx-auto">
           <dl className="grid grid-cols-2 gap-px overflow-hidden border border-[#6B4841]/15 bg-[#6B4841]/15 md:grid-cols-3">
             {specialEvent.details.map(({ label, value }) => (
-              <div key={label} className="bg-[#EDE0CC]/45 p-[max(1rem,1.6vw)] text-center md:text-left">
+              <div
+                key={label}
+                className="bg-[#EDE0CC]/45 p-[max(1rem,1.6vw)] text-center last:col-span-2 md:text-left md:last:col-span-1"
+              >
                 <dt className="brygada text-[0.95rem] font-bold uppercase tracking-[0.25em] text-[#6B4841]/60">
                   {label}
                 </dt>
@@ -133,12 +148,7 @@ export default function CompetitionPage() {
           </div>
 
           <div className="mt-12 text-center">
-            <BookingButton
-              serviceKey="competition"
-              label="Enter the Competition"
-              eyebrow={specialEvent.eyebrow}
-              className={buttonOnDark}
-            />
+            <TicketButton label="Enter the Competition" className={buttonOnDark} />
           </div>
         </div>
       </section>
@@ -201,19 +211,11 @@ export default function CompetitionPage() {
               Good to Know
             </h2>
             <p className="mt-5 text-[length:var(--text-body)] leading-relaxed text-[#6B4841]/75">
-              Never line danced before? That&apos;s most of the room. We teach every step on the
-              night, so all you have to bring is a costume and a pair of boots.
+              Never line danced before? That&apos;s most of the room. The 8:00 PM lesson covers
+              every step you need, so all you have to bring is a costume and a pair of boots.
             </p>
-            <div className="mt-7 flex flex-col items-center gap-3 sm:flex-row sm:justify-center md:justify-start">
-              <BookingButton
-                serviceKey="competition"
-                label="Save My Spot"
-                eyebrow={specialEvent.eyebrow}
-                className={buttonOnLight}
-              />
-              <Link href="/contact" className={buttonOutline}>
-                Contact Us
-              </Link>
+            <div className="mt-7 flex justify-center md:justify-start">
+              <TicketButton label={specialEvent.ticketsLabel} className={buttonOnLight} />
             </div>
           </div>
 

@@ -7,7 +7,6 @@
      2. app/(site)/competition/page.tsx
      3. the `specialEvent` blocks in components/Nav.tsx and components/HomeHero.tsx
      4. the /competition lines in app/sitemap.ts and components/Footer.tsx
-     5. the "competition" entry in lib/booking.ts
 */
 
 export const specialEvent = {
@@ -18,39 +17,47 @@ export const specialEvent = {
 
   name: "Dance Till You Die",
   eyebrow: "Sunday, October 25",
-  tagline: "A Halloween line dancing night",
-  intro:
-    "One night only. We're taking over the dance floor for a Halloween line dancing party with a dance competition, prizes and a costume contest for the boldest outfit in the room. Beginners welcome, we teach every routine on the night before anyone competes.",
+  tagline: "A Halloween night with The Yale Saloon",
 
-  /* Anything not confirmed yet says "Announced soon" on the page */
+  /* ▸ TICKETS: paste the Yale sign-up link here once it is live.
+     While this is empty the buttons show "Sign Up Opens Soon" instead. */
+  ticketsUrl: "",
+  ticketsLabel: "Sign Me Up",
+
+  intro:
+    "One night only, in collaboration with The Yale Saloon. We're taking over Vancouver's country nightclub for Halloween with a line dancing lesson, a dance competition and a costume contest. Wear the costume, learn the routine, dance for the prizes.",
+
   details: [
     { label: "Date", value: "Sunday, October 25, 2026" },
-    { label: "Time", value: "Doors and times announced soon" },
-    { label: "Where", value: "Greater Vancouver, venue announced soon" },
-    { label: "Entry", value: "Ticket details announced soon" },
+    { label: "Where", value: "The Yale Saloon, 1300 Granville St, Vancouver" },
+    { label: "Line Dancing Lesson", value: "8:00 PM to 9:00 PM" },
+    { label: "Dance Competition", value: "9:00 PM to 11:30 PM" },
+    { label: "Winners and Prizes", value: "Announced at midnight" },
+    { label: "Competition Sign Up", value: "$5, plus entry to the bar" },
+    { label: "Costume Contest", value: "Free, sign up at the booth inside" },
     { label: "Dress Code", value: "Halloween costume encouraged" },
-    { label: "Level", value: "Beginner and intermediate friendly" },
+    { label: "Who", value: "19+, beginner and intermediate friendly" },
   ],
 
   features: [
     {
       title: "Dance Competition",
-      desc: "Take the floor solo or with a partner and dance for the title. We teach the routine at the start of the night, then dancers are called up in rounds until we have a winner. Prizes go to the top three.",
+      desc: "Sign up for $5 on top of your entry to the bar and you'll be handed a wristband and a competition number. The floor is yours from 9:00 PM until 11:30 PM, and the routines come straight out of the lesson we teach beforehand.",
       points: [
-        "Routine taught on the night",
-        "Solo and partner entries",
-        "Judged in rounds",
-        "Prizes for the top three",
+        "$5 to sign up, plus entry to the bar",
+        "Wristband and competition number on sign up",
+        "Dancing from 9:00 PM to 11:30 PM",
+        "Winners and prizes at midnight",
       ],
     },
     {
       title: "Costume Contest",
-      desc: "Come as whatever you want, as long as you can dance in it. Costumes are judged on originality, effort and how well you sell it on the dance floor, with a prize for the best in the room.",
+      desc: "Free to enter. Pay your entry to the bar, find the costume contest booth once you're inside, and put your name down. Come as whatever you want, as long as you can dance in it all night.",
       points: [
-        "Judged on the dance floor",
-        "Group costumes welcome",
-        "Prize for best costume",
-        "Enter on the night",
+        "Free to enter, just pay entry to the bar",
+        "Sign up at the costume contest booth",
+        "Judged on originality, effort and stage presence",
+        "Winners and prizes at midnight",
       ],
     },
   ],
@@ -59,18 +66,21 @@ export const specialEvent = {
     {
       title: "Dance Competition Rules",
       items: [
-        "Entries are open to everyone aged 19 and over",
-        "Sign up in advance or add your name at the door until the first round starts",
-        "Dance solo or with one partner, and partners compete together as one entry",
-        "Everyone dances the same routine, taught at the start of the night",
+        "The Yale Saloon is a 19+ venue, so bring photo ID",
+        "Sign up costs $5 and is separate from your entry to the bar",
+        "Every competitor is given a wristband and a competition number on sign up",
+        "Wear your wristband all night, it is how we know you are competing",
+        "Be on the floor when your number is called, we cannot hold up the rounds",
+        "Everyone dances the same routines, taught in the 8:00 PM lesson",
         "Judges score on timing, technique and showmanship, and their decision is final",
-        "Dancers who miss their call are passed over for the next round",
         "Closed toe shoes or boots only on the competition floor",
       ],
     },
     {
       title: "Costume Contest Rules",
       items: [
+        "Free to enter, you only pay your entry to the bar",
+        "Sign up at the costume contest booth inside the Yale",
         "One entry per person, and group costumes count as a single entry",
         "Costumes are judged on originality, effort and stage presence",
         "Keep it family friendly, we reserve the right to turn away anything offensive",
@@ -82,11 +92,11 @@ export const specialEvent = {
   ],
 
   goodToKnow: [
-    "No experience needed, every routine is taught from scratch before it is danced",
-    "You do not need a partner, come on your own or bring your whole crew",
-    "Boots or closed toe shoes are best, the floor gets busy",
-    "Come early if you want the beginner lesson before the competition starts",
-    "Spectators are welcome, you do not have to compete to come and dance",
-    "Times, venue and ticket details are being finalised, contact us and we'll let you know first",
+    "Doors and entry to the bar are handled by The Yale Saloon, 1300 Granville St",
+    "The 8:00 PM lesson is normal line dancing, no experience and no partner needed",
+    "Come for 8:00 PM if you are competing, the routines are taught in that hour",
+    "Winners for both the dance competition and the costume contest are called at midnight",
+    "Spectators are welcome, you only need entry to the bar to come and dance",
+    "19+ with photo ID, boots or closed toe shoes are best on a busy floor",
   ],
 } as const;
