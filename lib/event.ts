@@ -17,7 +17,8 @@ export const specialEvent = {
 
   name: "Dance Till You Die",
   eyebrow: "Sunday, October 25",
-  tagline: "A Halloween night with The Yale Saloon",
+  tagline: "Line Dancing Competition & Costume Contest",
+  prizeLine: "Cash Prizes and More",
 
   /* ▸ TICKETS: paste the Yale sign-up link here once it is live.
      While this is empty the buttons show "Sign Up Opens Soon" instead. */
@@ -25,7 +26,7 @@ export const specialEvent = {
   ticketsLabel: "Sign Me Up",
 
   intro:
-    "One night only, in collaboration with The Yale Saloon. We're taking over Vancouver's country nightclub for Halloween with a line dancing lesson, a dance competition and a costume contest. Wear the costume, learn the routine, dance for the prizes.",
+    "One night only, in collaboration with The Yale Saloon. We're taking over Vancouver's country nightclub for Halloween with a line dancing lesson, a dance competition and a costume contest. Wear the costume, learn the routine, dance for the cash.",
 
   details: [
     { label: "Date", value: "Sunday, October 25, 2026" },
@@ -47,7 +48,7 @@ export const specialEvent = {
         "$5 to sign up, plus entry to the bar",
         "Wristband and competition number on sign up",
         "Dancing from 9:00 PM to 11:30 PM",
-        "Winners and prizes at midnight",
+        "Cash prizes and more at midnight",
       ],
     },
     {
