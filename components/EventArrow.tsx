@@ -20,20 +20,38 @@ export default function EventArrow() {
     const draw = () => {
       if (window.innerWidth >= 1024) return setPath(null);
       const base = svg.getBoundingClientRect();
-      const n = note.getBoundingClientRect();
+      const top = document.getElementById("hero-event-note-top") ?? note;
+      const t = top.getBoundingClientRect();
       const b = button.getBoundingClientRect();
 
-      // Tail: just right of the note, level with its first line
-      const sx = n.right - base.left + 8;
-      const sy = n.top - base.top + n.height * 0.3;
+      // Tail: just right of "Upcoming", level with the middle of that line
+      const sx = t.right - base.left + 10;
+      const sy = t.top - base.top + t.height * 0.5;
       // Tip: centre of the menu button, just under its bottom edge
       const ex = b.left + b.width / 2 - base.left;
-      const ey = b.bottom - base.top + 4;
+      const ey = b.bottom - base.top + 6;
 
-      const head = 9;
+      // Hand-drawn style swoop: out to the right with a slight dip,
+      // then curving up so the head points straight into the button
+      const dx = ex - sx;
+      const dy = Math.max(0, sy - ey);
+      const c1x = sx + dx * 0.45;
+      const c1y = sy + 10;
+      const c2x = ex;
+      const c2y = ey + Math.max(34, dy + 24);
+
+      // Arrowhead follows the direction the curve arrives in
+      const angle = Math.atan2(ey - c2y, ex - c2x);
+      const len = 11;
+      const spread = 0.5;
+      const hx1 = ex - len * Math.cos(angle - spread);
+      const hy1 = ey - len * Math.sin(angle - spread);
+      const hx2 = ex - len * Math.cos(angle + spread);
+      const hy2 = ey - len * Math.sin(angle + spread);
+
       setPath({
-        curve: `M${sx} ${sy} Q${ex} ${sy} ${ex} ${ey}`,
-        head: `M${ex - head * 0.75} ${ey + head} L${ex} ${ey} L${ex + head * 0.75} ${ey + head}`,
+        curve: `M${sx} ${sy} C${c1x} ${c1y} ${c2x} ${c2y} ${ex} ${ey}`,
+        head: `M${hx1} ${hy1} L${ex} ${ey} L${hx2} ${hy2}`,
       });
     };
 
@@ -56,7 +74,7 @@ export default function EventArrow() {
       className="pointer-events-none absolute inset-0 z-30 h-full w-full overflow-visible lg:hidden"
       fill="none"
       stroke="#C483C8"
-      strokeWidth="2.5"
+      strokeWidth="2.25"
       strokeLinecap="round"
       strokeLinejoin="round"
     >

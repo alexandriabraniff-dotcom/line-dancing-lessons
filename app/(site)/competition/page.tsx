@@ -63,33 +63,38 @@ export default function CompetitionPage() {
         className="grain relative px-[var(--gutter)] pt-[var(--section-top)] pb-[var(--section)]"
         style={{ background: `linear-gradient(180deg, ${STONE_ALT} 0%, ${STONE} 100%)` }}
       >
-        <div className="relative z-10 max-w-6xl mx-auto grid items-center gap-[var(--gap)] md:grid-cols-2">
+        {/* Title block, centred above everything */}
+        <div className="relative z-10 max-w-6xl mx-auto text-center">
+          <p className={`${eyebrowClass} mb-4`}>One Night Only, {specialEvent.eyebrow}</p>
+
+          <h1 className="rye uppercase leading-[0.95] tracking-wide">
+            <span className="block text-[#A62019]" style={{ fontSize: "var(--text-h1)" }}>
+              Dance
+            </span>
+            <span
+              className="block text-[#F7EAD8]"
+              style={{ fontSize: "calc(var(--text-h1) * 0.58)" }}
+            >
+              Till You
+            </span>
+            <span className="block text-[#A62019]" style={{ fontSize: "var(--text-h1)" }}>
+              Die
+            </span>
+          </h1>
+
+          <p className="brygada mt-6 text-[length:clamp(1.1rem,1.5vw,1.65rem)] font-bold uppercase tracking-[0.18em] text-[#F7EAD8]">
+            {specialEvent.tagline}
+          </p>
+        </div>
+
+        {/* Write-up left, image right */}
+        <div className="relative z-10 max-w-6xl mx-auto mt-[var(--section-sm)] grid items-center gap-[var(--gap)] md:grid-cols-2">
           <div className="text-center md:text-left">
-            <p className={`${eyebrowClass} mb-4`}>One Night Only, {specialEvent.eyebrow}</p>
-
-            <h1 className="rye uppercase leading-[0.95] tracking-wide">
-              <span className="block text-[#A62019]" style={{ fontSize: "var(--text-h1)" }}>
-                Dance
-              </span>
-              <span
-                className="block text-[#F7EAD8]"
-                style={{ fontSize: "calc(var(--text-h1) * 0.58)" }}
-              >
-                Till You
-              </span>
-              <span className="block text-[#A62019]" style={{ fontSize: "var(--text-h1)" }}>
-                Die
-              </span>
-            </h1>
-
-            <p className="brygada mt-6 text-[length:clamp(1.1rem,1.35vw,1.5rem)] font-bold uppercase tracking-[0.18em] text-[#F7EAD8]">
-              {specialEvent.tagline}
-            </p>
-            <p className="brygada mt-2 text-[length:clamp(1.38rem,1.75vw,1.88rem)] font-bold italic text-[#D0483A]">
+            <p className="brygada text-[length:clamp(1.38rem,1.75vw,1.88rem)] font-bold italic text-[#D0483A]">
               {specialEvent.prizeLine}
             </p>
 
-            <p className="mt-6 text-[length:var(--text-body)] leading-relaxed text-[#F7EAD8]/75">
+            <p className="mt-4 text-[length:var(--text-body)] leading-relaxed text-[#F7EAD8]/75">
               {specialEvent.intro}
             </p>
 

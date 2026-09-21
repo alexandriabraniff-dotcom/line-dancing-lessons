@@ -47,7 +47,7 @@ export default function HomeHero() {
           id="hero-event-note"
           className="brygada absolute bottom-[calc(100%-11svh+0.6rem)] left-1/2 -translate-x-1/2 whitespace-nowrap text-center text-[length:clamp(0.95rem,4.3vw,1.3rem)] font-bold italic leading-tight text-[#C483C8] drop-shadow-[0_2px_8px_rgba(30,15,11,0.95)] lg:hidden"
         >
-          Upcoming
+          <span id="hero-event-note-top">Upcoming</span>
           <br />
           Special Event
         </p>
