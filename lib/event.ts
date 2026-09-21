@@ -60,9 +60,14 @@ export const specialEvent = {
   image: "",
   imageAlt: "Dance Till You Die, Halloween line dancing at The Yale Saloon",
 
-  /* Rules for each contest, one string per rule (client to supply) */
+  /* Rules for each contest: an optional short paragraph, then one string per bullet */
   rules: [
-    { title: "Dance Competition", items: [] as string[] },
-    { title: "Costume Contest", items: [] as string[] },
+    {
+      title: "Dance Competition",
+      intro:
+        "Dance Till You Die is a line dancing endurance competition where participants earn points by completing as many qualifying line dances as possible throughout the competition. The dancer with the most points at the end of the competition wins.",
+      items: [] as string[],
+    },
+    { title: "Costume Contest", intro: "", items: [] as string[] },
   ],
 } as const;

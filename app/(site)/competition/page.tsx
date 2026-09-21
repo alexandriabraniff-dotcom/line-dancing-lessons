@@ -162,7 +162,7 @@ export default function CompetitionPage() {
           </div>
 
           <div className="grid gap-[var(--gap)] md:grid-cols-2">
-            {specialEvent.rules.map(({ title, items }) => (
+            {specialEvent.rules.map(({ title, intro, items }) => (
               <div
                 key={title}
                 className="border-t border-[#F7EAD8]/20 pt-7 text-center md:border md:border-[#F7EAD8]/15 md:bg-[#1F1715] md:p-[max(1.25rem,2.2vw)]"
@@ -173,6 +173,11 @@ export default function CompetitionPage() {
                 >
                   {title}
                 </h3>
+                {intro && (
+                  <p className="mx-auto mt-4 max-w-[34rem] text-[length:var(--text-body)] leading-relaxed text-[#F7EAD8]/75">
+                    {intro}
+                  </p>
+                )}
                 {items.length > 0 && (
                   <ul className="mt-5 space-y-3">
                     {items.map((item) => (
