@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { HeroNav } from "@/components/Nav";
+/* TEMPORARY: special event note + arrow, remove with lib/event.ts */
+import EventArrow from "@/components/EventArrow";
 
 const focusRing =
   "focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#C483C8]";
@@ -40,6 +42,15 @@ export default function HomeHero() {
           sizes="60vw"
           className="absolute left-1/2 top-[11svh] w-[45%] -translate-x-1/2 drop-shadow-[0_8px_20px_rgba(30,15,11,0.45)] lg:hidden"
         />
+        {/* TEMPORARY: phones, event note centred just above the logo */}
+        <p
+          id="hero-event-note"
+          className="brygada absolute bottom-[calc(100%-11svh+0.6rem)] left-1/2 -translate-x-1/2 whitespace-nowrap text-center text-[length:clamp(0.95rem,4.3vw,1.3rem)] font-bold italic leading-tight text-[#C483C8] drop-shadow-[0_2px_8px_rgba(30,15,11,0.95)] lg:hidden"
+        >
+          Upcoming
+          <br />
+          Special Event
+        </p>
         {/* Phones: cream title centred between the logo and the bottom of the arch.
             The wrapper does the centring so the fade-up transform can't shift it. */}
         <div className="absolute inset-x-0 bottom-0 top-[calc(11svh+(100vw-2*var(--hero-gutter))*0.45)] flex items-center justify-center lg:hidden">
@@ -59,6 +70,9 @@ export default function HomeHero() {
           className="absolute inset-x-0 top-0 hidden h-1/3 bg-linear-to-b from-[#1E0F0B]/60 to-transparent lg:block"
         />
       </div>
+
+      {/* TEMPORARY: arrow from the event note to the menu button (phones) */}
+      <EventArrow />
 
       {/* Navbar spans both halves */}
       <div className="relative z-20 row-start-1 lg:col-start-1 lg:col-span-2">

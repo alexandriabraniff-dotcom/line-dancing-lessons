@@ -14,6 +14,9 @@ const headingClass =
 
 const linkClass = `text-[length:var(--text-body)] transition-colors hover:text-[#C483C8] ${focusRing}`;
 
+/* Get in Touch values scale to their column (cqw) so the email always fits on one line */
+const contactValue = `block whitespace-nowrap text-[length:min(var(--text-body),5.9cqw)] transition-colors hover:text-[#C483C8] ${focusRing}`;
+
 const pages = [
   /* TEMPORARY: special event page, remove with lib/event.ts */
   { href: "/competition", label: "Competition" },
@@ -54,7 +57,7 @@ function ContactRow({ icon, label, children }: { icon: keyof typeof icons; label
           {icons[icon]}
         </svg>
       </span>
-      <span className="min-w-0">
+      <span className="@container min-w-0 flex-1">
         <span className="block text-[0.92rem] uppercase tracking-[0.2em] text-[#F7EAD8]/45">{label}</span>
         {children}
       </span>
@@ -68,7 +71,7 @@ export default function Footer() {
   return (
     <footer className="grain relative bg-[#1E0F0B] text-[#F7EAD8]">
       <div className="relative z-10 mx-auto max-w-7xl px-[var(--gutter)] pt-[var(--section)] pb-[clamp(1.5rem,2.5vw,2.5rem)]">
-        <div className="grid grid-cols-2 gap-x-[var(--gap)] gap-y-10 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,0.8fr)_minmax(0,0.9fr)_minmax(0,1.2fr)] lg:gap-y-12">
+        <div className="grid grid-cols-2 gap-x-[var(--gap)] gap-y-10 lg:grid-cols-[minmax(0,1.25fr)_minmax(0,0.7fr)_minmax(0,0.9fr)_minmax(0,1.55fr)] lg:gap-y-12">
           {/* Brand: centred on phones and tablets, left aligned on desktop */}
           <div className="col-span-2 flex flex-col items-center border-b border-[#F7EAD8]/10 pb-10 text-center lg:col-span-1 lg:items-start lg:border-b-0 lg:pb-0 lg:text-left">
             <Link href="/" aria-label="Wildflower Line Dancing, home" className={`inline-block ${focusRing}`}>
@@ -128,19 +131,21 @@ export default function Footer() {
             <p className={headingClass}>Get in Touch</p>
             <ul className="space-y-4">
               <ContactRow icon="email" label="Email">
-                <a href={`mailto:${site.email}`} className={`${linkClass} break-all text-[#F7EAD8]`}>
+                <a href={`mailto:${site.email}`} className={`${contactValue} text-[#F7EAD8]`}>
                   {site.email}
                 </a>
               </ContactRow>
               {site.phone && (
                 <ContactRow icon="phone" label="Phone">
-                  <a href={phoneHref(site.phone)} className={`${linkClass} text-[#F7EAD8]`}>
+                  <a href={phoneHref(site.phone)} className={`${contactValue} text-[#F7EAD8]`}>
                     {site.phone}
                   </a>
                 </ContactRow>
               )}
               <ContactRow icon="area" label="We Come to You">
-                <span className="text-[length:var(--text-body)] text-[#F7EAD8]">Anywhere in {site.serviceArea}</span>
+                <span className="block whitespace-nowrap text-[length:min(var(--text-body),5.9cqw)] text-[#F7EAD8]">
+                  Anywhere in {site.serviceArea}
+                </span>
               </ContactRow>
             </ul>
             <Link
