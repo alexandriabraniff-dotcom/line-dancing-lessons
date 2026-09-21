@@ -107,9 +107,14 @@ export default function CompetitionPage() {
               {specialEvent.learnMoreLine}
             </p>
 
-            <p className="mt-4 text-[length:var(--text-body)] leading-relaxed text-[#F7EAD8]/75">
-              {specialEvent.intro}
-            </p>
+            <div className="mt-4 space-y-4 text-[length:var(--text-body)] leading-relaxed text-[#F7EAD8]/75">
+              {specialEvent.intro.map(({ lead, text }) => (
+                <p key={text}>
+                  {lead && <strong className="font-bold text-[#F7EAD8]">{lead} </strong>}
+                  {text}
+                </p>
+              ))}
+            </div>
 
             <div className="mt-8 flex justify-center md:justify-start">
               <TicketButton label={specialEvent.ticketsLabel} className={buttonRed} />

@@ -27,8 +27,33 @@ export const specialEvent = {
 
   /* "Learn More" section beside the image */
   learnMoreLine: "Event on October 25th",
-  intro:
-    "Join us at The Yale Saloon where we will be hosting a Halloween themed line dancing competition. You'll find us at 1300 Granville St in Vancouver, where we'll teach a line dancing lesson from 8:00 PM to 9:00 PM, then the dance competition runs from 9:00 PM to 11:30 PM, with a costume contest all night long. Winners for both are announced at midnight, with cash prizes and more up for grabs.",
+  /* Write-up paragraphs. `lead` is shown in bold at the start of the paragraph. */
+  intro: [
+    {
+      lead: "",
+      text: "Join us at The Yale Saloon, 1300 Granville St in Vancouver, where we will be hosting a Halloween themed line dancing competition. One night of boots, costumes and friendly rivalry, and everyone is welcome, whether you're competing, dressing up or just coming out to dance.",
+    },
+    {
+      lead: "The Class.",
+      text: "The night kicks off with our regular line dancing class from 8:00 PM to 9:00 PM. It's open to everyone and no experience is needed, so it's the perfect warm up before the floor turns competitive.",
+    },
+    {
+      lead: "The Competition.",
+      text: "Competing? You'll receive a wristband and a competition number when you arrive. Head to the competition table to sign in so our MCs know you're here. The line dancing competition runs from 9:00 PM to 11:30 PM, and winners are decided at midnight, with cash prizes and more up for grabs.",
+    },
+    {
+      lead: "The Costume Contest.",
+      text: "Anyone in the bar can compete and have a chance to win. Find the costume contest booth, put your name down, and show off your best look. The winner is chosen at midnight.",
+    },
+    {
+      lead: "More at the Yale.",
+      text: "On top of all the special events, the Yale has plenty more to keep you entertained, with a bull riding competition, photo booths and pool tables.",
+    },
+    {
+      lead: "",
+      text: "We hope to see you there for a deadly night of fun.",
+    },
+  ],
 
   /* ▸ IMAGE: drop a file in public/ and set its path here, e.g. "/events/dance-till-you-die.jpg".
      While this is empty the page shows a placeholder box. */
@@ -41,7 +66,8 @@ export const specialEvent = {
       items: [
         "The Yale Saloon is a 19+ venue, so bring photo ID",
         "Sign up costs $5 and is separate from your entry to the bar",
-        "Every competitor is given a wristband and a competition number on sign up",
+        "Every competitor receives a wristband and a competition number on arrival",
+        "Sign in at the competition table so the MCs know you have arrived",
         "Wear your wristband all night, it is how we know you are competing",
         "Be on the floor when your number is called, we cannot hold up the rounds",
         "Everyone dances the same routines, taught in the 8:00 PM to 9:00 PM lesson",
