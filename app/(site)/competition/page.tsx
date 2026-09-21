@@ -161,7 +161,7 @@ export default function CompetitionPage() {
             </h2>
           </div>
 
-          <div className="grid gap-[var(--gap)] md:grid-cols-2">
+          <div className="grid gap-[var(--gap)] md:grid-cols-2 md:items-start">
             {specialEvent.rules.map(({ title, intro, items }) => (
               <div
                 key={title}
@@ -179,11 +179,11 @@ export default function CompetitionPage() {
                   </p>
                 )}
                 {items.length > 0 && (
-                  <ul className="mt-5 space-y-3">
+                  <ul className="mx-auto mt-6 max-w-[34rem] space-y-3 border-t border-[#F7EAD8]/15 pt-6 text-left">
                     {items.map((item) => (
                       <li
                         key={item}
-                        className="flex items-start justify-center gap-3 text-[length:var(--text-body)] leading-snug text-[#F7EAD8]/75"
+                        className="flex items-start gap-3 text-[length:var(--text-body)] leading-snug text-[#F7EAD8]/75"
                       >
                         <Bullet />
                         {item}
