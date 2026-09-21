@@ -14,9 +14,6 @@ export const metadata = {
   alternates: { canonical: "/competition" },
 };
 
-/* Poster palette, only used on this page */
-const STONE = "#17110F";
-const STONE_ALT = "#1F1715";
 
 const focusRing =
   "focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#C483C8]";
@@ -59,10 +56,19 @@ export default function CompetitionPage() {
   return (
     <div className="bg-[#17110F] text-[#F7EAD8]">
       {/* ── Event: write-up left, image right ── */}
-      <section
-        className="grain relative px-[var(--gutter)] pt-[var(--section-top)] pb-[var(--section)]"
-        style={{ background: `linear-gradient(180deg, ${STONE_ALT} 0%, ${STONE} 100%)` }}
-      >
+      <section className="relative isolate overflow-hidden px-[var(--gutter)] pt-[var(--section-top)] pb-[var(--section)]">
+        {/* Cracked wall background with a brown tint, like the poster */}
+        <Image
+          src="/events/cracked-wall.jpg"
+          alt=""
+          fill
+          preload
+          sizes="100vw"
+          className="-z-10 object-cover"
+        />
+        <div aria-hidden className="absolute inset-0 -z-10 bg-[#6B4841] mix-blend-multiply" />
+        <div aria-hidden className="absolute inset-0 -z-10 bg-[#1E0F0B]/70" />
+
         {/* Title block, centred above everything */}
         <div className="relative z-10 max-w-6xl mx-auto text-center">
           <h1 className="rye uppercase leading-[0.95] tracking-wide">
