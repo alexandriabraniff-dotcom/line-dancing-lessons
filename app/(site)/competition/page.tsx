@@ -161,7 +161,7 @@ export default function CompetitionPage() {
             </h2>
           </div>
 
-          <div className="grid gap-[var(--gap)] md:grid-cols-2 md:items-start">
+          <div className="grid gap-[var(--gap)] md:grid-cols-2">
             {specialEvent.rules.map(({ title, intro, items }) => (
               <div
                 key={title}

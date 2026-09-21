@@ -82,6 +82,20 @@ export const specialEvent = {
         "The dancer with the most points at the end of the competition wins",
       ] as string[],
     },
-    { title: "Costume Contest", intro: "", items: [] as string[] },
+    {
+      title: "Costume Contest",
+      intro:
+        "The costume contest is open to everyone at the Yale on the night. Dress up, sign up at the costume contest booth and you're in the running for a prize, whether you're competing on the dance floor or just coming out to celebrate Halloween.",
+      items: [
+        "Anyone in the bar can enter, no competition ticket needed",
+        "Free to enter, you only pay your entry to the bar",
+        "Sign up at the costume contest booth inside the Yale",
+        "One entry per person, and group costumes count as a single entry",
+        "Costumes are judged on originality, effort and overall look",
+        "No real or replica weapons, and nothing offensive",
+        "Make sure you can move safely in your costume, the dance floor will be busy all night",
+        "The winner is chosen and announced at midnight",
+      ] as string[],
+    },
   ],
 } as const;
