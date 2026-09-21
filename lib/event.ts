@@ -35,7 +35,7 @@ export const specialEvent = {
     },
     {
       lead: "The Class.",
-      text: "The night kicks off with our regular line dancing class from 8:00 PM to 9:00 PM. It's open to everyone and no experience is needed, so it's the perfect warm up before the floor turns competitive.",
+      text: "The night kicks off with our regular line dancing class from 8:00 PM to 9:00 PM. Just like any other night, we'll teach a mix of line dances so beginners have the chance to learn, and this time we'll also teach some of the dances that will be played throughout the competition. It's open to everyone and no experience is needed, so it's the perfect warm up before the floor turns competitive.",
     },
     {
       lead: "The Competition.",
