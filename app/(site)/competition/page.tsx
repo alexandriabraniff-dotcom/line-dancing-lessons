@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Creepster } from "next/font/google";
+import { Nosifer } from "next/font/google";
 import { specialEvent } from "@/lib/event";
 
 /* ── TEMPORARY PAGE: "Dance Till You Die", October 25 ──────────────────
@@ -9,7 +9,7 @@ import { specialEvent } from "@/lib/event";
    once the event is over. */
 
 /* Dripping horror font for "Die" in the title, only loaded on this page */
-const creepster = Creepster({ weight: "400", subsets: ["latin"], display: "swap" });
+const nosifer = Nosifer({ weight: "400", subsets: ["latin"], display: "swap" });
 
 export const metadata = {
   title: `${specialEvent.name}, Halloween Line Dancing Competition`,
@@ -86,8 +86,8 @@ export default function CompetitionPage() {
               Till You
             </span>
             <span
-              className={`${creepster.className} mt-[0.08em] block tracking-[0.04em] text-[#A62019]`}
-              style={{ fontSize: "calc(var(--text-h1) * 1.75)" }}
+              className={`${nosifer.className} mt-[0.12em] mb-[0.2em] block text-[#A62019]`}
+              style={{ fontSize: "calc(var(--text-h1) * 1.3)" }}
             >
               Die
             </span>
