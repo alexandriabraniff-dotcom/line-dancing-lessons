@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Creepster } from "next/font/google";
 import { specialEvent } from "@/lib/event";
 
 /* ── TEMPORARY PAGE: "Dance Till You Die", October 25 ──────────────────
@@ -6,6 +7,9 @@ import { specialEvent } from "@/lib/event";
    on the same section layout as the rest of the site.
    Delete this folder and the rest of the steps listed in lib/event.ts
    once the event is over. */
+
+/* Dripping horror font for "Die" in the title, only loaded on this page */
+const creepster = Creepster({ weight: "400", subsets: ["latin"], display: "swap" });
 
 export const metadata = {
   title: `${specialEvent.name}, Halloween Line Dancing Competition`,
@@ -81,7 +85,10 @@ export default function CompetitionPage() {
             >
               Till You
             </span>
-            <span className="block text-[#A62019]" style={{ fontSize: "calc(var(--text-h1) * 1.5)" }}>
+            <span
+              className={`${creepster.className} mt-[0.08em] block tracking-[0.04em] text-[#A62019]`}
+              style={{ fontSize: "calc(var(--text-h1) * 1.75)" }}
+            >
               Die
             </span>
           </h1>
@@ -158,7 +165,7 @@ export default function CompetitionPage() {
             {specialEvent.rules.map(({ title, items }) => (
               <div
                 key={title}
-                className="border-t border-[#F7EAD8]/20 pt-7 md:border md:border-[#F7EAD8]/15 md:bg-[#1F1715] md:p-[max(1.25rem,2.2vw)]"
+                className="border-t border-[#F7EAD8]/20 pt-7 text-center md:border md:border-[#F7EAD8]/15 md:bg-[#1F1715] md:p-[max(1.25rem,2.2vw)]"
               >
                 <h3
                   className="rye text-[#F7EAD8] uppercase tracking-wide"
@@ -166,17 +173,19 @@ export default function CompetitionPage() {
                 >
                   {title}
                 </h3>
-                <ul className="mt-5 space-y-3">
-                  {items.map((item) => (
-                    <li
-                      key={item}
-                      className="flex items-start gap-3 text-[length:var(--text-body)] leading-snug text-[#F7EAD8]/75"
-                    >
-                      <Bullet />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+                {items.length > 0 && (
+                  <ul className="mt-5 space-y-3">
+                    {items.map((item) => (
+                      <li
+                        key={item}
+                        className="flex items-start justify-center gap-3 text-[length:var(--text-body)] leading-snug text-[#F7EAD8]/75"
+                      >
+                        <Bullet />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </div>
             ))}
           </div>

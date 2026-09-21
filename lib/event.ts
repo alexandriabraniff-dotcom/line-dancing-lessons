@@ -60,37 +60,9 @@ export const specialEvent = {
   image: "",
   imageAlt: "Dance Till You Die, Halloween line dancing at The Yale Saloon",
 
+  /* Rules for each contest, one string per rule (client to supply) */
   rules: [
-    {
-      title: "Dance Competition Rules",
-      items: [
-        "The Yale Saloon is a 19+ venue, so bring photo ID",
-        "Sign up costs $5 and is separate from your entry to the bar",
-        "Every competitor receives a wristband and a competition number on arrival",
-        "Sign in at the competition table so the MCs know you have arrived",
-        "Wear your wristband all night, it is how we know you are competing",
-        "Be on the floor when your number is called, we cannot hold up the rounds",
-        "Everyone dances the same routines, taught in the 8:00 PM to 9:00 PM lesson",
-        "The competition runs from 9:00 PM to 11:30 PM",
-        "Judges score on timing, technique and showmanship, and their decision is final",
-        "Closed toe shoes or boots only on the competition floor",
-        "Winners are announced and prizes handed out at midnight",
-      ],
-    },
-    {
-      title: "Costume Contest Rules",
-      items: [
-        "Free to enter, you only pay your entry to the bar",
-        "Sign up at the costume contest booth inside the Yale",
-        "One entry per person, and group costumes count as a single entry",
-        "Costumes are judged on originality, effort and stage presence",
-        "Keep it family friendly, we reserve the right to turn away anything offensive",
-        "No face coverings that block your vision, and no real or replica weapons",
-        "Your costume has to be safe to dance in for the full night",
-        "Be on the floor when costume judging is called, entries are not judged from the sidelines",
-        "Winners are announced and prizes handed out at midnight",
-      ],
-    },
+    { title: "Dance Competition", items: [] as string[] },
+    { title: "Costume Contest", items: [] as string[] },
   ],
-
 } as const;
