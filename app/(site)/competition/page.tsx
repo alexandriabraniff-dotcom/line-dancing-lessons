@@ -65,19 +65,17 @@ export default function CompetitionPage() {
       >
         {/* Title block, centred above everything */}
         <div className="relative z-10 max-w-6xl mx-auto text-center">
-          <p className={`${eyebrowClass} mb-4`}>One Night Only, {specialEvent.eyebrow}</p>
-
           <h1 className="rye uppercase leading-[0.95] tracking-wide">
-            <span className="block text-[#A62019]" style={{ fontSize: "var(--text-h1)" }}>
+            <span className="block text-[#A62019]" style={{ fontSize: "calc(var(--text-h1) * 1.5)" }}>
               Dance
             </span>
             <span
               className="block text-[#F7EAD8]"
-              style={{ fontSize: "calc(var(--text-h1) * 0.58)" }}
+              style={{ fontSize: "calc(var(--text-h1) * 0.87)" }}
             >
               Till You
             </span>
-            <span className="block text-[#A62019]" style={{ fontSize: "var(--text-h1)" }}>
+            <span className="block text-[#A62019]" style={{ fontSize: "calc(var(--text-h1) * 1.5)" }}>
               Die
             </span>
           </h1>
@@ -85,13 +83,22 @@ export default function CompetitionPage() {
           <p className="brygada mt-6 text-[length:clamp(1.1rem,1.5vw,1.65rem)] font-bold uppercase tracking-[0.18em] text-[#F7EAD8]">
             {specialEvent.tagline}
           </p>
+          <p className="brygada mt-2 text-[length:clamp(1.38rem,1.75vw,1.88rem)] font-bold italic text-[#D0483A]">
+            {specialEvent.prizeLine}
+          </p>
         </div>
 
         {/* Write-up left, image right */}
         <div className="relative z-10 max-w-6xl mx-auto mt-[var(--section-sm)] grid items-center gap-[var(--gap)] md:grid-cols-2">
           <div className="text-center md:text-left">
-            <p className="brygada text-[length:clamp(1.38rem,1.75vw,1.88rem)] font-bold italic text-[#D0483A]">
-              {specialEvent.prizeLine}
+            <h2
+              className="rye text-[#F7EAD8] uppercase tracking-wide"
+              style={{ fontSize: "var(--text-h2)" }}
+            >
+              Learn More
+            </h2>
+            <p className="brygada mt-3 text-[length:clamp(1.25rem,1.6vw,1.75rem)] font-bold italic text-[#D0483A]">
+              {specialEvent.learnMoreLine}
             </p>
 
             <p className="mt-4 text-[length:var(--text-body)] leading-relaxed text-[#F7EAD8]/75">

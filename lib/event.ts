@@ -25,8 +25,10 @@ export const specialEvent = {
   ticketsUrl: "",
   ticketsLabel: "Sign Me Up",
 
+  /* "Learn More" section beside the image */
+  learnMoreLine: "Event on October 25th",
   intro:
-    "Join us on Sunday, October 25 at The Yale Saloon, 1300 Granville St in Vancouver, for a Halloween night of line dancing hosted together with the Yale. We'll teach a line dancing lesson from 8:00 PM to 9:00 PM, then the dance competition runs from 9:00 PM to 11:30 PM, with a costume contest all night long. Winners for both are announced at midnight, with cash prizes and more up for grabs.",
+    "Join us at The Yale Saloon where we will be hosting a Halloween themed line dancing competition. You'll find us at 1300 Granville St in Vancouver, where we'll teach a line dancing lesson from 8:00 PM to 9:00 PM, then the dance competition runs from 9:00 PM to 11:30 PM, with a costume contest all night long. Winners for both are announced at midnight, with cash prizes and more up for grabs.",
 
   /* ▸ IMAGE: drop a file in public/ and set its path here, e.g. "/events/dance-till-you-die.jpg".
      While this is empty the page shows a placeholder box. */
