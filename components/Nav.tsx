@@ -46,24 +46,28 @@ function EventNoteDesktop() {
   );
 }
 
+/* Hangs under the menu button with its right edge on the button's centre line,
+   so the arrow tip always points at the middle of the button on any phone. */
 function EventNoteMobile() {
   return (
-    <div className="pointer-events-none absolute right-0 top-full z-20 mt-1 flex items-start gap-1 lg:hidden">
-      <p className="brygada whitespace-nowrap pt-[0.4rem] text-[0.95rem] font-bold italic leading-tight text-[#C483C8] drop-shadow-[0_2px_8px_rgba(30,15,11,0.95)]">
-        {specialEvent.heroNote}
+    <div className="pointer-events-none absolute right-1/2 top-full z-20 flex items-start gap-1 lg:hidden">
+      <p className="brygada whitespace-nowrap pt-[1.1rem] text-right text-[0.95rem] font-bold italic leading-tight text-[#C483C8] drop-shadow-[0_2px_8px_rgba(30,15,11,0.95)]">
+        Upcoming
+        <br />
+        Special Event
       </p>
       <svg
         aria-hidden
-        viewBox="0 0 40 30"
-        className="mt-[0.15rem] w-[2.1rem] shrink-0 text-[#C483C8]"
+        viewBox="0 0 40 32"
+        className="w-[2.1rem] shrink-0 overflow-visible text-[#C483C8]"
         fill="none"
         stroke="currentColor"
         strokeWidth="2.5"
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        <path d="M2 27C15 25 29 18 34 4" />
-        <path d="M35 3 23 5m12-2 1 12" />
+        <path d="M2 30C17 28 33 20 40 1" />
+        <path d="M40 1 29 7M40 1l2 12" />
       </svg>
     </div>
   );
@@ -274,9 +278,7 @@ function NavBar({ hero }: { hero: boolean }) {
             Book Your Event
           </Link>
 
-          {/* TEMPORARY: event note pointing at the menu button on phones */}
-          {hero && <EventNoteMobile />}
-
+          <div className="relative -mr-2 lg:hidden">
           <button
             ref={toggleRef}
             type="button"
@@ -284,12 +286,15 @@ function NavBar({ hero }: { hero: boolean }) {
             aria-expanded={open}
             aria-controls="mobile-menu"
             aria-label="Open menu"
-            className={`relative -mr-2 h-11 w-11 lg:hidden text-[#6B4841] ${focusRing}`}
+            className={`relative block h-11 w-11 text-[#6B4841] ${focusRing}`}
           >
             <span aria-hidden className="absolute left-1/2 top-1/2 h-[1.5px] w-6 -translate-x-1/2 -translate-y-[7px] bg-current" />
             <span aria-hidden className="absolute left-1/2 top-1/2 h-[1.5px] w-6 -translate-x-1/2 bg-current" />
             <span aria-hidden className="absolute left-1/2 top-1/2 h-[1.5px] w-6 -translate-x-1/2 translate-y-[7px] bg-current" />
           </button>
+          {/* TEMPORARY: event note pointing at the menu button on phones */}
+          {hero && <EventNoteMobile />}
+          </div>
         </div>
       </nav>
 
