@@ -4,7 +4,7 @@ import BookingButton from "@/components/BookingButton";
 export const metadata = {
   title: "Services",
   description:
-    "Line dancing lessons in Vancouver for weddings, birthdays, bachelorette and stag parties, corporate events and private groups. Beginner and intermediate friendly.",
+    "Line dancing lessons in Vancouver for weddings, birthdays, bachelorette and stag parties, corporate events and private lessons. Beginner and intermediate friendly, we come to you.",
   alternates: { canonical: "/services" },
 };
 
@@ -93,8 +93,9 @@ export default function ServicesPage() {
             Our Services
           </h1>
           <p className="mx-auto mt-4 max-w-[38rem] text-[length:var(--text-body)] leading-relaxed text-[#6B4841]/75">
-            Every session is tailored to your group, your venue and your vibe. Pick your occasion
-            down below and we&apos;ll book a meeting with you to plan your day.
+            Every session is tailored to your group, your venue and your vibe. We teach right
+            across Greater Vancouver, so pick your occasion down below and we&apos;ll book a meeting
+            with you to plan your day.
           </p>
         </div>
       </section>

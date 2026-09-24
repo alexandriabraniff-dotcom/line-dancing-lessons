@@ -29,7 +29,7 @@ const SITE_NAME = "Wildflower Line Dancing";
 
 /* Shown as the grey caption under the title in Google results (kept under ~155 characters) */
 const SITE_DESCRIPTION =
-  "Beginner and intermediate friendly line dancing in Vancouver for weddings, birthdays, bachelorette parties, corporate events and private groups. We come to you.";
+  "Beginner and intermediate friendly line dancing lessons in Vancouver for weddings, birthdays, special events and private lessons. No partner needed, we come to you.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -45,6 +45,9 @@ export const metadata: Metadata = {
     "beginner line dancing",
     "wedding line dance",
     "bachelorette party line dancing",
+    "line dancing classes Vancouver",
+    "country dancing Vancouver",
+    "line dance instructor Vancouver",
     "corporate event line dancing",
   ],
   openGraph: {

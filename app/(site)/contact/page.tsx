@@ -6,7 +6,7 @@ import { site } from "@/lib/site";
 export const metadata = {
   title: "Contact Us",
   description:
-    "Book a line dancing lesson in Vancouver for your wedding, birthday, corporate event or private group. We reply to every enquiry within 24 hours.",
+    "Book a line dancing lesson in Vancouver for your wedding, birthday, special event or private lessons. We travel across Greater Vancouver and reply within 24 hours.",
   alternates: { canonical: "/contact" },
 };
 
@@ -36,6 +36,11 @@ export default function ContactPage() {
           <p className="mx-auto mt-4 max-w-[38rem] text-[length:var(--text-body)] leading-relaxed text-[#6B4841]/75">
             Have a question or an idea for your event? Send us a message and we&apos;ll get back to you
             within 24 hours.
+          </p>
+          <p className="mx-auto mt-4 max-w-[38rem] text-[length:var(--text-body)] leading-relaxed text-[#6B4841]/75">
+            We teach line dancing anywhere in Greater Vancouver, including Vancouver, Burnaby,
+            Richmond, Surrey, New Westminster, Coquitlam, Langley and the North Shore. Tell us your
+            date, your venue and roughly how many people are coming and we&apos;ll take it from there.
           </p>
         </div>
       </section>
