@@ -54,7 +54,7 @@ export default function HomeHero() {
         {/* Phones: cream title centred between the logo and the bottom of the arch.
             The wrapper does the centring so the fade-up transform can't shift it. */}
         <div className="absolute inset-x-0 bottom-0 top-[calc(11svh+(100vw-2*var(--hero-gutter))*0.45)] flex items-center justify-center lg:hidden">
-          <h1
+          <p
             id="hero-heading"
             className="fade-up rye whitespace-nowrap text-center text-[length:clamp(1.4rem,7.4vw,2.4rem)] uppercase leading-[1.08] tracking-wide text-[#F7EAD8]"
             style={delay(0)}
@@ -62,7 +62,7 @@ export default function HomeHero() {
             Line Dancing
             <br />
             Lessons &amp; Events
-          </h1>
+          </p>
         </div>
         {/* Soft shade behind the nav links on desktop */}
         <div
@@ -95,7 +95,7 @@ export default function HomeHero() {
           className="fade-up max-w-[34rem] text-[length:var(--hero-body)] leading-relaxed text-[#6B4841] lg:mt-[var(--hero-gap)] lg:text-[#6B4841]/80"
           style={delay(160)}
         >
-          Beginner and intermediate line dancing for weddings, birthdays, social events and private groups.
+          Beginner and intermediate line dancing in Vancouver for weddings, birthdays, special events and private lessons.
         </p>
 
         <div

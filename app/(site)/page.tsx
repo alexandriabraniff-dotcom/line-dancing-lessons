@@ -3,15 +3,59 @@ import Link from "next/link";
 import HomeHero from "@/components/HomeHero";
 
 export const metadata = {
+  title: "Line Dancing Lessons in Vancouver",
+  description:
+    "Line dancing lessons in Vancouver for weddings, birthdays, special events and private lessons. Beginner and intermediate friendly, no partner needed, we come to you.",
   alternates: { canonical: "/" },
+};
+
+/* Questions we get asked most, also used for the FAQ structured data below */
+const faqs = [
+  {
+    q: "Do we need any line dancing experience?",
+    a: "Not at all. Most of the people we teach have never line danced before. We break every routine down step by step and build it up slowly, so beginners and experienced dancers end up on the floor together.",
+  },
+  {
+    q: "Do we need a partner?",
+    a: "No. Line dancing is danced in lines rather than pairs, so nobody gets left out and you can come on your own, as a couple or with your whole group.",
+  },
+  {
+    q: "Where in Vancouver do you teach?",
+    a: "We come to you anywhere in Greater Vancouver, including Vancouver, Burnaby, Richmond, Surrey, New Westminster, Coquitlam, Langley and the North Shore. Your venue, your home, an office or a hall all work.",
+  },
+  {
+    q: "How big can the group be?",
+    a: "Anything from a small private group to a full wedding reception. Tell us how many people you expect and we will shape the session around the space and the crowd.",
+  },
+  {
+    q: "How long is a lesson?",
+    a: "We build the session around your event. Most groups book between one and two hours, and at weddings we often teach a shorter lesson partway through the night so nobody misses the party.",
+  },
+  {
+    q: "How do we book?",
+    a: "Send us a message through the contact page or pick your occasion on the services page. We reply to every enquiry within 24 hours.",
+  },
+];
+
+/* Escapes "<" so the JSON can never break out of the script tag */
+const jsonLd = (data: unknown) => JSON.stringify(data).split("<").join("\\u003c");
+
+const faqStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map(({ q, a }) => ({
+    "@type": "Question",
+    name: q,
+    acceptedAnswer: { "@type": "Answer", text: a },
+  })),
 };
 
 /* Card artwork is 3:4 portrait with the title designed into the image */
 const occasions = [
   { title: "Weddings", image: "/services/weddings.png", section: "weddings" },
   { title: "Birthdays", image: "/services/birthdays.png", section: "birthdays" },
-  { title: "Special Events", image: "/services/special-events.png", section: "social-events" },
-  { title: "Private Lessons", image: "/services/private-lessons.png", section: "private-groups" },
+  { title: "Special Events", image: "/services/special-events.png", section: "special-events" },
+  { title: "Private Lessons", image: "/services/private-lessons.png", section: "private-lessons" },
 ];
 
 /* ── Gallery ──────────────────────────────────────────────
@@ -79,11 +123,46 @@ function GallerySlot({ photo, sizes, className }: { photo: Photo; sizes: string;
 export default function Home() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: jsonLd(faqStructuredData),
+        }}
+      />
+
       {/* ── Hero ── */}
       <HomeHero />
 
       {/* Divider between hero and services on phones */}
       <div aria-hidden className="mx-[var(--gutter)] h-px bg-[#6B4841]/25 lg:hidden" />
+
+      {/* ── Who we are, in plain words (also the page's main copy for search) ── */}
+      <section className="px-[var(--gutter)] pt-[var(--section)]">
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="brygada font-bold text-[length:var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-3">
+            Greater Vancouver
+          </p>
+          <h2
+            className="rye text-[#6B4841] uppercase tracking-wide"
+            style={{ fontSize: "var(--text-h2)" }}
+          >
+            Line Dancing Lessons in Vancouver
+          </h2>
+          <div className="mt-6 space-y-4 text-[length:var(--text-body)] leading-relaxed text-[#6B4841]/75">
+            <p>
+              Wildflower Line Dancing is Alex and Lily. We teach beginner and intermediate line
+              dancing across Greater Vancouver, from downtown Vancouver to Burnaby, Richmond,
+              Surrey, New Westminster, Coquitlam, Langley and the North Shore. Weddings, birthdays,
+              special events, private lessons, we bring the steps to you.
+            </p>
+            <p>
+              Nobody needs experience and nobody needs a partner. We break every routine down step
+              by step, keep the music going and have your whole group dancing together within
+              minutes. You pick the date and the venue, we bring the good time.
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* ── Book by Occasion ── */}
       <section id="our-services" className="px-[var(--gutter)] py-[var(--section)]">
@@ -189,6 +268,36 @@ export default function Home() {
               ))}
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ── Common questions ── */}
+      <section className="px-[var(--gutter)] py-[var(--section)]">
+        <div className="mx-auto max-w-4xl">
+          <div className="text-center">
+            <p className="brygada font-bold text-[length:var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-3">
+              Good to Know
+            </p>
+            <h2
+              className="rye text-[#6B4841] uppercase tracking-wide"
+              style={{ fontSize: "var(--text-h2)" }}
+            >
+              Common Questions
+            </h2>
+          </div>
+
+          <dl className="mt-12 grid gap-[var(--gap)] md:grid-cols-2">
+            {faqs.map(({ q, a }) => (
+              <div key={q} className="border-t border-[#6B4841]/20 pt-6">
+                <dt className="rye text-[#6B4841] uppercase tracking-wide text-[length:var(--text-h3)] leading-tight">
+                  {q}
+                </dt>
+                <dd className="mt-3 text-[length:var(--text-body)] leading-relaxed text-[#6B4841]/75">
+                  {a}
+                </dd>
+              </div>
+            ))}
+          </dl>
         </div>
       </section>
 

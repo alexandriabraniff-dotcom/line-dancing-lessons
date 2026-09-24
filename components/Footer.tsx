@@ -30,8 +30,8 @@ const pages = [
 const services = [
   { key: "weddings", label: "Weddings" },
   { key: "birthdays", label: "Birthdays" },
-  { key: "social-events", label: "Social Events" },
-  { key: "private-groups", label: "Private Groups" },
+  { key: "special-events", label: "Special Events" },
+  { key: "private-lessons", label: "Private Lessons" },
 ];
 
 const icons = {

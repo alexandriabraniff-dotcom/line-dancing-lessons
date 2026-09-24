@@ -92,8 +92,8 @@ export const bookingServices: BookingService[] = [
     ],
   },
   {
-    key: "social-events",
-    title: "Social Events",
+    key: "special-events",
+    title: "Special Events",
     image: "/services/special-events.png",
     intro: "Tell us about your event and we'll plan a session that gets everyone moving.",
     fields: [
@@ -119,8 +119,8 @@ export const bookingServices: BookingService[] = [
     ],
   },
   {
-    key: "private-groups",
-    title: "Private Groups",
+    key: "private-lessons",
+    title: "Private Lessons",
     image: "/services/private-lessons.png",
     intro: "Tell us about your crew and we'll shape every session around your group.",
     fields: [
@@ -166,7 +166,7 @@ export const contactService: BookingService = {
       label: "Type of Event",
       type: "select",
       required: true,
-      options: ["Wedding", "Birthday", "Social Event", "Private Group", "Other"],
+      options: ["Wedding", "Birthday", "Special Event", "Private Lessons", "Other"],
     },
     {
       name: "message",

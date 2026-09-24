@@ -40,7 +40,7 @@ const services: {
     image: "/services/photos/birthdays.jpg",
   },
   {
-    title: "Social Events",
+    title: "Special Events",
     desc: "Looking for an activity that actually gets people engaged? Line dancing breaks the ice, gets everyone moving, and creates a shared experience your group won't forget.",
     details: [
       "Corporate team events",
@@ -52,7 +52,7 @@ const services: {
     image: "/services/photos/special-events.jpg",
   },
   {
-    title: "Private Groups",
+    title: "Private Lessons",
     desc: "Gather your friends, family or coworkers and make the dance floor your own. Whether you want a one-time session or weekly lessons to keep building your skills, we come to you and shape every routine around your group's energy and experience. No experience needed, just bring your crew and we'll handle the rest.",
     details: [
       "Custom sessions",

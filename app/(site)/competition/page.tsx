@@ -16,8 +16,58 @@ export const metadata = {
   description:
     "Dance Till You Die, a Halloween line dancing night at The Yale Saloon in Vancouver on Sunday October 25. Lesson at 8PM, dance competition from 9PM, costume contest, cash prizes at midnight.",
   alternates: { canonical: "/competition" },
+  openGraph: {
+    type: "article",
+    title: "Dance Till You Die, Halloween Line Dancing Competition in Vancouver",
+    description:
+      "Sunday October 25 at The Yale Saloon, Vancouver. Line dancing class at 8PM, competition from 9PM, costume contest and prizes at midnight.",
+    url: "/competition",
+    images: [{ url: "/events/cracked-wall.jpg", alt: "Dance Till You Die, Halloween line dancing at The Yale Saloon" }],
+  },
 };
 
+
+const SITE_URL = "https://wildflowerlinedancing.com";
+
+/* Event structured data so Google can show the date, venue and details */
+const eventStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "Event",
+  name: `${specialEvent.name}, Halloween Line Dancing Competition`,
+  url: `${SITE_URL}/competition`,
+  startDate: "2026-10-25T20:00:00-07:00",
+  endDate: "2026-10-26T00:00:00-07:00",
+  eventStatus: "https://schema.org/EventScheduled",
+  eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+  description:
+    "A Halloween line dancing night at The Yale Saloon in Vancouver. Line dancing class from 8:00 PM, an endurance line dancing competition from 9:00 PM to 11:30 PM, a costume contest all night and prizes at midnight.",
+  image: [`${SITE_URL}/events/cracked-wall.jpg`],
+  location: {
+    "@type": "Place",
+    name: "The Yale Saloon",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "1300 Granville St",
+      addressLocality: "Vancouver",
+      addressRegion: "BC",
+      postalCode: "V6Z 1M7",
+      addressCountry: "CA",
+    },
+  },
+  organizer: {
+    "@type": "Organization",
+    name: "Wildflower Line Dancing",
+    url: SITE_URL,
+  },
+  performer: {
+    "@type": "Organization",
+    name: "Wildflower Line Dancing",
+  },
+  typicalAgeRange: "19-",
+  isAccessibleForFree: false,
+};
+
+const jsonLd = (data: unknown) => JSON.stringify(data).split("<").join("\\u003c");
 
 const focusRing =
   "focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#C483C8]";
@@ -59,6 +109,11 @@ function Bullet() {
 export default function CompetitionPage() {
   return (
     <div className="bg-[#17110F] text-[#F7EAD8]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: jsonLd(eventStructuredData) }}
+      />
+
       {/* ── Event: write-up left, image right ── */}
       <section className="relative isolate overflow-hidden px-[var(--gutter)] pt-[var(--section-top)] pb-[var(--section)]">
         {/* Cracked wall background with a brown tint, like the poster */}

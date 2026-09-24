@@ -84,9 +84,10 @@ const structuredData = {
       inLanguage: "en-CA",
     },
     {
-      "@type": "Organization",
+      "@type": ["Organization", "LocalBusiness"],
       "@id": `${SITE_URL}/#organization`,
       name: SITE_NAME,
+      alternateName: "Wildflower Line Dancing Vancouver",
       url: SITE_URL,
       logo: {
         "@type": "ImageObject",
@@ -94,10 +95,54 @@ const structuredData = {
         width: 550,
         height: 550,
       },
+      image: `${SITE_URL}/hero-bg.png`,
       description: SITE_DESCRIPTION,
-      areaServed: {
-        "@type": "Place",
-        name: "Greater Vancouver, British Columbia, Canada",
+      slogan: "It's more than a dance, it's a good time.",
+      email: "wildflowerlinedancing@gmail.com",
+      telephone: "+1-250-650-1391",
+      priceRange: "$$",
+      currenciesAccepted: "CAD",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Vancouver",
+        addressRegion: "BC",
+        addressCountry: "CA",
+      },
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: 49.2827,
+        longitude: -123.1207,
+      },
+      areaServed: [
+        "Vancouver",
+        "Burnaby",
+        "Richmond",
+        "Surrey",
+        "North Vancouver",
+        "West Vancouver",
+        "Coquitlam",
+        "New Westminster",
+        "Langley",
+        "Greater Vancouver",
+      ].map((name) => ({ "@type": "City", name })),
+      knowsAbout: [
+        "Line dancing lessons",
+        "Country dance instruction",
+        "Wedding first dance choreography",
+        "Group dance classes",
+      ],
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Line dancing services",
+        itemListElement: [
+          ["Wedding Line Dancing", "Bridal party choreography, couples first dance and lessons for all your guests."],
+          ["Birthday Line Dancing", "Group line dancing lessons for birthday parties of any age."],
+          ["Special Events", "Line dancing for corporate events, stag parties, fundraisers and community events."],
+          ["Private Lessons", "One-time or recurring private line dancing lessons for your group."],
+        ].map(([name, description]) => ({
+          "@type": "Offer",
+          itemOffered: { "@type": "Service", name, description, serviceType: "Line dancing lessons" },
+        })),
       },
       sameAs: [
         "https://www.instagram.com/wildflowerlinedancing/",
@@ -115,7 +160,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="en-CA"
       className={`${rye.variable} ${brygada.variable} ${lato.variable} h-full`}
     >
       <body className="min-h-full">
