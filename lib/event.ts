@@ -61,8 +61,8 @@ export const specialEvent = {
 
   /* ▸ IMAGE: drop a file in public/ and set its path here, e.g. "/events/dance-till-you-die.jpg".
      While this is empty the page shows a placeholder box. */
-  image: "",
-  imageAlt: "Dance Till You Drop Dead, Halloween line dancing at The Yale Saloon",
+  image: "/events/poster.jpg",
+  imageAlt: "Dance Till You Drop Dead poster: line dancing endurance competition at The Yale Saloon, October 25, 9PM to 11:30PM",
 
   /* Rules for each contest: an optional short paragraph, then one string per bullet */
   rules: [
