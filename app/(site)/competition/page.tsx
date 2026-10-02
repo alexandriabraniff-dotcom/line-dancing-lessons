@@ -1,28 +1,34 @@
 import Image from "next/image";
-import { Nosifer } from "next/font/google";
+import { Kaushan_Script, Nosifer, Zilla_Slab } from "next/font/google";
 import { specialEvent } from "@/lib/event";
 
-/* ── TEMPORARY PAGE: "Dance Till You Die", October 25 ──────────────────
-   Styled after the event poster (stone dark, blood red display type)
-   on the same section layout as the rest of the site.
+/* ── TEMPORARY PAGE: "Dance Till You Drop Dead", October 25 ──────────────────
+   The hero recreates the Figma poster "Letter - 5 (Yale style)": dark
+   texture, red frame, Wildflower x Yale logos, Rye / Kaushan / Nosifer title
+   and the cowgirl on the right.
    Delete this folder and the rest of the steps listed in lib/event.ts
    once the event is over. */
 
-/* Dripping horror font for "Die" in the title, only loaded on this page */
+/* Poster fonts, only loaded on this page */
 const nosifer = Nosifer({ weight: "400", subsets: ["latin"], display: "swap" });
+const kaushan = Kaushan_Script({ weight: "400", subsets: ["latin"], display: "swap" });
+const zilla = Zilla_Slab({ weight: "700", subsets: ["latin"], display: "swap" });
+
+const posterRed = "#D4171C";
+const posterCream = "#F5E5CC";
 
 export const metadata = {
   title: `${specialEvent.name}, Halloween Line Dancing Competition`,
   description:
-    "Dance Till You Die, a Halloween line dancing night at The Yale Saloon in Vancouver on Sunday October 25. Lesson at 8PM, dance competition from 9PM, costume contest, cash prizes at midnight.",
+    "Dance Till You Drop Dead, a Halloween line dancing night at The Yale Saloon in Vancouver on Sunday October 25. Lesson at 8PM, dance competition from 9PM, costume contest, cash prizes at midnight.",
   alternates: { canonical: "/competition" },
   openGraph: {
     type: "article",
-    title: "Dance Till You Die, Halloween Line Dancing Competition in Vancouver",
+    title: "Dance Till You Drop Dead, Halloween Line Dancing Competition in Vancouver",
     description:
       "Sunday October 25 at The Yale Saloon, Vancouver. Line dancing class at 8PM, competition from 9PM, costume contest and prizes at midnight.",
     url: "/competition",
-    images: [{ url: "/events/cracked-wall.jpg", alt: "Dance Till You Die, Halloween line dancing at The Yale Saloon" }],
+    images: [{ url: "/events/cowgirl.png", alt: "Dance Till You Drop Dead, Halloween line dancing at The Yale Saloon" }],
   },
 };
 
@@ -41,7 +47,7 @@ const eventStructuredData = {
   eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
   description:
     "A Halloween line dancing night at The Yale Saloon in Vancouver. Line dancing class from 8:00 PM, an endurance line dancing competition from 9:00 PM to 11:30 PM, a costume contest all night and prizes at midnight.",
-  image: [`${SITE_URL}/events/cracked-wall.jpg`],
+  image: [`${SITE_URL}/events/cowgirl.png`],
   location: {
     "@type": "Place",
     name: "The Yale Saloon",
@@ -74,18 +80,18 @@ const focusRing =
 
 const buttonBase =
   "brygada inline-flex h-[45px] lg:h-12 items-center justify-center px-8 text-[1.15rem] font-bold tracking-[0.18em] transition-colors duration-300";
-const buttonRed = `${buttonBase} bg-[#A62019] text-[#F7EAD8] hover:bg-[#F7EAD8] hover:text-[#A62019] ${focusRing}`;
+const buttonRed = `${buttonBase} bg-[#D4171C] text-[#F5E5CC] hover:bg-[#F5E5CC] hover:text-[#D4171C] ${focusRing}`;
 
 const eyebrowClass =
-  "brygada font-bold text-[length:var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D0483A]";
+  "brygada font-bold text-[length:var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D4171C]";
 
-/* Sign-up lives on The Yale Saloon's ticket page. Until that link exists the
-   button says so instead of going nowhere. */
-function TicketButton({ label, className }: { label: string; className: string }) {
+/* Tickets live on The Yale Saloon's ticket page. Until that link exists the
+   button says "Tickets Coming Soon" instead of going nowhere. */
+function TicketButton({ className }: { className: string }) {
   if (!specialEvent.ticketsUrl) {
     return (
-      <span aria-disabled="true" className={`${className} cursor-default opacity-70`}>
-        Sign Up Opens Soon
+      <span aria-disabled="true" className={`${className} cursor-default`}>
+        {specialEvent.ticketsSoonLabel}
       </span>
     );
   }
@@ -97,13 +103,13 @@ function TicketButton({ label, className }: { label: string; className: string }
       rel="noopener noreferrer"
       className={className}
     >
-      {label}
+      {specialEvent.ticketsLabel}
     </a>
   );
 }
 
 function Bullet() {
-  return <span aria-hidden className="mt-[0.55em] h-1.5 w-1.5 shrink-0 rounded-full bg-[#D0483A]" />;
+  return <span aria-hidden className="mt-[0.55em] h-1.5 w-1.5 shrink-0 rounded-full bg-[#D4171C]" />;
 }
 
 export default function CompetitionPage() {
@@ -114,58 +120,132 @@ export default function CompetitionPage() {
         dangerouslySetInnerHTML={{ __html: jsonLd(eventStructuredData) }}
       />
 
-      {/* ── Event: write-up left, image right ── */}
+      {/* ── Poster hero (Figma "Letter - 5 (Yale style)") ── */}
       <section className="relative isolate overflow-hidden px-[var(--gutter)] pt-[var(--section-top)] pb-[var(--section)]">
-        {/* Cracked wall background with a brown tint, like the poster */}
-        <Image
-          src="/events/cracked-wall.jpg"
-          alt=""
-          fill
-          preload
-          sizes="100vw"
-          className="-z-10 object-cover"
+        {/* Dark hand-print texture, cracked wall on top, then the poster tint and red glow at the bottom */}
+        <Image src="/events/dark-texture.jpg" alt="" fill preload sizes="100vw" className="-z-10 object-cover" />
+        <Image src="/events/cracked-wall.jpg" alt="" fill sizes="100vw" className="-z-10 object-cover opacity-40" />
+        <div
+          aria-hidden
+          className="absolute inset-0 -z-10"
+          style={{
+            backgroundImage:
+              "linear-gradient(180deg, rgba(153,0,0,0) 0%, rgba(153,0,0,0) 55%, rgba(158,8,13,0.5) 100%), linear-gradient(90deg, rgba(10,5,5,0.86) 0%, rgba(10,5,5,0.86) 100%)",
+          }}
         />
-        <div aria-hidden className="absolute inset-0 -z-10 bg-[#6B4841] mix-blend-multiply" />
-        <div aria-hidden className="absolute inset-0 -z-10 bg-[#1E0F0B]/70" />
 
-        {/* Title block, centred above everything */}
-        <div className="relative z-10 max-w-6xl mx-auto text-center">
-          <h1 className="rye uppercase leading-[0.95] tracking-wide">
-            <span className="block text-[#A62019]" style={{ fontSize: "calc(var(--text-h1) * 1.5)" }}>
-              Dance
+        {/* Red poster frame */}
+        <div
+          className="relative max-w-6xl mx-auto border-[max(3px,0.3vw)] px-[max(1rem,3vw)] pt-[max(1.5rem,3vw)] pb-[max(2rem,3.5vw)]"
+          style={{ borderColor: posterRed }}
+        >
+          {/* Wildflower x The Yale Saloon */}
+          <div className="flex items-center justify-center gap-[max(0.9rem,1.6vw)]">
+            <Image
+              src="/wildflower-logo.png"
+              alt="Wildflower Line Dancing"
+              width={550}
+              height={550}
+              className="w-[max(4.5rem,7vw)] h-auto drop-shadow-[0_0_1.4rem_black]"
+            />
+            <span aria-hidden className={`${zilla.className} text-[max(2.2rem,3.6vw)] leading-none`} style={{ color: posterCream }}>
+              ×
             </span>
-            <span
-              className="block text-[#F7EAD8]"
-              style={{ fontSize: "calc(var(--text-h1) * 0.87)" }}
-            >
-              Till You
-            </span>
-            <span
-              className={`${nosifer.className} mt-[0.12em] mb-[0.2em] block text-[#A62019]`}
-              style={{ fontSize: "calc(var(--text-h1) * 1.3)" }}
-            >
-              Die
-            </span>
-          </h1>
+            <Image
+              src="/events/yale-logo-cream.png"
+              alt="The Yale Saloon"
+              width={296}
+              height={183}
+              className="w-[max(6.5rem,10vw)] h-auto"
+            />
+          </div>
 
-          <p className="brygada mt-6 text-[length:clamp(1.1rem,1.5vw,1.65rem)] font-bold uppercase tracking-[0.18em] text-[#F7EAD8]">
-            {specialEvent.tagline}
-          </p>
-          <p className="brygada mt-2 text-[length:clamp(1.38rem,1.75vw,1.88rem)] font-bold italic text-[#D0483A]">
-            {specialEvent.prizeLine}
-          </p>
+          {/* Date between two red rules */}
+          <div
+            className="mx-auto mt-[max(1.25rem,2vw)] max-w-[44rem] border-y-[3px] py-[max(0.7rem,1vw)] text-center"
+            style={{ borderColor: posterRed }}
+          >
+            <p
+              className={`${zilla.className} whitespace-pre-wrap uppercase tracking-[0.14em] text-[length:max(1.05rem,2vw)] [text-shadow:0_4px_4px_black]`}
+              style={{ color: posterCream }}
+            >
+              {specialEvent.dateLine}
+            </p>
+          </div>
+
+          {/* Title left, cowgirl right */}
+          <div className="mt-[max(1.5rem,3vw)] grid items-center gap-y-8 md:grid-cols-[1.45fr_1fr]">
+            <div className="@container text-center md:text-left">
+              <h1 className="leading-[0.95]">
+                <span
+                  className="rye block uppercase tracking-[0.01em] [text-shadow:0_4px_16px_black]"
+                  style={{ color: posterCream, fontSize: "24cqw" }}
+                >
+                  Dance
+                </span>
+                <span
+                  className={`${kaushan.className} block -rotate-4 tracking-[-0.03em] [text-shadow:0_4px_16px_black] md:pl-[6cqw]`}
+                  style={{ color: posterRed, fontSize: "13cqw", lineHeight: 1.3 }}
+                >
+                  Till You Drop
+                </span>
+                <span
+                  className={`${nosifer.className} block uppercase [text-shadow:4px_4px_5px_black]`}
+                  style={{ color: posterRed, fontSize: "21cqw", lineHeight: 1.15 }}
+                >
+                  Dead
+                </span>
+              </h1>
+
+              <p
+                className={`${zilla.className} mx-auto md:mx-0 mt-[max(1.5rem,2.5cqw)] max-w-[24ch] uppercase leading-tight [text-shadow:0_4px_4px_black]`}
+                style={{ color: posterCream, fontSize: "max(1.35rem, 5.2cqw)" }}
+              >
+                {specialEvent.subtitle}
+              </p>
+              <p className="brygada mt-3 text-[length:clamp(1.25rem,1.6vw,1.75rem)] font-bold italic" style={{ color: posterRed }}>
+                {specialEvent.prizeLine}
+              </p>
+
+              <div className="mt-8 flex justify-center md:justify-start">
+                <TicketButton className={buttonRed} />
+              </div>
+            </div>
+
+            {/* Cowgirl with the red haze behind her */}
+            <div className="relative mx-auto w-[min(70%,22rem)] md:w-full">
+              <div
+                aria-hidden
+                className="absolute inset-[-10%_-20%] -z-10"
+                style={{ background: "radial-gradient(closest-side, rgba(212,23,28,0.55), rgba(212,23,28,0))" }}
+              />
+              <Image
+                src="/events/cowgirl.png"
+                alt="Cowgirl in a skull hat and fringe jacket mid line dance"
+                width={335}
+                height={745}
+                preload
+                sizes="(min-width: 768px) 30vw, 70vw"
+                className="h-auto w-full drop-shadow-[0_0_1.6rem_rgba(217,13,20,0.9)]"
+              />
+            </div>
+          </div>
         </div>
+      </section>
 
-        {/* Write-up left, image right */}
-        <div className="relative z-10 max-w-6xl mx-auto mt-[var(--section-sm)] grid items-center gap-[var(--gap)] md:grid-cols-2">
-          <div className="text-center md:text-left">
+      {/* ── Learn More ── */}
+      <section className="px-[var(--gutter)] py-[var(--section)]">
+        <div
+          className={`max-w-6xl mx-auto grid items-center gap-[var(--gap)] ${specialEvent.image ? "md:grid-cols-2" : ""}`}
+        >
+          <div className={specialEvent.image ? "text-center md:text-left" : "mx-auto max-w-3xl text-center"}>
             <h2
               className="rye text-[#F7EAD8] uppercase tracking-wide"
               style={{ fontSize: "var(--text-h2)" }}
             >
               Learn More
             </h2>
-            <p className="brygada mt-3 text-[length:clamp(1.25rem,1.6vw,1.75rem)] font-bold italic text-[#D0483A]">
+            <p className="brygada mt-3 text-[length:clamp(1.25rem,1.6vw,1.75rem)] font-bold italic" style={{ color: posterRed }}>
               {specialEvent.learnMoreLine}
             </p>
 
@@ -178,27 +258,21 @@ export default function CompetitionPage() {
               ))}
             </div>
 
-            <div className="mt-8 flex justify-center md:justify-start">
-              <TicketButton label={specialEvent.ticketsLabel} className={buttonRed} />
+            <div className={`mt-8 flex justify-center ${specialEvent.image ? "md:justify-start" : ""}`}>
+              <TicketButton className={buttonRed} />
             </div>
           </div>
 
-          {specialEvent.image ? (
+          {specialEvent.image && (
             <div className="relative aspect-[4/5] overflow-hidden">
               <Image
                 src={specialEvent.image}
                 alt={specialEvent.imageAlt}
                 fill
-                preload
                 sizes="(min-width: 768px) 50vw, 100vw"
                 className="object-cover"
               />
             </div>
-          ) : (
-            <div
-              aria-hidden
-              className="image-placeholder aspect-[4/5] !border-[#F7EAD8]/15 !bg-[#F7EAD8]/[0.04]"
-            />
           )}
         </div>
       </section>

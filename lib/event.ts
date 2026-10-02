@@ -1,4 +1,4 @@
-/* ── SPECIAL EVENT: "Dance Till You Die" (Halloween 2026) ──────────────
+/* ── SPECIAL EVENT: "Dance Till You Drop Dead" (Halloween 2026) ──────────────
    TEMPORARY. All of the event copy lives here so it can be edited in one
    place, and removed in one go after October 25.
 
@@ -15,15 +15,19 @@ export const specialEvent = {
   /* Arrow note pointing at the nav button on the homepage hero */
   heroNote: "Upcoming Special Event",
 
-  name: "Dance Till You Die",
+  name: "Dance Till You Drop Dead",
   eyebrow: "Sunday, October 25",
   tagline: "Line Dancing Competition & Costume Contest",
   prizeLine: "Cash Prizes and More",
 
   /* ▸ TICKETS: paste the Yale sign-up link here once it is live.
-     While this is empty the buttons show "Sign Up Opens Soon" instead. */
+     While this is empty the buttons show "Tickets Coming Soon" instead. */
   ticketsUrl: "",
-  ticketsLabel: "Sign Me Up",
+  ticketsLabel: "Buy Tickets",
+  ticketsSoonLabel: "Tickets Coming Soon",
+  /* Poster subtitle under the title */
+  subtitle: "Line Dancing Endurance Competition",
+  dateLine: "October 25  ·  9PM to 11:30PM",
 
   /* "Learn More" section beside the image */
   learnMoreLine: "Event on October 25th",
@@ -56,16 +60,16 @@ export const specialEvent = {
   ],
 
   /* ▸ IMAGE: drop a file in public/ and set its path here, e.g. "/events/dance-till-you-die.jpg".
-     While this is empty the page shows a placeholder box. */
-  image: "",
-  imageAlt: "Dance Till You Die, Halloween line dancing at The Yale Saloon",
+     While this is empty the write-up is shown on its own, centred. */
+  image: "",  // optional photo beside "Learn More"; empty = text only
+  imageAlt: "Dance Till You Drop Dead, Halloween line dancing at The Yale Saloon",
 
   /* Rules for each contest: an optional short paragraph, then one string per bullet */
   rules: [
     {
       title: "Dance Competition",
       intro:
-        "Dance Till You Die is a line dancing endurance competition where participants earn points by completing as many qualifying line dances as possible throughout the competition. The dancer with the most points at the end of the competition wins.",
+        "Dance Till You Drop Dead is a line dancing endurance competition where participants earn points by completing as many qualifying line dances as possible throughout the competition. The dancer with the most points at the end of the competition wins.",
       items: [
         "The competition runs from 9:00 PM to 11:30 PM",
         "Each qualifying line dance is worth 1 point",
