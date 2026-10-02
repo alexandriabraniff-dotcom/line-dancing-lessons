@@ -60,8 +60,8 @@ export const specialEvent = {
   ],
 
   /* ▸ IMAGE: drop a file in public/ and set its path here, e.g. "/events/dance-till-you-die.jpg".
-     While this is empty the write-up is shown on its own, centred. */
-  image: "",  // optional photo beside "Learn More"; empty = text only
+     While this is empty the page shows a placeholder box. */
+  image: "",
   imageAlt: "Dance Till You Drop Dead, Halloween line dancing at The Yale Saloon",
 
   /* Rules for each contest: an optional short paragraph, then one string per bullet */
