@@ -21,7 +21,7 @@ const faqs = [
   },
   {
     q: "Where in Vancouver do you teach?",
-    a: "We come to you anywhere in Greater Vancouver, including Vancouver, Burnaby, Richmond, Surrey, New Westminster, Coquitlam, Langley and the North Shore. Your venue, your home, an office or a hall all work.",
+    a: "We teach classes at The Yale Saloon, 1300 Granville St in downtown Vancouver, every Thursday, Saturday and Sunday. For private bookings we come to you anywhere in Greater Vancouver, including Vancouver, Burnaby, Richmond, Surrey, New Westminster, Coquitlam, Langley and the North Shore. Your venue, your home, an office or a hall all work.",
   },
   {
     q: "How big can the group be?",
