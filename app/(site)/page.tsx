@@ -271,21 +271,22 @@ export default function Home() {
             </h2>
             <div className="space-y-4 text-[#6B4841]/70 text-[length:var(--text-body)] leading-relaxed">
               <p>
-                Wildflower Line Dancing is Alex and Lily, and we believe line dancing brings your
-                people together like nothing else. Whether you&apos;re learning a surprise routine
-                with your bridesmaids, celebrating a birthday with your friends, or letting loose
-                after hours with your team, the magic is always the same.
+                Wildflower Line Dancing is owned and run by instructors Alex and Lily. We believe
+                nothing brings people together quite like line dancing. Whether you&apos;re learning
+                a surprise routine with your bridesmaids, celebrating a birthday with friends or
+                unwinding after hours with your team, it&apos;s an experience everyone remembers.
               </p>
               <p>
-                We teach beginner and intermediate line dancing across Greater Vancouver, from
-                downtown Vancouver to Burnaby, Richmond, Surrey, New Westminster, Coquitlam,
-                Langley and the North Shore. Weddings, birthdays, special events and private
-                lessons: you pick the date and the venue, we bring the steps to you.
+                We offer beginner and intermediate line dancing lessons throughout Greater
+                Vancouver, including downtown Vancouver, Burnaby, Richmond, Surrey, New
+                Westminster, Coquitlam, Langley and the North Shore. From weddings and birthdays
+                to special events and private lessons, you choose the date and the venue, and we
+                bring the dance floor to you.
               </p>
               <p>
-                Nobody needs experience and nobody needs a partner. We break every routine down
-                step by step, keep the music going and have your whole group dancing together
-                within minutes, and we&apos;ll leave you wanting to dance every chance you get.
+                No experience or partner is required. We break down every routine step by step,
+                keep the music going and have your entire group dancing together within minutes.
+                Our goal is simple: to leave you wanting to dance every chance you get.
               </p>
             </div>
             <div className="mt-8">
