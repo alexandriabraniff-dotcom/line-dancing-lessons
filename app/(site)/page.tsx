@@ -37,6 +37,9 @@ const faqs = [
   },
 ];
 
+/* Split down the middle for the two column layout */
+const faqColumns = [faqs.slice(0, Math.ceil(faqs.length / 2)), faqs.slice(Math.ceil(faqs.length / 2))];
+
 /* Escapes "<" so the JSON can never break out of the script tag */
 const jsonLd = (data: unknown) => JSON.stringify(data).split("<").join("\\u003c");
 
@@ -135,34 +138,6 @@ export default function Home() {
 
       {/* Divider between hero and services on phones */}
       <div aria-hidden className="mx-[var(--gutter)] h-px bg-[#6B4841]/25 lg:hidden" />
-
-      {/* ── Who we are, in plain words (also the page's main copy for search) ── */}
-      <section className="px-[var(--gutter)] pt-[var(--section)]">
-        <div className="mx-auto max-w-3xl text-center">
-          <p className="brygada font-bold text-[length:var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-3">
-            Greater Vancouver
-          </p>
-          <h2
-            className="rye text-[#6B4841] uppercase tracking-wide"
-            style={{ fontSize: "var(--text-h2)" }}
-          >
-            Line Dancing Lessons in Vancouver
-          </h2>
-          <div className="mt-6 space-y-4 text-[length:var(--text-body)] leading-relaxed text-[#6B4841]/75">
-            <p>
-              Wildflower Line Dancing is Alex and Lily. We teach beginner and intermediate line
-              dancing across Greater Vancouver, from downtown Vancouver to Burnaby, Richmond,
-              Surrey, New Westminster, Coquitlam, Langley and the North Shore. Weddings, birthdays,
-              special events, private lessons, we bring the steps to you.
-            </p>
-            <p>
-              Nobody needs experience and nobody needs a partner. We break every routine down step
-              by step, keep the music going and have your whole group dancing together within
-              minutes. You pick the date and the venue, we bring the good time.
-            </p>
-          </div>
-        </div>
-      </section>
 
       {/* ── Book by Occasion ── */}
       <section id="our-services" className="px-[var(--gutter)] py-[var(--section)]">
@@ -271,9 +246,63 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Common questions ── */}
+      {/* ── Our Story (also the page's main copy for search: who we are and where we teach) ── */}
       <section className="px-[var(--gutter)] py-[var(--section)]">
-        <div className="mx-auto max-w-4xl">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-[var(--gap)] items-center text-center md:text-left">
+          <div className="relative aspect-[3/4] overflow-hidden shadow-[0_10px_30px_-18px_rgba(30,15,11,0.35)]">
+            <Image
+              src="/our-story.jpeg"
+              alt="Alex and Lily of Wildflower Line Dancing in cowboy hats and boots smiling in front of a brick wall"
+              fill
+              sizes="(min-width: 768px) 50vw, 100vw"
+              className="object-cover origin-[50%_52%] scale-[1.4]"
+            />
+          </div>
+
+          <div>
+            <p className="brygada font-bold text-[length:var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-3">
+              Line Dancing in Greater Vancouver
+            </p>
+            <h2
+              className="rye text-[#6B4841] uppercase tracking-wide mb-6"
+              style={{ fontSize: "var(--text-h2)" }}
+            >
+              Our Story
+            </h2>
+            <div className="space-y-4 text-[#6B4841]/70 text-[length:var(--text-body)] leading-relaxed">
+              <p>
+                Wildflower Line Dancing is Alex and Lily, and we believe line dancing brings your
+                people together like nothing else. Whether you&apos;re learning a surprise routine
+                with your bridesmaids, celebrating a birthday with your friends, or letting loose
+                after hours with your team, the magic is always the same.
+              </p>
+              <p>
+                We teach beginner and intermediate line dancing across Greater Vancouver, from
+                downtown Vancouver to Burnaby, Richmond, Surrey, New Westminster, Coquitlam,
+                Langley and the North Shore. Weddings, birthdays, special events and private
+                lessons: you pick the date and the venue, we bring the steps to you.
+              </p>
+              <p>
+                Nobody needs experience and nobody needs a partner. We break every routine down
+                step by step, keep the music going and have your whole group dancing together
+                within minutes, and we&apos;ll leave you wanting to dance every chance you get.
+              </p>
+            </div>
+            <div className="mt-8">
+              <Link
+                href="/about"
+                className="brygada mx-auto inline-flex h-[45px] lg:h-11 items-center justify-center bg-[#6B4841] md:mx-0 px-6 text-[1.15rem] font-bold tracking-[0.18em] text-[#F7EAD8] transition-colors duration-300 hover:bg-[#1E0F0B] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#C483C8]"
+              >
+                Read More About Us
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Common questions: two columns split down the middle ── */}
+      <section className="px-[var(--gutter)] pb-[var(--section)]">
+        <div className="mx-auto max-w-6xl">
           <div className="text-center">
             <p className="brygada font-bold text-[length:var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-3">
               Good to Know
@@ -286,65 +315,21 @@ export default function Home() {
             </h2>
           </div>
 
-          <dl className="mt-12 grid gap-[var(--gap)] md:grid-cols-2">
-            {faqs.map(({ q, a }) => (
-              <div key={q} className="border-t border-[#6B4841]/20 pt-6">
-                <dt className="rye text-[#6B4841] uppercase tracking-wide text-[length:var(--text-h3)] leading-tight">
-                  {q}
-                </dt>
-                <dd className="mt-3 text-[length:var(--text-body)] leading-relaxed text-[#6B4841]/75">
-                  {a}
-                </dd>
-              </div>
+          <div className="mt-10 grid md:grid-cols-2 md:divide-x md:divide-[#6B4841]/20">
+            {faqColumns.map((column, i) => (
+              <dl key={i} className={i === 0 ? "md:pr-[max(1.5rem,3vw)]" : "md:pl-[max(1.5rem,3vw)]"}>
+                {column.map(({ q, a }) => (
+                  <div key={q} className="border-b border-[#6B4841]/15 py-5">
+                    <dt className="brygada font-bold text-[length:clamp(1.1rem,1.25vw,1.35rem)] leading-snug text-[#6B4841]">
+                      {q}
+                    </dt>
+                    <dd className="mt-2 text-[length:calc(var(--text-body)*0.9)] leading-relaxed text-[#6B4841]/70">
+                      {a}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
             ))}
-          </dl>
-        </div>
-      </section>
-
-      {/* ── Our Story ── */}
-      <section className="px-[var(--gutter)] py-[var(--section)]">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-[var(--gap)] items-center text-center md:text-left">
-          <div className="relative aspect-[3/4] overflow-hidden shadow-[0_10px_30px_-18px_rgba(30,15,11,0.35)]">
-            <Image
-              src="/our-story.jpeg"
-              alt="Two Wildflower Line Dancing instructors in cowboy hats and boots smiling in front of a brick wall"
-              fill
-              sizes="(min-width: 768px) 50vw, 100vw"
-              className="object-cover origin-[50%_52%] scale-[1.4]"
-            />
-          </div>
-
-          <div>
-            <p className="brygada font-bold text-[length:var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-3">
-              Get to Know Us
-            </p>
-            <h2
-              className="rye text-[#6B4841] uppercase tracking-wide mb-6"
-              style={{ fontSize: "var(--text-h3)" }}
-            >
-              Our Story
-            </h2>
-            <div className="space-y-4 text-[#6B4841]/70 text-[length:var(--text-body)] leading-relaxed">
-              <p>
-                Line dancing has a way of bringing your people together like nothing else.
-                Whether you&apos;re learning a surprise routine with your bridesmaids,
-                celebrating a birthday with your friends, or letting loose after hours
-                with your team, the magic is always the same.
-              </p>
-              <p>
-                We&apos;re passionate about making every session fun, easy and memorable
-                for you. We&apos;ll meet you exactly where you are, and we&apos;ll leave you
-                wanting to dance every chance you get.
-              </p>
-            </div>
-            <div className="mt-8">
-              <Link
-                href="/about"
-                className="brygada mx-auto inline-flex h-[45px] lg:h-11 items-center justify-center bg-[#6B4841] md:mx-0 px-6 text-[1.15rem] font-bold tracking-[0.18em] text-[#F7EAD8] transition-colors duration-300 hover:bg-[#1E0F0B] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#C483C8]"
-              >
-                Read More About Us
-              </Link>
-            </div>
           </div>
         </div>
       </section>
