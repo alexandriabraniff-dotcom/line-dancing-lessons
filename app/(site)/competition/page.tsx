@@ -23,13 +23,13 @@ const zillaClass = "font-[family-name:var(--font-zilla)] font-bold";
 export const metadata = {
   title: `${specialEvent.name}, Halloween Line Dancing Competition`,
   description:
-    "Dance Till You Drop Dead, a Halloween line dancing night at The Yale Saloon in Vancouver on Sunday October 25. Lesson at 8PM, dance competition from 9PM, costume contest, cash prizes at midnight.",
+    "Dance Till You Drop Dead, a Halloween line dancing night at The Yale Saloon in Vancouver on Sunday October 25. 19+ event. Lesson at 8PM, dance competition from 9PM, costume contest, cash prizes at midnight.",
   alternates: { canonical: "/competition" },
   openGraph: {
     type: "article",
     title: "Dance Till You Drop Dead, Halloween Line Dancing Competition in Vancouver",
     description:
-      "Sunday October 25 at The Yale Saloon, Vancouver. Line dancing class at 8PM, competition from 9PM, costume contest and prizes at midnight.",
+      "Sunday October 25 at The Yale Saloon, Vancouver. 19+ event. Line dancing class at 8PM, competition from 9PM, costume contest and prizes at midnight.",
     url: "/competition",
     images: [{ url: "/events/cracked-wall.jpg", alt: "Dance Till You Drop Dead, Halloween line dancing at The Yale Saloon" }],
   },
@@ -45,7 +45,7 @@ const eventStructuredData = {
   name: `${specialEvent.name}, Halloween Line Dancing Competition`,
   url: `${SITE_URL}/competition`,
   startDate: "2026-10-25T20:00:00-07:00",
-  endDate: "2026-10-26T00:00:00-07:00",
+  endDate: "2026-10-26T02:00:00-07:00",
   eventStatus: "https://schema.org/EventScheduled",
   eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
   description:
@@ -74,6 +74,12 @@ const eventStructuredData = {
   },
   typicalAgeRange: "19-",
   isAccessibleForFree: false,
+  offers: {
+    "@type": "Offer",
+    url: specialEvent.ticketsUrl,
+    availability: "https://schema.org/InStock",
+    validFrom: "2026-10-01T00:00:00-07:00",
+  },
 };
 
 const jsonLd = (data: unknown) => JSON.stringify(data).split("<").join("\\u003c");
@@ -88,8 +94,8 @@ const buttonRed = `${buttonBase} bg-[#D4171C] text-[#F5E5CC] hover:bg-[#F5E5CC] 
 const eyebrowClass =
   `${zillaClass} font-bold text-[length:var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D4171C]`;
 
-/* Tickets live on The Yale Saloon's ticket page. Until that link exists the
-   button says "Tickets Coming Soon" instead of going nowhere. */
+/* Tickets are sold on AdmitONE (link in lib/event.ts). If the link is ever
+   removed the button says "Tickets Coming Soon" instead of going nowhere. */
 function TicketButton({ className }: { className: string }) {
   if (!specialEvent.ticketsUrl) {
     return (
@@ -178,6 +184,9 @@ export default function CompetitionPage() {
           </p>
           <p className={`${zillaClass} mt-2 text-[length:clamp(1.38rem,1.75vw,1.88rem)] text-[#D4171C]`}>
             {specialEvent.prizeLine}
+          </p>
+          <p className={`${zillaClass} mt-4 inline-block border-2 border-[#F5E5CC] px-3 py-1 text-[length:clamp(1rem,1.2vw,1.3rem)] uppercase tracking-[0.12em] text-[#F5E5CC]`}>
+            {specialEvent.ageLine}
           </p>
         </div>
 

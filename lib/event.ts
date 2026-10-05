@@ -7,6 +7,7 @@
      2. app/(site)/competition/page.tsx
      3. the `specialEvent` blocks in components/Nav.tsx and components/HomeHero.tsx
      4. the /competition lines in app/sitemap.ts and components/Footer.tsx
+     5. the /tickets redirect in next.config.ts (printed poster QR codes use it)
 */
 
 export const specialEvent = {
@@ -19,10 +20,13 @@ export const specialEvent = {
   eyebrow: "Sunday, October 25",
   tagline: "Line Dancing Competition & Costume Contest",
   prizeLine: "Cash Prizes and More",
+  ageLine: "19+ Event",
 
-  /* ▸ TICKETS: paste the Yale sign-up link here once it is live.
-     While this is empty the buttons show "Tickets Coming Soon" instead. */
-  ticketsUrl: "",
+  /* ▸ TICKETS: AdmitONE ticket page. The print poster QR code points at
+     wildflowerlinedancing.com/tickets, which next.config.ts forwards here.
+     If this is ever emptied the button shows "Tickets Coming Soon" instead. */
+  ticketsUrl:
+    "https://admitone.com/events/vancouver/community/halloween/the-yale-saloon-presents-dance-till-you-drop-dead/HCSUJ0",
   ticketsLabel: "Buy Tickets",
   ticketsSoonLabel: "Tickets Coming Soon",
   /* Poster subtitle under the title */
