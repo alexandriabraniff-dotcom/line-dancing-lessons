@@ -45,7 +45,7 @@ export default async function InstagramFeed() {
   const posts = profile?.posts.slice(0, POST_COUNT) ?? [];
 
   return (
-    <section className="border-t border-[#6B4841]/15 pt-[var(--section)]">
+    <section className="py-[var(--section)]">
       {/* Profile info */}
       <div className="mx-auto mb-8 flex max-w-6xl flex-col gap-6 px-[var(--gutter)] sm:flex-row sm:items-center sm:justify-between">
         <a

@@ -1,7 +1,8 @@
 import Link from "next/link";
 import ContactForm from "@/components/ContactForm";
+import { GoogleIcon } from "@/components/GoogleReview";
 import SocialLinks from "@/components/SocialLinks";
-import { site } from "@/lib/site";
+import { googleReviewUrl, site } from "@/lib/site";
 
 export const metadata = {
   title: "Contact Us",
@@ -68,6 +69,26 @@ export default function ContactPage() {
                 Follow Along
               </p>
               <SocialLinks className="mt-3" />
+            </div>
+
+            <div className="border-b border-[#6B4841]/10 py-5">
+              <p className="brygada text-[0.97rem] font-bold uppercase tracking-[0.25em] text-[#D49C84]">
+                Danced With Us?
+              </p>
+              <p className="mt-1 text-[length:var(--text-body)] leading-relaxed text-[#6B4841]/75">
+                We&apos;d love to hear how it went. A quick Google review helps more groups find us.
+              </p>
+              <a
+                href={googleReviewUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`brygada mt-4 inline-flex h-[45px] lg:h-11 items-center justify-center gap-3 bg-[#6B4841] pl-2 pr-6 text-[1.15rem] font-bold tracking-[0.18em] text-[#F7EAD8] transition-colors duration-300 hover:bg-[#1E0F0B] ${focusRing}`}
+              >
+                <span className="flex h-[calc(100%-0.75rem)] aspect-square items-center justify-center bg-white">
+                  <GoogleIcon className="h-[1.1rem] w-[1.1rem]" />
+                </span>
+                Leave a Google Review
+              </a>
             </div>
 
             <div className="mt-8">
