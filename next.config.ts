@@ -9,6 +9,8 @@ const redirectHosts = [
   "www.wildflowerlinedancing.com",
   "vancouverlinedancing.com",
   "www.vancouverlinedancing.com",
+  /* Vercel's own address, so Google never sees a duplicate copy of the site */
+  "line-dancing-lessons.vercel.app",
 ];
 
 /* TEMPORARY (Dance Till You Drop Dead, Oct 25): wildflowerlinedancing.com/tickets
