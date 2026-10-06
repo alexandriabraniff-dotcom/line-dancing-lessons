@@ -105,6 +105,15 @@ const gallery: { featured: Photo; left: Photo[]; right: Photo[]; mobile: Photo[]
   mobile: [photos.street, photos.group, photos.danceFloor, photos.boots, photos.streetLineDance, photos.streetCrowd, null, null, null],
 };
 
+/* Thin brown line that breaks up sections sharing the same background */
+function Divider({ className = "" }: { className?: string }) {
+  return (
+    <div aria-hidden className={`px-[var(--gutter)] ${className}`}>
+      <div className="mx-auto h-px max-w-6xl bg-[#6B4841]/25" />
+    </div>
+  );
+}
+
 function GallerySlot({ photo, sizes, className }: { photo: Photo; sizes: string; className: string }) {
   if (!photo) {
     return (
@@ -141,8 +150,7 @@ export default function Home() {
       {/* ── Hero ── */}
       <HomeHero />
 
-      {/* Divider between hero and services on phones */}
-      <div aria-hidden className="mx-[var(--gutter)] h-px bg-[#6B4841]/25 lg:hidden" />
+      <Divider />
 
       {/* ── Book by Occasion ── */}
       <section id="our-services" className="px-[var(--gutter)] py-[var(--section)]">
@@ -306,8 +314,10 @@ export default function Home() {
         </div>
       </section>
 
+      <Divider />
+
       {/* ── Common questions: two columns split down the middle ── */}
-      <section className="px-[var(--gutter)] pb-[var(--section)]">
+      <section className="px-[var(--gutter)] py-[var(--section)]">
         <div className="mx-auto max-w-6xl">
           <div className="text-center">
             <p className="brygada font-bold text-[length:var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D49C84] mb-3">
@@ -340,11 +350,16 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Google review prompt ── */}
-      <GoogleReview />
+      {/* Review prompt fades from cream into the Instagram section's pink */}
+      <div>
+        {/* ── Google review prompt ── */}
+        <GoogleReview />
 
-      {/* ── Latest Instagram posts ── */}
-      <InstagramFeed />
+        <Divider className="bg-[#FFE3E2]" />
+
+        {/* ── Latest Instagram posts ── */}
+        <InstagramFeed />
+      </div>
     </>
   );
 }

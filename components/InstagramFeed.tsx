@@ -45,7 +45,7 @@ export default async function InstagramFeed() {
   const posts = profile?.posts.slice(0, POST_COUNT) ?? [];
 
   return (
-    <section className="py-[var(--section)]">
+    <section className="bg-[#FFE3E2] py-[var(--section)]">
       {/* Profile info */}
       <div className="mx-auto mb-8 flex max-w-6xl flex-col gap-6 px-[var(--gutter)] sm:flex-row sm:items-center sm:justify-between">
         <a
@@ -112,7 +112,7 @@ export default async function InstagramFeed() {
                 ? `Instagram post: ${post.caption.slice(0, 100)}`
                 : "View post on Instagram"
             }
-            className="group relative block aspect-square overflow-hidden bg-[#EDE0CC]"
+            className="group relative block aspect-square overflow-hidden bg-[#F2B8CE]/35"
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
@@ -148,7 +148,7 @@ export default async function InstagramFeed() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Wildflower Line Dancing on Instagram"
-            className="flex aspect-square items-center justify-center bg-[#EDE0CC] transition-opacity hover:opacity-90"
+            className="flex aspect-square items-center justify-center bg-[#F2B8CE]/35 transition-opacity hover:opacity-90"
           >
             <InstagramIcon className="h-6 w-6 text-[#6B4841]/20" />
           </a>

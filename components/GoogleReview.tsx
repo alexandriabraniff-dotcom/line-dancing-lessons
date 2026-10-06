@@ -14,10 +14,10 @@ export function GoogleIcon({ className }: { className?: string }) {
 }
 
 /* Asks happy dancers to leave a Google review (helps the business show up in local search).
-   Full-width band in the hero's cream-to-blush gradient, copy beside an arch-framed photo. */
+   Cream-to-pink band that flows into the Instagram section, copy beside an arch-framed photo. */
 export default function GoogleReview() {
   return (
-    <section className="bg-gradient-to-br from-[#FEEFB8] to-[#FFE3E2] px-[var(--gutter)] py-[var(--section)]">
+    <section className="bg-gradient-to-b from-[#FEEFB8] to-[#FFE3E2] px-[var(--gutter)] py-[var(--section)]">
       <div className="mx-auto grid max-w-6xl items-center gap-[var(--gap)] md:grid-cols-[1.15fr_1fr]">
         {/* Copy */}
         <div className="order-2 text-center md:order-1 md:text-left">
