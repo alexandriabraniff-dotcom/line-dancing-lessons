@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import HomeHero from "@/components/HomeHero";
+import GoogleReview from "@/components/GoogleReview";
+import InstagramFeed from "@/components/InstagramFeed";
 
 export const metadata = {
   title: "Line Dancing Lessons in Vancouver",
@@ -8,6 +10,9 @@ export const metadata = {
     "Line dancing lessons in Vancouver for weddings, birthdays, special events and private lessons. Beginner and intermediate friendly, no partner needed, we come to you.",
   alternates: { canonical: "/" },
 };
+
+/* Re-render hourly so the Instagram feed stays fresh */
+export const revalidate = 3600;
 
 /* Questions we get asked most, also used for the FAQ structured data below */
 const faqs = [
@@ -334,6 +339,12 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ── Google review prompt ── */}
+      <GoogleReview />
+
+      {/* ── Latest Instagram posts ── */}
+      <InstagramFeed />
     </>
   );
 }

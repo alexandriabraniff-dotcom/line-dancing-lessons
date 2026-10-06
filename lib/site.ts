@@ -11,4 +11,15 @@ export const site = {
   ],
 } as const;
 
+/* ── Google reviews ────────────────────────────────────────
+   Paste the Google Business Profile Place ID here (Business Profile >
+   "Ask for reviews" link, or Google's Place ID Finder) and the review
+   button opens the "write a review" box directly. Until then it opens
+   a Google Maps search for the business. */
+export const googlePlaceId = "";
+
+export const googleReviewUrl = googlePlaceId
+  ? `https://search.google.com/local/writereview?placeid=${googlePlaceId}`
+  : "https://www.google.com/maps/search/?api=1&query=Wildflower+Line+Dancing+Vancouver";
+
 export const phoneHref = (phone: string) => `tel:${phone.replace(/[^\d+]/g, "")}`;
