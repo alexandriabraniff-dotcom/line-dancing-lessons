@@ -106,9 +106,9 @@ const gallery: { featured: Photo; left: Photo[]; right: Photo[]; mobile: Photo[]
 };
 
 /* Thin brown line that breaks up sections sharing the same background */
-function Divider({ className = "" }: { className?: string }) {
+function Divider() {
   return (
-    <div aria-hidden className={`px-[var(--gutter)] ${className}`}>
+    <div aria-hidden className="px-[var(--gutter)]">
       <div className="mx-auto h-px max-w-6xl bg-[#6B4841]/25" />
     </div>
   );
@@ -335,7 +335,7 @@ export default function Home() {
             {faqColumns.map((column, i) => (
               <dl key={i} className={i === 0 ? "md:pr-[max(1.5rem,3vw)]" : "md:pl-[max(1.5rem,3vw)]"}>
                 {column.map(({ q, a }) => (
-                  <div key={q} className="border-b border-[#6B4841]/15 py-5">
+                  <div key={q} className={`border-b border-[#6B4841]/15 py-5 md:last:border-b-0 ${i === 1 ? "last:border-b-0" : ""}`}>
                     <dt className="brygada font-bold text-[length:clamp(1.1rem,1.25vw,1.35rem)] leading-snug text-[#6B4841]">
                       {q}
                     </dt>
@@ -350,16 +350,15 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Review prompt fades from cream into the Instagram section's pink */}
-      <div>
-        {/* ── Google review prompt ── */}
-        <GoogleReview />
+      <Divider />
 
-        <Divider className="bg-[#FFE3E2]" />
+      {/* ── Google review prompt ── */}
+      <GoogleReview />
 
-        {/* ── Latest Instagram posts ── */}
-        <InstagramFeed />
-      </div>
+      <Divider />
+
+      {/* ── Latest Instagram posts ── */}
+      <InstagramFeed />
     </>
   );
 }
