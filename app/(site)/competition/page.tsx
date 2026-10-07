@@ -90,9 +90,9 @@ const focusRing =
 const eyebrowClass =
   `${zillaClass} font-bold text-[length:var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D4171C]`;
 
-/* Tickets are sold on AdmitONE (link in lib/event.ts). If the link is ever
-   removed the button says "Tickets Coming Soon" instead of going nowhere. */
-function TicketButton({ className }: { className: string }) {
+/* If the AdmitONE link is ever removed the button says "Tickets Coming Soon"
+   instead of going nowhere. */
+function TicketButton({ className, label }: { className: string; label?: string }) {
   if (!specialEvent.ticketsUrl) {
     return (
       <span aria-disabled="true" className={`${className} cursor-default`}>
@@ -108,54 +108,13 @@ function TicketButton({ className }: { className: string }) {
       rel="noopener noreferrer"
       className={className}
     >
-      {specialEvent.ticketsLabel}
+      {label ?? specialEvent.ticketsLabel}
     </a>
   );
 }
 
 const buttonBig =
-  `${zillaClass} inline-flex h-14 lg:h-16 w-full sm:w-auto items-center justify-center px-12 text-[length:clamp(1.25rem,1.5vw,1.6rem)] font-bold tracking-[0.18em] bg-[#D4171C] text-[#F5E5CC] shadow-[0_0_40px_-6px_rgba(212,23,28,0.7)] transition-colors duration-300 hover:bg-[#F5E5CC] hover:text-[#D4171C] ${focusRing}`;
-
-/* Big ticket call to action: used above the poster and again after the rules */
-function TicketPanel({ eyebrow, heading, line }: { eyebrow: string; heading: string; line: string }) {
-  return (
-    <div className="relative mx-auto max-w-6xl overflow-hidden border-2 border-[#D4171C] bg-[#0A0505]/80 px-[max(1.25rem,4vw)] py-[max(2.5rem,4vw)] text-center shadow-[0_0_60px_-20px_rgba(212,23,28,0.6)]">
-      {/* Red glow rising from the bottom, like the poster */}
-      <div
-        aria-hidden
-        className="absolute inset-0 -z-0"
-        style={{ backgroundImage: "radial-gradient(ellipse at 50% 120%, rgba(212,23,28,0.35) 0%, rgba(212,23,28,0) 65%)" }}
-      />
-      <div className="relative">
-        <p className={`${eyebrowClass} mb-3`}>{eyebrow}</p>
-        <h2 className="rye uppercase tracking-wide text-[#F5E5CC]" style={{ fontSize: "var(--text-h2)" }}>
-          {heading}
-        </h2>
-        <p className="mx-auto mt-4 max-w-2xl text-[length:var(--text-body)] leading-relaxed text-[#F5E5CC]/80">
-          {line}
-        </p>
-
-        <dl className="mx-auto mt-8 grid max-w-5xl grid-cols-1 gap-x-6 gap-y-4 border-y border-[#F5E5CC]/15 py-6 sm:grid-cols-3 lg:grid-cols-5">
-          {specialEvent.ticketFacts.map(({ label, value }) => (
-            <div key={label}>
-              <dt className={`${zillaClass} text-[0.9rem] uppercase tracking-[0.25em] text-[#D4171C]`}>{label}</dt>
-              <dd className="mt-1 text-[length:clamp(1.05rem,1.2vw,1.25rem)] leading-snug text-[#F5E5CC]">{value}</dd>
-            </div>
-          ))}
-        </dl>
-
-        <div className="mt-8 flex flex-col items-center gap-3">
-          <TicketButton className={buttonBig} />
-          <p className={`${zillaClass} text-[0.95rem] uppercase tracking-[0.2em] text-[#F5E5CC]/70`}>
-            {specialEvent.ageLine}
-            <span aria-hidden className="mx-2">&middot;</span>
-            Costume Contest Free to Enter
-          </p>
-        </div>
-      </div>
-    </div>
-  );
-}
+  `${zillaClass} inline-flex h-[45px] lg:h-14 w-full items-center justify-center px-8 text-[length:clamp(1.15rem,1.3vw,1.4rem)] font-bold tracking-[0.18em] bg-[#D4171C] text-[#F5E5CC] shadow-[0_0_30px_-8px_rgba(212,23,28,0.7)] transition-colors duration-300 hover:bg-[#F5E5CC] hover:text-[#D4171C] ${focusRing}`;
 
 function Bullet() {
   return <span aria-hidden className="mt-[0.55em] h-1.5 w-1.5 shrink-0 rounded-full bg-[#D4171C]" />;
@@ -230,15 +189,6 @@ export default function CompetitionPage() {
           </p>
         </div>
 
-        {/* Big ticket panel, right above the poster */}
-        <div className="relative z-10 mt-[var(--section-sm)]">
-          <TicketPanel
-            eyebrow="Secure Your Spot"
-            heading="Get Your Tickets"
-            line="Join us for a deadly night of line dancing, costumes and cash prizes. Competitors need a ticket to enter, so grab yours early."
-          />
-        </div>
-
         {/* Write-up left, image right */}
         <div className="relative z-10 max-w-6xl mx-auto mt-[var(--section-sm)] grid items-center gap-[var(--gap)] md:grid-cols-2">
           <div className="text-center md:text-left">
@@ -262,23 +212,39 @@ export default function CompetitionPage() {
             </div>
           </div>
 
-          {specialEvent.image ? (
-            <div className="relative aspect-[4/5] overflow-hidden">
-              <Image
-                src={specialEvent.image}
-                alt={specialEvent.imageAlt}
-                fill
-                preload
-                sizes="(min-width: 768px) 50vw, 100vw"
-                className="object-cover"
-              />
+          <div>
+            {/* Compact ticket box sitting right on top of the poster */}
+            <div className="mb-5 border-2 border-[#D4171C] bg-[#0A0505]/85 p-[max(1.25rem,1.8vw)] text-center shadow-[0_0_40px_-16px_rgba(212,23,28,0.7)]">
+              <p className={`${eyebrowClass} mb-2`}>Secure Your Spot</p>
+              <h2 className="rye uppercase tracking-wide text-[#F5E5CC]" style={{ fontSize: "var(--text-h3)" }}>
+                Get Your Tickets
+              </h2>
+              <p className={`${zillaClass} mt-2 mb-5 text-[length:clamp(1rem,1.15vw,1.2rem)] uppercase tracking-[0.12em] text-[#F5E5CC]/80`}>
+                Sunday, October 25
+                <span aria-hidden className="mx-2 text-[#D4171C]">&middot;</span>
+                {specialEvent.ageLine}
+              </p>
+              <TicketButton className={buttonBig} />
             </div>
-          ) : (
-            <div
-              aria-hidden
-              className="image-placeholder aspect-[4/5] !border-[#F5E5CC]/15 !bg-[#F5E5CC]/[0.04]"
-            />
-          )}
+
+            {specialEvent.image ? (
+              <div className="relative aspect-[4/5] overflow-hidden">
+                <Image
+                  src={specialEvent.image}
+                  alt={specialEvent.imageAlt}
+                  fill
+                  preload
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  className="object-cover"
+                />
+              </div>
+            ) : (
+              <div
+                aria-hidden
+                className="image-placeholder aspect-[4/5] !border-[#F5E5CC]/15 !bg-[#F5E5CC]/[0.04]"
+              />
+            )}
+          </div>
         </div>
       </section>
 
@@ -329,13 +295,14 @@ export default function CompetitionPage() {
             ))}
           </div>
 
-          {/* Second ticket panel once they've read the rules */}
-          <div className="mt-[var(--section)]">
-            <TicketPanel
-              eyebrow="Know the Rules?"
-              heading="Ready to Compete?"
-              line="You know how it works, now it's time to prove you can outlast the floor. Get your ticket and we'll see you on October 25."
-            />
+          {/* Short ticket prompt once they've read the rules */}
+          <div className="mt-[var(--section)] text-center">
+            <h2 className="rye uppercase tracking-wide text-[#F5E5CC]" style={{ fontSize: "var(--text-h3)" }}>
+              Are You Ready to Compete?
+            </h2>
+            <div className="mx-auto mt-6 max-w-sm">
+              <TicketButton className={buttonBig} label="Get Your Ticket Now" />
+            </div>
           </div>
         </div>
       </section>
