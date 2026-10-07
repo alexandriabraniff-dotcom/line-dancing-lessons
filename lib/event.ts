@@ -29,6 +29,14 @@ export const specialEvent = {
     "https://admitone.com/events/vancouver/community/halloween/the-yale-saloon-presents-dance-till-you-drop-dead/HCSUJ0",
   ticketsLabel: "Buy Tickets",
   ticketsSoonLabel: "Tickets Coming Soon",
+  /* Key details shown in the big ticket panels (above the poster and after the rules) */
+  ticketFacts: [
+    { label: "When", value: "Sunday, October 25" },
+    { label: "Where", value: "The Yale Saloon, 1300 Granville St" },
+    { label: "Class", value: "8:00 PM to 9:00 PM" },
+    { label: "Competition", value: "9:00 PM to 11:30 PM" },
+    { label: "Winners", value: "Cash prizes at midnight" },
+  ],
   /* Poster subtitle under the title */
   subtitle: "Line Dancing Endurance Competition",
   dateLine: "October 25  ·  9PM to 11:30PM",
