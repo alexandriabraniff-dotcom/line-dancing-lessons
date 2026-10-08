@@ -72,10 +72,6 @@ const occasions = [
 type Photo = { src: string; alt: string } | null;
 
 const photos = {
-  group: {
-    src: "/gallery/group-photo.png",
-    alt: "Group of dancers in cowboy hats smiling under string lights at an outdoor event",
-  },
   danceFloor: {
     src: "/gallery/dance-floor.jpeg",
     alt: "A packed dance floor line dancing together at a country bar",
@@ -100,9 +96,9 @@ const photos = {
 
 const gallery: { featured: Photo; left: Photo[]; right: Photo[]; mobile: Photo[] } = {
   featured: photos.street,
-  left: [photos.danceFloor, photos.group, photos.streetLineDance, null],
+  left: [photos.danceFloor, null, photos.streetLineDance, null],
   right: [photos.boots, null, null, photos.streetCrowd],
-  mobile: [photos.street, photos.group, photos.danceFloor, photos.boots, photos.streetLineDance, photos.streetCrowd, null, null, null],
+  mobile: [photos.street, photos.danceFloor, photos.boots, photos.streetLineDance, photos.streetCrowd, null, null, null, null],
 };
 
 /* Thin brown line that breaks up sections sharing the same background */

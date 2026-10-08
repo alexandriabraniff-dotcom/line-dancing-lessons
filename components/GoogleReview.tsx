@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { googleReviewUrl } from "@/lib/site";
 
 /* Google's four colour "G" */
@@ -14,13 +13,13 @@ export function GoogleIcon({ className }: { className?: string }) {
 }
 
 /* Asks happy dancers to leave a Google review (helps the business show up in local search).
-   Copy beside an arch-framed photo. */
+   Copy only, no photo. */
 export default function GoogleReview() {
   return (
     <section className="px-[var(--gutter)] py-[var(--section)]">
-      <div className="mx-auto grid max-w-6xl items-center gap-[var(--gap)] md:grid-cols-[1.15fr_1fr]">
+      <div className="mx-auto max-w-6xl">
         {/* Copy */}
-        <div className="order-2 text-center md:order-1 md:text-left">
+        <div className="text-center md:text-left">
           <p className="brygada mb-3 text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.35em] text-[#D49C84]">
             Kind Words Go a Long Way
           </p>
@@ -51,19 +50,6 @@ export default function GoogleReview() {
             <p className="brygada text-[length:calc(var(--text-body)*0.9)] italic text-[#6B4841]/70">
               Takes less than a minute
             </p>
-          </div>
-        </div>
-
-        {/* Arch photo */}
-        <div className="order-1 mx-auto w-[min(70vw,22rem)] md:order-2 md:w-full md:max-w-[26rem]">
-          <div className="relative aspect-[3/4] overflow-hidden rounded-t-full border-[6px] border-[#F7EAD8] shadow-[0_18px_40px_-24px_rgba(30,15,11,0.45)]">
-            <Image
-              src="/gallery/group-photo.png"
-              alt="Dancers in cowboy hats smiling together under string lights"
-              fill
-              sizes="(min-width: 768px) 26rem, 70vw"
-              className="object-cover"
-            />
           </div>
         </div>
       </div>
