@@ -116,6 +116,9 @@ function TicketButton({ className, label }: { className: string; label?: string 
 const buttonBig =
   `${zillaClass} inline-flex h-[45px] lg:h-14 w-full items-center justify-center px-8 text-[length:clamp(1.15rem,1.3vw,1.4rem)] font-bold tracking-[0.18em] bg-[#D4171C] text-[#F5E5CC] shadow-[0_0_30px_-8px_rgba(212,23,28,0.7)] transition-colors duration-300 hover:bg-[#F5E5CC] hover:text-[#D4171C] ${focusRing}`;
 
+const buttonOutline =
+  `${zillaClass} inline-flex h-[45px] lg:h-14 w-full items-center justify-center px-8 text-[length:clamp(1.15rem,1.3vw,1.4rem)] font-bold tracking-[0.18em] border-2 border-[#F5E5CC] text-[#F5E5CC] transition-colors duration-300 hover:bg-[#F5E5CC] hover:text-[#0A0505] ${focusRing}`;
+
 function Bullet() {
   return <span aria-hidden className="mt-[0.55em] h-1.5 w-1.5 shrink-0 rounded-full bg-[#D4171C]" />;
 }
@@ -244,6 +247,32 @@ export default function CompetitionPage() {
                 className="image-placeholder aspect-[4/5] !border-[#F5E5CC]/15 !bg-[#F5E5CC]/[0.04]"
               />
             )}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Song requests: Google Form ── */}
+      <section className="px-[var(--gutter)] pt-[var(--section)]">
+        <div className="max-w-3xl mx-auto border-2 border-[#F5E5CC]/20 bg-[#140A0A] p-[max(1.5rem,2.5vw)] text-center">
+          <p className={`${eyebrowClass} mb-3`}>Pick the Playlist</p>
+          <h2
+            className="rye text-[#F5E5CC] uppercase tracking-wide"
+            style={{ fontSize: "var(--text-h2)" }}
+          >
+            Request a Song
+          </h2>
+          <p className="mx-auto mt-4 max-w-[34rem] text-[length:var(--text-body)] leading-relaxed text-[#F5E5CC]/75">
+            Got a line dance you want to hear on the night? Send us your song requests and we'll do our best to get them played.
+          </p>
+          <div className="mx-auto mt-6 max-w-sm">
+            <a
+              href={specialEvent.songRequestsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={buttonOutline}
+            >
+              Send a Song Request
+            </a>
           </div>
         </div>
       </section>

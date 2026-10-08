@@ -29,6 +29,9 @@ export const specialEvent = {
     "https://admitone.com/events/vancouver/community/halloween/the-yale-saloon-presents-dance-till-you-drop-dead/HCSUJ0",
   ticketsLabel: "Buy Tickets",
   ticketsSoonLabel: "Tickets Coming Soon",
+
+  /* ▸ SONG REQUESTS: Google Form where people send songs for the night */
+  songRequestsUrl: "https://forms.gle/UJEkKd1S5QHNAghC6",
   /* Poster subtitle under the title */
   subtitle: "Line Dancing Endurance Competition",
   dateLine: "October 25  ·  9PM to 11:30PM",
