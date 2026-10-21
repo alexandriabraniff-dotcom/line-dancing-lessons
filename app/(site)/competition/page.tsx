@@ -88,7 +88,7 @@ const focusRing =
   "focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#C483C8]";
 
 const eyebrowClass =
-  `${zillaClass} font-bold text-[length:var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#D4171C]`;
+  `${zillaClass} font-bold text-[length:var(--text-eyebrow)] tracking-[0.35em] uppercase text-[#E8383D]`;
 
 /* If the AdmitONE link is ever removed the button says "Tickets Coming Soon"
    instead of going nowhere. */
@@ -114,10 +114,14 @@ function TicketButton({ className, label }: { className: string; label?: string 
 }
 
 const buttonBig =
-  `${zillaClass} inline-flex h-[45px] lg:h-14 w-full items-center justify-center px-8 text-[length:clamp(1.15rem,1.3vw,1.4rem)] font-bold tracking-[0.18em] bg-[#D4171C] text-[#F5E5CC] shadow-[0_0_30px_-8px_rgba(212,23,28,0.7)] transition-colors duration-300 hover:bg-[#F5E5CC] hover:text-[#D4171C] ${focusRing}`;
+  `${zillaClass} inline-flex h-[45px] lg:h-14 w-full items-center justify-center px-8 text-[length:clamp(1.15rem,1.3vw,1.4rem)] font-bold tracking-[0.18em] bg-[#C0141A] text-[#F5E5CC] shadow-[0_0_30px_-8px_rgba(212,23,28,0.7)] transition-colors duration-300 hover:bg-[#F5E5CC] hover:text-[#D4171C] ${focusRing}`;
 
 const buttonOutline =
   `${zillaClass} inline-flex h-[45px] lg:h-14 w-full items-center justify-center px-8 text-[length:clamp(1.15rem,1.3vw,1.4rem)] font-bold tracking-[0.18em] border-2 border-[#F5E5CC] text-[#F5E5CC] transition-colors duration-300 hover:bg-[#F5E5CC] hover:text-[#0A0505] ${focusRing}`;
+
+/* Darker red than the brand red so the small cream text keeps AA contrast */
+const swapTag =
+  `${zillaClass} inline-block bg-[#A80F14] px-2 py-0.5 text-[0.8rem] uppercase tracking-[0.14em] text-[#F5E5CC]`;
 
 function Bullet() {
   return <span aria-hidden className="mt-[0.55em] h-1.5 w-1.5 shrink-0 rounded-full bg-[#D4171C]" />;
@@ -158,8 +162,9 @@ export default function CompetitionPage() {
           }}
         />
 
-        {/* Title block, centred above everything */}
-        <div className="relative z-10 max-w-6xl mx-auto text-center">
+        {/* Title block left, tickets right */}
+        <div className="relative z-10 max-w-6xl mx-auto grid items-center gap-[var(--gap)] md:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)]">
+        <div className="text-center md:text-left">
           <h1 className="leading-[0.95]">
             <span
               className="rye block uppercase tracking-[0.01em] text-[#F5E5CC] [text-shadow:0_4px_16px_black]"
@@ -192,6 +197,24 @@ export default function CompetitionPage() {
           </p>
         </div>
 
+          {/* Ticket box, with a jump down to the setlist */}
+          <div className="border-2 border-[#D4171C] bg-[#0A0505]/85 p-[max(1.25rem,2.2vw)] text-center shadow-[0_0_40px_-16px_rgba(212,23,28,0.7)]">
+            <p className={`${eyebrowClass} mb-2`}>Secure Your Spot</p>
+            <h2 className="rye uppercase tracking-wide text-[#F5E5CC]" style={{ fontSize: "var(--text-h3)" }}>
+              Get Your Tickets
+            </h2>
+            <p className={`${zillaClass} mt-2 mb-6 text-[length:clamp(1rem,1.15vw,1.2rem)] uppercase tracking-[0.12em] text-[#F5E5CC]/80`}>
+              Sunday, October 25
+              <span aria-hidden className="mx-2 text-[#D4171C]">&middot;</span>
+              {specialEvent.ageLine}
+            </p>
+            <TicketButton className={buttonBig} />
+            <a href="#setlist" className={`${buttonOutline} mt-3`}>
+              See the Setlist
+            </a>
+          </div>
+        </div>
+
         {/* Write-up left, image right */}
         <div className="relative z-10 max-w-6xl mx-auto mt-[var(--section-sm)] grid items-center gap-[var(--gap)] md:grid-cols-2">
           <div className="text-center md:text-left">
@@ -216,20 +239,6 @@ export default function CompetitionPage() {
           </div>
 
           <div>
-            {/* Compact ticket box sitting right on top of the poster */}
-            <div className="mb-5 border-2 border-[#D4171C] bg-[#0A0505]/85 p-[max(1.25rem,1.8vw)] text-center shadow-[0_0_40px_-16px_rgba(212,23,28,0.7)]">
-              <p className={`${eyebrowClass} mb-2`}>Secure Your Spot</p>
-              <h2 className="rye uppercase tracking-wide text-[#F5E5CC]" style={{ fontSize: "var(--text-h3)" }}>
-                Get Your Tickets
-              </h2>
-              <p className={`${zillaClass} mt-2 mb-5 text-[length:clamp(1rem,1.15vw,1.2rem)] uppercase tracking-[0.12em] text-[#F5E5CC]/80`}>
-                Sunday, October 25
-                <span aria-hidden className="mx-2 text-[#D4171C]">&middot;</span>
-                {specialEvent.ageLine}
-              </p>
-              <TicketButton className={buttonBig} />
-            </div>
-
             {specialEvent.image ? (
               <div className="relative aspect-[4/5] overflow-hidden">
                 <Image
@@ -251,29 +260,75 @@ export default function CompetitionPage() {
         </div>
       </section>
 
-      {/* ── Song requests: Google Form ── */}
-      <section className="px-[var(--gutter)] pt-[var(--section)]">
-        <div className="max-w-3xl mx-auto border-2 border-[#F5E5CC]/20 bg-[#140A0A] p-[max(1.5rem,2.5vw)] text-center">
-          <p className={`${eyebrowClass} mb-3`}>Pick the Playlist</p>
-          <h2
-            className="rye text-[#F5E5CC] uppercase tracking-wide"
-            style={{ fontSize: "var(--text-h2)" }}
-          >
-            Request a Song
-          </h2>
-          <p className="mx-auto mt-4 max-w-[34rem] text-[length:var(--text-body)] leading-relaxed text-[#F5E5CC]/75">
-            Got a line dance you want to hear on the night? Send us your song requests and we'll do our best to get them played.
-          </p>
-          <div className="mx-auto mt-6 max-w-sm">
-            <a
-              href={specialEvent.songRequestsUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={buttonOutline}
+      {/* ── Setlist: every dance that could be played, with step sheet links ── */}
+      <section id="setlist" className="scroll-mt-[calc(var(--header-logo)+var(--header-pad-y)*2+1.5rem)] px-[var(--gutter)] pt-[var(--section)]">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center">
+            <p className={`${eyebrowClass} mb-3`}>Practise Before the Night</p>
+            <h2
+              className="rye text-[#F5E5CC] uppercase tracking-wide"
+              style={{ fontSize: "var(--text-h2)" }}
             >
-              Send a Song Request
-            </a>
+              The Setlist
+            </h2>
+            <p className="mx-auto mt-4 max-w-[40rem] text-[length:var(--text-body)] leading-relaxed text-[#F5E5CC]/75">
+              Here are all {specialEvent.setlist.length} line dances that could be played during the competition. Open any step sheet to learn a new dance or brush up on the ones you know. The more you know, the more points you can earn.
+            </p>
           </div>
+
+          {/* How the spooky song swaps work */}
+          <div className="mx-auto mt-8 flex max-w-[40rem] flex-col items-center gap-3 border border-[#F5E5CC]/15 bg-[#140A0A] px-5 py-4 text-center sm:flex-row sm:text-left">
+            <span className={`${swapTag} shrink-0`}>Spooky Swap</span>
+            <p className="text-[length:clamp(0.98rem,1vw,1.1rem)] leading-snug text-[#F5E5CC]/75">
+              These start on a Halloween song, then switch to the song shown. They only count once the MC calls &quot;Song swap, this counts!&quot;
+            </p>
+          </div>
+
+          <ol className="mt-[var(--section-sm)] gap-x-[var(--gap)] lg:columns-2">
+            {specialEvent.setlist.map(({ song, artist, dance, url, swap }, i) => (
+              <li
+                key={url}
+                className="grid break-inside-avoid grid-cols-[auto_minmax(0,1fr)] items-center gap-x-4 border-b border-[#F5E5CC]/12 py-4 sm:grid-cols-[auto_minmax(0,1fr)_auto]"
+              >
+                <span
+                  aria-hidden
+                  className="rye w-[2.2ch] shrink-0 text-[length:clamp(1.65rem,1.9vw,1.8rem)] leading-none text-[#D4171C]"
+                >
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+
+                <div className="min-w-0">
+                  <p className={`${zillaClass} text-[length:clamp(1.1rem,1.25vw,1.3rem)] leading-tight text-[#F5E5CC]`}>
+                    {song}
+                    <span className="block font-[family-name:var(--font-body)] font-normal text-[#F5E5CC]/60 sm:inline"> by {artist}</span>
+                  </p>
+                  {swap && (
+                    <p className="mt-1.5 flex flex-wrap items-center gap-x-2 gap-y-1 text-[0.95rem] text-[#F5E5CC]/75">
+                      <span className={swapTag}>Spooky Swap</span>
+                      <span>to {swap}</span>
+                    </p>
+                  )}
+                  <p className="mt-1 text-[0.95rem] text-[#F5E5CC]/60">
+                    Dance: <span className="text-[#F5E5CC]/85">{dance}</span>
+                  </p>
+                </div>
+
+                <a
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Step sheet for ${dance}, opens CopperKnob in a new tab`}
+                  className={`${zillaClass} col-start-2 mt-3 inline-flex min-h-11 items-center justify-self-start border sm:col-start-3 sm:mt-0 border-[#F5E5CC]/40 px-3 text-[0.9rem] uppercase tracking-[0.12em] text-[#F5E5CC] transition-colors duration-300 hover:border-[#F5E5CC] hover:bg-[#F5E5CC] hover:text-[#0A0505] sm:px-4 ${focusRing}`}
+                >
+                  Step Sheet
+                </a>
+              </li>
+            ))}
+          </ol>
+
+          <p className="mt-6 text-center text-[0.95rem] text-[#F5E5CC]/60">
+            Step sheets open on CopperKnob in a new tab.
+          </p>
         </div>
       </section>
 

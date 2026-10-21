@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePagePath } from "@/lib/usePagePath";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import SocialLinks from "@/components/SocialLinks";
@@ -161,7 +161,7 @@ function MobileMenu({
 /* ── Shared bar: `hero` sits over the photo, otherwise the solid cream header.
    Sizes come from the --nav-* / --header-* / --hero-* variables in globals.css. ── */
 function NavBar({ hero }: { hero: boolean }) {
-  const pathname = usePathname();
+  const pathname = usePagePath();
   const [open, setOpen] = useState(false);
   const [lastPath, setLastPath] = useState(pathname);
   const toggleRef = useRef<HTMLButtonElement>(null);
@@ -229,7 +229,7 @@ function NavBar({ hero }: { hero: boolean }) {
                           : "text-[#F7EAD8] drop-shadow-[0_1px_6px_rgba(30,15,11,0.6)] hover:text-[#C483C8]"
                         : active
                           ? "text-[#6B4841]"
-                          : "text-[#6B4841]/75 hover:text-[#6B4841]"
+                          : "text-[#6B4841]/90 hover:text-[#6B4841]"
                     }`}
                   >
                     {l.label}
@@ -286,7 +286,7 @@ export function HeroNav() {
 /* Fixed header: always shown on inner pages. On the homepage it drops in
    once you are 75% of the way past the hero and stays for the rest of the page. */
 export default function Nav() {
-  const pathname = usePathname();
+  const pathname = usePagePath();
   const isHome = pathname === "/";
   const [pastHero, setPastHero] = useState(false);
 

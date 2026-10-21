@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePagePath } from "@/lib/usePagePath";
 import SocialLinks from "@/components/SocialLinks";
 import { phoneHref, site } from "@/lib/site";
 
@@ -66,7 +66,7 @@ function ContactRow({ icon, label, children }: { icon: keyof typeof icons; label
 }
 
 export default function Footer() {
-  const pathname = usePathname();
+  const pathname = usePagePath();
 
   return (
     <footer className="grain relative bg-[#1E0F0B] text-[#F7EAD8]">
@@ -168,7 +168,7 @@ export default function Footer() {
               href="https://alexandriabraniff.com"
               target="_blank"
               rel="noopener noreferrer"
-              className={`text-[#F7EAD8]/70 transition-colors hover:text-[#C483C8] ${focusRing}`}
+              className={`text-[#F7EAD8]/70 underline underline-offset-4 transition-colors hover:text-[#C483C8] ${focusRing}`}
             >
               Alexandria Braniff
             </a>
