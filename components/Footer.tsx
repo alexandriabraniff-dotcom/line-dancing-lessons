@@ -18,11 +18,10 @@ const linkClass = `text-[length:var(--text-body)] transition-colors hover:text-[
 const contactValue = `block whitespace-nowrap text-[length:min(var(--text-body),5.9cqw)] transition-colors hover:text-[#C483C8] ${focusRing}`;
 
 const pages = [
-  /* TEMPORARY: special event page, remove with lib/event.ts */
-  { href: "/competition", label: "Competition" },
   { href: "/", label: "Home" },
   { href: "/about", label: "About Us" },
   { href: "/services", label: "Services" },
+  { href: "/competitions", label: "Competitions" },
   { href: "/contact", label: "Contact" },
 ];
 

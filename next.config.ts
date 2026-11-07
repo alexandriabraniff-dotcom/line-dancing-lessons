@@ -13,13 +13,11 @@ const redirectHosts = [
   "line-dancing-lessons.vercel.app",
 ];
 
-/* TEMPORARY (Dance Till You Drop Dead, Oct 25): wildflowerlinedancing.com/tickets
-   forwards to the AdmitONE ticket page. The Tickets QR code on the printed posters
-   points here, so if the ticket page ever changes, update this one line instead of
-   reprinting. Keep it in sync with ticketsUrl in lib/event.ts. Not permanent, so
-   browsers don't cache it. */
-const TICKETS_URL =
-  "https://admitone.com/events/vancouver/community/halloween/the-yale-saloon-presents-dance-till-you-drop-dead/HCSUJ0";
+/* The printed posters' Tickets QR code points at /tickets. The Halloween
+   event is over, so it now goes to the Competitions page, where the next
+   event's tickets will be. Temporary (307) so it can point at a specific
+   ticket page again later without browsers having cached it. */
+const TICKETS_URL = "/competitions";
 
 const nextConfig: NextConfig = {
   /* Browsers and crawlers that still ask for /favicon.ico get the flower icon */
@@ -35,6 +33,12 @@ const nextConfig: NextConfig = {
         permanent: true,
       })),
       { source: "/tickets", destination: TICKETS_URL, permanent: false },
+      /* The old single event page. Instagram, posters and QR codes link here. */
+      {
+        source: "/competition",
+        destination: "/competitions/dance-till-you-drop-dead-2026",
+        statusCode: 301,
+      },
     ];
   },
 };

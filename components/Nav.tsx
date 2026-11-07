@@ -6,45 +6,21 @@ import { usePagePath } from "@/lib/usePagePath";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import SocialLinks from "@/components/SocialLinks";
-/* TEMPORARY: special event nav button, remove with lib/event.ts */
-import { specialEvent } from "@/lib/event";
 
 const links = [
-  /* TEMPORARY: sits to the left of Home until the event is over */
-  { href: specialEvent.href, label: specialEvent.navLabel },
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
+  { href: "/competitions", label: "Competitions" },
   { href: "/contact", label: "Contact" },
 ];
 
+/* A section stays active on its sub-pages, e.g. /competitions/<slug> */
+const isActive = (pathname: string, href: string) =>
+  pathname === href || (href !== "/" && pathname.startsWith(`${href}/`));
+
 const focusRing =
   "focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#C483C8]";
-
-/* ── TEMPORARY: hand-drawn style arrow pointing at the Competition button.
-   Only on the homepage hero. Remove with lib/event.ts. ── */
-function EventNoteDesktop() {
-  return (
-    <div className="pointer-events-none absolute left-1/2 top-full z-20 mt-1 hidden -translate-x-[0.6rem] items-start gap-2 lg:flex">
-      <svg
-        aria-hidden
-        viewBox="0 0 64 48"
-        className="mt-1 w-[max(3.3rem,calc(var(--vu)*4))] shrink-0 text-[#C483C8]"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M60 45C38 41 16 31 9 7" />
-        <path d="M9 5 2 17M9 5l10 8" />
-      </svg>
-      <p className="brygada whitespace-nowrap pt-[1.15rem] text-[length:max(1.35rem,calc(var(--vu)*1.3))] font-bold italic text-[#C483C8] drop-shadow-[0_2px_8px_rgba(30,15,11,0.95)]">
-        {specialEvent.heroNote}
-      </p>
-    </div>
-  );
-}
 
 function Logo({ className, preload = false, cream = false }: { className: string; preload?: boolean; cream?: boolean }) {
   return (
@@ -119,7 +95,7 @@ function MobileMenu({
       <div className="relative z-10 flex flex-1 flex-col justify-between px-[var(--hero-gutter)] pb-10 pt-10">
         <ul className="flex flex-col items-center gap-1 text-center">
           {links.map((l, i) => {
-            const active = pathname === l.href;
+            const active = isActive(pathname, l.href);
             return (
               <li key={l.href} className="fade-up" style={{ animationDelay: `${80 + i * 60}ms` }}>
                 <Link
@@ -214,11 +190,9 @@ function NavBar({ hero }: { hero: boolean }) {
         >
           <ul className="hidden items-center gap-[var(--nav-gap)] whitespace-nowrap lg:flex">
             {links.map((l) => {
-              const active = pathname === l.href;
-              /* TEMPORARY: event note hangs off the Competition button in the hero */
-              const isEvent = l.href === specialEvent.href;
+              const active = isActive(pathname, l.href);
               return (
-                <li key={l.href} className={isEvent ? "relative" : undefined}>
+                <li key={l.href}>
                   <Link
                     href={l.href}
                     aria-current={active ? "page" : undefined}
@@ -234,7 +208,6 @@ function NavBar({ hero }: { hero: boolean }) {
                   >
                     {l.label}
                   </Link>
-                  {hero && isEvent && <EventNoteDesktop />}
                 </li>
               );
             })}
