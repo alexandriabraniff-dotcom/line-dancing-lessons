@@ -32,6 +32,11 @@ export const danceTillYouDropDead2026: Competition = {
     height: 1350,
   },
 
+  banner: {
+    src: "/events/dance-till-you-drop-dead-banner.jpg",
+    alt: "Dance Till You Drop Dead competition, October 25 2026 at The Yale Saloon, Wildflower Line Dancing x The Yale Saloon, 19+",
+  },
+
   /* TODO (client): one or more paragraphs about the night. Until then the page
      says the recap is coming soon. */
   recap: [],

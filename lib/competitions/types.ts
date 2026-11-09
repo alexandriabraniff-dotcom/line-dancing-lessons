@@ -22,6 +22,10 @@ export type Competition = {
   /* Cover photo. Either a file in public/ ("/events/poster.jpg") with its
      pixel size, or a Cloudinary public ID from the gallery manifest. */
   cover: { src: string; alt: string; width: number; height: number } | { cloudinaryId: string; alt: string };
+  /* Wide 4:1 banner for the /competitions cards, in the style of the Google
+     Form header (Figma "Website Competition Banner (1600x400)"). Export at
+     1600x400 into public/events/. Without one the card uses the cover photo. */
+  banner?: { src: string; alt: string };
   /* Recap paragraphs. While empty the page says the recap is coming soon. */
   recap: string[];
   /* Only shown while the competition is upcoming */
