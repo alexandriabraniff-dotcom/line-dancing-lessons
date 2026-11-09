@@ -70,13 +70,14 @@ function CompetitionCard({ competition, upcoming }: { competition: Competition; 
           )}
         </div>
         <div className="flex flex-1 flex-col p-4">
-          <p className={`${eyebrow} tracking-[0.2em]`}>
-            <time dateTime={competition.startDate}>{shortDate(competition.startDate)}</time>
-          </p>
+          <p className={`${eyebrow} tracking-[0.2em]`}>{upcoming ? "Upcoming" : "Past Event"}</p>
           <h3 className="rye mt-1.5 uppercase leading-tight tracking-wide text-[#6B4841] text-[length:var(--text-body)]">
             {competition.name}
           </h3>
           <p className={`mt-1 ${small} text-[#6B4841]`}>
+            <time dateTime={competition.startDate}>{shortDate(competition.startDate)}</time>
+          </p>
+          <p className={`${small} text-[#6B4841]`}>
             {competition.venue.name}, {competition.venue.city}
           </p>
           <p className={`mt-auto pt-3 ${small} font-bold text-[#6B4841] underline decoration-[#6B4841]/40 underline-offset-4 group-hover:decoration-[#6B4841]`}>
@@ -142,38 +143,29 @@ export default function CompetitionsPage() {
         </div>
       </section>
 
-      {/* ── Upcoming: always shown, with a Coming Soon card holding the next spot ── */}
-        <section aria-labelledby="upcoming-heading" className="px-[var(--gutter)] pb-[var(--section)]">
-          <div className="max-w-6xl mx-auto">
-            <h2 id="upcoming-heading" className="rye mb-8 text-center uppercase tracking-wide text-[#6B4841]" style={{ fontSize: "var(--text-h2)" }}>
-              Upcoming
-            </h2>
-            <ul id="upcoming-cards" className={cardRow}>
-              {upcoming.map((c) => (
-                <CompetitionCard key={c.slug} competition={c} upcoming />
-              ))}
-              <ComingSoonCard more={upcoming.length > 0} />
-            </ul>
-            <ScrollDots targetId="upcoming-cards" labels={[...upcoming.map((c) => c.name), "Coming Soon"]} groupLabel="Upcoming competitions" />
-          </div>
-        </section>
-
-      {/* ── Past competitions, newest first ── */}
-      {past.length > 0 && (
-        <section aria-labelledby="past-heading" className="border-t border-[#6B4841]/10 px-[var(--gutter)] pt-[var(--section-sm)] pb-[var(--section)]">
-          <div className="max-w-6xl mx-auto">
-            <h2 id="past-heading" className="rye mb-8 text-center uppercase tracking-wide text-[#6B4841]" style={{ fontSize: "var(--text-h2)" }}>
-              Past Competitions
-            </h2>
-            <ul id="past-cards" className={cardRow}>
-              {past.map((c) => (
-                <CompetitionCard key={c.slug} competition={c} upcoming={false} />
-              ))}
-            </ul>
-            <ScrollDots targetId="past-cards" labels={past.map((c) => c.name)} groupLabel="Past competitions" />
-          </div>
-        </section>
-      )}
+      {/* ── Every competition in one row: upcoming (soonest first), the Coming
+             Soon card, then past ones (newest first). Each card says which it is. ── */}
+      <section aria-labelledby="competitions-heading" className="px-[var(--gutter)] pb-[var(--section)]">
+        <div className="max-w-6xl mx-auto">
+          <h2 id="competitions-heading" className="sr-only">
+            All Competitions
+          </h2>
+          <ul id="competition-cards" className={cardRow}>
+            {upcoming.map((c) => (
+              <CompetitionCard key={c.slug} competition={c} upcoming />
+            ))}
+            <ComingSoonCard more={upcoming.length > 0} />
+            {past.map((c) => (
+              <CompetitionCard key={c.slug} competition={c} upcoming={false} />
+            ))}
+          </ul>
+          <ScrollDots
+            targetId="competition-cards"
+            labels={[...upcoming.map((c) => c.name), "Coming Soon", ...past.map((c) => c.name)]}
+            groupLabel="Competitions"
+          />
+        </div>
+      </section>
     </>
   );
 }
