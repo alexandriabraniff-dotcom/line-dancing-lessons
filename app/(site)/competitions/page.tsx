@@ -51,8 +51,8 @@ function CompetitionCard({ competition, upcoming }: { competition: Competition; 
         href={`/competitions/${competition.slug}`}
         className={`group ${card} transition-shadow duration-300 hover:shadow-[0_18px_40px_-18px_rgba(30,15,11,0.5)] ${focusRing}`}
       >
-        {/* Wide 4:1 banner, like the Google Form header */}
-        <div className="relative aspect-[4/1] overflow-hidden bg-[#0A0505]">
+        {/* 3:2 artwork: event name + cowgirl only */}
+        <div className="relative aspect-[3/2] overflow-hidden bg-[#0A0505]">
           {competition.banner ? (
             <Image
               src={competition.banner.src}
@@ -69,7 +69,7 @@ function CompetitionCard({ competition, upcoming }: { competition: Competition; 
             />
           )}
         </div>
-        <div className="flex min-h-[11rem] flex-1 lg:min-h-[15rem] flex-col px-5 pt-6 pb-6">
+        <div className="flex min-h-[9rem] flex-1 lg:min-h-[12rem] flex-col px-5 pt-6 pb-6">
           <p className={`${eyebrow} tracking-[0.2em]`}>{upcoming ? "Upcoming" : "Past Event"}</p>
           <h3 className="rye mt-2 uppercase leading-tight tracking-wide text-[#6B4841] text-[length:var(--text-body)]">
             {competition.name}
@@ -95,13 +95,13 @@ function ComingSoonCard({ more }: { more: boolean }) {
   return (
     <li className={cardItem}>
       <div className="flex h-full flex-col border-2 border-dashed border-[#6B4841]/35 bg-[#FBF4EA]/60">
-        <div className="flex aspect-[4/1] flex-col items-center justify-center border-b-2 border-dashed border-[#6B4841]/35 px-4 text-center">
+        <div className="flex aspect-[3/2] flex-col items-center justify-center border-b-2 border-dashed border-[#6B4841]/35 px-4 text-center">
           <p className="rye uppercase leading-tight tracking-wide text-[#6B4841] text-[length:var(--text-body)]">
             {more ? "More Events" : "Next Competition"}
           </p>
           <p className={`${eyebrow} mt-1 tracking-[0.2em]`}>Coming Soon</p>
         </div>
-        <div className="flex min-h-[11rem] flex-1 lg:min-h-[15rem] flex-col px-5 pt-6 pb-6">
+        <div className="flex min-h-[9rem] flex-1 lg:min-h-[12rem] flex-col px-5 pt-6 pb-6">
           <p className={`${small} leading-relaxed text-[#6B4841]`}>
             Dates, venue and tickets will be posted here first, and on our Instagram.
           </p>

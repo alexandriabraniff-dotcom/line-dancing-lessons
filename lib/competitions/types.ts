@@ -22,9 +22,10 @@ export type Competition = {
   /* Cover photo. Either a file in public/ ("/events/poster.jpg") with its
      pixel size, or a Cloudinary public ID from the gallery manifest. */
   cover: { src: string; alt: string; width: number; height: number } | { cloudinaryId: string; alt: string };
-  /* Wide 4:1 banner for the /competitions cards, in the style of the Google
-     Form header (Figma "Website Competition Banner (1600x400)"). Export at
-     1600x400 into public/events/. Without one the card uses the cover photo. */
+  /* 3:2 artwork for the /competitions cards: just the event name and the
+     cowgirl, no date/venue/logos (the card text has those). Figma
+     "Website Competition Card (1200x800)", export 1200x800 into
+     public/events/. Without one the card uses the cover photo. */
   banner?: { src: string; alt: string };
   /* Recap paragraphs. While empty the page says the recap is coming soon. */
   recap: string[];
