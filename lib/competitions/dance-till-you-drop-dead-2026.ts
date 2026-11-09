@@ -33,7 +33,7 @@ export const danceTillYouDropDead2026: Competition = {
   },
 
   banner: {
-    src: "/events/dance-till-you-drop-dead-card-2.jpg",
+    src: "/events/dance-till-you-drop-dead-card-3.jpg",
     alt: "Dance Till You Drop Dead, a 19+ event by Wildflower Line Dancing and The Yale Saloon, with the Wildflower cowgirl dancing",
   },
 
