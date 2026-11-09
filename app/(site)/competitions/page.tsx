@@ -69,18 +69,18 @@ function CompetitionCard({ competition, upcoming }: { competition: Competition; 
             />
           )}
         </div>
-        <div className="flex flex-1 flex-col p-4">
+        <div className="flex min-h-[11rem] flex-1 lg:min-h-[15rem] flex-col px-5 pt-6 pb-6">
           <p className={`${eyebrow} tracking-[0.2em]`}>{upcoming ? "Upcoming" : "Past Event"}</p>
-          <h3 className="rye mt-1.5 uppercase leading-tight tracking-wide text-[#6B4841] text-[length:var(--text-body)]">
+          <h3 className="rye mt-2 uppercase leading-tight tracking-wide text-[#6B4841] text-[length:var(--text-body)]">
             {competition.name}
           </h3>
-          <p className={`mt-1 ${small} text-[#6B4841]`}>
+          <p className={`mt-3 ${small} text-[#6B4841]`}>
             <time dateTime={competition.startDate}>{shortDate(competition.startDate)}</time>
           </p>
           <p className={`${small} text-[#6B4841]`}>
             {competition.venue.name}, {competition.venue.city}
           </p>
-          <p className={`mt-auto pt-3 ${small} font-bold text-[#6B4841] underline decoration-[#6B4841]/40 underline-offset-4 group-hover:decoration-[#6B4841]`}>
+          <p className={`mt-auto pt-5 ${small} font-bold text-[#6B4841] underline decoration-[#6B4841]/40 underline-offset-4 group-hover:decoration-[#6B4841]`}>
             {upcoming ? "Event Details & Tickets" : "Recap & Photos"}
           </p>
         </div>
@@ -101,7 +101,7 @@ function ComingSoonCard({ more }: { more: boolean }) {
           </p>
           <p className={`${eyebrow} mt-1 tracking-[0.2em]`}>Coming Soon</p>
         </div>
-        <div className="flex flex-1 flex-col p-4">
+        <div className="flex min-h-[11rem] flex-1 lg:min-h-[15rem] flex-col px-5 pt-6 pb-6">
           <p className={`${small} leading-relaxed text-[#6B4841]`}>
             Dates, venue and tickets will be posted here first, and on our Instagram.
           </p>
@@ -110,7 +110,7 @@ function ComingSoonCard({ more }: { more: boolean }) {
               href={instagram.href}
               target="_blank"
               rel="noopener noreferrer"
-              className={`mt-auto pt-3 ${small} font-bold text-[#6B4841] underline decoration-[#6B4841]/40 underline-offset-4 hover:decoration-[#6B4841] ${focusRing}`}
+              className={`mt-auto pt-5 ${small} font-bold text-[#6B4841] underline decoration-[#6B4841]/40 underline-offset-4 hover:decoration-[#6B4841] ${focusRing}`}
             >
               Follow {instagram.handle}
               <span className="sr-only"> (opens in a new tab)</span>
@@ -131,15 +131,10 @@ export default function CompetitionsPage() {
       {/* ── Header ── */}
       <section className="px-[var(--gutter)] pt-[var(--section-top)] pb-[var(--section-sm)]">
         <div className="max-w-6xl mx-auto text-center">
-          {/* TODO (client): page intro copy */}
           <p className={`${eyebrow} mb-3`}>Compete With Us</p>
           <h1 className="rye text-[#6B4841] uppercase tracking-wide" style={{ fontSize: "var(--text-h1)" }}>
             Competitions
           </h1>
-          <p className="mx-auto mt-5 max-w-[40rem] text-[length:var(--text-body)] leading-relaxed text-[#6B4841]">
-            Boots on, numbers pinned, and a whole lot of friendly rivalry. Find our next line dancing
-            competition here, and relive past nights with the recap and photos.
-          </p>
         </div>
       </section>
 
